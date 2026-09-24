@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Design tokens. Use them as Tailwind classes: bg-ink, text-volt, border-line, font-display... */
+@theme {
+  --color-ink: #09090c;
+  --color-panel: #131318;
+  --color-panel-2: #1b1b22;
+  --color-line: #2a2a33;
+  --color-fg: #f4f4f5;
+  --color-muted: #9b9ba8;
+  --color-volt: #d4ff3a;
+  --color-volt-dim: #a8cc2a;
+  --color-heat: #ff5a36;
+  --color-easy: #3ddc97;
+  --color-mid: #ffb020;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-rise: rise 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-pop: pop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-fg);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: var(--color-volt);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-volt);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
