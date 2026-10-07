@@ -7,30 +7,35 @@
 ## 1. What every image must be
 
 - One image per exercise, **landscape 3:2** (for example 1536×1024), PNG.
-- **Two panels side by side**, separated by a thin gap of background colour.
-  - LEFT panel = **START** position.
-  - RIGHT panel = **END** position.
+- **Two panels side by side**, separated by a thin vertical divider line in dark gray `#2A2A33`.
+  - LEFT panel = **START** position (for static holds: **SET-UP**).
+  - RIGHT panel = **END** position (for static holds: **HOLD**).
 - The **same athlete figure, same size, same camera angle** in both panels. Only the pose changes.
-- Purpose: a person in the gym glances at it mid-workout and instantly understands the movement, the muscles it trains and the body angles. Clarity beats decoration.
+- In side views the athlete **faces LEFT** (the front of the body toward the left of the image), in both panels and in every image.
+- **Framing:** the figure fills about 85% of the panel width and is centred vertically with a small margin. Avoid large empty areas. Both panels use the same scale and the same floor-line height.
+- Purpose: a person in the gym glances at it mid-workout on a phone and instantly understands the movement, the muscles it trains and the body angles. Clarity beats decoration.
+- If a reference image `push-up-approved.webp` is attached, match its look exactly: line weight, colours, level of anatomical detail and angle labels.
 
-## 2. The figure (the "mannequin")
+## 2. Style and figure: anatomical line-art
 
-- A smooth, **gender-neutral anatomy mannequin**: no clothes, no hair, no facial features, no skin-tone detail.
-- Colour: a flat, **light neutral gray `#C9CCD2`**, with only very subtle shading. The body is deliberately pale and plain so the working muscles stand out.
-- Realistic human proportions. Exactly **two arms, two legs**, correct joints, normal hands and feet.
-- Neutral spine at all times: never rounded or over-arched, unless the exercise explicitly calls for it.
+- **Look:** a technical anatomy-chart illustration, like a precise engraving. Thin, clean contour lines. **No** filled 3D shading, gradients, glow, cartoon look or photo-realism.
+- **Background:** flat near-black `#09090C`.
+- **The figure** is a gender-neutral anatomy mannequin: no clothes, no hair, no facial features.
+  - Body outline in fine light-gray lines, **`#C9CCD2`**. The inside of the body is transparent or very dark, **not** filled with gray.
+  - Add subtle thin contour lines for muscle separations across the whole body in dim gray **`#5B5F68`**, plus a little fine hatching for depth, so it feels like a real anatomy drawing but stays clearly line-art.
+  - Realistic human proportions. Exactly **two arms and two legs**, correct joints, normal hands and feet.
+  - Neutral spine at all times: never rounded or over-arched, unless the exercise explicitly calls for it.
+- **Line weight:** thin and consistent (about 1 to 1.5 px at 1536 px width). Equipment lines may be slightly heavier (see section 4).
+- **Floor:** a faint line in dark gray `#3A3A44` where relevant.
 
 ## 3. Muscles (the main feature)
 
-- **Primary working muscles**: drawn as accurate anatomical muscle shapes in saturated **lime `#D4FF3A`**.
-  - Show clearly visible **muscle-fibre striation lines** that follow the real fibre direction.
-  - Use a darker lime **`#8FB31A`** in the shadowed parts and a brighter lime on highlights, so the shape reads in 3D-like form while staying flat vector.
-- **Secondary (assisting) muscles**: the same lime hue but paler and less saturated (about 40% strength) with fewer fibre lines.
-- Everything else: flat light gray `#C9CCD2`. Never highlight more muscles than the exercise needs.
-- Use proper anatomical muscle names when thinking about shapes (pectoralis major, latissimus dorsi, gluteus maximus, rectus femoris, vastus lateralis, biceps femoris, triceps brachii, deltoids, rhomboids, rectus abdominis, erector spinae and so on).
-- Lime is **reserved for muscles**. Nothing else in the image (equipment, lines, labels) may be lime.
-- **Visibility:** the primary muscles must be clearly visible from the chosen camera and must be the strongest-coloured thing in the image. Secondary muscles must look clearly weaker than the primary ones. If a secondary muscle looks as strong as a primary one, make it paler.
+- **Primary working muscles:** a clearly outlined anatomical muscle shape in **lime `#D4FF3A`**, with a very faint lime tint inside (about 15%) and **dense, clearly visible muscle-fibre striation lines** that follow the real fibre direction.
+- **Secondary (assisting) muscles:** the same lime but **thinner, dashed outlines** with only a few fibre lines, clearly weaker than the primary muscle.
+- **Everything else:** dim gray anatomy lines only. Never highlight more muscles than the exercise needs.
+- **Visibility:** the primary muscles must be clearly visible from the chosen camera and must be the strongest-coloured thing in the image. If a secondary muscle looks as strong as a primary one, make it weaker.
 - **Only the listed muscles:** highlight exactly the muscles given for the exercise and no others (for example, do not highlight the biceps unless it is listed).
+- Lime is **reserved for muscles**. Nothing else in the image (equipment, lines, labels) may be lime.
 - **Where each muscle sits** (draw it in the right place):
   - Pectoralis major: the fan-shaped muscle across the front of the chest, from the breastbone and collarbone to the upper arm. In a side view, draw the near-side pec as a full fan on the chest wall.
   - Deltoids: the cap of the shoulder (anterior = front, lateral = side, rear = back).
@@ -39,33 +44,33 @@
   - Rhomboids and middle trapezius: between and across the shoulder blades. Erector spinae: along both sides of the lower spine.
   - Rectus abdominis: the front strip of the abdomen. Obliques: the sides of the abdomen.
   - Gluteus maximus: the buttocks. Quadriceps: front of the thigh. Hamstrings: back of the thigh. Calves: back of the lower leg.
+- Use proper anatomical names when thinking about shapes (pectoralis major, latissimus dorsi, gluteus maximus, rectus femoris, vastus lateralis, biceps femoris, triceps brachii, deltoids, rhomboids, rectus abdominis, erector spinae and so on).
 
 ## 4. Equipment
 
 - Draw only the equipment named for the exercise. Nothing extra, no decorative gym background.
-- Colour: **mid-gray `#7B8089`** with a thin **white outline**, so it never competes with the muscles.
+- Same line-art style as the figure, in **mid-gray `#7B8089`** lines (slightly heavier, about 2 px, so it reads clearly), with at most a faint dark fill. Never lime.
 - Equipment must look correct: a dumbbell is a dumbbell, a kettlebell is a kettlebell, a barbell has round plates, a resistance band is a flat band. Hands must grip it properly.
-- If a rack, bench, machine or mat is needed, draw it simply and in the same mid-gray.
+- If a rack, bench, machine or mat is needed, draw it simply, in the same mid-gray lines.
 
 ## 5. Background and layout
 
-- Background: near-black **`#09090C`**, flat, with a faint floor line where relevant.
-- No gradients in the background, no cast shadows, no 3D rendering, no photo-realism, no textures.
-- Keep generous margin around the figure. Both panels the same scale.
+- Background: flat near-black **`#09090C`**. No gradients, no glow, no cast shadows, no textures.
+- Faint floor line and thin divider as described above. Nothing else decorative.
+- Keep a small margin around the figure. Both panels the same scale.
 
 ## 6. Camera
 
 - Default: **strict side view**, so joint angles and body lines are readable.
-- Use a **three-quarter rear view** for exercises where the back muscles must face the viewer (for example band pull-apart).
-- Never mix camera angles between the two panels of one image.
+- Use a **three-quarter rear view** for exercises where the back muscles must face the viewer (for example band pull-apart), and a **three-quarter front view** where the chest must face the viewer (for example dumbbell fly).
+- The camera stated for an exercise overrides this default. Never mix camera angles between the two panels of one image.
 
 ## 7. Angle indicators (important)
 
 Every panel shows the body angles that matter for the form, so the viewer understands how upright, bent or inclined to be.
 
-- Draw **thin white dashed reference lines**: a vertical line, a horizontal line, or the straight extension of a limb.
-- Draw a **small white arc** between the reference line and the body segment.
-- Put the number with a degree sign (for example `90°`) **next to the arc**, in small, clean, sans-serif **white** text.
+- Draw **thin white dashed reference lines**: a vertical line, a horizontal line, or the straight extension of a limb. A small white dot may mark the joint.
+- Draw a **small white arc** between the reference line and the body segment, with the number and a degree sign (for example `90°`) **next to the arc**, in small, clean, sans-serif **white** text.
 - The drawn angle **must visually match the number**. A `90°` knee must look like a right angle.
 - **Put each arc exactly on the joint named in the label:**
   - elbow angle = arc centred on the elbow, between the upper arm and the forearm;
@@ -75,7 +80,6 @@ Every panel shows the body angles that matter for the form, so the viewer unders
   - **Never place an arc at the wrist, hand or foot** unless the label says so.
 - Use the **same joint and the same arc style in both panels**, so the START and END numbers can be compared directly.
 - The pose must really form the labelled angle: for a `90°` elbow, the upper arm and forearm must be perpendicular. If the pose and the number disagree, fix the pose, not the number.
-- Typical things to label: knee angle, elbow angle, torso lean from vertical, torso angle above horizontal, arm angle from the torso.
 - Maximum two or three labels per panel.
 - **These number labels are the ONLY text allowed in the image.** No titles, captions, exercise names, muscle names, letters, logos or watermarks.
 
@@ -84,7 +88,7 @@ Every panel shows the body angles that matter for the form, so the viewer unders
 These images teach form, so a wrong picture can hurt someone. Never draw:
 
 - A rounded or over-arched back during lifts.
-- Knees collapsing inward, heels lifting during squats, locked-out elbows being slammed, or any unsafe position.
+- Knees collapsing inward, heels lifting during squats, locked-out elbows being slammed, hips sagging or piking in plank-type positions, or any unsafe position.
 - Equipment resting on the neck (a barbell sits on the upper back/shoulders).
 - Extra or missing limbs, merged hands, or equipment passing through the body.
 
@@ -92,17 +96,18 @@ If the exercise description would force an unsafe position, say so instead of dr
 
 ## 9. Quality checklist (check before showing me)
 
-1. Exactly 2 arms and 2 legs, normal hands and feet.
-2. Right equipment, nothing extra, properly gripped.
-3. Back neutral in both panels.
-4. START and END clearly differ and match the description.
-5. Same mannequin, size and camera in both panels.
-6. Primary muscles lime with visible fibre lines; secondary muscles paler; rest light gray.
-7. The highlighted muscles are the correct ones for this exercise.
-8. Every angle label shows the right number and the angle drawn looks like that number.
-9. No other text anywhere.
+1. Layout: 3:2, two panels with a thin divider, LEFT = start, RIGHT = end; same athlete, size and camera; athlete faces left in side views; figure fills about 85% of panel width.
+2. Style: anatomical line-art, light-gray contour on near-black, body interior not filled gray; no 3D shading, gradients or glow.
+3. Figure: exactly 2 arms and 2 legs, normal hands and feet, neutral spine.
+4. Equipment: right type, nothing extra, properly gripped, mid-gray lines, not lime.
+5. Muscles: the right ones highlighted and in the right place; primary = outlined lime with a faint tint and dense fibre lines; secondary = thinner dashed lime; nothing else highlighted.
+6. START and END clearly differ and match the description.
+7. Angles: every label shows the right number, each arc is centred on the named joint (never the wrist, hand or foot), the same joint is shown in both panels, and the drawn angle looks like its number.
+8. No other text anywhere.
 
 If any check fails, fix it before showing me. If I report a problem, change **only** that problem and keep everything else identical.
+
+---
 
 ## 10. How I will ask
 

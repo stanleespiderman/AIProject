@@ -1,5 +1,7 @@
 # Exercise images: prompt template and pilot list (v2)
 
+> **SUPERSEDED.** This is the old style (flat gray mannequin). Use `exercise-image-design.md` (final style guide) and `exercise-image-prompts-sample.md` instead.
+
 Goal: one image per exercise, showing the **start** and **end** position side by side. Saved as `public/exercises/<exercise-id>.png`.
 
 ## What changed in v2
