@@ -13,7 +13,7 @@ Purpose: test the image rules on exercises that stress them in different ways, *
 
 | # | Exercise id | What it stresses |
 | --- | --- | --- |
-| 1 | `push-up` | Body horizontal on the floor, no equipment, elbow angle at both ends. |
+| 1 | `push-up` | Body horizontal on the floor, no equipment; checks the chest highlight and that the elbow arc sits on the elbow. |
 | 2 | `barbell-back-squat` | Heavy equipment placement (bar on the back, not the neck), rack and safety bars, two joint angles. |
 | 3 | `kettlebell-swing` | Dynamic/ballistic movement, one kettlebell, hip hinge with a flat back. |
 | 4 | `pull-up` | Hanging body, equipment overhead, back muscles visible from the side. |
@@ -48,7 +48,7 @@ What I expected:
 
 ### 1. push-up
 
-*Tests: Body horizontal on the floor, no equipment, elbow angle at both ends.*  ·  Save as `push-up.png`
+*Tests: Body horizontal on the floor, no equipment; checks the chest highlight and that the elbow arc sits on the elbow.*  ·  Save as `push-up.png`
 
 ```
 Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, mannequin, colours, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
@@ -58,14 +58,14 @@ Create the image for exercise id: push-up (Push-Up)
 EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Camera: strict side view
 - Equipment: none, just the floor
-- Primary muscles (lime, with fibre lines): pectoralis major (chest), fibres fanning from the breastbone toward the upper arm
-- Secondary muscles (pale lime): anterior deltoids, triceps brachii, rectus abdominis (abs)
-- LEFT panel, START: top of the push-up, arms fully straight, hands directly under the shoulders, body in one straight line from head to heels, feet together on their toes
-- RIGHT panel, END: bottom of the push-up, chest a fist's height above the floor, elbows bent and angled about 45° back from the body, body still in one straight line, hips not sagging or piking
-- Angle labels, LEFT panel: elbow angle 180°
-- Angle labels, RIGHT panel: elbow angle 90°
+- Primary muscles (lime, with fibre lines): pectoralis major (the fan across the front of the chest, drawn clearly on the near side of the chest wall)
+- Secondary muscles (pale lime): anterior deltoids (front of the shoulder), triceps brachii (BACK of the upper arm), rectus abdominis (abs); do NOT highlight the biceps
+- LEFT panel, START: top of the push-up, arms fully straight, wrists directly under the shoulders, body in one straight line from head to heels, feet together on their toes
+- RIGHT panel, END: bottom of the push-up, chest a fist's height above the floor, body still in one straight line, hips not sagging or piking, forearms close to vertical with the wrists directly below the elbows, upper arms angled back along the body (elbows tucked, not flared), hands under the lower chest
+- Angle labels, LEFT panel: elbow angle 180° (arc on the elbow joint, between upper arm and forearm)
+- Angle labels, RIGHT panel: elbow angle 90° (arc on the elbow joint, between upper arm and forearm; NOT at the wrist)
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 2. barbell-back-squat
@@ -87,7 +87,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: knee angle 180°
 - Angle labels, RIGHT panel: knee angle 90°, torso lean 40° from vertical
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 3. kettlebell-swing
@@ -109,7 +109,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: torso 45° from vertical, knee angle 140°
 - Angle labels, RIGHT panel: arms 90° from the torso
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 4. pull-up
@@ -131,7 +131,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: elbow angle 180°
 - Angle labels, RIGHT panel: elbow angle 50°
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 5. dumbbell-fly
@@ -153,7 +153,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: elbow angle 165°
 - Angle labels, RIGHT panel: elbow angle 150°
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 6. band-pull-apart
@@ -175,7 +175,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: elbow angle 180°
 - Angle labels, RIGHT panel: arms 90° from the torso
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 7. plank
@@ -197,7 +197,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: elbow angle 90°, knee angle 90°
 - Angle labels, RIGHT panel: elbow angle 90°, hip angle 180°
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 8. cable-triceps-pushdown
@@ -219,7 +219,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: elbow angle 90°
 - Angle labels, RIGHT panel: elbow angle 170°, torso lean 10° from vertical
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 9. dumbbell-bulgarian-split-squat
@@ -241,7 +241,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: front knee angle 175°
 - Angle labels, RIGHT panel: front knee angle 90°, torso lean 15° from vertical
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ### 10. leg-press
@@ -263,7 +263,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Angle labels, LEFT panel: knee angle 170°
 - Angle labels, RIGHT panel: knee angle 90°, back rest 45° from the floor
 
-If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
+Place every angle arc exactly on the joint named in its label (guide section 7), and show the same joint in both panels. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.
 ```
 
 ## After the test

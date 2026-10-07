@@ -29,6 +29,16 @@
 - Everything else: flat light gray `#C9CCD2`. Never highlight more muscles than the exercise needs.
 - Use proper anatomical muscle names when thinking about shapes (pectoralis major, latissimus dorsi, gluteus maximus, rectus femoris, vastus lateralis, biceps femoris, triceps brachii, deltoids, rhomboids, rectus abdominis, erector spinae and so on).
 - Lime is **reserved for muscles**. Nothing else in the image (equipment, lines, labels) may be lime.
+- **Visibility:** the primary muscles must be clearly visible from the chosen camera and must be the strongest-coloured thing in the image. Secondary muscles must look clearly weaker than the primary ones. If a secondary muscle looks as strong as a primary one, make it paler.
+- **Only the listed muscles:** highlight exactly the muscles given for the exercise and no others (for example, do not highlight the biceps unless it is listed).
+- **Where each muscle sits** (draw it in the right place):
+  - Pectoralis major: the fan-shaped muscle across the front of the chest, from the breastbone and collarbone to the upper arm. In a side view, draw the near-side pec as a full fan on the chest wall.
+  - Deltoids: the cap of the shoulder (anterior = front, lateral = side, rear = back).
+  - Triceps brachii: the BACK of the upper arm. Biceps brachii: the FRONT of the upper arm.
+  - Latissimus dorsi: the wide muscle running from the lower spine up to the armpit along the side of the back.
+  - Rhomboids and middle trapezius: between and across the shoulder blades. Erector spinae: along both sides of the lower spine.
+  - Rectus abdominis: the front strip of the abdomen. Obliques: the sides of the abdomen.
+  - Gluteus maximus: the buttocks. Quadriceps: front of the thigh. Hamstrings: back of the thigh. Calves: back of the lower leg.
 
 ## 4. Equipment
 
@@ -57,6 +67,14 @@ Every panel shows the body angles that matter for the form, so the viewer unders
 - Draw a **small white arc** between the reference line and the body segment.
 - Put the number with a degree sign (for example `90°`) **next to the arc**, in small, clean, sans-serif **white** text.
 - The drawn angle **must visually match the number**. A `90°` knee must look like a right angle.
+- **Put each arc exactly on the joint named in the label:**
+  - elbow angle = arc centred on the elbow, between the upper arm and the forearm;
+  - knee angle = arc centred on the knee, between the thigh and the shin;
+  - hip angle = arc at the hip, between the torso and the thigh;
+  - torso lean = arc at the hip (or shoulder), between the torso line and the vertical reference line; torso angle above horizontal = between the torso line and the horizontal reference line.
+  - **Never place an arc at the wrist, hand or foot** unless the label says so.
+- Use the **same joint and the same arc style in both panels**, so the START and END numbers can be compared directly.
+- The pose must really form the labelled angle: for a `90°` elbow, the upper arm and forearm must be perpendicular. If the pose and the number disagree, fix the pose, not the number.
 - Typical things to label: knee angle, elbow angle, torso lean from vertical, torso angle above horizontal, arm angle from the torso.
 - Maximum two or three labels per panel.
 - **These number labels are the ONLY text allowed in the image.** No titles, captions, exercise names, muscle names, letters, logos or watermarks.
@@ -101,11 +119,11 @@ Each entry gives everything needed to draw the image. Angles are typical working
 ### push-up: Push-Up
 - **Camera:** strict side view
 - **Equipment:** none, just the floor
-- **Primary muscles:** pectoralis major (chest), fibres fanning from the breastbone toward the upper arm
-- **Secondary muscles:** anterior deltoids, triceps, rectus abdominis
-- **START:** top of the push-up, arms fully straight, hands under shoulders, body in one straight line from head to heels, feet together on toes
-- **END:** bottom of the push-up, chest a fist's height above the floor, elbows bent, body still in one straight line, hips not sagging or piking
-- **Angles:** LEFT elbow `180°` · RIGHT elbow `90°`
+- **Primary muscles:** pectoralis major (the fan across the front of the chest, drawn clearly on the near side of the chest wall)
+- **Secondary muscles (paler):** anterior deltoids (front of the shoulder), triceps brachii (BACK of the upper arm), rectus abdominis. Do NOT highlight the biceps.
+- **START:** top of the push-up, arms fully straight, wrists directly under the shoulders, body in one straight line from head to heels, feet together on their toes
+- **END:** bottom of the push-up, chest a fist's height above the floor, body still in one straight line, hips not sagging or piking, forearms close to vertical with the wrists directly below the elbows, upper arms angled back along the body (elbows tucked, not flared), hands under the lower chest
+- **Angles:** LEFT elbow `180°` · RIGHT elbow `90°`. In BOTH panels the arc sits on the elbow joint, between the upper arm and the forearm (not at the wrist)
 
 ### goblet-squat: Goblet Squat
 - **Camera:** strict side view
