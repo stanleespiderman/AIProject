@@ -96,6 +96,8 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 - `exercise-image-prompts-sample.md`: 10 ready-to-paste test prompts, chosen to be very different from each other (push-up, barbell-back-squat, kettlebell-swing, pull-up, dumbbell-fly, band-pull-apart, plank, cable-triceps-pushdown, dumbbell-bulgarian-split-squat, leg-press), plus a scoring list and a report-back template.
 - `exercise-images.md`: SUPERSEDED older flat-mannequin prompts. Ignore.
 
+**Update (angle ranges):** after the first squat renders (one more natural but with off angles, one with correct angles but too rigid), the decision was to give each key angle a **target plus an acceptable range** (`angleRanges` in `docs/data/whatnext-exercise-form-data.json`, drafted for the 10 test exercises only, trainer to confirm). The image labels are now approximate (`~90°`), the pose must look natural (within about 10 degrees), and one key angle per exercise may show a faint range wedge. The card shows the range as text under "How to do it". Test prompts are generated from the JSON with `npm run build:prompts`.
+
 ## 8. Next steps (in order)
 
 1. Owner runs the 10 sample prompts in ChatGPT, one per message, and reports failures (which exercise, which rule broke).

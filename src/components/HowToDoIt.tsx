@@ -20,6 +20,8 @@ export function HowToDoIt({ exercise }: { exercise: Exercise }) {
     easierOption,
     harderOption,
     reviewStatus,
+    angleRanges,
+    image,
   } = exercise;
 
   return (
@@ -62,6 +64,26 @@ export function HowToDoIt({ exercise }: { exercise: Exercise }) {
         <Section title="Do it">
           <Steps items={execution} />
         </Section>
+
+        {angleRanges && angleRanges.length > 0 && (
+          <Section title="Angles that matter">
+            <ul className="space-y-2">
+              {angleRanges.map((a, i) => {
+                const phase = a.panel === "left" ? image?.leftPanel.label : image?.rightPanel.label;
+                return (
+                  <li key={`${i}-${a.label}`}>
+                    <span className="font-semibold">{a.joint}</span>
+                    {phase && <span className="text-muted"> ({phase.toLowerCase()})</span>}
+                    {": about "}
+                    <span className="font-semibold text-volt">{a.target}°</span>
+                    <span className="text-muted">, {a.min}–{a.max}° is fine</span>
+                    {a.note && <span className="block text-sm text-muted">{a.note}</span>}
+                  </li>
+                );
+              })}
+            </ul>
+          </Section>
+        )}
 
         {breathing && (
           <Section title="Breathing">

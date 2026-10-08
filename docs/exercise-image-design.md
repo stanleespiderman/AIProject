@@ -25,6 +25,7 @@
   - Add subtle thin contour lines for muscle separations across the whole body in dim gray **`#5B5F68`**, plus a little fine hatching for depth, so it feels like a real anatomy drawing but stays clearly line-art.
   - Realistic human proportions. Exactly **two arms and two legs**, correct joints, normal hands and feet.
   - Neutral spine at all times: never rounded or over-arched, unless the exercise explicitly calls for it.
+  - **Natural pose, not rigid geometry.** Draw a real, slightly imperfect human rep: soft joints, relaxed hands and feet, no perfectly straight or perfectly symmetric lines, nothing that looks like a protractor drawing. A labelled angle may differ from its target by up to about 10 degrees. It must still be a safe, good-form rep (section 8).
 - **Line weight:** thin and consistent (about 1 to 1.5 px at 1536 px width). Equipment lines may be slightly heavier (see section 4).
 - **Floor:** a faint line in dark gray `#3A3A44` where relevant.
 
@@ -72,7 +73,8 @@ Every panel shows the body angles that matter for the form, so the viewer unders
 
 - Draw **thin white dashed reference lines**: a vertical line, a horizontal line, or the straight extension of a limb. A small white dot may mark the joint.
 - Draw a **small white arc** between the reference line and the body segment, with the number and a degree sign (for example `90°`) **next to the arc**, in small, clean, sans-serif **white** text.
-- The drawn angle **must visually match the number**. A `90°` knee must look like a right angle.
+- Labels are **approximate**: write them with a tilde, for example `~90°`. The drawn angle should look like that number, give or take about 10 degrees. A `~90°` knee should look close to a right angle but not like a rigid one.
+- **Range wedge (key angle only).** When a prompt names a key angle with a range, draw a faint translucent white wedge (about 15% opacity) on that joint, with its two edges at the minimum and maximum angle, and the dashed target line inside it. Do this for that one angle only. The range itself is **not** written in the image; the card in the app shows it as text.
 - **Put each arc exactly on the joint named in the label:**
   - elbow angle = arc centred on the elbow, between the upper arm and the forearm;
   - knee angle = arc centred on the knee, between the thigh and the shin;
@@ -80,7 +82,7 @@ Every panel shows the body angles that matter for the form, so the viewer unders
   - torso lean = arc at the hip (or shoulder), between the torso line and the vertical reference line; torso angle above horizontal = between the torso line and the horizontal reference line.
   - **Never place an arc at the wrist, hand or foot** unless the label says so.
 - Use the **same joint and the same arc style in both panels**, so the START and END numbers can be compared directly.
-- The pose must really form the labelled angle: for a `90°` elbow, the upper arm and forearm must be perpendicular. If the pose and the number disagree, fix the pose, not the number.
+- If the pose and the label disagree by more than about 10 degrees, fix the pose, not the number.
 - Maximum two or three labels per panel.
 - **These number labels are the ONLY text allowed in the image.** No titles, captions, exercise names, muscle names, letters, logos or watermarks.
 
@@ -103,7 +105,7 @@ If the exercise description would force an unsafe position, say so instead of dr
 4. Equipment: right type, nothing extra, properly gripped, mid-gray lines, not lime.
 5. Muscles: the right ones highlighted and in the right place; primary = outlined lime with a faint tint and dense fibre lines; secondary = thinner dashed lime; nothing else highlighted.
 6. START and END clearly differ and match the description.
-7. Angles: every label shows the right number, each arc is centred on the named joint (never the wrist, hand or foot), the same joint is shown in both panels, and the drawn angle looks like its number.
+7. Angles: every label is written with a tilde (`~90°`), each arc is centred on the named joint (never the wrist, hand or foot), the same joint is shown in both panels, and the drawn angle is within about 10 degrees of its number. If a key range is given, the faint wedge is drawn on that joint only. The pose looks natural, not rigid.
 8. No other text anywhere.
 
 If any check fails, fix it before showing me. If I report a problem, change **only** that problem and keep everything else identical.
@@ -112,102 +114,6 @@ If any check fails, fix it before showing me. If I report a problem, change **on
 
 ## 10. How I will ask
 
-I will usually just name the exercise id. Look it up in section 11 and build the image from the spec. If I give a new exercise that is not in the list, I will provide: name, primary muscles, secondary muscles, camera, equipment, START, END and angles. If any of these is missing, ask me for it instead of guessing.
+Each message gives you the full data for one exercise: camera, equipment, primary and secondary muscles, the LEFT and RIGHT panel poses, the angle labels, and (for some exercises) a key angle range. Use exactly that data and this guide. If any item is missing or unclear, ask me instead of guessing.
 
 The file name I will save it as is `<exercise-id>.png`.
-
----
-
-## 11. Exercise specs (pilot set)
-
-Each entry gives everything needed to draw the image. Angles are typical working values.
-
-### push-up: Push-Up
-- **Camera:** strict side view
-- **Equipment:** none, just the floor
-- **Primary muscles:** pectoralis major (the fan across the front of the chest, drawn clearly on the near side of the chest wall)
-- **Secondary muscles (paler):** anterior deltoids (front of the shoulder), triceps brachii (BACK of the upper arm), rectus abdominis. Do NOT highlight the biceps.
-- **START:** top of the push-up, arms fully straight, wrists directly under the shoulders, body in one straight line from head to heels, feet together on their toes
-- **END:** bottom of the push-up, chest a fist's height above the floor, body still in one straight line, hips not sagging or piking, forearms close to vertical with the wrists directly below the elbows, upper arms angled back along the body (elbows tucked, not flared), hands under the lower chest
-- **Angles:** LEFT elbow `180°` · RIGHT elbow `90°`. In BOTH panels the arc sits on the elbow joint, between the upper arm and the forearm (not at the wrist)
-
-### goblet-squat: Goblet Squat
-- **Camera:** strict side view
-- **Equipment:** one dumbbell held vertically against the chest, both hands cupping the top end
-- **Primary muscles:** quadriceps (rectus femoris, vastus lateralis), gluteus maximus
-- **Secondary muscles:** adductors, rectus abdominis, calves
-- **START:** standing tall, feet shoulder-width, toes slightly out, dumbbell at the chest, elbows down
-- **END:** deep squat, hips down between the heels, thighs at or just below parallel, chest up, back straight, knees over toes, heels flat, dumbbell still at the chest
-- **Angles:** LEFT knee `180°` · RIGHT knee `90°`, torso lean `30°` from vertical
-
-### kettlebell-swing: Kettlebell Swing
-- **Camera:** strict side view
-- **Equipment:** one kettlebell held with both hands by the handle
-- **Primary muscles:** gluteus maximus, hamstrings (biceps femoris, semitendinosus)
-- **Secondary muscles:** erector spinae, rectus abdominis, latissimus dorsi, front and rear deltoids
-- **START:** hinge position, hips far back, knees slightly bent, flat back leaning forward, arms straight, kettlebell between the legs just behind the knees
-- **END:** standing fully tall, hips and knees extended, glutes squeezed, arms straight out at chest height, kettlebell floating level with the chest
-- **Angles:** LEFT torso `45°` from vertical, knee `140°` · RIGHT arms `90°` from the torso
-
-### barbell-back-squat: Barbell Back Squat
-- **Camera:** strict side view
-- **Equipment:** barbell with round plates across the upper back (not the neck), inside a simple squat rack with safety bars set low
-- **Primary muscles:** quadriceps (rectus femoris, vastus lateralis), gluteus maximus
-- **Secondary muscles:** hamstrings, adductors, erector spinae, rectus abdominis
-- **START:** standing tall with the bar on the upper back, feet shoulder-width, toes slightly out, chest up, both hands on the bar
-- **END:** deep squat, thighs at or just below parallel, torso leaning forward with a straight back, chest up, knees over toes, heels flat, safety bars just below the bar
-- **Angles:** LEFT knee `180°` · RIGHT knee `90°`, torso lean `40°` from vertical
-
-### dumbbell-romanian-deadlift: Dumbbell Romanian Deadlift
-- **Camera:** strict side view
-- **Equipment:** two dumbbells, one in each hand
-- **Primary muscles:** hamstrings (biceps femoris, semitendinosus, semimembranosus), gluteus maximus
-- **Secondary muscles:** erector spinae, trapezius, forearms
-- **START:** standing tall, feet hip-width, knees softly bent, a dumbbell in each hand in front of the thighs
-- **END:** hips pushed far back, torso hinged until nearly parallel to the floor, back flat, knees slightly bent, dumbbells close to the legs at mid-shin, head in line with the spine
-- **Angles:** LEFT knee `175°` · RIGHT torso `20°` above horizontal, knee `160°`
-
-### lat-pulldown: Lat Pulldown
-- **Camera:** strict side view, latissimus dorsi drawn clearly on the visible side of the torso
-- **Equipment:** lat pulldown machine with seat, thigh pad, high pulley and a long wide bar
-- **Primary muscles:** latissimus dorsi (fibres running up toward the armpit)
-- **Secondary muscles:** biceps, rear deltoids, rhomboids, lower trapezius
-- **START:** seated upright, thighs under the pad, arms straight overhead gripping the bar just outside shoulder width, chest up
-- **END:** bar pulled to the upper chest, elbows down and back, shoulder blades squeezed, chest up, torso leaning back only slightly
-- **Angles:** LEFT elbow `170°` · RIGHT elbow `70°`, torso lean back `15°` from vertical
-
-### band-pull-apart: Band Pull-Apart
-- **Camera:** three-quarter REAR view, upper-back muscles facing the viewer
-- **Equipment:** one flat resistance band held in both hands
-- **Primary muscles:** rear deltoids, rhomboids and middle trapezius
-- **Secondary muscles:** infraspinatus, teres minor, triceps
-- **START:** standing tall, feet hip-width, arms straight out in front at shoulder height, hands shoulder-width apart on the band, band slightly taut
-- **END:** arms pulled wide to the sides at shoulder height, band stretched, shoulder blades squeezed, arms straight, shoulders down (not shrugged)
-- **Angles:** LEFT elbow `180°` · RIGHT arms `90°` from the torso
-
-### glute-bridge: Glute Bridge
-- **Camera:** strict side view
-- **Equipment:** none, just a thin exercise mat
-- **Primary muscles:** gluteus maximus
-- **Secondary muscles:** hamstrings, rectus abdominis, quadriceps
-- **START:** lying on the back, knees bent, feet flat close to the glutes, arms on the floor by the sides, hips on the floor
-- **END:** hips lifted so shoulders, hips and knees form one straight diagonal line, glutes squeezed, lower back flat (not arched), head and shoulders on the floor
-- **Angles:** LEFT knee `90°` · RIGHT knee `90°`, body line from shoulders to knees `25°` above the floor
-
-### dumbbell-shoulder-press: Dumbbell Shoulder Press
-- **Camera:** strict side view
-- **Equipment:** two dumbbells, and a bench with a slightly reclined back support
-- **Primary muscles:** deltoids (anterior and lateral heads, fibres visible)
-- **Secondary muscles:** triceps, upper pectoralis major, upper trapezius
-- **START:** seated with the back against the support, feet flat, a dumbbell in each hand at shoulder height beside the ears, forearms vertical
-- **END:** both arms pressed fully overhead, dumbbells above the shoulders, back against the support (not arched), core tight, elbows not harshly locked
-- **Angles:** LEFT elbow `90°`, bench back `80°` from the floor · RIGHT elbow `170°`
-
-### cable-triceps-pushdown: Cable Triceps Pushdown
-- **Camera:** strict side view
-- **Equipment:** cable machine with the pulley at the top and a short straight bar
-- **Primary muscles:** triceps brachii (long, lateral and medial heads, fibres visible)
-- **Secondary muscles:** forearm flexors, rectus abdominis, anterior deltoids
-- **START:** standing upright facing the machine, elbows tucked against the sides, hands on the bar at chest height, forearms pointing up and slightly forward
-- **END:** arms pushed straight down, bar at the thighs, elbows still tucked at the sides, shoulders down, torso upright
-- **Angles:** LEFT elbow `90°` · RIGHT elbow `170°`, torso lean `10°` from vertical

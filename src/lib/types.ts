@@ -35,6 +35,26 @@ export interface ExerciseImagePanel {
   angles: string[];
 }
 
+/**
+ * An angle that matters for the form, as a target with an acceptable range.
+ * A good rep does not need to hit the target exactly; anything in [min, max] is fine.
+ * DRAFT values: a certified trainer should confirm them (see reviewStatus).
+ */
+export interface AngleRange {
+  /** Which image panel it belongs to: left = START / SET-UP, right = END / HOLD. */
+  panel: "left" | "right";
+  /** The approximate label drawn on the image, e.g. "knee ~90°". */
+  label: string;
+  /** Human wording for the card, e.g. "Knee at the bottom". */
+  joint: string;
+  target: number;
+  min: number;
+  max: number;
+  /** The one angle per exercise that the image may also show as a range wedge. */
+  key?: boolean;
+  note?: string;
+}
+
 /** Everything needed to build an illustration prompt (see docs/exercise-image-design.md). */
 export interface ExerciseImageSpec {
   camera: string;
@@ -69,6 +89,8 @@ export interface ExerciseDetails {
   easierOption: string;
   harderOption: string;
   image: ExerciseImageSpec;
+  /** Target and acceptable range for the angles that matter. Added exercise by exercise. */
+  angleRanges?: AngleRange[];
   reviewStatus: ReviewStatus;
 }
 

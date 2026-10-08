@@ -45,6 +45,7 @@ for (const e of data.exercises) {
     easierOption: e.easierOption,
     harderOption: e.harderOption,
     image: e.image,
+    ...(e.angleRanges ? { angleRanges: e.angleRanges } : {}),
     reviewStatus: e.review.status === "approved" ? "approved" : "pending",
   };
 }
