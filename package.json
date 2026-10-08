@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:details": "node scripts/build-exercise-details.mjs",
+    "check:data": "tsx scripts/check-exercise-data.ts",
+    "prebuild": "npm run check:data"
   },
   "dependencies": {
     "next": "16.3.6",
@@ -21,6 +24,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

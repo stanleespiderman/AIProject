@@ -63,6 +63,7 @@
 
 - Default: **strict side view**, so joint angles and body lines are readable.
 - Use a **three-quarter rear view** for exercises where the back muscles must face the viewer (for example band pull-apart), and a **three-quarter front view** where the chest must face the viewer (for example dumbbell fly).
+- Use a plain **front view** (athlete facing the viewer, symmetrical) for movements in the side-to-side plane, where a side view would hide the movement: lateral raises, side plank, hip abduction, carries, clamshell, windmill and Pallof press.
 - The camera stated for an exercise overrides this default. Never mix camera angles between the two panels of one image.
 
 ## 7. Angle indicators (important)

@@ -21,7 +21,9 @@ Other scripts:
 
 ```bash
 npm run lint       # ESLint (next/core-web-vitals + TypeScript rules)
-npm run build      # production build (also type-checks)
+npm run build      # production build (runs check:data first, also type-checks)
+npm run check:data       # verify every exercise has a details entry and the data is consistent
+npm run build:details    # regenerate src/data/exerciseDetails.ts from the JSON in docs/data
 npm start          # serve the production build
 ```
 
@@ -57,7 +59,8 @@ src/
 │  ├─ Footer.tsx               # Disclaimer in the footer
 │  └─ icons.tsx                # Inline SVG icons
 ├─ data/
-│  └─ exercises.ts             # ← The exercise library (168 exercises)
+│  ├─ exercises.ts             # ← The exercise library: names, groups, equipment, sets, reps (168)
+│  └─ exerciseDetails.ts       # Form cues, how-to, safety, image specs. AUTO-GENERATED, don't edit
 └─ lib/
    ├─ types.ts                 # Exercise model and shared types
    ├─ constants.ts             # Equipment/muscle lists, labels, storage keys, disclaimer text
@@ -69,6 +72,15 @@ src/
    └─ payments/                # ← Everything monetisation-related
       ├─ index.ts              #   Plans, checkout stub, Pro status
       └─ usage.ts              #   3-free-shuffles-per-day quota
+```
+
+Outside `src/`:
+
+```
+docs/data/whatnext-exercise-form-data.json   # SOURCE OF TRUTH for form content (cues, steps, safety, image specs)
+scripts/build-exercise-details.mjs           # JSON -> src/data/exerciseDetails.ts
+scripts/check-exercise-data.ts               # fails the build if exercises and details are out of step
+docs/exercise-image-design.md                # style guide for exercise illustrations
 ```
 
 ### How the flow works
@@ -98,7 +110,9 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 
 ## Adding exercises
 
-Open `src/data/exercises.ts` and add an entry to the right muscle section:
+An exercise lives in **two places**, joined by its `id`:
+
+1. **`src/data/exercises.ts`**: the basics you edit by hand.
 
 ```ts
 ex({
@@ -109,14 +123,26 @@ ex({
   difficulty: "beginner",                  // beginner | intermediate | advanced
   sets: 3,
   reps: "10–12",                           // free text: "8–10", "30s", "10/side"
-  formCues: ["Push hips back, soft knees", "Dumbbells slide down your thighs", "Stop when your back wants to round"],
 }),
 ```
 
+2. **`docs/data/whatnext-exercise-form-data.json`**: the form content (3 form cues, setup and execution steps, breathing, common mistakes, safety, rest, easier/harder option, image spec). Add an entry with the same `id`, then run:
+
+```bash
+npm run build:details   # regenerates src/data/exerciseDetails.ts (never edit that file by hand)
+npm run check:data      # confirms every exercise has details; also runs automatically before `npm run build`
+```
+
+If you add an exercise to `exercises.ts` without a details entry, `check:data` fails and so does the build, so it can't ship by accident.
+
 - **`id`** is generated from the name (`dumbbell-romanian-deadlift`). Votes are stored against the id, so **don't rename a shipped exercise** unless you pass the old `id` explicitly: `ex({ id: "old-id", name: "New Name", ... })`.
-- **`videoUrl`** defaults to a YouTube search: `https://www.youtube.com/results?search_query=<name>+form`. Don't paste video ids. They rot, and nobody has checked them. To tweak the search, pass `videoUrl: youtubeSearchUrl("better search terms")`.
-- **`equipment` means "any of"**: `["dumbbells", "kettlebell"]` means either one works. If you list more than one, give the exercise a neutral name ("Goblet Squat", not "Kettlebell Goblet Squat") so it doesn't look wrong to someone who only has dumbbells.
-- Keep 2–3 short, imperative form cues. Stick to common, safe movements.
+- **`videoUrl`** defaults to a YouTube search: `https://www.youtube.com/results?search_query=<name>+form`. Don't paste video ids. They rot, and nobody has checked them.
+- **`equipment` means "any of"**: `["dumbbells", "kettlebell"]` means either one works. If you list more than one, give the exercise a neutral name ("Goblet Squat", not "Kettlebell Goblet Squat").
+- Keep exactly 3 short, imperative form cues. Stick to common, safe movements.
+
+### Trainer review
+
+Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`). All 168 are currently **pending**: the content was written from established coaching standards but has not been signed off by a certified trainer. Cards show a "Guidance pending trainer review" note inside "How to do it" until an entry is set to `"approved"` (then run `npm run build:details`). Review the advanced and higher-risk lifts first.
 
 **Adding a new equipment type or muscle group:** add it to the union type in `src/lib/types.ts` and to the list in `src/lib/constants.ts`. TypeScript will then point you at everything that needs updating.
 

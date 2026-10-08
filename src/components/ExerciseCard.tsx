@@ -3,6 +3,7 @@ import type { Exercise, Vote } from "@/lib/types";
 import { Play } from "./icons";
 import { buttonClasses } from "./ui/Button";
 import { DifficultyBadge } from "./ui/DifficultyBadge";
+import { HowToDoIt } from "./HowToDoIt";
 import { VoteButtons } from "./VoteButtons";
 
 interface ExerciseCardProps {
@@ -48,6 +49,8 @@ export function ExerciseCard({ exercise, index, vote, onVote }: ExerciseCardProp
           </li>
         ))}
       </ul>
+
+      <HowToDoIt exercise={exercise} />
 
       <div className="mt-5 flex items-center gap-2">
         <a

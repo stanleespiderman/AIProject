@@ -19,7 +19,61 @@ export type MuscleGroup =
 
 export type Difficulty = "beginner" | "intermediate" | "advanced";
 
-export interface Exercise {
+/** Trainer sign-off state for an exercise's form content. */
+export type ReviewStatus = "pending" | "approved";
+
+export interface CommonMistake {
+  mistake: string;
+  fix: string;
+}
+
+export interface ExerciseImagePanel {
+  /** START / END, or SET-UP / HOLD for static holds. */
+  label: string;
+  pose: string;
+  /** Angle labels to draw, e.g. "elbow 90°". */
+  angles: string[];
+}
+
+/** Everything needed to build an illustration prompt (see docs/exercise-image-design.md). */
+export interface ExerciseImageSpec {
+  camera: string;
+  facing: string;
+  equipmentToDraw: string;
+  primaryMusclesToHighlight: string[];
+  secondaryMusclesToHighlight: string[];
+  leftPanel: ExerciseImagePanel;
+  rightPanel: ExerciseImagePanel;
+  angleNote: string;
+}
+
+/**
+ * Form, safety and image content for one exercise.
+ * Source of truth: docs/data/whatnext-exercise-form-data.json, compiled into
+ * src/data/exerciseDetails.ts by `npm run build:details`.
+ */
+export interface ExerciseDetails {
+  movementPattern: string;
+  isStaticHold: boolean;
+  /** Anatomical muscle names (the app-level groups live in primaryMuscle / secondaryMuscles). */
+  muscles: { primary: string[]; secondary: string[] };
+  equipmentDetail: string;
+  setup: string[];
+  execution: string[];
+  breathing: string;
+  /** Exactly 3 short cues. */
+  formCues: string[];
+  commonMistakes: CommonMistake[];
+  safety: string[];
+  rest: string;
+  easierOption: string;
+  harderOption: string;
+  image: ExerciseImageSpec;
+  reviewStatus: ReviewStatus;
+}
+
+export interface Exercise
+  extends Partial<Omit<ExerciseDetails, "formCues">> {
   /** Stable, URL-safe id. Never change it once shipped: votes are stored against it. */
   id: string;
   name: string;
@@ -33,11 +87,25 @@ export interface Exercise {
   sets: number;
   /** Free text so it can hold ranges, times or per-side counts: "8-12", "30s", "10/side". */
   reps: string;
-  /** 2-3 short, imperative cues. */
+  /** 3 short, imperative cues. Comes from exerciseDetails.ts. */
   formCues: string[];
   /** A YouTube *search* URL. Never a hard-coded video id. */
   videoUrl: string;
 }
+
+/** The hand-edited part of an exercise (src/data/exercises.ts). Details are merged in on top. */
+export type BaseExercise = Pick<
+  Exercise,
+  | "id"
+  | "name"
+  | "primaryMuscle"
+  | "secondaryMuscles"
+  | "equipment"
+  | "difficulty"
+  | "sets"
+  | "reps"
+  | "videoUrl"
+>;
 
 /** 1 = liked, -1 = disliked. Missing = neutral. */
 export type Vote = 1 | -1;
