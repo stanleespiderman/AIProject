@@ -69,6 +69,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on a flat bench, feet flat, dumbbells pressed above the mid-chest, arms straight, palms facing the feet",
+        "alignment": [
+          "a vertical line from each dumbbell down to its shoulder: arms stacked over the shoulders (dots on dumbbells and shoulders)"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -76,6 +79,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "dumbbells lowered to the sides of the mid-chest, upper arms about 45° from the torso, forearms vertical, shoulder blades pinched",
+        "alignment": [
+          "forearm line from each elbow up to its dumbbell, vertical: dumbbell stacked over the elbow (dots on elbows and dumbbells)",
+          "dashed horizontal reference line across the mid-chest: the dumbbells come down to chest level"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -146,6 +153,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "on a 30° incline bench, dumbbells pressed above the upper chest, arms straight",
+        "alignment": [
+          "a dashed reference line along the bench back pad, showing the low incline",
+          "one vertical line from the dumbbell down through the elbow to the shoulder: arm stacked over the shoulder (dots on dumbbell, elbow and shoulder)"
+        ],
         "angles": [
           "bench 30° above the floor",
           "elbow 170°"
@@ -154,6 +165,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "dumbbells lowered to the sides of the upper chest, forearms vertical, elbows below the bench line",
+        "alignment": [
+          "forearm line from elbow to dumbbell, vertical: dumbbell stacked over the elbow (dots on elbow and dumbbell)",
+          "the same dashed reference line along the bench back pad"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -326,6 +341,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on the floor, knees bent, feet flat, dumbbells pressed above the chest, arms straight",
+        "alignment": [
+          "one vertical line from the dumbbell down through the elbow to the shoulder: arm stacked over the shoulder (dots on dumbbell, elbow and shoulder)"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -333,6 +351,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "back of the upper arms resting on the floor, forearms vertical, dumbbells above the elbows",
+        "alignment": [
+          "upper arm line from shoulder to elbow, resting on the floor (dots on shoulder and elbow)",
+          "forearm line from elbow to dumbbell, vertical (dot on the dumbbell)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -409,6 +431,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on a flat bench, bar pressed above the shoulders with straight arms, shoulder blades pinched, feet flat",
+        "alignment": [
+          "one vertical line from the bar down through the elbow to the shoulder: arm stacked over the shoulder (dots on bar, elbow and shoulder)"
+        ],
         "angles": [
           "elbow 175°"
         ]
@@ -416,6 +441,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "bar touching the lower chest, forearms vertical, elbows below the bench line, glutes on the bench",
+        "alignment": [
+          "forearm line from elbow to bar, vertical: bar stacked over the elbow (dots on elbow and bar)",
+          "upper arm line from shoulder to elbow, elbow just below the bench line (dot on the shoulder)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -487,6 +516,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "on a 30° incline bench, bar held above the upper chest with straight arms",
+        "alignment": [
+          "a dashed reference line along the bench back pad, showing the low incline",
+          "one vertical line from the bar down through the elbow to the shoulder: arm stacked over the shoulder (dots on bar, elbow and shoulder)"
+        ],
         "angles": [
           "bench 30° above the floor",
           "elbow 175°"
@@ -495,6 +528,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "bar touching the upper chest just below the collarbones, forearms vertical",
+        "alignment": [
+          "forearm line from elbow to bar, vertical: bar touches the upper chest below the collarbones (dots on elbow and bar)",
+          "the same dashed reference line along the bench back pad"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -565,6 +602,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on the back, knees bent, one kettlebell pressed straight above the shoulder, arm straight, bell on the back of the forearm",
+        "alignment": [
+          "one vertical line from the hand down through the elbow to the shoulder, wrist straight (dots on hand, elbow and shoulder)"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -572,6 +612,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "upper arm resting on the floor, forearm vertical, kettlebell above the elbow",
+        "alignment": [
+          "upper arm line from shoulder to elbow, resting on the floor (dots on shoulder and elbow)",
+          "forearm line from elbow to hand, vertical, wrist straight (dot on the hand)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -642,6 +686,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on a flat bench, dumbbell held vertically on the chest between both flat palms, elbows bent",
+        "alignment": [
+          "upper arm and forearm lines, elbow bent, dumbbell resting on the chest (dots on shoulder, elbow and dumbbell)"
+        ],
         "angles": [
           "elbow 80°"
         ]
@@ -649,6 +696,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "dumbbell pressed straight up over the chest, arms straight, palms still pressed together",
+        "alignment": [
+          "one vertical line from the dumbbell down through the elbow to the shoulder: arm stacked over the shoulder (dots on dumbbell, elbow and shoulder)"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -717,6 +767,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "standing in a staggered stance between two high pulleys, torso leaning slightly forward, arms out to the sides at shoulder height, elbows softly bent",
+        "alignment": [
+          "torso line from hip to shoulder, leaning slightly forward, back straight (dots on hip and shoulder)",
+          "a line along each arm from shoulder to handle at shoulder height, soft elbow bend (dots on elbows and hands)"
+        ],
         "angles": [
           "torso lean 15° from vertical"
         ]
@@ -724,6 +778,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "hands brought down and together in front of the lower chest, same soft elbow bend, chest squeezed",
+        "alignment": [
+          "the same torso line, same slight forward lean",
+          "a line along each arm from shoulder to hand, hands meeting in front of the lower chest, same soft elbow bend (dots on elbows and hands)"
+        ],
         "angles": [
           "torso lean 15° from vertical"
         ]
@@ -792,6 +850,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "standing in a split stance between two low pulleys, arms low beside the hips, elbows softly bent, palms forward",
+        "alignment": [
+          "a line along each arm from shoulder to handle, hands low beside the hips, soft elbow bend (dots on elbows and hands)",
+          "vertical torso line from hip to shoulder: torso stays upright (dot on the hip)"
+        ],
         "angles": [
           "elbow 160°"
         ]
@@ -799,6 +861,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "hands swept up and together in front of the chin, elbows softly bent, upper chest squeezed",
+        "alignment": [
+          "a line along each arm from shoulder to hand, hands meeting in front of the chin, same soft elbow bend (dots on elbows and hands)",
+          "the same vertical torso line: no leaning back"
+        ],
         "angles": [
           "elbow 160°"
         ]
@@ -871,6 +937,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "standing in a split stance facing away from the machine, handles beside the chest, elbows bent",
+        "alignment": [
+          "upper arm and forearm lines, elbow bent, hands beside the chest (dots on shoulder, elbow and hands)",
+          "torso line from hip to shoulder, upright (dot on the hip)"
+        ],
         "angles": [
           "elbow 80°"
         ]
@@ -878,6 +948,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "arms pressed straight forward at chest height, hands together, torso upright",
+        "alignment": [
+          "one straight horizontal line from shoulder through elbow to hands: arms pressed straight forward at chest height (dots on shoulder, elbow and hands)",
+          "torso line from hip to shoulder, upright (dot on the hip)"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -948,6 +1022,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "seated upright with the back on the pad, hands on the handles beside the chest, elbows bent",
+        "alignment": [
+          "upper arm and forearm lines, elbow bent, hands beside the chest (dots on shoulder, elbow and hands)",
+          "back line along the back pad from hip to shoulder: back stays on the pad (dot on the hip)"
+        ],
         "angles": [
           "elbow 80°"
         ]
@@ -955,6 +1033,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "arms pressed forward and straight at chest height, back still on the pad",
+        "alignment": [
+          "one straight horizontal line from shoulder through elbow to hands: arms pressed straight forward at chest height (dots on shoulder, elbow and hands)",
+          "the same back line along the pad: back still on the pad"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -1023,6 +1105,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "seated with the back on the pad, arms open out to the sides at chest height holding the handles, elbows slightly bent",
+        "alignment": [
+          "a line along each arm from shoulder to handle at chest height, slight elbow bend (dots on elbows and hands)",
+          "back line along the back pad from hip to shoulder: back stays on the pad (dot on the hip)"
+        ],
         "angles": [
           "elbow 160°"
         ]
@@ -1030,6 +1116,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "handles brought together in front of the chest, same slight elbow bend, chest squeezed",
+        "alignment": [
+          "a line along each arm from shoulder to hand, hands meeting in front of the chest, same elbow bend (dots on elbows and hands)",
+          "the same back line along the pad: back still on the pad"
+        ],
         "angles": [
           "elbow 160°"
         ]
@@ -1100,6 +1190,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "standing in a split stance, band anchored behind, hands beside the chest, elbows bent",
+        "alignment": [
+          "upper arm and forearm lines, elbow bent, hands beside the chest (dots on shoulder, elbow and hands)",
+          "torso line from hip to shoulder, upright (dot on the hip)"
+        ],
         "angles": [
           "elbow 80°"
         ]
@@ -1107,6 +1201,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "arms pressed straight forward at chest height, band stretched",
+        "alignment": [
+          "one straight horizontal line from shoulder through elbow to hands: arms pressed straight forward at chest height (dots on shoulder, elbow and hands)",
+          "torso line from hip to shoulder, upright (dot on the hip)"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -1175,6 +1273,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "standing, band anchored behind, arms out to the sides at chest height, elbows softly bent",
+        "alignment": [
+          "a line along each arm from shoulder to hand at chest height, soft elbow bend (dots on elbows and hands)"
+        ],
         "angles": [
           "elbow 160°"
         ]
@@ -1182,6 +1283,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "hands together in front of the chest, band stretched, same elbow bend",
+        "alignment": [
+          "a line along each arm from shoulder to hand, hands meeting in front of the chest, same soft elbow bend (dots on elbows and hands)",
+          "vertical torso line from hip to shoulder: torso stays tall (dot on the hip)"
+        ],
         "angles": [
           "elbow 160°"
         ]
@@ -1366,6 +1471,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "hands on a hip-height bench, arms straight, body in one straight diagonal line",
+        "alignment": [
+          "one straight line from shoulder through hip to ankle, body angled up toward the bench (dots on shoulder, hip and ankle)",
+          "arm line from shoulder to wrist, straight (dot on the wrist)"
+        ],
         "angles": [
           "body 40° above the floor",
           "elbow 180°"
@@ -1374,6 +1483,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "chest lowered to the bench edge, elbows tucked, body still straight",
+        "alignment": [
+          "the same straight line from shoulder through hip to ankle: hips do not sag or pike",
+          "forearm line from elbow to wrist, near vertical, elbow tucked (dots on elbow and wrist)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -1446,6 +1559,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "feet on a bench behind, hands on the floor, arms straight, body in one straight line angled down toward the head",
+        "alignment": [
+          "one straight line from the ankle on the bench through hip to shoulder, angled down toward the head (dots on ankle, hip and shoulder)",
+          "arm line from shoulder to wrist, vertical, wrist under the shoulder (dot on the wrist)"
+        ],
         "angles": [
           "elbow 180°"
         ]
@@ -1453,6 +1570,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "chest lowered close to the floor, elbows tucked, body still straight",
+        "alignment": [
+          "the same straight line from ankle through hip to shoulder: hips do not sag or pike",
+          "forearm line from elbow to wrist, near vertical, elbow tucked (dots on elbow and wrist)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -1524,6 +1645,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "supported on parallel bars with straight arms, torso leaning forward, knees slightly bent",
+        "alignment": [
+          "torso line from hip to shoulder, leaning forward (dots on hip and shoulder)",
+          "one straight line from shoulder through elbow to hand: arm straight (dots on elbow and hand)"
+        ],
         "angles": [
           "torso lean 30° from vertical",
           "elbow 175°"
@@ -1532,6 +1657,11 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "elbows bent with upper arms parallel to the floor, torso still leaning forward",
+        "alignment": [
+          "upper arm line from shoulder to elbow, about level with the floor: go no lower (dots on shoulder and elbow)",
+          "forearm line from elbow to hand on the bar, near vertical (dot on the hand)",
+          "torso line from hip to shoulder, still leaning forward (dot on the hip)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -1602,6 +1732,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on the floor, barbell pressed above the chest with straight arms",
+        "alignment": [
+          "one vertical line from the bar down through the elbow to the shoulder: arm stacked over the shoulder (dots on bar, elbow and shoulder)"
+        ],
         "angles": [
           "elbow 175°"
         ]
@@ -1609,6 +1742,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "upper arms resting on the floor, forearms vertical, bar above the lower chest",
+        "alignment": [
+          "upper arm line from shoulder to elbow, resting on the floor (dots on shoulder and elbow)",
+          "forearm line from elbow to bar, vertical (dot on the bar)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -1681,6 +1818,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "hands gripping the handles of two upright kettlebells, arms straight, body in one line",
+        "alignment": [
+          "one straight line from shoulder through hip to ankle (dots on shoulder, hip and ankle)",
+          "arm line from shoulder to the kettlebell handle, vertical (dot on the hand)"
+        ],
         "angles": [
           "elbow 180°"
         ]
@@ -1688,6 +1829,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "chest lowered just below the handles, elbows tucked, body straight",
+        "alignment": [
+          "the same straight line from shoulder through hip to ankle: hips do not sag or pike",
+          "forearm line from elbow to the handle, near vertical, elbow tucked (dots on elbow and hand)"
+        ],
         "angles": [
           "elbow 80°"
         ]
@@ -1758,6 +1903,9 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "lying on a flat bench in a Smith machine, bar pressed above the chest with straight arms",
+        "alignment": [
+          "one vertical line from the bar down through the elbow to the shoulder: arm stacked over the shoulder (dots on bar, elbow and shoulder)"
+        ],
         "angles": [
           "elbow 175°"
         ]
@@ -1765,6 +1913,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "bar lowered to the lower chest, forearms vertical",
+        "alignment": [
+          "forearm line from elbow to bar, vertical: bar stacked over the elbow (dots on elbow and bar)",
+          "upper arm line from shoulder to elbow, elbow just below the bench line (dot on the shoulder)"
+        ],
         "angles": [
           "elbow 90°"
         ]
@@ -1835,6 +1987,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "seated in an incline press machine, back on the pad, hands on the handles beside the upper chest",
+        "alignment": [
+          "upper arm and forearm lines, elbow bent, hands beside the upper chest (dots on shoulder, elbow and hands)",
+          "back line along the back pad from hip to shoulder: back stays on the pad (dot on the hip)"
+        ],
         "angles": [
           "elbow 80°"
         ]
@@ -1842,6 +1998,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "handles pressed up and forward, arms straight, back on the pad",
+        "alignment": [
+          "one straight line from shoulder through elbow to hands, pressing up and forward (dots on shoulder, elbow and hands)",
+          "the same back line along the pad: back still on the pad"
+        ],
         "angles": [
           "elbow 170°"
         ]
@@ -1914,6 +2074,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "leftPanel": {
         "label": "START",
         "pose": "top of a push-up, band across the upper back with the ends under the hands, arms straight",
+        "alignment": [
+          "one straight line from shoulder through hip to ankle (dots on shoulder, hip and ankle)",
+          "arm line from shoulder to wrist, vertical, wrist under the shoulder (dot on the wrist)"
+        ],
         "angles": [
           "elbow 180°"
         ]
@@ -1921,6 +2085,10 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "rightPanel": {
         "label": "END",
         "pose": "bottom of the push-up, chest near the floor, band slack-ish, body straight",
+        "alignment": [
+          "the same straight line from shoulder through hip to ankle: hips do not sag or pike",
+          "forearm line from elbow to wrist, near vertical, elbow tucked (dots on elbow and wrist)"
+        ],
         "angles": [
           "elbow 90°"
         ]

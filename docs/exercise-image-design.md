@@ -77,6 +77,7 @@ Every panel shows the few body lines that matter for good form, drawn over the f
 - **Reference lines:** only when the prompt asks for one, a thin white **dashed** vertical or horizontal line, for example "the bar stays over the mid-foot" or "the chin is above the bar". Solid means the body; dashed means a reference.
 - **The lines must tell the truth.** If the prompt says "one straight line from shoulder through hip to ankle", those three dots must really line up on the drawn body. If it says "vertical" or "level with the floor", the line must look vertical or level. If the body and the line disagree, fix the pose, not the line.
 - When the prompt says "the same" line in both panels, draw it on the same joints in both, so START and END can be compared.
+- Never draw two lines from the same dot in nearly the same direction (for example a torso line and an arm line both running down from the shoulder): they read as one confusing V. Lines that share a dot must point clearly different ways.
 - At most **three alignment lines plus one dashed reference line** per panel. No arrows, arcs, wedges, glow or extra shapes.
 - White is reserved for the alignment lines, dots and reference lines; lime is reserved for muscles.
 - **No text anywhere in the image:** no numbers, titles, captions, exercise names, muscle names, letters, logos or watermarks.

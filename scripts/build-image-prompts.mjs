@@ -152,7 +152,10 @@ What I expected:
   const ids = (arg ?? "").split(",").filter(Boolean);
   if (ids.length === 0) throw new Error("Usage: ids <id1,id2,...> --out <file>");
   const out = flag === "--out" ? outArg : "docs/exercise-image-prompts-custom.md";
-  writeFileSync(join(root, out), render(ids.map((id) => [id, ""]), { title: "Exercise image prompts", intro: "Generated from `docs/data/whatnext-exercise-form-data.json`." }) + "\n");
+  writeFileSync(join(root, out), render(ids.map((id) => [id, ""]), {
+      title: "Exercise image prompts",
+      intro: "Generated from `docs/data/whatnext-exercise-form-data.json` by `scripts/build-image-prompts.mjs`; do not edit by hand.\n\nPaste one prompt per new chat in the ChatGPT Project (with `exercise-image-design.md` and the reference image uploaded), on a Thinking model. Judge each result with the scoring list in `exercise-image-prompts-sample.md`, then convert the PNG to WebP for `public/exercises/` (see the README there).",
+    }) + "\n");
   console.log(`Wrote ${out}`);
 } else {
   console.error("Usage: build-image-prompts.mjs sample | ids <id1,id2,...> --out <file>");
