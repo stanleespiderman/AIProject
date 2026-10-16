@@ -21,8 +21,8 @@ const byId = new Map(data.exercises.map((e) => [e.id, e]));
 
 /** The test set, with what each one stresses. */
 const SAMPLE = [
-  ["push-up", "Body flat on the floor, no equipment; the elbow arc must sit on the elbow."],
-  ["barbell-back-squat", "Heavy equipment (bar on the back, not the neck), a rack, and two joint angles."],
+  ["push-up", "Body flat on the floor, no equipment; the shoulder-hip-ankle line must really be straight."],
+  ["barbell-back-squat", "Heavy equipment (bar on the back, not the neck), a rack, and a dashed bar-path reference line."],
   ["kettlebell-swing", "Fast, ballistic movement with a flat back."],
   ["pull-up", "Hanging body with the bar overhead."],
   ["dumbbell-fly", "A different camera angle (three-quarter front)."],
@@ -35,11 +35,43 @@ const SAMPLE = [
 
 const list = (a) => a.join(", ");
 
+/**
+ * Fallback for exercises without hand-written `alignment` lines: turn each angle label
+ * ("knee ~90°", "torso lean ~40° from vertical") into the body lines that meet at that joint.
+ * Hand-written lines are better (they say what must be straight, vertical or level), so add
+ * them to the JSON before generating an exercise for real.
+ */
+function deriveAlignment(angles) {
+  const out = [];
+  for (const label of angles) {
+    const a = label.toLowerCase();
+    const ref = a.includes("vertical") ? "vertical" : a.includes("horizontal") || a.includes("floor") ? "horizontal" : null;
+    const withRef = (line) => (ref ? `${line}, with a dashed ${ref} reference line` : line);
+    let m;
+    if ((m = a.match(/^(front |back )?knee/))) out.push(`${m[1] ?? ""}thigh and shin lines (dots on hip, ${m[1] ?? ""}knee and ankle)`);
+    else if (a.startsWith("elbow")) out.push("upper arm and forearm lines (dots on shoulder, elbow and wrist)");
+    else if (a.startsWith("ankle")) out.push("shin and foot lines (dots on knee, ankle and toes)");
+    else if (a.startsWith("hip extension")) out.push(withRef("thigh line from hip to knee (dots on hip and knee)"));
+    else if (a.startsWith("hip")) out.push("torso and thigh lines (dots on shoulder, hip and knee)");
+    else if (/^(arms?|shoulder) /.test(a)) out.push("arm line from shoulder to hand, and torso line from shoulder to hip (dots on hand, shoulder and hip)");
+    else if (a.startsWith("torso rotated")) out.push("one line across both shoulders, showing the rotation (dots on both shoulders)");
+    else if (a.startsWith("torso")) out.push(withRef("torso line from hip to shoulder (dots on hip and shoulder)"));
+    else if (a.startsWith("body")) out.push(withRef("one line along the body from shoulder through hip to ankle (dots on shoulder, hip and ankle)"));
+    else if (a.startsWith("leg")) out.push(withRef("leg line from hip to ankle (dots on hip and ankle)"));
+    else if (a.startsWith("thighs")) out.push("a line along each thigh from hip to knee (dots on both knees)");
+    else if (a.startsWith("bench")) out.push("a dashed reference line along the bench back pad");
+    else throw new Error(`No alignment rule for angle label "${label}": add alignment lines to the JSON`);
+  }
+  return [...new Set(out)].slice(0, 3);
+}
+
+const alignmentOf = (panel) => panel.alignment ?? deriveAlignment(panel.angles);
+const bullets = (a) => a.map((x) => `    - ${x}`);
+
 function prompt(e) {
   const im = e.image;
-  const key = (e.angleRanges ?? []).find((r) => r.key);
   const lines = [
-    `Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.`,
+    `Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.`,
     ``,
     `Create the image for exercise id: ${e.id} (${e.name})`,
     ``,
@@ -50,19 +82,14 @@ function prompt(e) {
     `- Secondary muscles (thinner dashed lime outlines): ${list(im.secondaryMusclesToHighlight)}. Highlight no other muscle.`,
     `- LEFT panel, ${im.leftPanel.label}: ${im.leftPanel.pose}`,
     `- RIGHT panel, ${im.rightPanel.label}: ${im.rightPanel.pose}`,
-    `- Angle labels, LEFT panel: ${list(im.leftPanel.angles)}`,
-    `- Angle labels, RIGHT panel: ${list(im.rightPanel.angles)}`,
-    `- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet, no perfectly straight or symmetric lines). Each labelled angle may differ from its target by up to about 10 degrees, but the pose must stay safe and good form.`,
-  ];
-  if (key) {
-    lines.push(
-      `- Key angle range: on the ${key.panel.toUpperCase()} panel, at the "${key.label}" angle only, draw a faint translucent white wedge (about 15% opacity) with its edges at ${key.min}° and ${key.max}° and the dashed target line at ${key.target}° inside it. Do not write the range as text.`,
-    );
-  }
-  lines.push(
+    `- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):`,
+    ...bullets(alignmentOf(im.leftPanel)),
+    `- Alignment lines, RIGHT panel (same style):`,
+    ...bullets(alignmentOf(im.rightPanel)),
+    `- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.`,
     ``,
-    `Place every angle arc exactly on the joint named in its label (guide section 7), never on the wrist, hand or foot, and show the same joint in both panels. Write every angle with a tilde as given. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. The only text allowed in the image is the angle labels listed above.`,
-  );
+    `Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.`,
+  ];
   return lines.join("\n");
 }
 
@@ -105,15 +132,14 @@ ${SAMPLE.map(([id, f], i) => `| ${i + 1} | \`${id}\` | ${f} |`).join("\n")}
 - [ ] Natural pose: a real, slightly imperfect rep, not rigid geometry, and still safe
 - [ ] Muscles: the right muscles highlighted; primary = outlined lime with dense fibre lines; secondary = thinner dashed lime; nothing else highlighted
 - [ ] Equipment: right type, nothing extra, gripped correctly, mid-gray lines, not lime
-- [ ] Angles: labels written with a tilde (\`~90°\`), arcs centred on the named joint, drawn angles within about 10 degrees of the number
-- [ ] Key range wedge: a faint wedge on the key joint only (if the prompt asks for one), with no range text
-- [ ] Text: no words anywhere except the angle numbers
+- [ ] Alignment: only the listed lines; dots on joint centres; solid for body lines, dashed only for reference lines; lines called straight, vertical or level really look that way on the body
+- [ ] Text: no text at all (no numbers, degree signs or arcs left over from the reference image)
 
 ## Report-back template
 
 \`\`\`
 Exercise id:
-Rule that failed (layout / style / figure / natural pose / muscles / equipment / angles / wedge / text):
+Rule that failed (layout / style / figure / natural pose / muscles / equipment / alignment / text):
 What it looked like:
 What I expected:
 \`\`\`

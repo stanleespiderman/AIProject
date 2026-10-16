@@ -143,7 +143,7 @@ If you add an exercise to `exercises.ts` without a details entry, `check:data` f
 
 ### Angle ranges
 
-For the exercises that have them, `angleRanges` in the JSON gives each key angle a target and an acceptable range (for example knee at the bottom of a squat: about 90°, 70–100° is fine). The card shows them under "How to do it", and the image prompts use them for the `~` labels and the optional range wedge. They are drafts until a trainer approves them. Only the 10 test exercises have them so far.
+For the exercises that have them, `angleRanges` in the JSON gives each key angle a target and an acceptable range (for example knee at the bottom of a squat: about 90°, 70–100° is fine). The card shows them under "How to do it". The images don't print numbers: they show **alignment lines** instead (white dots on the key joints joined by lines, for example "one straight line from shoulder through hip to ankle"), set per panel in `image.leftPanel.alignment` / `image.rightPanel.alignment`. Exercises without hand-written alignment lines get basic ones derived from their angle labels when the prompts are built; write real ones before generating an image for production. Angle ranges and alignment lines are drafts until a trainer approves them. Only the 10 test exercises have them so far.
 
 ### Trainer review
 

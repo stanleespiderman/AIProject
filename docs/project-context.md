@@ -82,7 +82,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 - Figure: gender-neutral anatomy mannequin, no clothes/hair/face, fine light-gray contour `#C9CCD2`, interior NOT filled, dim gray `#5B5F68` muscle-separation lines and light hatching. No 3D shading, gradients or glow.
 - Muscles: primary = outlined lime `#D4FF3A` with ~15% tint and dense fibre lines; secondary = thinner dashed lime outlines; nothing else highlighted. Lime only for muscles.
 - Equipment: mid-gray `#7B8089` lines, only what the exercise needs.
-- Angle labels: white dashed reference lines, a small arc centred ON the named joint (never wrist/hand/foot), number with degree sign, same joint in both panels, and the drawn angle must match the number. Angle numbers are the only text allowed.
+- Alignment lines (replaced angle labels, see the update below): small white dots on the centres of the key joints, joined by thin solid white lines along the body; dashed white only for a vertical or horizontal reference line. At most 3 lines plus 1 reference per panel. Lines called straight, vertical or level must really look that way on the body. No text at all in the image.
 - Safety: never draw rounded or over-arched backs, bar on the neck, sagging hips, extra limbs, etc.
 
 **Lessons from the first renders (already folded into the guide):**
@@ -98,11 +98,13 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Update (angle ranges):** after the first squat renders (one more natural but with off angles, one with correct angles but too rigid), the decision was to give each key angle a **target plus an acceptable range** (`angleRanges` in `docs/data/whatnext-exercise-form-data.json`, drafted for the 10 test exercises only, trainer to confirm). The image labels are now approximate (`~90°`), the pose must look natural (within about 10 degrees), and one key angle per exercise may show a faint range wedge. The card shows the range as text under "How to do it". Test prompts are generated from the JSON with `npm run build:prompts`.
 
+**Update (alignment lines, 2026-10-16):** the first 10 renders kept the style well but 4 failed (squat bar behind the neck and hands off the bar, kettlebell not held, pull-up mixed cameras and chin not over the bar, band behind the neck), and several 90 degree knee arcs swept the outside of the joint. The owner decided angle numbers read poorly mid-workout and replaced them with **alignment lines**: white joint dots plus 2-3 lines per panel showing what must be straight, vertical or level (for example the shoulder-hip-ankle line in a push-up, the bar over the mid-foot in a squat). Numbers stay in the data (`angles`, `angleRanges`) and on the card, never in the image. Lines are hand-written per panel in `image.*Panel.alignment` (done for the 10 test exercises); others fall back to lines derived from their angle labels. The approved push-up reference still has arcs; the guide and prompts tell ChatGPT to ignore them.
+
 ## 8. Next steps (in order)
 
 1. Owner runs the 10 sample prompts in ChatGPT, one per message, and reports failures (which exercise, which rule broke).
 2. Fix the guide or the per-exercise data based on the failures.
-3. Write the per-exercise data (camera, equipment, primary and secondary muscles, start, end, angle labels) for all 168 exercises and generate one prompt each. A first draft of the chest and back data (44 exercises) was started in the session but not committed; redo it after the sample test.
+3. Write the per-exercise data (camera, equipment, primary and secondary muscles, start, end, alignment lines) for all 168 exercises and generate one prompt each. A first draft of the chest and back data (44 exercises) was started in the session but not committed; redo it after the sample test.
 4. Generate all images, upload to `public/exercises/`, and have a trainer review them (the angle values are typical working values, not rules).
 5. App changes: add an optional `steps`/image field to the exercise data; show the image first on each card with a fallback to text cues when no image exists; make the video link secondary ("Prefer video? Watch form").
 6. Deploy to Vercel; consider server-side entitlements and a real payment provider (Razorpay or Stripe) later, behind `src/lib/payments/`.

@@ -31,7 +31,13 @@ export interface ExerciseImagePanel {
   /** START / END, or SET-UP / HOLD for static holds. */
   label: string;
   pose: string;
-  /** Angle labels to draw, e.g. "elbow 90°". */
+  /**
+   * Alignment lines the image draws over the body (white lines with dots on the joints),
+   * e.g. "one straight line from shoulder through hip to ankle". Added exercise by exercise;
+   * without it, the prompt builder derives the lines from `angles`.
+   */
+  alignment?: string[];
+  /** The joint angles that matter, e.g. "elbow ~90°". Data only: images no longer print numbers. */
   angles: string[];
 }
 
@@ -43,14 +49,14 @@ export interface ExerciseImagePanel {
 export interface AngleRange {
   /** Which image panel it belongs to: left = START / SET-UP, right = END / HOLD. */
   panel: "left" | "right";
-  /** The approximate label drawn on the image, e.g. "knee ~90°". */
+  /** The approximate angle, matching one of the panel's `angles`, e.g. "knee ~90°". */
   label: string;
   /** Human wording for the card, e.g. "Knee at the bottom". */
   joint: string;
   target: number;
   min: number;
   max: number;
-  /** The one angle per exercise that the image may also show as a range wedge. */
+  /** The one angle per exercise that matters most. */
   key?: boolean;
   note?: string;
 }
