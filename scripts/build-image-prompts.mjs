@@ -89,7 +89,7 @@ function prompt(e) {
     ...bullets(alignmentOf(im.rightPanel)),
     `- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.`,
     ``,
-    `Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.`,
+    `Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.`,
   ];
   return lines.join("\n");
 }
@@ -134,7 +134,7 @@ ${SAMPLE.map(([id, f], i) => `| ${i + 1} | \`${id}\` | ${f} |`).join("\n")}
 - [ ] Muscles: the right muscles highlighted; primary = outlined lime with dense fibre lines; secondary = thinner dashed lime; nothing else highlighted
 - [ ] Equipment: right type, nothing extra, mid-gray lines, not lime; hands wrapped around it, nothing floating or passing through the body
 - [ ] Alignment: only the listed lines; dots on joint centres; solid for body lines, dashed only for reference lines; lines called straight, vertical or level really look that way on the body
-- [ ] Text: no text at all (no numbers, degree signs or arcs left over from the reference image)
+- [ ] Text: no text at all (no numbers, degree signs or angle arcs)
 
 ## Report-back template
 

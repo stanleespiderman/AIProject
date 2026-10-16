@@ -29,7 +29,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, dumbbell at the hip, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 2. chest-supported-dumbbell-row
@@ -57,7 +57,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, dumbbell beside the ribs, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 3. dumbbell-pullover
@@ -85,7 +85,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - arm line from shoulder to the dumbbell, reaching back behind the head, roughly in line with the torso (dot on the dumbbell)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 4. barbell-bent-over-row
@@ -113,7 +113,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, bar at the lower ribs, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 5. pendlay-row
@@ -141,7 +141,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, bar at the lower chest, elbow high, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 6. single-arm-kettlebell-row
@@ -169,7 +169,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, kettlebell at the hip, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 7. kettlebell-gorilla-row
@@ -197,7 +197,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, near-side kettlebell at the hip, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 8. seated-cable-row
@@ -225,7 +225,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, handle at the belly, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 9. straight-arm-cable-pulldown
@@ -253,7 +253,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - the same torso line: torso angle unchanged
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 10. lat-pulldown
@@ -281,7 +281,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - torso line from hip to the base of the neck, leaning back only slightly (dot on the hip)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 11. machine-seated-row
@@ -309,7 +309,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, handles beside the torso, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 12. assisted-pull-up
@@ -337,7 +337,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - dashed horizontal reference line along the top of the handles: the chin is above it
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 13. band-seated-row
@@ -365,7 +365,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, hands at the belly, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 14. band-lat-pulldown
@@ -393,7 +393,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - the same straight kneeling line: still kneeling tall
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 15. chin-up
@@ -421,7 +421,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - dashed horizontal reference line along the top of the bar: the chin is above it
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 16. inverted-row
@@ -449,7 +449,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, chest at the bar, elbow behind the torso (dots on elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 17. superman
@@ -477,7 +477,7 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - dashed horizontal reference line along the top of the mat: shows the small lift
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
 ### 18. t-bar-row
@@ -505,6 +505,6 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
     - upper arm and forearm lines, handle pulled toward the chest, elbow behind the torso (dots on shoulder, elbow and hand)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
-Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 

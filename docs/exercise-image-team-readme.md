@@ -12,7 +12,7 @@ This pack covers **40 exercises: 22 chest and 18 back.** Look at `3-approved-exa
 |---|---|
 | `README.md` | This file. |
 | `1-upload-to-chatgpt/exercise-image-design.md` | The style guide. ChatGPT needs it for every image. |
-| `1-upload-to-chatgpt/push-up-approved.webp` | The style reference image. |
+| `1-upload-to-chatgpt/push-up-approved.webp` | The style reference image (the approved push-up, with alignment lines). |
 | `2-prompts/chest-prompts.md` | 22 ready-to-paste prompts. |
 | `2-prompts/back-prompts.md` | 18 ready-to-paste prompts. |
 | `3-approved-examples/` | The 10 approved images: the quality bar. |
@@ -24,7 +24,7 @@ This pack covers **40 exercises: 22 chest and 18 back.** Look at `3-approved-exa
 
 1. In ChatGPT, create a **Project** (for example "WhatNext images").
 2. Upload **both files** from `1-upload-to-chatgpt/` to the Project's files.
-   - The reference image still shows small angle numbers from an older style. **Ignore those.** New images must have **no numbers or text at all**. The guide tells ChatGPT this too.
+   - If you already have an older `push-up-approved.webp` in the Project (one with angle numbers like `~90°`), delete it and upload this one instead.
 3. **Model:** pick a **Thinking** model in the model picker (Sol, or the standard Thinking option). Thinking lets ChatGPT check its own image against the guide before showing it. Don't use Instant or Luna.
    - Only switch to **Astra** for a single exercise that keeps failing (see step 5).
    - Use the same model for the whole batch, so the style stays consistent.

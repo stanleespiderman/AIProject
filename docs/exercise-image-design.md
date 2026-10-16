@@ -14,7 +14,7 @@
 - In side views the athlete **faces LEFT** (the front of the body toward the left of the image), in both panels and in every image.
 - **Framing:** the figure fills about 85% of the panel width and is centred vertically with a small margin. Avoid large empty areas. Both panels use the same scale and the same floor-line height.
 - Purpose: a person in the gym glances at it mid-workout on a phone and instantly understands the movement, the muscles it trains and the body alignment. Clarity beats decoration.
-- If a reference image `push-up-approved.webp` is attached, match its look exactly: line weight, colours and level of anatomical detail. **Ignore its angle arcs and numbers**: they come from an older version of this guide. Draw the alignment lines from section 7 instead.
+- If a reference image `push-up-approved.webp` is attached, match its look exactly: line weight, colours, level of anatomical detail and the style of the white alignment lines and dots (section 7).
 
 ## 2. Style and figure: anatomical line-art
 
