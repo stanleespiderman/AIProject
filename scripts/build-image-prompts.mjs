@@ -154,7 +154,7 @@ What I expected:
   const out = flag === "--out" ? outArg : "docs/exercise-image-prompts-custom.md";
   writeFileSync(join(root, out), render(ids.map((id) => [id, ""]), {
       title: "Exercise image prompts",
-      intro: "Generated from `docs/data/whatnext-exercise-form-data.json` by `scripts/build-image-prompts.mjs`; do not edit by hand.\n\nPaste one prompt per new chat in the ChatGPT Project (with `exercise-image-design.md` and the reference image uploaded), on a Thinking model. Judge each result with the scoring list in `exercise-image-prompts-sample.md`, then convert the PNG to WebP for `public/exercises/` (see the README there).",
+      intro: "Generated from `docs/data/whatnext-exercise-form-data.json` by `scripts/build-image-prompts.mjs`; do not edit by hand.\n\nPaste one prompt per new chat in the ChatGPT Project (with `exercise-image-design.md` and the reference image uploaded), on a Thinking model. Judge each result against the checklist in section 9 of `exercise-image-design.md` (the team pack README has the full checking steps), then convert the PNG to WebP for `public/exercises/` (see the README there).",
     }) + "\n");
   console.log(`Wrote ${out}`);
 } else {

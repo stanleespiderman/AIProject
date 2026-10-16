@@ -2,7 +2,7 @@
 
 Generated from `docs/data/whatnext-exercise-form-data.json` by `scripts/build-image-prompts.mjs`; do not edit by hand.
 
-Paste one prompt per new chat in the ChatGPT Project (with `exercise-image-design.md` and the reference image uploaded), on a Thinking model. Judge each result with the scoring list in `exercise-image-prompts-sample.md`, then convert the PNG to WebP for `public/exercises/` (see the README there).
+Paste one prompt per new chat in the ChatGPT Project (with `exercise-image-design.md` and the reference image uploaded), on a Thinking model. Judge each result against the checklist in section 9 of `exercise-image-design.md` (the team pack README has the full checking steps), then convert the PNG to WebP for `public/exercises/` (see the README there).
 
 ### 1. dumbbell-bench-press
 
