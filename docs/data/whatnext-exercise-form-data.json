@@ -296,7 +296,7 @@
       "easierOption": "Band chest fly or pec deck",
       "harderOption": "Cable crossover",
       "image": {
-        "camera": "three-quarter front view",
+        "camera": "front view from the foot end of the bench (looking along the bench at the athlete, symmetrical)",
         "facing": "as per camera",
         "equipmentToDraw": "two dumbbells and a flat bench: the bench pad is horizontal, level with the floor, NOT inclined (head and hips at the same height)",
         "primaryMusclesToHighlight": [

@@ -75,7 +75,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Decision:** every exercise card should show a **pictorial step image first**; the YouTube form video becomes a **secondary** option (smaller "Prefer video? Watch form" link).
 
-**How images are made:** the owner generates them in **ChatGPT (Plus subscription, not the API)** using a design guide uploaded to a ChatGPT Project. Claude cannot generate images. Images are saved as `public/exercises/<exercise-id>.png` and uploaded to GitHub by hand (the ChatGPT GitHub connector found no accessible repo).
+**How images are made:** the owner generates them in **ChatGPT (Plus subscription, not the API)** using a design guide uploaded to a ChatGPT Project. Claude cannot generate images. Images are saved as `public/exercises/<exercise-id>.webp` (ChatGPT's PNG converted to WebP at quality 90, about 80 KB instead of 1.6 MB) and uploaded to GitHub by hand (the ChatGPT GitHub connector found no accessible repo).
 
 **Final style (approved):** anatomical line-art on near-black. Key rules (full detail in `docs/exercise-image-design.md`):
 - One landscape 3:2 image, two panels with a thin divider. LEFT = START, RIGHT = END (static holds: SET-UP and HOLD). Same figure, size and camera in both panels. Side views: athlete faces LEFT. Figure fills about 85% of panel width.
@@ -100,12 +100,14 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Update (alignment lines, 2026-10-16):** the first 10 renders kept the style well but 4 failed (squat bar behind the neck and hands off the bar, kettlebell not held, pull-up mixed cameras and chin not over the bar, band behind the neck), and several 90 degree knee arcs swept the outside of the joint. The owner decided angle numbers read poorly mid-workout and replaced them with **alignment lines**: white joint dots plus 2-3 lines per panel showing what must be straight, vertical or level (for example the shoulder-hip-ankle line in a push-up, the bar over the mid-foot in a squat). Numbers stay in the data (`angles`, `angleRanges`) and on the card, never in the image. Lines are hand-written per panel in `image.*Panel.alignment` (done for the 10 test exercises); others fall back to lines derived from their angle labels. The approved push-up reference still has arcs; the guide and prompts tell ChatGPT to ignore them. The same round also added grip and camera fixes: every prompt now says both panels use exactly the same camera and every holding hand wraps around the equipment, and the squat, kettlebell swing, pull-up and band pull-apart poses spell out where the equipment sits (bar below the neck with hands on it, bell hanging from both hands, free-standing bar with feet off the floor and chin over it, band in front of the chest).
 
+**Update (test set approved, 2026-10-16):** after two more rounds (fly bench made flat, band ends made visible, triceps torso line dropped) all 10 test images passed and were checked at phone size (358 px wide): poses, muscles and alignment lines all read clearly. They are committed as WebP in `public/exercises/`. ChatGPT drew the fly head-on from the foot end of the bench instead of three-quarter front; it reads better, so the fly's camera in the data was changed to match. Next: write hand-made alignment lines for the other 158 exercises, batch by muscle group.
+
 ## 8. Next steps (in order)
 
 1. Owner runs the 10 sample prompts in ChatGPT, one per message, and reports failures (which exercise, which rule broke).
 2. Fix the guide or the per-exercise data based on the failures.
 3. Write the per-exercise data (camera, equipment, primary and secondary muscles, start, end, alignment lines) for all 168 exercises and generate one prompt each. A first draft of the chest and back data (44 exercises) was started in the session but not committed; redo it after the sample test.
-4. Generate all images, upload to `public/exercises/`, and have a trainer review them (the angle values are typical working values, not rules).
+4. Generate all images, convert to WebP, upload to `public/exercises/` (the 10 test images are already there), and have a trainer review them (the angle values are typical working values, not rules).
 5. App changes: add an optional `steps`/image field to the exercise data; show the image first on each card with a fallback to text cues when no image exists; make the video link secondary ("Prefer video? Watch form").
 6. Deploy to Vercel; consider server-side entitlements and a real payment provider (Razorpay or Stripe) later, behind `src/lib/payments/`.
 

@@ -168,7 +168,7 @@ Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise
 Create the image for exercise id: dumbbell-fly (Dumbbell Fly)
 
 EXERCISE DATA (use exactly this; do not substitute or improvise):
-- Camera: three-quarter front view. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Camera: front view from the foot end of the bench (looking along the bench at the athlete, symmetrical). Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
 - Equipment: two dumbbells and a flat bench: the bench pad is horizontal, level with the floor, NOT inclined (head and hips at the same height)
 - Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
 - Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
