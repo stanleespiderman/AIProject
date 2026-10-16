@@ -76,8 +76,9 @@ function prompt(e) {
     `Create the image for exercise id: ${e.id} (${e.name})`,
     ``,
     `EXERCISE DATA (use exactly this; do not substitute or improvise):`,
-    `- Camera: ${im.camera}${im.facing && im.facing !== "as per camera" ? ` (${im.facing})` : ""}`,
+    `- Camera: ${im.camera}${im.facing && im.facing !== "as per camera" ? ` (${im.facing})` : ""}. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.`,
     `- Equipment: ${im.equipmentToDraw}`,
+    `- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.`,
     `- Primary muscles (outlined lime, faint tint, dense fibre lines): ${list(im.primaryMusclesToHighlight)}`,
     `- Secondary muscles (thinner dashed lime outlines): ${list(im.secondaryMusclesToHighlight)}. Highlight no other muscle.`,
     `- LEFT panel, ${im.leftPanel.label}: ${im.leftPanel.pose}`,
@@ -126,12 +127,12 @@ ${SAMPLE.map(([id, f], i) => `| ${i + 1} | \`${id}\` | ${f} |`).join("\n")}
 
 ## Scoring list (score each image pass / fail)
 
-- [ ] Layout: two panels with a thin divider, LEFT = start, RIGHT = end (or set-up / hold); same figure, size and camera; faces left in side views
+- [ ] Layout: two panels with a thin divider, LEFT = start, RIGHT = end (or set-up / hold); same figure and size, exactly the same camera viewpoint in both panels; faces left in side views
 - [ ] Style: anatomical line-art, light-gray contour on near-black, body interior not filled gray; no 3D shading, gradient or glow
 - [ ] Figure: exactly 2 arms, 2 legs, normal hands and feet; no clothes, hair or face
 - [ ] Natural pose: a real, slightly imperfect rep, not rigid geometry, and still safe
 - [ ] Muscles: the right muscles highlighted; primary = outlined lime with dense fibre lines; secondary = thinner dashed lime; nothing else highlighted
-- [ ] Equipment: right type, nothing extra, gripped correctly, mid-gray lines, not lime
+- [ ] Equipment: right type, nothing extra, mid-gray lines, not lime; hands wrapped around it, nothing floating or passing through the body
 - [ ] Alignment: only the listed lines; dots on joint centres; solid for body lines, dashed only for reference lines; lines called straight, vertical or level really look that way on the body
 - [ ] Text: no text at all (no numbers, degree signs or arcs left over from the reference image)
 

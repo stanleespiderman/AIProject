@@ -51,7 +51,8 @@
 
 - Draw only the equipment named for the exercise. Nothing extra, no decorative gym background.
 - Same line-art style as the figure, in **mid-gray `#7B8089`** lines (slightly heavier, about 2 px, so it reads clearly), with at most a faint dark fill. Never lime.
-- Equipment must look correct: a dumbbell is a dumbbell, a kettlebell is a kettlebell, a barbell has round plates, a resistance band is a flat band. Hands must grip it properly.
+- Equipment must look correct: a dumbbell is a dumbbell, a kettlebell is a kettlebell, a barbell has round plates, a resistance band is a flat band.
+- **Grip and contact:** every hand that holds equipment wraps around it, in both panels. The equipment sits exactly where the pose says (a bar on the upper back below the neck, a kettlebell hanging from both hands, a band in front of the chest). Nothing floats near a hand, and nothing passes through the body.
 - If a rack, bench, machine or mat is needed, draw it simply, in the same mid-gray lines.
 
 ## 5. Background and layout
@@ -65,7 +66,7 @@
 - Default: **strict side view**, so joint angles and body lines are readable.
 - Use a **three-quarter rear view** for exercises where the back muscles must face the viewer (for example band pull-apart), and a **three-quarter front view** where the chest must face the viewer (for example dumbbell fly).
 - Use a plain **front view** (athlete facing the viewer, symmetrical) for movements in the side-to-side plane, where a side view would hide the movement: lateral raises, side plank, hip abduction, carries, clamshell, windmill and Pallof press.
-- The camera stated for an exercise overrides this default. Never mix camera angles between the two panels of one image.
+- The camera stated for an exercise overrides this default. **Both panels use exactly the same camera**: same viewpoint, same distance, same figure size. Never show one panel from the side and the other from behind or at three-quarters.
 
 ## 7. Alignment lines (important)
 
@@ -93,10 +94,10 @@ If the exercise description would force an unsafe position, say so instead of dr
 
 ## 9. Quality checklist (check before showing me)
 
-1. Layout: 3:2, two panels with a thin divider, LEFT = start, RIGHT = end; same athlete, size and camera; athlete faces left in side views; figure fills about 85% of panel width.
+1. Layout: 3:2, two panels with a thin divider, LEFT = start, RIGHT = end; same athlete, size and exactly the same camera viewpoint in both panels; athlete faces left in side views; figure fills about 85% of panel width.
 2. Style: anatomical line-art, light-gray contour on near-black, body interior not filled gray; no 3D shading, gradients or glow.
 3. Figure: exactly 2 arms and 2 legs, normal hands and feet, neutral spine.
-4. Equipment: right type, nothing extra, properly gripped, mid-gray lines, not lime.
+4. Equipment: right type, nothing extra, mid-gray lines, not lime; every holding hand wrapped around it, sitting where the pose says, nothing floating or passing through the body.
 5. Muscles: the right ones highlighted and in the right place; primary = outlined lime with a faint tint and dense fibre lines; secondary = thinner dashed lime; nothing else highlighted.
 6. START and END clearly differ and match the description.
 7. Alignment: only the listed lines; every dot on a joint centre; solid white for body lines, dashed only for reference lines; lines called straight, vertical or level look that way on the drawn body; the same lines in both panels where asked. The pose looks natural, not rigid.

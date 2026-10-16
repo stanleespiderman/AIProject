@@ -2966,11 +2966,11 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "three-quarter rear view",
       "facing": "as per camera",
-      "equipmentToDraw": "one flat resistance band held in both hands",
+      "equipmentToDraw": "one flat resistance band held in both hands, always in front of the body at shoulder height (never behind the neck or head); from the rear camera the middle of the band is hidden behind the torso and only its ends show beside the hands",
       "primaryMusclesToHighlight": [
         "rear deltoid",
         "rhomboids",
-        "middle trapezius"
+        "middle trapezius (between the shoulder blades only, not the upper trapezius on the neck)"
       ],
       "secondaryMusclesToHighlight": [
         "infraspinatus",
@@ -2979,7 +2979,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "standing tall, both arms straight out in front at shoulder height, hands shoulder-width on the band, band slightly taut",
+        "pose": "standing tall, both arms straight out in front at shoulder height, hands shoulder-width on the band, band slightly taut in front of the chest",
         "alignment": [
           "a straight line along each arm from shoulder to hand, at shoulder height (dots on shoulders and hands)"
         ],
@@ -2989,7 +2989,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "arms pulled wide to the sides at shoulder height, band stretched, shoulder blades squeezed, arms straight, shoulders down",
+        "pose": "arms pulled wide to the sides at shoulder height, band stretched across the front of the chest, shoulder blades squeezed, arms straight, shoulders down",
         "alignment": [
           "one straight horizontal line from hand to hand through both shoulders: arms out wide at shoulder height (dots on hands and shoulders)",
           "vertical spine line from the base of the neck to the hips: torso stays tall"
@@ -3234,7 +3234,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "strict side view",
       "facing": "athlete faces LEFT",
-      "equipmentToDraw": "a pull-up bar fixed overhead",
+      "equipmentToDraw": "a straight pull-up bar overhead on a simple free-standing frame; in the side view the bar points toward the viewer, so it shows as a short round bar with the hands wrapped over it; no wall bracket and nothing in front of the athlete's face or body",
       "primaryMusclesToHighlight": [
         "latissimus dorsi"
       ],
@@ -3245,7 +3245,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "dead hang from the bar, overhand grip a little wider than the shoulders, arms straight, shoulders engaged, legs slightly bent behind",
+        "pose": "dead hang from the bar, overhand grip a little wider than the shoulders, arms straight, shoulders engaged, body hanging directly below the bar, legs slightly bent behind, feet clearly off the floor",
         "alignment": [
           "one straight line from hand through elbow to shoulder: arm fully straight (dots on hand, elbow and shoulder)",
           "body line from shoulder to hip, hanging directly under the bar"
@@ -3256,7 +3256,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "chin above the bar, elbows pulled down toward the ribs, no swinging",
+        "pose": "chin clearly above the top of the bar, elbows pulled down toward the ribs, body still directly below the bar, no swinging, feet clearly off the floor",
         "alignment": [
           "upper arm and forearm lines, elbow pulled down beside the ribs (dot on the elbow)",
           "dashed horizontal reference line along the top of the bar: the chin is above it"
@@ -7362,7 +7362,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "strict side view",
       "facing": "athlete faces LEFT",
-      "equipmentToDraw": "barbell with round plates across the upper back (not the neck), inside a squat rack with safety bars set low",
+      "equipmentToDraw": "barbell with round plates, resting across the upper back at shoulder-blade height, below the base of the neck (in the side view the plate is a circle centred just behind the shoulders, never behind the head or neck, with the bar shaft running through its centre); inside a squat rack whose uprights and low safety bars stand beside the athlete and never pass through the body",
       "primaryMusclesToHighlight": [
         "quadriceps",
         "gluteus maximus"
@@ -7375,7 +7375,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "standing tall with the bar on the upper back, feet shoulder-width, toes slightly out, chest up, both hands on the bar",
+        "pose": "standing tall with the bar on the upper back, feet shoulder-width, toes slightly out, chest up, both hands gripping the bar just outside the shoulders, elbows pointing down and back",
         "alignment": [
           "one vertical line from the bar on the upper back down through the hip to the mid-foot (dots on bar, hip and mid-foot)",
           "thigh and shin lines, nearly straight (dot on the knee)"
@@ -7386,7 +7386,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "deep squat, thighs at or just below parallel, torso leaning forward with a straight back, chest up, knees over toes, heels flat, safety bars just below the bar",
+        "pose": "deep squat, thighs at or just below parallel, torso leaning forward with a straight back, chest up, knees over toes, heels flat, bar still on the upper back with both hands still gripping it, safety bars just below the bar",
         "alignment": [
           "torso line from hip to shoulder, straight back, leaning forward (dots on hip and shoulder)",
           "thigh line from hip to knee, about level with the floor (dot on the knee)",
@@ -9482,7 +9482,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "strict side view",
       "facing": "athlete faces LEFT",
-      "equipmentToDraw": "one kettlebell held with both hands by the handle",
+      "equipmentToDraw": "one kettlebell, its handle held by both hands at all times (fingers wrapped around the handle; the kettlebell hangs from the hands and never floats away from them)",
       "primaryMusclesToHighlight": [
         "gluteus maximus",
         "hamstrings"
@@ -9495,7 +9495,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "hinge position, hips far back, knees slightly bent, flat back leaning forward, arms straight, kettlebell between the legs behind the knees",
+        "pose": "hinge position, hips far back, knees slightly bent, flat back leaning forward, head in line with the spine (neck neutral, not dropped), arms straight, both hands on the kettlebell handle, the kettlebell hanging from the hands between the thighs, just behind the knees",
         "alignment": [
           "torso line from hip to the back of the head, straight (flat back), leaning forward (dots on hip and shoulder)",
           "thigh and shin lines, knee softly bent (dot on the knee)"
@@ -9507,7 +9507,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "standing fully tall, hips and knees extended, glutes squeezed, arms straight out at chest height, kettlebell level with the chest",
+        "pose": "standing fully tall, hips and knees extended, glutes squeezed, arms straight out at chest height, both hands still on the handle, kettlebell level with the chest",
         "alignment": [
           "one straight vertical line from ankle through knee and hip to shoulder: standing fully tall (dots on ankle, knee, hip and shoulder)",
           "arm line from shoulder to the kettlebell, level with the floor (dot on the shoulder)"
