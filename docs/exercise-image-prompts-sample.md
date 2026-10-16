@@ -169,11 +169,11 @@ Create the image for exercise id: dumbbell-fly (Dumbbell Fly)
 
 EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Camera: three-quarter front view. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
-- Equipment: two dumbbells and a flat bench
+- Equipment: two dumbbells and a flat bench: the bench pad is horizontal, level with the floor, NOT inclined (head and hips at the same height)
 - Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
 - Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
 - Secondary muscles (thinner dashed lime outlines): anterior deltoid. Highlight no other muscle.
-- LEFT panel, START: lying on a flat bench, feet flat, dumbbells above the chest, palms facing each other, elbows softly bent
+- LEFT panel, START: lying flat on a horizontal bench, head and hips at the same height, feet flat on the floor, dumbbells above the chest, palms facing each other, elbows softly bent
 - RIGHT panel, END: arms opened wide in an arc, dumbbells level with the chest, same soft elbow bend, chest stretched
 - Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
     - a line along each arm from shoulder to dumbbell, with a dot on each elbow showing the soft bend
@@ -195,13 +195,13 @@ Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise
 Create the image for exercise id: band-pull-apart (Band Pull-Apart)
 
 EXERCISE DATA (use exactly this; do not substitute or improvise):
-- Camera: three-quarter rear view. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Camera: three-quarter rear view (athlete turned about 30 degrees away from the viewer, the same turn in both panels). Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
 - Equipment: one flat resistance band held in both hands, always in front of the body at shoulder height (never behind the neck or head); from the rear camera the middle of the band is hidden behind the torso and only its ends show beside the hands
 - Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
 - Primary muscles (outlined lime, faint tint, dense fibre lines): rear deltoid, rhomboids, middle trapezius (between the shoulder blades only, not the upper trapezius on the neck)
 - Secondary muscles (thinner dashed lime outlines): infraspinatus, teres minor, triceps brachii. Highlight no other muscle.
 - LEFT panel, START: standing tall, both arms straight out in front at shoulder height, hands shoulder-width on the band, band slightly taut in front of the chest
-- RIGHT panel, END: arms pulled wide to the sides at shoulder height, band stretched across the front of the chest, shoulder blades squeezed, arms straight, shoulders down
+- RIGHT panel, END: arms pulled wide to the sides at shoulder height, band stretched across the front of the chest, the band ends clearly visible coming out of both fists, shoulder blades squeezed, arms straight, shoulders down
 - Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
     - a straight line along each arm from shoulder to hand, at shoulder height (dots on shoulders and hands)
 - Alignment lines, RIGHT panel (same style):
@@ -263,7 +263,6 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Alignment lines, RIGHT panel (same style):
     - the same vertical upper arm line, elbow still at the side (dots on shoulder and elbow)
     - forearm line continuing straight down from the elbow to the bar: arm fully straight
-    - torso line from hip to shoulder, nearly upright (dot on the hip)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
 Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs, even though the reference image has them. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.

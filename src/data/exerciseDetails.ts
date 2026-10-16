@@ -212,7 +212,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "three-quarter front view",
       "facing": "as per camera",
-      "equipmentToDraw": "two dumbbells and a flat bench",
+      "equipmentToDraw": "two dumbbells and a flat bench: the bench pad is horizontal, level with the floor, NOT inclined (head and hips at the same height)",
       "primaryMusclesToHighlight": [
         "pectoralis major"
       ],
@@ -221,7 +221,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "lying on a flat bench, feet flat, dumbbells above the chest, palms facing each other, elbows softly bent",
+        "pose": "lying flat on a horizontal bench, head and hips at the same height, feet flat on the floor, dumbbells above the chest, palms facing each other, elbows softly bent",
         "alignment": [
           "a line along each arm from shoulder to dumbbell, with a dot on each elbow showing the soft bend"
         ],
@@ -2964,7 +2964,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "easierOption": "Lighter band or wider grip",
     "harderOption": "Thicker band or narrower grip",
     "image": {
-      "camera": "three-quarter rear view",
+      "camera": "three-quarter rear view (athlete turned about 30 degrees away from the viewer, the same turn in both panels)",
       "facing": "as per camera",
       "equipmentToDraw": "one flat resistance band held in both hands, always in front of the body at shoulder height (never behind the neck or head); from the rear camera the middle of the band is hidden behind the torso and only its ends show beside the hands",
       "primaryMusclesToHighlight": [
@@ -2989,7 +2989,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "arms pulled wide to the sides at shoulder height, band stretched across the front of the chest, shoulder blades squeezed, arms straight, shoulders down",
+        "pose": "arms pulled wide to the sides at shoulder height, band stretched across the front of the chest, the band ends clearly visible coming out of both fists, shoulder blades squeezed, arms straight, shoulders down",
         "alignment": [
           "one straight horizontal line from hand to hand through both shoulders: arms out wide at shoulder height (dots on hands and shoulders)",
           "vertical spine line from the base of the neck to the hips: torso stays tall"
@@ -6144,8 +6144,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "pose": "arms pushed straight down, bar at the thighs, elbows still at the sides, torso upright",
         "alignment": [
           "the same vertical upper arm line, elbow still at the side (dots on shoulder and elbow)",
-          "forearm line continuing straight down from the elbow to the bar: arm fully straight",
-          "torso line from hip to shoulder, nearly upright (dot on the hip)"
+          "forearm line continuing straight down from the elbow to the bar: arm fully straight"
         ],
         "angles": [
           "elbow ~170°",
