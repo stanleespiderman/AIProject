@@ -6,7 +6,7 @@
 
 ## 1. What every image must be
 
-- One image per exercise, **landscape 3:2** (for example 1536×1024), PNG.
+- One main image per exercise, **landscape 3:2** (for example 1536×1024), PNG. Some exercises also get a **second view** image (section 6), built exactly the same way.
 - **Two panels side by side**, separated by a thin vertical divider line in dark gray `#2A2A33`.
   - LEFT panel = **START** position (for static holds: **SET-UP**).
   - RIGHT panel = **END** position (for static holds: **HOLD**).
@@ -68,6 +68,16 @@
 - Use a plain **front view** (athlete facing the viewer, symmetrical) for movements in the side-to-side plane, where a side view would hide the movement: lateral raises, side plank, hip abduction, carries, clamshell, windmill and Pallof press.
 - The camera stated for an exercise overrides this default. **Both panels use exactly the same camera**: same viewpoint, same distance, same figure size. Never show one panel from the side and the other from behind or at three-quarters.
 
+### Second views
+
+Some form points can't be seen from one camera. For example, how far the elbows flare in a bench press only shows from above. Those exercises get a **second image** from a second camera. The prompt says so: "Create the SECOND VIEW image…".
+
+- It is the **same exercise, same athlete, same equipment, same style and the same two-panel START / END layout** as the main image. Only the camera changes.
+- **Top view:** the camera is directly overhead, looking straight down. The athlete's head is at the **left** of the image and the feet at the right, in both panels. Draw the bench, floor or equipment from above too, simply.
+- **Side view** (as a second view for a front-view exercise): strict side view, athlete faces left.
+- The alignment lines in a second view show what that view is for, for example the arrow shape of the upper arms (not a T) from above. Never repeat lines that only make sense from the main camera.
+- One image per view. Never put both views in one image.
+
 ## 7. Alignment lines (important)
 
 Every panel shows the few body lines that matter for good form, drawn over the figure, so the viewer sees at a glance what should be straight, vertical or level. It works like the pose-tracking overlay in a fitness app, but only for the lines the prompt lists. **There are no angle numbers, arcs, wedges or degree signs in the image.** The card in the app shows the numbers as text.
@@ -112,4 +122,4 @@ If any check fails, fix it before showing me. If I report a problem, change **on
 
 Each message gives you the full data for one exercise: camera, equipment, primary and secondary muscles, the LEFT and RIGHT panel poses, and the alignment lines for each panel. Use exactly that data and this guide. If any item is missing or unclear, ask me instead of guessing.
 
-The file name I will save it as is `<exercise-id>.png`.
+The file name I will save it as is `<exercise-id>.png`, and `<exercise-id>--<view>.png` for a second view (for example `barbell-bench-press--top.png`).

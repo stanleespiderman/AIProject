@@ -31,6 +31,33 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
+### 1b. dumbbell-bench-press: second view (top)
+
+Save as `dumbbell-bench-press--top.png`. Shows how far the elbows flare out, which the main view can't show clearly.
+
+```
+Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+
+Create the SECOND VIEW image for exercise id: dumbbell-bench-press (Dumbbell Bench Press). It is the same exercise, athlete, equipment and style as the main image, seen from a different camera, to show how far the elbows flare out, which the main view can't show clearly.
+
+EXERCISE DATA (use exactly this; do not substitute or improvise):
+- Camera: top view: camera directly overhead looking straight down at the athlete, head at the LEFT of the image and feet at the right, the same in both panels. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Equipment: two dumbbells and a flat bench
+- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
+- Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
+- Secondary muscles (thinner dashed lime outlines): anterior deltoid, triceps brachii. Highlight no other muscle.
+- LEFT panel, START: lying on a flat bench seen from above, dumbbells pressed over the shoulders with straight arms, both feet flat on the floor either side of the bench
+- RIGHT panel, END: dumbbells lowered beside the mid-chest, seen from above: upper arms angled toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T)
+- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
+    - dashed reference line straight across the body through both shoulders: the dumbbells sit right above it
+- Alignment lines, RIGHT panel (same style):
+    - upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)
+    - dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it
+- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
+
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+```
+
 ### 2. incline-dumbbell-press
 
 Save as `incline-dumbbell-press.png`
@@ -97,17 +124,46 @@ Create the image for exercise id: barbell-bench-press (Barbell Bench Press)
 
 EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Camera: strict side view (athlete faces LEFT). Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
-- Equipment: barbell with plates on a flat bench with uprights; safety arms or spotter
+- Equipment: barbell with plates on a flat bench with uprights and safety arms set just below chest height
 - Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
 - Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
 - Secondary muscles (thinner dashed lime outlines): anterior deltoid, triceps brachii. Highlight no other muscle.
-- LEFT panel, START: lying on a flat bench, bar pressed above the shoulders with straight arms, shoulder blades pinched, feet flat
+- LEFT panel, START: lying on a flat bench, bar pressed above the shoulders with straight arms, shoulder blades pinched, feet flat on the floor under or slightly behind the knees
 - RIGHT panel, END: bar touching the lower chest, forearms vertical, elbows below the bench line, glutes on the bench
 - Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
     - one vertical line from the bar down through the elbow to the shoulder: arm stacked over the shoulder (dots on bar, elbow and shoulder)
 - Alignment lines, RIGHT panel (same style):
     - forearm line from elbow to bar, vertical: bar stacked over the elbow (dots on elbow and bar)
     - upper arm line from shoulder to elbow, elbow just below the bench line (dot on the shoulder)
+- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
+
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+```
+
+### 4b. barbell-bench-press: second view (top)
+
+Save as `barbell-bench-press--top.png`. Shows how far the elbows flare out and how wide the grip is, which a side view can't show.
+
+```
+Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+
+Create the SECOND VIEW image for exercise id: barbell-bench-press (Barbell Bench Press). It is the same exercise, athlete, equipment and style as the main image, seen from a different camera, to show how far the elbows flare out and how wide the grip is, which a side view can't show.
+
+EXERCISE DATA (use exactly this; do not substitute or improvise):
+- Camera: top view: camera directly overhead looking straight down at the athlete, head at the LEFT of the image and feet at the right, the same in both panels. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Equipment: barbell with plates on a flat bench with uprights and safety arms set just below chest height
+- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
+- Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
+- Secondary muscles (thinner dashed lime outlines): anterior deltoid, triceps brachii. Highlight no other muscle.
+- LEFT panel, START: lying on a flat bench seen from above, bar held over the shoulders with straight arms, hands a little wider than shoulder-width, both feet flat on the floor either side of the bench
+- RIGHT panel, END: bar lowered to the lower chest, seen from above: upper arms angled toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T), hands right above the elbows
+- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
+    - dashed reference line straight across the body through both shoulders: the bar sits right above it
+    - a line along the bar between the two hands, a little wider than the shoulders (dots on both hands)
+- Alignment lines, RIGHT panel (same style):
+    - upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)
+    - dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it
+    - a line along the bar between the two hands, over the lower chest (dots on both hands)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
 Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
@@ -210,13 +266,40 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major (sternal / lower fibres)
 - Secondary muscles (thinner dashed lime outlines): anterior deltoid. Highlight no other muscle.
 - LEFT panel, START: standing in a staggered stance between two high pulleys, torso leaning slightly forward, arms out to the sides at shoulder height, elbows softly bent
-- RIGHT panel, END: hands brought down and together in front of the lower chest, same soft elbow bend, chest squeezed
+- RIGHT panel, END: hands brought down and together in front of the lower chest, elbows still softly bent exactly as at the start (the arms do not bend more: this is a fly, not a press), chest squeezed
 - Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
-    - torso line from hip to shoulder, leaning slightly forward, back straight (dots on hip and shoulder)
-    - a line along each arm from shoulder to handle at shoulder height, soft elbow bend (dots on elbows and hands)
+    - a line along each arm from shoulder to handle at shoulder height, soft elbow bend (dots on shoulders, elbows and hands)
+    - dashed horizontal reference line through both shoulders: the hands start at this height
 - Alignment lines, RIGHT panel (same style):
-    - the same torso line, same slight forward lean
-    - a line along each arm from shoulder to hand, hands meeting in front of the lower chest, same soft elbow bend (dots on elbows and hands)
+    - a line along each arm from shoulder to hand, hands meeting in front of the lower chest, the same soft elbow bend as at the start (dots on shoulders, elbows and hands)
+- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
+
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+```
+
+### 8b. cable-crossover: second view (side)
+
+Save as `cable-crossover--side.png`. Shows the slight forward lean, the staggered stance and the arc of the arms, which the front view can't show.
+
+```
+Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+
+Create the SECOND VIEW image for exercise id: cable-crossover (Cable Crossover). It is the same exercise, athlete, equipment and style as the main image, seen from a different camera, to show the slight forward lean, the staggered stance and the arc of the arms, which the front view can't show.
+
+EXERCISE DATA (use exactly this; do not substitute or improvise):
+- Camera: strict side view, athlete faces LEFT, the same in both panels. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Equipment: cable crossover station with both pulleys set high and single handles
+- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
+- Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major (sternal / lower fibres)
+- Secondary muscles (thinner dashed lime outlines): anterior deltoid. Highlight no other muscle.
+- LEFT panel, START: staggered stance between the pulleys, torso leaning slightly forward with a straight back, arms out to the sides at shoulder height with a soft elbow bend
+- RIGHT panel, END: same lean and stance, hands brought down and forward in an arc to meet in front of the lower chest, elbows still softly bent (not bent more than at the start)
+- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
+    - torso line from hip to the base of the neck, leaning slightly forward, back straight (dots on hip and base of the neck)
+    - one straight line from the back heel up through the hip: braced staggered stance (dots on back heel and hip)
+- Alignment lines, RIGHT panel (same style):
+    - the same torso line: the lean does not change
+    - arm line from shoulder down and forward to the hands in front of the lower chest, the same soft elbow bend as at the start (dots on shoulder, elbow and hands)
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
 Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
@@ -456,12 +539,12 @@ Create the image for exercise id: chest-dip (Chest Dip)
 
 EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Camera: strict side view (athlete faces LEFT). Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
-- Equipment: parallel dip bars
+- Equipment: parallel dip bars set high enough that the athlete hangs between them with the feet well off the floor (nothing under the feet)
 - Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
 - Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major (lower / sternal fibres)
 - Secondary muscles (thinner dashed lime outlines): triceps brachii, anterior deltoid. Highlight no other muscle.
-- LEFT panel, START: supported on parallel bars with straight arms, torso leaning forward, knees slightly bent
-- RIGHT panel, END: elbows bent with upper arms parallel to the floor, torso still leaning forward
+- LEFT panel, START: supported on the parallel bars with straight arms, body hanging between the bars, torso leaning forward, knees bent with the shins crossed behind, feet well off the floor and touching nothing
+- RIGHT panel, END: elbows bent with the upper arms level with the floor, torso still leaning forward, knees still bent behind, feet still well off the floor
 - Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
     - torso line from hip to shoulder, leaning forward (dots on hip and shoulder)
     - one straight line from shoulder through elbow to hand: arm straight (dots on elbow and hand)
@@ -607,6 +690,34 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 - Alignment lines, RIGHT panel (same style):
     - the same straight line from shoulder through hip to ankle: hips do not sag or pike
     - forearm line from elbow to wrist, near vertical, elbow tucked (dots on elbow and wrist)
+- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
+
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+```
+
+### 23. push-up: second view (top)
+
+Save as `push-up--top.png`. Shows where the hands go and how far the elbows flare out, which a side view can't show. The main image is already approved.
+
+```
+Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+
+Create the SECOND VIEW image for exercise id: push-up (Push-Up). It is the same exercise, athlete, equipment and style as the main image, seen from a different camera, to show where the hands go and how far the elbows flare out, which a side view can't show.
+
+EXERCISE DATA (use exactly this; do not substitute or improvise):
+- Camera: top view: camera directly overhead looking straight down at the athlete's back, head at the LEFT of the image and feet at the right, the same in both panels. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Equipment: none, just the floor
+- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
+- Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
+- Secondary muscles (thinner dashed lime outlines): anterior deltoid, triceps brachii, rectus abdominis. Highlight no other muscle.
+- LEFT panel, START: top of the push-up seen from above, arms straight, hands flat on the floor just wider than the shoulders and right under them, body straight, feet together
+- RIGHT panel, END: bottom of the push-up seen from above, chest near the floor, upper arms angled back toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T), hands still in place
+- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
+    - dashed reference line straight across the body through both shoulders: the hands sit right under it, just wider than the shoulders
+    - one straight line along the spine from the base of the neck to the hips: no twisting (dots on base of the neck and hips)
+- Alignment lines, RIGHT panel (same style):
+    - upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)
+    - dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it
 - Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
 
 Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.

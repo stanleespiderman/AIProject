@@ -73,6 +73,34 @@ EXERCISE DATA (use exactly this; do not substitute or improvise):
 Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
 ```
 
+### 1b. push-up: second view (top)
+
+Save as `push-up--top.png`. Shows where the hands go and how far the elbows flare out, which a side view can't show.
+
+```
+Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+
+Create the SECOND VIEW image for exercise id: push-up (Push-Up). It is the same exercise, athlete, equipment and style as the main image, seen from a different camera, to show where the hands go and how far the elbows flare out, which a side view can't show.
+
+EXERCISE DATA (use exactly this; do not substitute or improvise):
+- Camera: top view: camera directly overhead looking straight down at the athlete's back, head at the LEFT of the image and feet at the right, the same in both panels. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.
+- Equipment: none, just the floor
+- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.
+- Primary muscles (outlined lime, faint tint, dense fibre lines): pectoralis major
+- Secondary muscles (thinner dashed lime outlines): anterior deltoid, triceps brachii, rectus abdominis. Highlight no other muscle.
+- LEFT panel, START: top of the push-up seen from above, arms straight, hands flat on the floor just wider than the shoulders and right under them, body straight, feet together
+- RIGHT panel, END: bottom of the push-up seen from above, chest near the floor, upper arms angled back toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T), hands still in place
+- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):
+    - dashed reference line straight across the body through both shoulders: the hands sit right under it, just wider than the shoulders
+    - one straight line along the spine from the base of the neck to the hips: no twisting (dots on base of the neck and hips)
+- Alignment lines, RIGHT panel (same style):
+    - upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)
+    - dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it
+- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.
+
+Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.
+```
+
 ### 2. barbell-back-squat
 
 *Tests: Heavy equipment (bar on the back, not the neck), a rack, and a dashed bar-path reference line.*  ·  Save as `barbell-back-squat.png`

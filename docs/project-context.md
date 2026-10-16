@@ -102,6 +102,8 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Update (test set approved, 2026-10-16):** after two more rounds (fly bench made flat, band ends made visible, triceps torso line dropped) all 10 test images passed and were checked at phone size (358 px wide): poses, muscles and alignment lines all read clearly. They are committed as WebP in `public/exercises/`. ChatGPT drew the fly head-on from the foot end of the bench instead of three-quarter front; it reads better, so the fly's camera in the data was changed to match. Next: write hand-made alignment lines for the other 158 exercises, batch by muscle group.
 
+**Update (second views, 2026-10-16):** the first chest trial showed that some form can't be judged from one camera (elbow flare in pressing, lean in a crossover), and found form flaws: the crossover's elbows bent more at the end (turning a fly into a press) and its torso line ended at a hand; the dip bars were so low the feet rested on the frame. Fixes went into the data, and exercises can now have an optional `image.extraView` (a second two-panel image from another camera, saved as `<id>--<view>.webp`; one view per image, never a 2x2 grid, which is too small on a phone). First four: barbell and dumbbell bench press and push-up (top view, elbows in an arrow not a T) and cable crossover (side view, the lean). Once the top view is proven, extend it to the other presses and push-up variants, and add front views where knees can cave (squats, lunges). The app will need a view toggle on the card when it starts showing images.
+
 ## 8. Next steps (in order)
 
 1. Owner runs the 10 sample prompts in ChatGPT, one per message, and reports failures (which exercise, which rule broke).

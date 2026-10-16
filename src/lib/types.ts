@@ -71,6 +71,29 @@ export interface ExerciseImageSpec {
   leftPanel: ExerciseImagePanel;
   rightPanel: ExerciseImagePanel;
   angleNote: string;
+  /**
+   * Optional second image for form a single camera can't show (for example elbow flare in a
+   * bench press needs a top view). Same layout and equipment, its own camera and panels.
+   * Saved as public/exercises/<id>--<name>.webp.
+   */
+  extraView?: ExerciseImageExtraView;
+}
+
+export interface ExerciseImageExtraView {
+  /** File suffix and view name: "top", "side", "front" or "rear". */
+  name: "top" | "side" | "front" | "rear";
+  camera: string;
+  /** What this view shows that the main one can't, e.g. "how far the elbows flare". */
+  purpose: string;
+  leftPanel: ExerciseImagePanelView;
+  rightPanel: ExerciseImagePanelView;
+}
+
+/** A panel of the extra view: no angle labels, alignment lines are required. */
+export interface ExerciseImagePanelView {
+  label: string;
+  pose: string;
+  alignment: string[];
 }
 
 /**

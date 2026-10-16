@@ -87,7 +87,27 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
           "elbow 90°"
         ]
       },
-      "angleNote": "Typical working values for illustration, not strict rules."
+      "angleNote": "Typical working values for illustration, not strict rules.",
+      "extraView": {
+        "name": "top",
+        "camera": "top view: camera directly overhead looking straight down at the athlete, head at the LEFT of the image and feet at the right, the same in both panels",
+        "purpose": "how far the elbows flare out, which the main view can't show clearly",
+        "leftPanel": {
+          "label": "START",
+          "pose": "lying on a flat bench seen from above, dumbbells pressed over the shoulders with straight arms, both feet flat on the floor either side of the bench",
+          "alignment": [
+            "dashed reference line straight across the body through both shoulders: the dumbbells sit right above it"
+          ]
+        },
+        "rightPanel": {
+          "label": "END",
+          "pose": "dumbbells lowered beside the mid-chest, seen from above: upper arms angled toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T)",
+          "alignment": [
+            "upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)",
+            "dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it"
+          ]
+        }
+      }
     },
     "reviewStatus": "pending"
   },
@@ -420,7 +440,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "strict side view",
       "facing": "athlete faces LEFT",
-      "equipmentToDraw": "barbell with plates on a flat bench with uprights; safety arms or spotter",
+      "equipmentToDraw": "barbell with plates on a flat bench with uprights and safety arms set just below chest height",
       "primaryMusclesToHighlight": [
         "pectoralis major"
       ],
@@ -430,7 +450,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "lying on a flat bench, bar pressed above the shoulders with straight arms, shoulder blades pinched, feet flat",
+        "pose": "lying on a flat bench, bar pressed above the shoulders with straight arms, shoulder blades pinched, feet flat on the floor under or slightly behind the knees",
         "alignment": [
           "one vertical line from the bar down through the elbow to the shoulder: arm stacked over the shoulder (dots on bar, elbow and shoulder)"
         ],
@@ -449,7 +469,29 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
           "elbow 90°"
         ]
       },
-      "angleNote": "Typical working values for illustration, not strict rules."
+      "angleNote": "Typical working values for illustration, not strict rules.",
+      "extraView": {
+        "name": "top",
+        "camera": "top view: camera directly overhead looking straight down at the athlete, head at the LEFT of the image and feet at the right, the same in both panels",
+        "purpose": "how far the elbows flare out and how wide the grip is, which a side view can't show",
+        "leftPanel": {
+          "label": "START",
+          "pose": "lying on a flat bench seen from above, bar held over the shoulders with straight arms, hands a little wider than shoulder-width, both feet flat on the floor either side of the bench",
+          "alignment": [
+            "dashed reference line straight across the body through both shoulders: the bar sits right above it",
+            "a line along the bar between the two hands, a little wider than the shoulders (dots on both hands)"
+          ]
+        },
+        "rightPanel": {
+          "label": "END",
+          "pose": "bar lowered to the lower chest, seen from above: upper arms angled toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T), hands right above the elbows",
+          "alignment": [
+            "upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)",
+            "dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it",
+            "a line along the bar between the two hands, over the lower chest (dots on both hands)"
+          ]
+        }
+      }
     },
     "reviewStatus": "pending"
   },
@@ -768,8 +810,8 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "label": "START",
         "pose": "standing in a staggered stance between two high pulleys, torso leaning slightly forward, arms out to the sides at shoulder height, elbows softly bent",
         "alignment": [
-          "torso line from hip to shoulder, leaning slightly forward, back straight (dots on hip and shoulder)",
-          "a line along each arm from shoulder to handle at shoulder height, soft elbow bend (dots on elbows and hands)"
+          "a line along each arm from shoulder to handle at shoulder height, soft elbow bend (dots on shoulders, elbows and hands)",
+          "dashed horizontal reference line through both shoulders: the hands start at this height"
         ],
         "angles": [
           "torso lean 15° from vertical"
@@ -777,16 +819,36 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "hands brought down and together in front of the lower chest, same soft elbow bend, chest squeezed",
+        "pose": "hands brought down and together in front of the lower chest, elbows still softly bent exactly as at the start (the arms do not bend more: this is a fly, not a press), chest squeezed",
         "alignment": [
-          "the same torso line, same slight forward lean",
-          "a line along each arm from shoulder to hand, hands meeting in front of the lower chest, same soft elbow bend (dots on elbows and hands)"
+          "a line along each arm from shoulder to hand, hands meeting in front of the lower chest, the same soft elbow bend as at the start (dots on shoulders, elbows and hands)"
         ],
         "angles": [
           "torso lean 15° from vertical"
         ]
       },
-      "angleNote": "Typical working values for illustration, not strict rules."
+      "angleNote": "Typical working values for illustration, not strict rules.",
+      "extraView": {
+        "name": "side",
+        "camera": "strict side view, athlete faces LEFT, the same in both panels",
+        "purpose": "the slight forward lean, the staggered stance and the arc of the arms, which the front view can't show",
+        "leftPanel": {
+          "label": "START",
+          "pose": "staggered stance between the pulleys, torso leaning slightly forward with a straight back, arms out to the sides at shoulder height with a soft elbow bend",
+          "alignment": [
+            "torso line from hip to the base of the neck, leaning slightly forward, back straight (dots on hip and base of the neck)",
+            "one straight line from the back heel up through the hip: braced staggered stance (dots on back heel and hip)"
+          ]
+        },
+        "rightPanel": {
+          "label": "END",
+          "pose": "same lean and stance, hands brought down and forward in an arc to meet in front of the lower chest, elbows still softly bent (not bent more than at the start)",
+          "alignment": [
+            "the same torso line: the lean does not change",
+            "arm line from shoulder down and forward to the hands in front of the lower chest, the same soft elbow bend as at the start (dots on shoulder, elbow and hands)"
+          ]
+        }
+      }
     },
     "reviewStatus": "pending"
   },
@@ -1382,7 +1444,28 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
           "elbow ~90°"
         ]
       },
-      "angleNote": "Approximate working values for illustration (the ~ means 'about'); the acceptable range is in angleRanges. A natural rep may differ by up to about 10 degrees."
+      "angleNote": "Approximate working values for illustration (the ~ means 'about'); the acceptable range is in angleRanges. A natural rep may differ by up to about 10 degrees.",
+      "extraView": {
+        "name": "top",
+        "camera": "top view: camera directly overhead looking straight down at the athlete's back, head at the LEFT of the image and feet at the right, the same in both panels",
+        "purpose": "where the hands go and how far the elbows flare out, which a side view can't show",
+        "leftPanel": {
+          "label": "START",
+          "pose": "top of the push-up seen from above, arms straight, hands flat on the floor just wider than the shoulders and right under them, body straight, feet together",
+          "alignment": [
+            "dashed reference line straight across the body through both shoulders: the hands sit right under it, just wider than the shoulders",
+            "one straight line along the spine from the base of the neck to the hips: no twisting (dots on base of the neck and hips)"
+          ]
+        },
+        "rightPanel": {
+          "label": "END",
+          "pose": "bottom of the push-up seen from above, chest near the floor, upper arms angled back toward the hips, about halfway between straight out to the sides and tucked against the ribs (an arrow shape, not a T), hands still in place",
+          "alignment": [
+            "upper arm line from each shoulder to its elbow, angled toward the hips: an arrow shape, not a T (dots on shoulders and elbows)",
+            "dashed reference line straight across the body through both shoulders: the elbows sit clearly on the hip side of it, never level with it"
+          ]
+        }
+      }
     },
     "angleRanges": [
       {
@@ -1634,7 +1717,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
     "image": {
       "camera": "strict side view",
       "facing": "athlete faces LEFT",
-      "equipmentToDraw": "parallel dip bars",
+      "equipmentToDraw": "parallel dip bars set high enough that the athlete hangs between them with the feet well off the floor (nothing under the feet)",
       "primaryMusclesToHighlight": [
         "pectoralis major (lower / sternal fibres)"
       ],
@@ -1644,7 +1727,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "leftPanel": {
         "label": "START",
-        "pose": "supported on parallel bars with straight arms, torso leaning forward, knees slightly bent",
+        "pose": "supported on the parallel bars with straight arms, body hanging between the bars, torso leaning forward, knees bent with the shins crossed behind, feet well off the floor and touching nothing",
         "alignment": [
           "torso line from hip to shoulder, leaning forward (dots on hip and shoulder)",
           "one straight line from shoulder through elbow to hand: arm straight (dots on elbow and hand)"
@@ -1656,7 +1739,7 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       },
       "rightPanel": {
         "label": "END",
-        "pose": "elbows bent with upper arms parallel to the floor, torso still leaning forward",
+        "pose": "elbows bent with the upper arms level with the floor, torso still leaning forward, knees still bent behind, feet still well off the floor",
         "alignment": [
           "upper arm line from shoulder to elbow, about level with the floor: go no lower (dots on shoulder and elbow)",
           "forearm line from elbow to hand on the bar, near vertical (dot on the hand)",

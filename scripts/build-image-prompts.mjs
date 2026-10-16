@@ -68,25 +68,33 @@ function deriveAlignment(angles) {
 const alignmentOf = (panel) => panel.alignment ?? deriveAlignment(panel.angles);
 const bullets = (a) => a.map((x) => `    - ${x}`);
 
-function prompt(e) {
+/**
+ * One prompt per image. `view` is undefined for the main image, or the exercise's `image.extraView`
+ * for the optional second image (same exercise and style, another camera, saved as <id>--<name>.png).
+ */
+function prompt(e, view) {
   const im = e.image;
+  const v = view ?? im;
+  const facing = view ? "" : im.facing && im.facing !== "as per camera" ? ` (${im.facing})` : "";
   const lines = [
     `Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, alignment lines, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.`,
     ``,
-    `Create the image for exercise id: ${e.id} (${e.name})`,
+    view
+      ? `Create the SECOND VIEW image for exercise id: ${e.id} (${e.name}). It is the same exercise, athlete, equipment and style as the main image, seen from a different camera, to show ${view.purpose}.`
+      : `Create the image for exercise id: ${e.id} (${e.name})`,
     ``,
     `EXERCISE DATA (use exactly this; do not substitute or improvise):`,
-    `- Camera: ${im.camera}${im.facing && im.facing !== "as per camera" ? ` (${im.facing})` : ""}. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.`,
+    `- Camera: ${v.camera}${facing}. Use exactly this camera in BOTH panels: same viewpoint, same distance, same figure size. Never switch to a different view in one panel.`,
     `- Equipment: ${im.equipmentToDraw}`,
     `- Grip and contact: every hand that holds equipment is wrapped around it, in both panels. The equipment sits exactly where the poses below say; nothing floats, and no equipment passes through the body.`,
     `- Primary muscles (outlined lime, faint tint, dense fibre lines): ${list(im.primaryMusclesToHighlight)}`,
     `- Secondary muscles (thinner dashed lime outlines): ${list(im.secondaryMusclesToHighlight)}. Highlight no other muscle.`,
-    `- LEFT panel, ${im.leftPanel.label}: ${im.leftPanel.pose}`,
-    `- RIGHT panel, ${im.rightPanel.label}: ${im.rightPanel.pose}`,
+    `- LEFT panel, ${v.leftPanel.label}: ${v.leftPanel.pose}`,
+    `- RIGHT panel, ${v.rightPanel.label}: ${v.rightPanel.pose}`,
     `- Alignment lines, LEFT panel (white dots on the joint centres, solid white lines between them; dashed only for reference lines):`,
-    ...bullets(alignmentOf(im.leftPanel)),
+    ...bullets(alignmentOf(v.leftPanel)),
     `- Alignment lines, RIGHT panel (same style):`,
-    ...bullets(alignmentOf(im.rightPanel)),
+    ...bullets(alignmentOf(v.rightPanel)),
     `- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet). The lines above that are called straight, vertical or level must really look that way on the drawn body; everything else can be relaxed. The pose must stay safe and good form.`,
     ``,
     `Draw only the alignment lines listed above (guide section 7), never a full skeleton, and put every dot on the centre of the named joint. Do not draw angle arcs, wedges, numbers or degree signs. Highlight only the muscles listed above, in the right place on the body. If anything above is unclear or conflicts with the guide, ask me before drawing. Before showing the image, run the section 9 checklist and fix any failure. There must be no text of any kind in the image.`,
@@ -96,13 +104,27 @@ function prompt(e) {
 
 function render(entries, { title, intro }) {
   const out = [`# ${title}`, ``, intro, ``];
-  for (const [i, [id, focus]] of entries.entries()) {
+  for (const [i, [entry, focus]] of entries.entries()) {
+    // "<id>--<view>" renders only that exercise's second view (its main image is already done).
+    const [id, onlyView] = entry.split("--");
     const e = byId.get(id);
     if (!e) throw new Error(`Unknown exercise id: ${id}`);
+    if (onlyView) {
+      const xv = e.image.extraView;
+      if (xv?.name !== onlyView) throw new Error(`${id} has no "${onlyView}" second view`);
+      out.push(`### ${i + 1}. ${id}: second view (${xv.name})`, ``, `Save as \`${id}--${xv.name}.png\`. Shows ${xv.purpose}. The main image is already approved.`, ``);
+      out.push("```", prompt(e, xv), "```", ``);
+      continue;
+    }
     out.push(`### ${i + 1}. ${id}`, ``);
     if (focus) out.push(`*Tests: ${focus}*  ·  Save as \`${id}.png\``, ``);
     else out.push(`Save as \`${id}.png\``, ``);
     out.push("```", prompt(e), "```", ``);
+    const xv = e.image.extraView;
+    if (xv) {
+      out.push(`### ${i + 1}b. ${id}: second view (${xv.name})`, ``, `Save as \`${id}--${xv.name}.png\`. Shows ${xv.purpose}.`, ``);
+      out.push("```", prompt(e, xv), "```", ``);
+    }
   }
   return out.join("\n");
 }
