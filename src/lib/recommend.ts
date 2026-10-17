@@ -1,5 +1,5 @@
 import { RESULTS_MAX, RESULTS_MIN } from "./constants";
-import type { EquipmentId, Exercise, MuscleGroup, VoteMap } from "./types";
+import type { Difficulty, EquipmentId, Exercise, MuscleGroup, VoteMap } from "./types";
 
 /** How much each vote changes an exercise's chance of being picked. */
 export const VOTE_WEIGHT = { liked: 3, neutral: 1, disliked: 0.25 } as const;
@@ -24,10 +24,39 @@ export function isCompound(ex: Exercise): boolean {
   return ex.secondaryMuscles.length >= 2;
 }
 
+/** Exercises that train the muscle only as a secondary (or, for Full Body, big compound lifts). */
+export function secondaryMatches(
+  all: Exercise[],
+  equipment: EquipmentId[],
+  muscle: MuscleGroup,
+): Exercise[] {
+  return all.filter(
+    (ex) =>
+      ex.primaryMuscle !== muscle &&
+      usesAvailableEquipment(ex, equipment) &&
+      (muscle === "fullBody"
+        ? isCompound(ex) // nothing lists "fullBody" as secondary; big compound lifts fit instead
+        : ex.secondaryMuscles.includes(muscle)),
+  );
+}
+
+/** Everything recommend() could pick for these filters. `level` null = any difficulty. */
+export function eligible(
+  all: Exercise[],
+  equipment: EquipmentId[],
+  muscle: MuscleGroup,
+  level: Difficulty | null = null,
+): Exercise[] {
+  const pool = [...primaryMatches(all, equipment, muscle), ...secondaryMatches(all, equipment, muscle)];
+  return level ? pool.filter((ex) => ex.difficulty === level) : pool;
+}
+
 interface RecommendOptions {
   all: Exercise[];
   equipment: EquipmentId[];
   muscle: MuscleGroup;
+  /** Only exercises of this difficulty. null/omitted = any. */
+  level?: Difficulty | null;
   votes: VoteMap;
   /** Ids to avoid (e.g. the set on screen) so a shuffle feels fresh. Soft: used only if the pool allows. */
   avoid?: string[];
@@ -44,19 +73,14 @@ export function recommend({
   all,
   equipment,
   muscle,
+  level = null,
   votes,
   avoid = [],
   random = Math.random,
 }: RecommendOptions): Exercise[] {
-  const primary = primaryMatches(all, equipment, muscle);
-  const secondary = all.filter(
-    (ex) =>
-      ex.primaryMuscle !== muscle &&
-      usesAvailableEquipment(ex, equipment) &&
-      (muscle === "fullBody"
-        ? isCompound(ex) // nothing lists "fullBody" as secondary; big compound lifts fit instead
-        : ex.secondaryMuscles.includes(muscle)),
-  );
+  const inLevel = (ex: Exercise) => !level || ex.difficulty === level;
+  const primary = primaryMatches(all, equipment, muscle).filter(inLevel);
+  const secondary = secondaryMatches(all, equipment, muscle).filter(inLevel);
 
   const target = RESULTS_MIN + Math.floor(random() * (RESULTS_MAX - RESULTS_MIN + 1));
 

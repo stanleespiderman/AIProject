@@ -6,7 +6,7 @@ export function Footer() {
       <p>
         <strong className="font-semibold text-fg">Heads up:</strong> {DISCLAIMER}
       </p>
-      <p className="mt-2 opacity-70">© {new Date().getFullYear()} WhatNext?</p>
+      <p className="mt-2 opacity-70">© {new Date().getFullYear()} WhatNxt</p>
     </footer>
   );
 }

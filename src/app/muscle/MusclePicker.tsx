@@ -7,7 +7,7 @@ import { StepHeader } from "@/components/StepHeader";
 import { ButtonLink } from "@/components/ui/Button";
 import { EXERCISES } from "@/data/exercises";
 import { MUSCLES } from "@/lib/constants";
-import { parseEquipment, resultsHref } from "@/lib/params";
+import { levelHref, parseEquipment } from "@/lib/params";
 import { isCompound, usesAvailableEquipment } from "@/lib/recommend";
 import type { MuscleGroup } from "@/lib/types";
 
@@ -17,7 +17,7 @@ export function MusclePicker() {
   if (equipment.length === 0) {
     return (
       <>
-        <StepHeader backHref="/equipment" step="Step 2 / 2" title="Hold up" />
+        <StepHeader backHref="/equipment" step="Step 2 / 3" title="Hold up" />
         <p className="text-muted">Pick your equipment first so we know what you can do.</p>
         <ButtonLink href="/equipment" className="mt-6">
           Pick equipment <ArrowRight />
@@ -38,7 +38,7 @@ export function MusclePicker() {
     <>
       <StepHeader
         backHref="/equipment"
-        step="Step 2 / 2"
+        step="Step 2 / 3"
         title="Hit what?"
         subtitle="Pick one. We'll do the rest."
       />
@@ -50,7 +50,7 @@ export function MusclePicker() {
           return (
             <Link
               key={m.id}
-              href={resultsHref(equipment, m.id)}
+              href={levelHref(equipment, m.id)}
               aria-disabled={disabled}
               tabIndex={disabled ? -1 : undefined}
               className={`group flex min-h-28 flex-col justify-between rounded-3xl border border-line bg-panel p-4 transition active:scale-[0.97] ${

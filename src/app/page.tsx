@@ -1,4 +1,6 @@
+import { AccountLink } from "@/components/AccountLink";
 import { BottomBar } from "@/components/BottomBar";
+import { InstallBanner } from "@/components/InstallBanner";
 import { ArrowRight } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/Button";
 import { EXERCISES } from "@/data/exercises";
@@ -6,7 +8,8 @@ import { EXERCISES } from "@/data/exercises";
 const steps = [
   { n: "01", label: "Pick your kit" },
   { n: "02", label: "Pick a muscle" },
-  { n: "03", label: "Lift" },
+  { n: "03", label: "Pick a level" },
+  { n: "04", label: "Lift" },
 ];
 
 export default function Home() {
@@ -14,10 +17,13 @@ export default function Home() {
     <>
       <div className="flex items-center justify-between pt-6">
         <span className="font-display text-xl font-extrabold tracking-wide uppercase italic">
-          What<span className="text-volt">Next?</span>
+          What<span className="text-volt">Nxt</span>
         </span>
-        <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">
-          {EXERCISES.length}+ moves
+        <span className="flex items-center gap-2">
+          <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">
+            {EXERCISES.length}+ moves
+          </span>
+          <AccountLink />
         </span>
       </div>
 
@@ -36,14 +42,16 @@ export default function Home() {
           Get your next set in <span className="font-semibold text-volt">10 seconds.</span>
         </p>
 
-        <ol className="mt-10 grid grid-cols-3 gap-2">
+        <ol className="mt-10 grid grid-cols-4 gap-2">
           {steps.map((s) => (
-            <li key={s.n} className="rounded-2xl border border-line bg-panel p-3">
+            <li key={s.n} className="rounded-2xl border border-line bg-panel p-2.5">
               <span className="font-display text-2xl font-extrabold text-volt italic">{s.n}</span>
               <p className="mt-1 text-sm leading-tight text-muted">{s.label}</p>
             </li>
           ))}
         </ol>
+
+        <InstallBanner className="mt-6" />
       </section>
 
       <BottomBar>

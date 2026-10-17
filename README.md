@@ -1,10 +1,10 @@
-# WhatNext?
+# WhatNxt
 
 > Bored mid-workout? Get your next set in 10 seconds.
 
 A mobile-first web app for gym-goers. Pick the equipment you have and a muscle group, and get 5–8 exercise suggestions, each with sets × reps, form cues and a link to form videos.
 
-**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. No backend, no database and no accounts. Everything the app remembers lives in `localStorage`. Every route is statically prerendered, so it deploys to Vercel with zero config.
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Supabase (optional accounts and cloud storage). Without Supabase configured there is no backend: everything the app remembers lives in `localStorage`. With it, signed-in users also get their equipment and votes saved to their account. Every route is statically prerendered. See `docs/deploy-accounts.md` to switch accounts on.
 
 ---
 
@@ -21,17 +21,20 @@ Other scripts:
 
 ```bash
 npm run lint       # ESLint (next/core-web-vitals + TypeScript rules)
-npm run build      # production build (also type-checks)
+npm run build      # production build (runs check:data first, also type-checks)
+npm run check:data       # verify every exercise has a details entry and the data is consistent
+npm run build:details    # regenerate src/data/exerciseDetails.ts from the JSON in docs/data
+npm run build:prompts    # regenerate the ChatGPT image prompts (docs/exercise-image-prompts-sample.md) from the same JSON
 npm start          # serve the production build
 ```
 
 To test on your phone, run `npm run dev -- -H 0.0.0.0` and open `http://<your-laptop-ip>:3000` on the same Wi-Fi.
 
-**Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, the free shuffles, your votes and your saved equipment.
+**Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, your votes and your saved equipment.
 
 ## Deploy to Vercel
 
-Push to GitHub, then "Add New Project" in Vercel and import the repo. No environment variables or settings are needed.
+Push to GitHub, then "Add New Project" in Vercel and import the repo. It deploys with no settings. To turn on accounts, add the two Supabase variables (`.env.example`) and follow `docs/deploy-accounts.md`.
 
 ---
 
@@ -45,11 +48,13 @@ src/
 │  ├─ page.tsx                 # 1. Home
 │  ├─ equipment/page.tsx       # 2. Equipment picker (multi-select, remembered)
 │  ├─ muscle/                  # 3. Muscle picker (single select, tap to go)
-│  ├─ results/                 # 4. Results + Shuffle + votes
-│  └─ unlock/page.tsx          # 5. "Unlock NextSet" paywall (stub)
+│  ├─ level/                   # 4. Level picker (Any / Beginner / Intermediate / Advanced)
+│  ├─ results/                 # 5. Tile grid + free Shuffle + votes
+│  └─ unlock/page.tsx          # Paywall stub. Not linked from anywhere right now
 ├─ components/
-│  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyBadge
-│  ├─ ExerciseCard.tsx         # One exercise card
+│  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyDots
+│  ├─ ExerciseTile.tsx         # One exercise: small tile, expands in place
+│  ├─ MuscleParts.tsx          # "Muscle parts worked" reveal animation
 │  ├─ VoteButtons.tsx          # Thumbs up / down
 │  ├─ StepHeader.tsx           # Back button + step label + big title
 │  ├─ BottomBar.tsx            # Sticky thumb-zone action area
@@ -57,7 +62,8 @@ src/
 │  ├─ Footer.tsx               # Disclaimer in the footer
 │  └─ icons.tsx                # Inline SVG icons
 ├─ data/
-│  └─ exercises.ts             # ← The exercise library (168 exercises)
+│  ├─ exercises.ts             # ← The exercise library: names, groups, equipment, sets, reps (168)
+│  └─ exerciseDetails.ts       # Form cues, how-to, safety, image specs. AUTO-GENERATED, don't edit
 └─ lib/
    ├─ types.ts                 # Exercise model and shared types
    ├─ constants.ts             # Equipment/muscle lists, labels, storage keys, disclaimer text
@@ -71,6 +77,19 @@ src/
       └─ usage.ts              #   3-free-shuffles-per-day quota
 ```
 
+Outside `src/`:
+
+```
+docs/data/whatnext-exercise-form-data.json   # SOURCE OF TRUTH for form content (cues, steps, safety, image specs)
+scripts/build-exercise-details.mjs           # JSON -> src/data/exerciseDetails.ts
+scripts/check-exercise-data.ts               # fails the build if exercises and details are out of step
+docs/exercise-image-design.md                # style guide for exercise illustrations
+```
+
+### Results screen
+
+Results are a two-column grid of tiles (difficulty dots, name, muscle groups). Tapping a tile opens it in place at full width and moves it to the top: image (only if `public/exercises/<id>.*` exists), form cues, "Muscle parts worked" (tap to reveal), sets x reps, How to do it, Watch form and votes. The X or tapping the header closes it. See `public/exercises/README.md` for adding images.
+
 ### How the flow works
 
 - Selections are passed between screens in the URL, e.g. `/results?eq=dumbbells,bodyweight&m=chest`. Results links can be shared and bookmarked, and they survive a refresh.
@@ -79,7 +98,8 @@ src/
   2. Draws from exercises whose `primaryMuscle` matches and which you can do with at least one of your selected pieces of equipment.
   3. If those run out, it tops up with exercises that train the muscle as a secondary. For **Full Body**, it tops up with compound lifts instead: any exercise that trains 3+ muscle groups.
   4. The draw is weighted random: 👍 = 3× as likely, 👎 = 0.25×, neutral = 1×. The weights are in `VOTE_WEIGHT`.
-  5. A shuffle avoids the cards currently on screen when the pool is big enough.
+  5. With a level picked (`lv=beginner|intermediate|advanced`, absent = any), only exercises of that difficulty are drawn.
+  6. A shuffle avoids the tiles currently on screen when the pool is big enough.
 - Votes are read once per roll, so tapping 👍/👎 never reshuffles the cards you're looking at.
 
 ### localStorage keys
@@ -91,14 +111,16 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 | `whatnext:equipment` | Last equipment selection |
 | `whatnext:votes` | `{ [exerciseId]: 1 \| -1 }` |
 | `whatnext:disclaimer-ack` | Disclaimer dismissed |
-| `whatnext:shuffles` | `{ date, count }`. Today's shuffle usage (local date) |
+| `whatnext:shuffles` | Unused: Shuffle is free and unlimited |
 | `whatnext:pro` | Set only by `grantPro()` after a real payment |
 
 ---
 
 ## Adding exercises
 
-Open `src/data/exercises.ts` and add an entry to the right muscle section:
+An exercise lives in **two places**, joined by its `id`:
+
+1. **`src/data/exercises.ts`**: the basics you edit by hand.
 
 ```ts
 ex({
@@ -109,14 +131,38 @@ ex({
   difficulty: "beginner",                  // beginner | intermediate | advanced
   sets: 3,
   reps: "10–12",                           // free text: "8–10", "30s", "10/side"
-  formCues: ["Push hips back, soft knees", "Dumbbells slide down your thighs", "Stop when your back wants to round"],
 }),
 ```
 
+2. **`docs/data/whatnext-exercise-form-data.json`**: the form content (3 form cues, setup and execution steps, breathing, common mistakes, safety, rest, easier/harder option, image spec). Add an entry with the same `id`, then run:
+
+```bash
+npm run build:details   # regenerates src/data/exerciseDetails.ts (never edit that file by hand)
+npm run check:data      # confirms every exercise has details; also runs automatically before `npm run build`
+```
+
+If you add an exercise to `exercises.ts` without a details entry, `check:data` fails and so does the build, so it can't ship by accident.
+
 - **`id`** is generated from the name (`dumbbell-romanian-deadlift`). Votes are stored against the id, so **don't rename a shipped exercise** unless you pass the old `id` explicitly: `ex({ id: "old-id", name: "New Name", ... })`.
-- **`videoUrl`** defaults to a YouTube search: `https://www.youtube.com/results?search_query=<name>+form`. Don't paste video ids. They rot, and nobody has checked them. To tweak the search, pass `videoUrl: youtubeSearchUrl("better search terms")`.
-- **`equipment` means "any of"**: `["dumbbells", "kettlebell"]` means either one works. If you list more than one, give the exercise a neutral name ("Goblet Squat", not "Kettlebell Goblet Squat") so it doesn't look wrong to someone who only has dumbbells.
-- Keep 2–3 short, imperative form cues. Stick to common, safe movements.
+- **`videoUrl`** defaults to a YouTube search: `https://www.youtube.com/results?search_query=<name>+form`. Don't paste video ids. They rot, and nobody has checked them.
+- **`equipment` means "any of"**: `["dumbbells", "kettlebell"]` means either one works. If you list more than one, give the exercise a neutral name ("Goblet Squat", not "Kettlebell Goblet Squat").
+- Keep exactly 3 short, imperative form cues. Stick to common, safe movements.
+
+### Angle ranges
+
+For the exercises that have them, `angleRanges` in the JSON gives each key angle a target and an acceptable range (for example knee at the bottom of a squat: about 90°, 70–100° is fine). The card shows them under "How to do it", and the image prompts use them for the `~` labels and the optional range wedge. They are drafts until a trainer approves them. Only the 10 test exercises have them so far.
+
+### Install to home screen
+
+`src/app/manifest.ts` + `public/icons/` make WhatNxt installable (icons drawn by `scripts/build-app-icons.mjs`). `InstallBanner` shows on Home and under the results: on Android/Chrome an Install button opens the browser's dialog; on iPhone it shows the Share > Add to Home Screen steps. It hides once installed, waits for the first-run safety notice, and a dismissal hides it for 30 days. `/install` is a shareable page (bio, message or QR code) that shows only the steps for the visitor's phone: the Install button on Android, Share steps on iPhone, "open in your browser" inside Instagram/Facebook, and a QR code on desktop. There is deliberately no service worker, so nothing is cached offline yet.
+
+### Muscle parts
+
+Each details entry has `muscleParts` (`primary` / `secondary`): the specific part of the muscle worked, in everyday words ("Upper chest", "Lats", "Mid traps"). It is shown on the expanded tile. It is generated from the anatomical `muscles` names by `node scripts/build-muscle-parts.mjs`, which holds the label table and the per-exercise exceptions (for example incline push-up is lower chest, decline push-up is upper chest). Run it after changing `muscles`, then `npm run build:details`. `node scripts/build-muscle-parts.mjs --check --fedb <path to free-exercise-db exercises.json>` compares the main muscles with free-exercise-db.
+
+### Trainer review
+
+Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`). All 168 are currently **pending**: the content was written from established coaching standards but has not been signed off by a certified trainer. Cards show a "Guidance pending trainer review" note inside "How to do it" until an entry is set to `"approved"` (then run `npm run build:details`). Review the advanced and higher-risk lifts first.
 
 **Adding a new equipment type or muscle group:** add it to the union type in `src/lib/types.ts` and to the list in `src/lib/constants.ts`. TypeScript will then point you at everything that needs updating.
 
@@ -134,7 +180,7 @@ ex({
 | `FREE_SHUFFLES_PER_DAY` | `usage.ts` | The daily free limit (3) |
 | `consumeShuffle()` / `useShufflesLeft()` | `usage.ts` | Quota tracking; resets at local midnight |
 
-When the free shuffles run out, the Shuffle button becomes "Unlock more shuffles" and links to `/unlock`.
+Shuffle is currently free and unlimited, so nothing in the UI calls `consumeShuffle()` or links to `/unlock`. The code is kept for if paid features come back.
 
 ### Plugging in Razorpay or Stripe
 
