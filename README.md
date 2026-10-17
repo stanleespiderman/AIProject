@@ -30,7 +30,7 @@ npm start          # serve the production build
 
 To test on your phone, run `npm run dev -- -H 0.0.0.0` and open `http://<your-laptop-ip>:3000` on the same Wi-Fi.
 
-**Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, the free shuffles, your votes and your saved equipment.
+**Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, your votes and your saved equipment.
 
 ## Deploy to Vercel
 
@@ -48,11 +48,13 @@ src/
 │  ├─ page.tsx                 # 1. Home
 │  ├─ equipment/page.tsx       # 2. Equipment picker (multi-select, remembered)
 │  ├─ muscle/                  # 3. Muscle picker (single select, tap to go)
-│  ├─ results/                 # 4. Results + Shuffle + votes
-│  └─ unlock/page.tsx          # 5. "Unlock NextSet" paywall (stub)
+│  ├─ level/                   # 4. Level picker (Any / Beginner / Intermediate / Advanced)
+│  ├─ results/                 # 5. Tile grid + free Shuffle + votes
+│  └─ unlock/page.tsx          # Paywall stub. Not linked from anywhere right now
 ├─ components/
-│  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyBadge
-│  ├─ ExerciseCard.tsx         # One exercise card
+│  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyDots
+│  ├─ ExerciseTile.tsx         # One exercise: small tile, expands in place
+│  ├─ MuscleParts.tsx          # "Muscle parts worked" reveal animation
 │  ├─ VoteButtons.tsx          # Thumbs up / down
 │  ├─ StepHeader.tsx           # Back button + step label + big title
 │  ├─ BottomBar.tsx            # Sticky thumb-zone action area
@@ -84,6 +86,10 @@ scripts/check-exercise-data.ts               # fails the build if exercises and 
 docs/exercise-image-design.md                # style guide for exercise illustrations
 ```
 
+### Results screen
+
+Results are a two-column grid of tiles (difficulty dots, name, muscle groups). Tapping a tile opens it in place at full width and moves it to the top: image (only if `public/exercises/<id>.*` exists), form cues, "Muscle parts worked" (tap to reveal), sets x reps, How to do it, Watch form and votes. The X or tapping the header closes it. See `public/exercises/README.md` for adding images.
+
 ### How the flow works
 
 - Selections are passed between screens in the URL, e.g. `/results?eq=dumbbells,bodyweight&m=chest`. Results links can be shared and bookmarked, and they survive a refresh.
@@ -92,7 +98,8 @@ docs/exercise-image-design.md                # style guide for exercise illustra
   2. Draws from exercises whose `primaryMuscle` matches and which you can do with at least one of your selected pieces of equipment.
   3. If those run out, it tops up with exercises that train the muscle as a secondary. For **Full Body**, it tops up with compound lifts instead: any exercise that trains 3+ muscle groups.
   4. The draw is weighted random: 👍 = 3× as likely, 👎 = 0.25×, neutral = 1×. The weights are in `VOTE_WEIGHT`.
-  5. A shuffle avoids the cards currently on screen when the pool is big enough.
+  5. With a level picked (`lv=beginner|intermediate|advanced`, absent = any), only exercises of that difficulty are drawn.
+  6. A shuffle avoids the tiles currently on screen when the pool is big enough.
 - Votes are read once per roll, so tapping 👍/👎 never reshuffles the cards you're looking at.
 
 ### localStorage keys
@@ -104,7 +111,7 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 | `whatnext:equipment` | Last equipment selection |
 | `whatnext:votes` | `{ [exerciseId]: 1 \| -1 }` |
 | `whatnext:disclaimer-ack` | Disclaimer dismissed |
-| `whatnext:shuffles` | `{ date, count }`. Today's shuffle usage (local date) |
+| `whatnext:shuffles` | Unused: Shuffle is free and unlimited |
 | `whatnext:pro` | Set only by `grantPro()` after a real payment |
 
 ---
@@ -169,7 +176,7 @@ Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`
 | `FREE_SHUFFLES_PER_DAY` | `usage.ts` | The daily free limit (3) |
 | `consumeShuffle()` / `useShufflesLeft()` | `usage.ts` | Quota tracking; resets at local midnight |
 
-When the free shuffles run out, the Shuffle button becomes "Unlock more shuffles" and links to `/unlock`.
+Shuffle is currently free and unlimited, so nothing in the UI calls `consumeShuffle()` or links to `/unlock`. The code is kept for if paid features come back.
 
 ### Plugging in Razorpay or Stripe
 

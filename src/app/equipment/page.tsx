@@ -27,7 +27,7 @@ export default function EquipmentPage() {
     <>
       <StepHeader
         backHref="/"
-        step="Step 1 / 2"
+        step="Step 1 / 3"
         title="What's free?"
         subtitle="Tap everything you can grab right now."
       />

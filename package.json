@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "build:details": "node scripts/build-exercise-details.mjs",
+    "build:images": "node scripts/build-exercise-images.mjs",
     "check:data": "tsx scripts/check-exercise-data.ts",
-    "prebuild": "npm run check:data",
+    "prebuild": "npm run build:images && npm run check:data",
     "build:prompts": "node scripts/build-image-prompts.mjs sample"
   },
   "dependencies": {

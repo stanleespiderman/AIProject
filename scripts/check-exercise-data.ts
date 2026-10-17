@@ -4,6 +4,7 @@
  */
 import { EXERCISES } from "../src/data/exercises";
 import { EXERCISE_DETAILS } from "../src/data/exerciseDetails";
+import { EXERCISE_IMAGES } from "../src/data/exerciseImages";
 
 const errors: string[] = [];
 const fail = (msg: string) => errors.push(msg);
@@ -68,6 +69,11 @@ for (const e of EXERCISES) {
   if (!e.videoUrl.startsWith(SEARCH)) fail(`${e.id}: videoUrl must be a YouTube search URL, got ${e.videoUrl}`);
 }
 
+// 6. every uploaded image belongs to a real exercise (a typo in a filename would silently show nothing)
+for (const id of Object.keys(EXERCISE_IMAGES)) {
+  if (!idSet.has(id)) fail(`public/exercises has an image for "${id}", which is not an exercise id (check the filename)`);
+}
+
 if (errors.length > 0) {
   console.error(`\nExercise data check FAILED (${errors.length} problem${errors.length === 1 ? "" : "s"}):\n`);
   for (const msg of errors) console.error(`  - ${msg}`);
@@ -77,4 +83,4 @@ if (errors.length > 0) {
 
 const withRanges = EXERCISES.filter((e) => e.angleRanges?.length).length;
 const pending = EXERCISES.filter((e) => e.reviewStatus !== "approved").length;
-console.log(`Exercise data OK: ${EXERCISES.length} exercises, all with details. ${withRanges} with angle ranges. Trainer review pending on ${pending}.`);
+console.log(`Exercise data OK: ${EXERCISES.length} exercises, all with details. ${withRanges} with angle ranges. Trainer review pending on ${pending}. ${Object.keys(EXERCISE_IMAGES).length} with images.`);

@@ -1,26 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BottomBar } from "@/components/BottomBar";
-import { ExerciseCard } from "@/components/ExerciseCard";
-import { ArrowRight, Lock, Shuffle } from "@/components/icons";
+import { ExerciseTile } from "@/components/ExerciseTile";
+import { ArrowRight, Shuffle } from "@/components/icons";
 import { StepHeader } from "@/components/StepHeader";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { EXERCISES } from "@/data/exercises";
-import { EQUIPMENT, MUSCLE_LABEL, RESULTS_MIN } from "@/lib/constants";
-import { consumeShuffle, useShufflesLeft } from "@/lib/payments/usage";
-import { muscleHref, parseEquipment, parseMuscle } from "@/lib/params";
+import { DIFFICULTY_LABEL, EQUIPMENT, MUSCLE_LABEL, RESULTS_MIN } from "@/lib/constants";
+import { levelHref, parseEquipment, parseLevel, parseMuscle, resultsHref } from "@/lib/params";
 import { recommend } from "@/lib/recommend";
 import { useHydrated } from "@/lib/storage";
-import type { EquipmentId, MuscleGroup } from "@/lib/types";
+import type { Difficulty, EquipmentId, MuscleGroup } from "@/lib/types";
 import { readVotes, useVotes } from "@/lib/votes";
+import { useSearchParams } from "next/navigation";
 
 export function ResultsView() {
   const params = useSearchParams();
   const equipment = parseEquipment(params.get("eq"));
   const muscle = parseMuscle(params.get("m"));
+  const level = parseLevel(params.get("lv"));
   // Results are random and read localStorage, so render them in the browser only.
   const hydrated = useHydrated();
 
@@ -38,39 +38,54 @@ export function ResultsView() {
   if (!hydrated) return <ResultsSkeleton />;
 
   // Remount (and re-roll) whenever the filters change.
-  return <ResultsList key={`${equipment.join()}|${muscle}`} equipment={equipment} muscle={muscle} />;
+  return (
+    <ResultsList key={`${equipment.join()}|${muscle}|${level ?? "any"}`} equipment={equipment} muscle={muscle} level={level} />
+  );
 }
 
-function ResultsList({ equipment, muscle }: { equipment: EquipmentId[]; muscle: MuscleGroup }) {
-  const router = useRouter();
+function ResultsList({
+  equipment,
+  muscle,
+  level,
+}: {
+  equipment: EquipmentId[];
+  muscle: MuscleGroup;
+  level: Difficulty | null;
+}) {
   const { votes, toggle } = useVotes();
-  const shufflesLeft = useShufflesLeft();
 
   const roll = (avoid: string[] = []) =>
-    recommend({ all: EXERCISES, equipment, muscle, votes: readVotes(), avoid });
+    recommend({ all: EXERCISES, equipment, muscle, level, votes: readVotes(), avoid });
 
-  // Votes are read once per roll, so voting never reshuffles the cards on screen.
+  // Votes are read once per roll, so voting never reshuffles the tiles on screen.
   const [list, setList] = useState(() => roll());
   const [round, setRound] = useState(0);
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const shuffle = () => {
-    if (!consumeShuffle()) {
-      router.push("/unlock");
-      return;
-    }
     setList(roll(list.map((ex) => ex.id)));
     setRound((r) => r + 1);
+    setOpenId(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const toggleTile = (id: string) => {
+    const opening = openId !== id;
+    setOpenId(opening ? id : null);
+    // The open tile moves to the top of the grid, so bring the top into view.
+    if (opening) window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // The open tile always comes first; the rest keep their order below it.
+  const ordered = [...list].sort((a, b) => Number(b.id === openId) - Number(a.id === openId));
+
   const kit = EQUIPMENT.filter((e) => equipment.includes(e.id)).map((e) => e.label).join(", ");
-  const outOfShuffles = shufflesLeft === 0;
 
   return (
     <>
       <StepHeader
-        backHref={muscleHref(equipment)}
-        step={MUSCLE_LABEL[muscle]}
+        backHref={levelHref(equipment, muscle, level)}
+        step={`${MUSCLE_LABEL[muscle]} · ${level ? DIFFICULTY_LABEL[level] : "Any level"}`}
         title={<>Your next {list.length} moves</>}
         subtitle={<>With: {kit}</>}
       />
@@ -78,19 +93,29 @@ function ResultsList({ equipment, muscle }: { equipment: EquipmentId[]; muscle: 
       {list.length < RESULTS_MIN && (
         <p className="mb-4 rounded-2xl border border-mid/40 bg-mid/10 p-4 text-sm text-fg/90">
           Only {list.length} {list.length === 1 ? "match" : "matches"} for this combo.{" "}
+          {level && (
+            <>
+              <Link href={resultsHref(equipment, muscle)} className="font-semibold text-mid underline underline-offset-4">
+                Show any level
+              </Link>{" "}
+              or{" "}
+            </>
+          )}
           <Link href="/equipment" className="font-semibold text-mid underline underline-offset-4">
-            Add more equipment
+            {level ? "add" : "Add"} more equipment
           </Link>{" "}
           for more variety.
         </p>
       )}
 
-      <div className="flex flex-col gap-4">
-        {list.map((ex, i) => (
-          <ExerciseCard
+      <div className="grid grid-cols-2 gap-2.5">
+        {ordered.map((ex, i) => (
+          <ExerciseTile
             key={`${round}-${ex.id}`}
             exercise={ex}
             index={i}
+            open={openId === ex.id}
+            onToggle={() => toggleTile(ex.id)}
             vote={votes[ex.id]}
             onVote={(v) => toggle(ex.id, v)}
           />
@@ -98,26 +123,13 @@ function ResultsList({ equipment, muscle }: { equipment: EquipmentId[]; muscle: 
       </div>
 
       <p className="mt-6 text-center text-xs text-muted">
-        👍 = see it more often · 👎 = see it less
+        Tap a tile for sets, form cues and video
       </p>
 
       <BottomBar>
-        {outOfShuffles ? (
-          <ButtonLink href="/unlock">
-            <Lock /> Unlock more shuffles
-          </ButtonLink>
-        ) : (
-          <Button onClick={shuffle}>
-            <Shuffle /> Shuffle
-          </Button>
-        )}
-        <p className="mt-2 text-center text-xs text-muted">
-          {shufflesLeft === Infinity
-            ? "NextSet: unlimited shuffles"
-            : outOfShuffles
-              ? "No free shuffles left today"
-              : `${shufflesLeft} free ${shufflesLeft === 1 ? "shuffle" : "shuffles"} left today`}
-        </p>
+        <Button onClick={shuffle}>
+          <Shuffle /> Shuffle
+        </Button>
       </BottomBar>
     </>
   );
@@ -125,9 +137,9 @@ function ResultsList({ equipment, muscle }: { equipment: EquipmentId[]; muscle: 
 
 export function ResultsSkeleton() {
   return (
-    <div className="flex flex-col gap-4 pt-24" aria-busy="true" aria-label="Loading exercises">
-      {[0, 1, 2].map((i) => (
-        <div key={i} className="h-72 animate-pulse rounded-3xl border border-line bg-panel" />
+    <div className="grid grid-cols-2 gap-2.5 pt-24" aria-busy="true" aria-label="Loading exercises">
+      {[0, 1, 2, 3, 4, 5].map((i) => (
+        <div key={i} className="h-28 animate-pulse rounded-3xl border border-line bg-panel" />
       ))}
     </div>
   );

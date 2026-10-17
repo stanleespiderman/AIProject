@@ -27,6 +27,15 @@ export const DIFFICULTY_LABEL: Record<Difficulty, string> = {
   advanced: "Advanced",
 };
 
+/** The level step. "any" applies no difficulty filter. */
+export type LevelChoice = Difficulty | "any";
+export const LEVELS: { id: LevelChoice; label: string; blurb: string }[] = [
+  { id: "any", label: "Any level", blurb: "No filter. A mix of everything." },
+  { id: "beginner", label: "Beginner", blurb: "Simple moves, low risk." },
+  { id: "intermediate", label: "Intermediate", blurb: "Some lifting experience." },
+  { id: "advanced", label: "Advanced", blurb: "Technical or heavy moves." },
+];
+
 export const MUSCLE_LABEL = Object.fromEntries(
   MUSCLES.map((m) => [m.id, m.label]),
 ) as Record<MuscleGroup, string>;

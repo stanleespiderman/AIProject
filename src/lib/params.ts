@@ -1,5 +1,5 @@
 import { EQUIPMENT_IDS, MUSCLE_IDS } from "./constants";
-import type { EquipmentId, MuscleGroup } from "./types";
+import type { Difficulty, EquipmentId, MuscleGroup } from "./types";
 
 /**
  * Selections travel between screens in the URL (?eq=dumbbells,bands&m=chest)
@@ -17,10 +17,19 @@ export function parseMuscle(value: string | null): MuscleGroup | null {
   return value && (MUSCLE_IDS as string[]).includes(value) ? (value as MuscleGroup) : null;
 }
 
+/** Missing or unknown means "any level" (no filter). */
+export function parseLevel(value: string | null): Difficulty | null {
+  return value === "beginner" || value === "intermediate" || value === "advanced" ? value : null;
+}
+
 export function muscleHref(equipment: EquipmentId[]): string {
   return `/muscle?eq=${equipment.join(",")}`;
 }
 
-export function resultsHref(equipment: EquipmentId[], muscle: MuscleGroup): string {
-  return `/results?eq=${equipment.join(",")}&m=${muscle}`;
+export function levelHref(equipment: EquipmentId[], muscle: MuscleGroup, level: Difficulty | null = null): string {
+  return `/level?eq=${equipment.join(",")}&m=${muscle}${level ? `&lv=${level}` : ""}`;
+}
+
+export function resultsHref(equipment: EquipmentId[], muscle: MuscleGroup, level: Difficulty | null = null): string {
+  return `/results?eq=${equipment.join(",")}&m=${muscle}${level ? `&lv=${level}` : ""}`;
 }
