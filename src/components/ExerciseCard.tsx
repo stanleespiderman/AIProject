@@ -3,6 +3,7 @@ import type { Exercise, Vote } from "@/lib/types";
 import { Play } from "./icons";
 import { buttonClasses } from "./ui/Button";
 import { DifficultyBadge } from "./ui/DifficultyBadge";
+import { ExerciseImage } from "./ExerciseImage";
 import { HowToDoIt } from "./HowToDoIt";
 import { VoteButtons } from "./VoteButtons";
 
@@ -33,6 +34,8 @@ export function ExerciseCard({ exercise, index, vote, onVote }: ExerciseCardProp
         <span className="font-semibold text-fg">{MUSCLE_LABEL[primaryMuscle]}</span>
         {secondaryMuscles.length > 0 && <> · also {secondaryMuscles.map((m) => MUSCLE_LABEL[m]).join(", ")}</>}
       </p>
+
+      <ExerciseImage exercise={exercise} preload={index === 0} />
 
       <div className="mt-4 flex items-baseline gap-2 rounded-2xl bg-panel-2 px-4 py-3">
         <span className="font-display text-4xl font-extrabold text-volt">{sets}</span>

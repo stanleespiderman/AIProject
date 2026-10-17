@@ -21,10 +21,11 @@ Other scripts:
 
 ```bash
 npm run lint       # ESLint (next/core-web-vitals + TypeScript rules)
-npm run build      # production build (runs check:data first, also type-checks)
+npm run build      # production build (runs build:images and check:data first, also type-checks)
 npm run check:data       # verify every exercise has a details entry and the data is consistent
 npm run build:details    # regenerate src/data/exerciseDetails.ts from the JSON in docs/data
 npm run build:prompts    # regenerate the ChatGPT image prompts (docs/exercise-image-prompts-sample.md) from the same JSON
+npm run build:images     # list public/exercises/ into src/data/exerciseImages.ts (also runs before dev and build)
 npm start          # serve the production build
 ```
 
