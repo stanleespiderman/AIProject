@@ -152,6 +152,10 @@ If you add an exercise to `exercises.ts` without a details entry, `check:data` f
 
 For the exercises that have them, `angleRanges` in the JSON gives each key angle a target and an acceptable range (for example knee at the bottom of a squat: about 90°, 70–100° is fine). The card shows them under "How to do it", and the image prompts use them for the `~` labels and the optional range wedge. They are drafts until a trainer approves them. Only the 10 test exercises have them so far.
 
+### Install to home screen
+
+`src/app/manifest.ts` + `public/icons/` make WhatNext? installable (icons drawn by `scripts/build-app-icons.mjs`). `InstallBanner` shows on Home and under the results: on Android/Chrome an Install button opens the browser's dialog; on iPhone it shows the Share > Add to Home Screen steps. It hides once installed, waits for the first-run safety notice, and a dismissal hides it for 30 days. There is deliberately no service worker, so nothing is cached offline yet.
+
 ### Muscle parts
 
 Each details entry has `muscleParts` (`primary` / `secondary`): the specific part of the muscle worked, in everyday words ("Upper chest", "Lats", "Mid traps"). It is shown on the expanded tile. It is generated from the anatomical `muscles` names by `node scripts/build-muscle-parts.mjs`, which holds the label table and the per-exercise exceptions (for example incline push-up is lower chest, decline push-up is upper chest). Run it after changing `muscles`, then `npm run build:details`. `node scripts/build-muscle-parts.mjs --check --fedb <path to free-exercise-db exercises.json>` compares the main muscles with free-exercise-db.

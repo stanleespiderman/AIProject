@@ -57,4 +57,5 @@ export const STORAGE_KEYS = {
   disclaimer: "whatnext:disclaimer-ack",
   shuffles: "whatnext:shuffles",
   pro: "whatnext:pro",
+  installDismissed: "whatnext:install-dismissed",
 } as const;

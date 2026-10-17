@@ -1,5 +1,6 @@
 import { AccountLink } from "@/components/AccountLink";
 import { BottomBar } from "@/components/BottomBar";
+import { InstallBanner } from "@/components/InstallBanner";
 import { ArrowRight } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/Button";
 import { EXERCISES } from "@/data/exercises";
@@ -49,6 +50,8 @@ export default function Home() {
             </li>
           ))}
         </ol>
+
+        <InstallBanner className="mt-6" />
       </section>
 
       <BottomBar>

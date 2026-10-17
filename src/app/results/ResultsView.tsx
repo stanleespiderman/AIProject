@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { BottomBar } from "@/components/BottomBar";
 import { ExerciseTile } from "@/components/ExerciseTile";
+import { InstallBanner } from "@/components/InstallBanner";
 import { ArrowRight, Shuffle } from "@/components/icons";
 import { StepHeader } from "@/components/StepHeader";
 import { Button, ButtonLink } from "@/components/ui/Button";
@@ -125,6 +126,8 @@ function ResultsList({
       <p className="mt-6 text-center text-xs text-muted">
         Tap a tile for sets, form cues and video
       </p>
+
+      <InstallBanner title="Liked it? Add it to your home screen" className="mt-6" />
 
       <BottomBar>
         <Button onClick={shuffle}>

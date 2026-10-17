@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import { DisclaimerModal } from "@/components/DisclaimerModal";
+import { InstallBoot } from "@/components/InstallBoot";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
   description:
     "Bored mid-workout or finished early? Pick your equipment and a muscle group and get your next exercises with sets, reps and form cues.",
   applicationName: "WhatNext?",
+  icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
+  // iOS home-screen launch: full screen with a black status bar (matches the page, content starts below it).
+  appleWebApp: { capable: true, title: "WhatNext?", statusBarStyle: "black" },
 };
 
 export const viewport: Viewport = {
@@ -40,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Footer />
         </div>
         <DisclaimerModal />
+        <InstallBoot />
       </body>
     </html>
   );
