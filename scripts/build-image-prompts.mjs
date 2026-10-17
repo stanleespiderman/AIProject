@@ -7,11 +7,14 @@
  *       -> writes docs/exercise-image-prompts-sample.md (the 10-exercise test set)
  *   node scripts/build-image-prompts.mjs ids push-up,plank --out docs/some-file.md
  *       -> writes prompts for the given exercise ids
+ *   node scripts/build-image-prompts.mjs groups
+ *       -> writes one file per muscle group into docs/exercise-image-prompts/ for every
+ *          exercise that is not in the 10-exercise test set
  *
  * Each prompt tells ChatGPT to use the uploaded design guide (docs/exercise-image-design.md)
  * and hands it the exact data, so it has nothing to decide.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -35,6 +38,9 @@ const SAMPLE = [
 
 const list = (a) => a.join(", ");
 
+/** Angle labels must be approximate; add the tilde to any label that does not have one yet. */
+const tilde = (a) => (a.includes("~") ? a : a.replace(/(\d)/, "~$1"));
+
 function prompt(e) {
   const im = e.image;
   const key = (e.angleRanges ?? []).find((r) => r.key);
@@ -50,8 +56,8 @@ function prompt(e) {
     `- Secondary muscles (thinner dashed lime outlines): ${list(im.secondaryMusclesToHighlight)}. Highlight no other muscle.`,
     `- LEFT panel, ${im.leftPanel.label}: ${im.leftPanel.pose}`,
     `- RIGHT panel, ${im.rightPanel.label}: ${im.rightPanel.pose}`,
-    `- Angle labels, LEFT panel: ${list(im.leftPanel.angles)}`,
-    `- Angle labels, RIGHT panel: ${list(im.rightPanel.angles)}`,
+    `- Angle labels, LEFT panel: ${list(im.leftPanel.angles.map(tilde))}`,
+    `- Angle labels, RIGHT panel: ${list(im.rightPanel.angles.map(tilde))}`,
     `- Natural pose: draw a natural, slightly imperfect human rep, not rigid geometry (soft joints, relaxed hands and feet, no perfectly straight or symmetric lines). Each labelled angle may differ from its target by up to about 10 degrees, but the pose must stay safe and good form.`,
   ];
   if (key) {
@@ -121,6 +127,26 @@ What I expected:
   const body = render(SAMPLE, { title: "Sample prompts: 10 very different exercises", intro: header });
   writeFileSync(join(root, "docs/exercise-image-prompts-sample.md"), body + "\n");
   console.log("Wrote docs/exercise-image-prompts-sample.md");
+} else if (mode === "groups") {
+  const GROUPS = [
+    ["chest", "Chest"], ["back", "Back"], ["shoulders", "Shoulders"], ["arms", "Arms"],
+    ["legs", "Legs"], ["glutes", "Glutes"], ["core", "Core"], ["fullBody", "Full Body"],
+  ];
+  const done = new Set(SAMPLE.map(([id]) => id));
+  const dir = join(root, "docs/exercise-image-prompts");
+  mkdirSync(dir, { recursive: true });
+  const files = [];
+  for (const [n, [key, label]] of GROUPS.entries()) {
+    const ids = data.exercises.filter((e) => e.appFields.primaryMuscle === key && !done.has(e.id)).map((e) => e.id);
+    if (ids.length === 0) continue;
+    const name = `${String(n + 1).padStart(2, "0")}-${key}.md`;
+    const intro = `${ids.length} exercises. Open a chat in the ChatGPT Project that has \`exercise-image-design.md\` and \`push-up-approved.webp\` uploaded, paste **one prompt per message**, check the result against the guide's section 9 checklist, and save it as \`<exercise-id>.png\`. Generated from \`docs/data/whatnext-exercise-form-data.json\` by \`node scripts/build-image-prompts.mjs groups\`; do not edit by hand.`;
+    writeFileSync(join(dir, name), render(ids.map((id) => [id, ""]), { title: `${label}: image prompts`, intro }) + "\n");
+    files.push([name, label, ids.length]);
+  }
+  const index = [`# Exercise image prompts, by muscle group`, ``, `Prompts for the ${files.reduce((a, f) => a + f[2], 0)} exercises not in the 10-exercise test set (\`docs/exercise-image-prompts-sample.md\`).`, ``, `| File | Group | Prompts |`, `| --- | --- | --- |`, ...files.map(([n, l, c]) => `| \`${n}\` | ${l} | ${c} |`), ``].join("\n");
+  writeFileSync(join(dir, "README.md"), index);
+  console.log(`Wrote ${files.length} group files to docs/exercise-image-prompts/`);
 } else if (mode === "ids") {
   const ids = (arg ?? "").split(",").filter(Boolean);
   if (ids.length === 0) throw new Error("Usage: ids <id1,id2,...> --out <file>");
@@ -128,6 +154,6 @@ What I expected:
   writeFileSync(join(root, out), render(ids.map((id) => [id, ""]), { title: "Exercise image prompts", intro: "Generated from `docs/data/whatnext-exercise-form-data.json`." }) + "\n");
   console.log(`Wrote ${out}`);
 } else {
-  console.error("Usage: build-image-prompts.mjs sample | ids <id1,id2,...> --out <file>");
+  console.error("Usage: build-image-prompts.mjs sample | groups | ids <id1,id2,...> --out <file>");
   process.exit(1);
 }
