@@ -8,6 +8,7 @@ import { Chip } from "@/components/ui/Chip";
 import { EQUIPMENT, EQUIPMENT_IDS, STORAGE_KEYS } from "@/lib/constants";
 import { muscleHref } from "@/lib/params";
 import { useStoredState } from "@/lib/storage";
+import { pushEquipment } from "@/lib/sync";
 import type { EquipmentId } from "@/lib/types";
 
 const NONE: EquipmentId[] = [];
@@ -16,8 +17,13 @@ export default function EquipmentPage() {
   // Remembered across visits so regulars can tap straight through.
   const [selected, setSelected] = useStoredState<EquipmentId[]>(STORAGE_KEYS.equipment, NONE);
 
+  const save = (next: EquipmentId[]) => {
+    setSelected(next);
+    void pushEquipment(next).catch(() => {});
+  };
+
   const toggle = (id: EquipmentId) =>
-    setSelected(selected.includes(id) ? selected.filter((e) => e !== id) : [...selected, id]);
+    save(selected.includes(id) ? selected.filter((e) => e !== id) : [...selected, id]);
 
   const allSelected = selected.length === EQUIPMENT_IDS.length;
   // Keep a stable order in the URL regardless of tap order.
@@ -40,7 +46,7 @@ export default function EquipmentPage() {
 
       <button
         type="button"
-        onClick={() => setSelected(allSelected ? [] : EQUIPMENT_IDS)}
+        onClick={() => save(allSelected ? [] : EQUIPMENT_IDS)}
         className="mt-4 h-12 self-start px-1 text-sm font-semibold text-muted underline-offset-4 hover:text-fg hover:underline"
       >
         {allSelected ? "Clear all" : "I have everything"}

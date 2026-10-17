@@ -2,6 +2,7 @@
 
 import { STORAGE_KEYS } from "./constants";
 import { readJSON, useStoredState } from "./storage";
+import { pushVote } from "./sync";
 import type { Vote, VoteMap } from "./types";
 
 const EMPTY: VoteMap = {};
@@ -19,6 +20,7 @@ export function useVotes() {
     if (next[id] === vote) delete next[id];
     else next[id] = vote;
     setVotes(next);
+    void pushVote(id, next[id] ?? null).catch(() => {});
   };
 
   return { votes, toggle };
