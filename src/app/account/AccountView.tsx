@@ -37,12 +37,39 @@ export function AccountView() {
 function SignedIn({ email, name }: { email: string; name?: string }) {
   const [votes] = useStoredState<VoteMap>(STORAGE_KEYS.votes, {});
   const [busy, setBusy] = useState(false);
+  const [confirming, setConfirming] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
   const voted = Object.keys(votes).length;
 
   const signOut = async () => {
     setBusy(true);
     await getSupabase()?.auth.signOut();
     setBusy(false);
+  };
+
+  const deleteAccount = async () => {
+    const supabase = getSupabase();
+    if (!supabase) return;
+    setBusy(true);
+    setDeleteError(null);
+    try {
+      const { data } = await supabase.auth.getSession();
+      const res = await fetch("/api/account/delete", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${data.session?.access_token ?? ""}` },
+      });
+      if (!res.ok) {
+        const body = (await res.json().catch(() => null)) as { error?: string } | null;
+        setDeleteError(body?.error ?? "Couldn't delete the account. Try again.");
+        return;
+      }
+      // The account is gone on the server; end the local session too.
+      await supabase.auth.signOut({ scope: "local" });
+    } catch {
+      setDeleteError("Couldn't reach the server. Check your connection and try again.");
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -62,6 +89,56 @@ function SignedIn({ email, name }: { email: string; name?: string }) {
       <p className="mt-3 text-xs text-muted">
         Signing out clears your saved picks from this device. They stay in your account.
       </p>
+
+      <section className="mt-10 border-t border-line pt-6">
+        <h2 className="font-display text-xl font-extrabold tracking-wide uppercase">Delete account</h2>
+        {!confirming ? (
+          <>
+            <p className="mt-2 text-sm text-muted">
+              Permanently removes your email, saved equipment and votes. This can&apos;t be undone.
+            </p>
+            <button
+              type="button"
+              onClick={() => setConfirming(true)}
+              className="mt-3 h-11 text-sm font-semibold text-heat underline-offset-4 hover:underline"
+            >
+              Delete my account
+            </button>
+          </>
+        ) : (
+          <div className="mt-2 rounded-2xl border border-heat/40 bg-heat/10 p-4">
+            <p className="text-sm">
+              Delete <span className="font-semibold">{email}</span> and all its data forever?
+            </p>
+            {deleteError && (
+              <p role="alert" className="mt-2 text-sm font-semibold text-heat">
+                {deleteError}
+              </p>
+            )}
+            <div className="mt-3 flex gap-2">
+              <button
+                type="button"
+                onClick={deleteAccount}
+                disabled={busy}
+                className="h-11 flex-1 rounded-2xl bg-heat font-display text-lg font-extrabold tracking-wide text-ink uppercase disabled:opacity-50"
+              >
+                {busy ? "Deleting…" : "Yes, delete"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setConfirming(false);
+                  setDeleteError(null);
+                }}
+                disabled={busy}
+                className="h-11 flex-1 rounded-2xl border border-line font-display text-lg font-extrabold tracking-wide uppercase disabled:opacity-50"
+              >
+                Keep it
+              </button>
+            </div>
+          </div>
+        )}
+      </section>
     </>
   );
 }

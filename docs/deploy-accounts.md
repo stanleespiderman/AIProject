@@ -23,11 +23,16 @@ Project > Settings > Environment Variables (Production and Preview), then redepl
 | `NEXT_PUBLIC_SUPABASE_URL` | the Project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | the anon / publishable key |
 
-Both are meant to be public. The database is protected by the row level security policies, not by hiding the key. **Never** put the `service_role` key in a `NEXT_PUBLIC_` variable.
-For local dev copy `.env.example` to `.env.local`.
+| `SUPABASE_SERVICE_ROLE_KEY` | the `service_role` / secret key. **Server only**, used by the delete-account route. Mark it Sensitive in Vercel and do not tick "Expose to browser". |
+
+The first two are meant to be public. The database is protected by the row level security policies, not by hiding the key. **Never** put the `service_role` key in a `NEXT_PUBLIC_` variable.
+For local dev copy `.env.example` to `.env.local`. Without `SUPABASE_SERVICE_ROLE_KEY` everything else works and the delete button reports that deletion isn't set up.
 
 ## 4. Check it
 Create an account, vote on an exercise, open the app in a private window, sign in, and confirm the vote and equipment come back. In Supabase > Table Editor you should see the rows.
+
+## Deleting an account
+Account page > Delete account > confirm. The browser sends its session token to `POST /api/account/delete` (`src/app/api/account/delete/route.ts`). The server checks the token with the service role key, deletes that user, and the database cascades the delete to `profiles`, `user_settings` and `exercise_votes`. The user id always comes from the verified token, never from the request. Deleting also signs the browser out.
 
 ## What is stored
 | Table | Holds |
@@ -44,7 +49,6 @@ The exercise library itself stays in the code (`src/data`), versioned and checke
 Code: `src/lib/auth.ts`, `src/lib/sync.ts`, `src/lib/supabase/client.ts`.
 
 ## Not built yet
-- **Delete account.** It needs a server route with the service role key. Add it before you promote the app widely.
 - A privacy policy and terms page (you now store emails).
 - Google or Apple sign-in (configure the provider in Supabase, then add a button calling `supabase.auth.signInWithOAuth`).
 - Workout logs and learn-mode progress. Add them as new tables with the same row level security pattern.
