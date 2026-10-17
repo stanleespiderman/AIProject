@@ -18,7 +18,7 @@ const out = join(root, "src/data/exerciseDetails.ts");
 
 const data = JSON.parse(readFileSync(src, "utf8"));
 const REQUIRED = [
-  "id", "movementPattern", "isStaticHold", "muscles", "equipmentDetail", "setup", "execution",
+  "id", "movementPattern", "isStaticHold", "muscles", "muscleParts", "equipmentDetail", "setup", "execution",
   "breathing", "formCues", "commonMistakes", "safety", "rest", "easierOption", "harderOption",
   "image", "review",
 ];
@@ -34,6 +34,7 @@ for (const e of data.exercises) {
     movementPattern: e.movementPattern,
     isStaticHold: e.isStaticHold,
     muscles: e.muscles,
+    muscleParts: e.muscleParts,
     equipmentDetail: e.equipmentDetail,
     setup: e.setup,
     execution: e.execution,

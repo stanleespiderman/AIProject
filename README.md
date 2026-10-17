@@ -145,6 +145,10 @@ If you add an exercise to `exercises.ts` without a details entry, `check:data` f
 
 For the exercises that have them, `angleRanges` in the JSON gives each key angle a target and an acceptable range (for example knee at the bottom of a squat: about 90°, 70–100° is fine). The card shows them under "How to do it", and the image prompts use them for the `~` labels and the optional range wedge. They are drafts until a trainer approves them. Only the 10 test exercises have them so far.
 
+### Muscle parts
+
+Each details entry has `muscleParts` (`primary` / `secondary`): the specific part of the muscle worked, in everyday words ("Upper chest", "Lats", "Mid traps"). It is shown on the expanded tile. It is generated from the anatomical `muscles` names by `node scripts/build-muscle-parts.mjs`, which holds the label table and the per-exercise exceptions (for example incline push-up is lower chest, decline push-up is upper chest). Run it after changing `muscles`, then `npm run build:details`. `node scripts/build-muscle-parts.mjs --check --fedb <path to free-exercise-db exercises.json>` compares the main muscles with free-exercise-db.
+
 ### Trainer review
 
 Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`). All 168 are currently **pending**: the content was written from established coaching standards but has not been signed off by a certified trainer. Cards show a "Guidance pending trainer review" note inside "How to do it" until an entry is set to `"approved"` (then run `npm run build:details`). Review the advanced and higher-risk lifts first.

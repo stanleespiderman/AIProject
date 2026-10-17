@@ -11,7 +11,12 @@
     "ETK": "Pavel Tsatsouline, Enter the Kettlebell! (Dragon Door, 2006) — kettlebell ballistics and get-up",
     "MCGILL": "Stuart McGill, Ultimate Back Fitness and Performance — core stability and back-safe core training",
     "CONCEPT2": "Concept2 rowing technique guide (concept2.com)",
-    "FEDB": "free-exercise-db (github.com/yuhonas/free-exercise-db), public domain (Unlicense)"
+    "FEDB": "free-exercise-db (github.com/yuhonas/free-exercise-db), public domain (Unlicense)",
+    "NASM": "NASM Exercise Library (nasm.org/resource-center/exercise-library): clavicular vs sternal pec and glute regions",
+    "BROOKBUSH": "Brookbush Institute systematic review of gluteus maximus regional activation (upper vs lower)",
+    "TREBS2010": "Trebs, Brandenburg & Pitney (2010), An electromyography analysis of 3 muscles surrounding the shoulder joint during the performance of a chest press at 3 angles of bench inclination",
+    "LAUVER2016": "Lauver, Cayot & Scheuermann (2016), Influence of bench angle on upper extremity muscular activation during bench press exercise",
+    "LEHMAN2004": "Lehman et al. (2004), Variations in muscle activation levels during traditional latissimus dorsi weight training exercises, Dynamic Medicine 3:4"
   },
   "disclaimer": "Form guidance synthesised from established coaching standards (NSCA, ACSM, ACE). Not medical advice. Every entry must be reviewed by a certified trainer before it ships or is used to make an image.",
   "exercises": [
@@ -123,6 +128,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -232,6 +246,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Upper chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -357,6 +380,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts"
+        ]
       }
     },
     {
@@ -464,6 +495,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Triceps",
+          "Front delts"
+        ]
       }
     },
     {
@@ -578,6 +618,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -688,6 +737,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Upper chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -796,6 +854,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Triceps",
+          "Front delts"
+        ]
       }
     },
     {
@@ -904,6 +971,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Inner chest"
+        ],
+        "secondary": [
+          "Triceps",
+          "Front delts"
+        ]
       }
     },
     {
@@ -1009,6 +1085,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lower chest"
+        ],
+        "secondary": [
+          "Front delts"
+        ]
       }
     },
     {
@@ -1114,6 +1198,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Upper chest"
+        ],
+        "secondary": [
+          "Front delts"
+        ]
       }
     },
     {
@@ -1224,6 +1316,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps",
+          "Core"
+        ]
       }
     },
     {
@@ -1332,6 +1434,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -1437,6 +1548,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts"
+        ]
       }
     },
     {
@@ -1539,6 +1658,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -1639,6 +1767,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts"
+        ]
       }
     },
     {
@@ -1775,6 +1911,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps",
+          "Abs"
+        ]
       }
     },
     {
@@ -1885,6 +2031,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lower chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps",
+          "Abs"
+        ]
       }
     },
     {
@@ -1994,6 +2150,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Upper chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps",
+          "Abs"
+        ]
       }
     },
     {
@@ -2103,6 +2269,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lower chest"
+        ],
+        "secondary": [
+          "Triceps",
+          "Front delts"
+        ]
       }
     },
     {
@@ -2206,6 +2381,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Triceps",
+          "Front delts"
+        ]
       }
     },
     {
@@ -2312,6 +2496,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps",
+          "Abs"
+        ]
       }
     },
     {
@@ -2420,6 +2614,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -2528,6 +2731,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Upper chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps"
+        ]
       }
     },
     {
@@ -2633,6 +2845,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid chest"
+        ],
+        "secondary": [
+          "Front delts",
+          "Triceps",
+          "Abs"
+        ]
       }
     },
     {
@@ -2744,6 +2966,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Mid traps",
+          "Rear delts",
+          "Biceps"
+        ]
       }
     },
     {
@@ -2853,6 +3086,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps"
+        ]
       }
     },
     {
@@ -2965,6 +3209,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Lower chest"
+        ],
+        "secondary": [
+          "Triceps (long head)",
+          "Teres major",
+          "Serratus"
+        ]
       }
     },
     {
@@ -3083,6 +3338,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps",
+          "Lower back (erectors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -3194,6 +3462,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps",
+          "Lower back (erectors)"
+        ]
       }
     },
     {
@@ -3305,6 +3585,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Mid traps",
+          "Rear delts",
+          "Biceps"
+        ]
       }
     },
     {
@@ -3417,6 +3708,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps",
+          "Obliques",
+          "Lower back (erectors)"
+        ]
       }
     },
     {
@@ -3528,6 +3832,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps"
+        ]
       }
     },
     {
@@ -3637,6 +3952,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Teres major",
+          "Triceps (long head)",
+          "Abs"
+        ]
       }
     },
     {
@@ -3750,6 +4075,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Biceps",
+          "Rear delts",
+          "Mid-back (rhomboids)",
+          "Lower traps"
+        ]
       }
     },
     {
@@ -3861,6 +4197,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps"
+        ]
       }
     },
     {
@@ -3970,6 +4317,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Biceps",
+          "Mid-back (rhomboids)",
+          "Lower traps"
+        ]
       }
     },
     {
@@ -4102,6 +4459,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Rear delts",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rotator cuff",
+          "Triceps"
+        ]
       }
     },
     {
@@ -4208,6 +4576,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps"
+        ]
       }
     },
     {
@@ -4312,6 +4691,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Biceps",
+          "Rear delts",
+          "Lower traps"
+        ]
       }
     },
     {
@@ -4442,6 +4831,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats"
+        ],
+        "secondary": [
+          "Biceps",
+          "Teres major",
+          "Abs"
+        ]
       }
     },
     {
@@ -4552,6 +4951,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Biceps"
+        ],
+        "secondary": [
+          "Teres major",
+          "Mid-back (rhomboids)",
+          "Abs"
+        ]
       }
     },
     {
@@ -4668,6 +5078,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps",
+          "Glutes",
+          "Abs"
+        ]
       }
     },
     {
@@ -4780,6 +5203,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lower back (erectors)"
+        ],
+        "secondary": [
+          "Glutes",
+          "Hamstrings",
+          "Rear delts",
+          "Mid traps"
+        ]
       }
     },
     {
@@ -4894,6 +5328,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Mid-back (rhomboids)",
+          "Mid traps"
+        ],
+        "secondary": [
+          "Rear delts",
+          "Biceps",
+          "Lower back (erectors)"
+        ]
       }
     },
     {
@@ -5006,6 +5452,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper chest",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -5113,6 +5570,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side delts"
+        ],
+        "secondary": [
+          "Front delts",
+          "Upper traps",
+          "Rotator cuff"
+        ]
       }
     },
     {
@@ -5222,6 +5689,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Rear delts"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Mid traps",
+          "Rotator cuff"
+        ]
       }
     },
     {
@@ -5330,6 +5807,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper chest"
+        ]
       }
     },
     {
@@ -5444,6 +5931,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper traps",
+          "Upper chest",
+          "Core"
+        ]
       }
     },
     {
@@ -5552,6 +6051,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Upper chest"
+        ],
+        "secondary": [
+          "Triceps",
+          "Serratus",
+          "Core"
+        ]
       }
     },
     {
@@ -5665,6 +6175,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper traps",
+          "Obliques"
+        ]
       }
     },
     {
@@ -5777,6 +6298,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Shoulders (all heads)"
+        ],
+        "secondary": [
+          "Upper traps",
+          "Triceps",
+          "Abs",
+          "Obliques"
+        ]
       }
     },
     {
@@ -5892,6 +6424,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts",
+          "Rotator cuff"
+        ],
+        "secondary": [
+          "Triceps",
+          "Forearms and grip",
+          "Core"
+        ]
       }
     },
     {
@@ -5999,6 +6543,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side delts"
+        ],
+        "secondary": [
+          "Front delts",
+          "Rotator cuff",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -6112,6 +6666,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Rear delts",
+          "Mid traps",
+          "Mid-back (rhomboids)"
+        ],
+        "secondary": [
+          "Rotator cuff",
+          "Biceps"
+        ]
       }
     },
     {
@@ -6221,6 +6786,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts"
+        ],
+        "secondary": [
+          "Upper chest",
+          "Side delts",
+          "Serratus"
+        ]
       }
     },
     {
@@ -6330,6 +6905,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -6439,6 +7024,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Rear delts"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Mid traps",
+          "Rotator cuff"
+        ]
       }
     },
     {
@@ -6540,6 +7135,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side delts"
+        ],
+        "secondary": [
+          "Rotator cuff",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -6648,6 +7252,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -6754,6 +7368,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side delts"
+        ],
+        "secondary": [
+          "Front delts",
+          "Rotator cuff",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -6860,6 +7484,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Rear delts",
+          "Mid traps",
+          "Mid-back (rhomboids)"
+        ],
+        "secondary": [
+          "Rotator cuff"
+        ]
       }
     },
     {
@@ -6967,6 +7601,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Side delts"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper chest",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -7074,6 +7719,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Front delts",
+          "Abs"
+        ],
+        "secondary": [
+          "Serratus",
+          "Triceps",
+          "Hamstrings",
+          "Calves"
+        ]
       }
     },
     {
@@ -7183,6 +7840,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Mid traps",
+          "Lower traps",
+          "Rear delts"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Rotator cuff"
+        ]
       }
     },
     {
@@ -7288,6 +7956,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -7392,6 +8069,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ],
+        "secondary": [
+          "Biceps"
+        ]
       }
     },
     {
@@ -7496,6 +8182,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps (long head)"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -7599,6 +8294,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps (long head)"
+        ],
+        "secondary": [
+          "Triceps (outer and inner heads)"
+        ]
       }
     },
     {
@@ -7697,6 +8400,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Elbow extensors (anconeus)"
+        ]
       }
     },
     {
@@ -7801,6 +8512,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -7909,6 +8629,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps",
+          "Inner chest"
+        ],
+        "secondary": [
+          "Front delts"
+        ]
       }
     },
     {
@@ -8011,6 +8740,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Elbow extensors (anconeus)"
+        ]
       }
     },
     {
@@ -8113,6 +8850,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -8215,6 +8961,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps (long head)"
+        ],
+        "secondary": [
+          "Triceps (outer and inner heads)"
+        ]
       }
     },
     {
@@ -8351,6 +9105,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Forearms and grip",
+          "Abs",
+          "Front delts"
+        ]
       }
     },
     {
@@ -8455,6 +9219,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -8560,6 +9333,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps (long head)"
+        ],
+        "secondary": [
+          "Triceps (outer and inner heads)",
+          "Core"
+        ]
       }
     },
     {
@@ -8665,6 +9447,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -8772,6 +9563,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Lower chest",
+          "Front delts"
+        ]
       }
     },
     {
@@ -8871,6 +9671,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Biceps"
+        ],
+        "secondary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ]
       }
     },
     {
@@ -8968,6 +9777,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -9075,6 +9892,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Front delts",
+          "Lower chest"
+        ]
       }
     },
     {
@@ -9179,6 +10005,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Inner chest",
+          "Front delts",
+          "Abs"
+        ]
       }
     },
     {
@@ -9281,6 +10117,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Brachialis",
+          "Forearms (brachioradialis)"
+        ],
+        "secondary": [
+          "Biceps",
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -9384,6 +10230,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Triceps"
+        ],
+        "secondary": [
+          "Elbow extensors (anconeus)"
+        ]
       }
     },
     {
@@ -9498,6 +10352,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Abs",
+          "Calves"
+        ]
       }
     },
     {
@@ -9609,6 +10474,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings",
+          "Calves"
+        ]
       }
     },
     {
@@ -9738,6 +10614,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -9849,6 +10735,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Calves",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -10000,6 +10897,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Inner thighs (adductors)",
+          "Lower back (erectors)",
+          "Abs"
+        ]
       }
     },
     {
@@ -10113,6 +11022,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads"
+        ],
+        "secondary": [
+          "Glutes",
+          "Inner thighs (adductors)",
+          "Lower back (erectors)",
+          "Abs"
+        ]
       }
     },
     {
@@ -10218,6 +11138,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -10332,6 +11262,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Abs",
+          "Upper back"
+        ]
       }
     },
     {
@@ -10437,6 +11378,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -10542,6 +11493,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Abs"
+        ]
       }
     },
     {
@@ -10673,6 +11634,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads"
+        ],
+        "secondary": [
+          "Glutes",
+          "Hamstrings",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -10776,6 +11747,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads"
+        ],
+        "secondary": [
+          "Quads (rectus femoris)"
+        ]
       }
     },
     {
@@ -10881,6 +11860,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Hamstrings"
+        ],
+        "secondary": [
+          "Calves (gastrocnemius)"
+        ]
       }
     },
     {
@@ -10988,6 +11975,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads"
+        ],
+        "secondary": [
+          "Glutes",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -11091,6 +12087,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Calves (gastrocnemius)"
+        ],
+        "secondary": [
+          "Soleus (lower calf)"
+        ]
       }
     },
     {
@@ -11198,6 +12202,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -11304,6 +12318,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "secondary": [
+          "Lower back (erectors)"
+        ]
       }
     },
     {
@@ -11414,6 +12437,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings",
+          "Calves"
+        ]
       }
     },
     {
@@ -11522,6 +12556,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -11631,6 +12675,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Calves",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -11734,6 +12788,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads"
+        ],
+        "secondary": [
+          "Glutes",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -11841,6 +12904,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Abs",
+          "Calves"
+        ]
       }
     },
     {
@@ -11945,6 +13019,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Calves (gastrocnemius)"
+        ],
+        "secondary": [
+          "Soleus (lower calf)"
+        ]
       }
     },
     {
@@ -12051,6 +13133,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -12154,6 +13246,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Hamstrings"
+        ],
+        "secondary": [
+          "Calves (gastrocnemius)"
+        ]
       }
     },
     {
@@ -12266,6 +13366,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "secondary": [
+          "Lower back (erectors)",
+          "Traps",
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -12372,6 +13483,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Quads",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -12483,6 +13604,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Quads",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -12595,6 +13726,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "secondary": [
+          "Lower back (erectors)",
+          "Traps",
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -12702,6 +13844,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Quads"
+        ]
       }
     },
     {
@@ -12854,6 +14005,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings"
+        ],
+        "secondary": [
+          "Lower back (erectors)",
+          "Abs",
+          "Lats",
+          "Front delts",
+          "Rear delts"
+        ]
       }
     },
     {
@@ -12964,6 +14128,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings"
+        ],
+        "secondary": [
+          "Inner thighs (adductors)",
+          "Quads",
+          "Lower back (erectors)"
+        ]
       }
     },
     {
@@ -13076,6 +14251,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "secondary": [
+          "Side glutes",
+          "Lower back (erectors)",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -13185,6 +14371,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings"
+        ],
+        "secondary": [
+          "Lower back (erectors)",
+          "Inner thighs (adductors)"
+        ]
       }
     },
     {
@@ -13288,6 +14484,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -13388,6 +14592,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side glutes"
+        ],
+        "secondary": [
+          "Outer hip (TFL)"
+        ]
       }
     },
     {
@@ -13494,6 +14706,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side glutes"
+        ],
+        "secondary": [
+          "Outer hip (TFL)",
+          "Upper glutes"
+        ]
       }
     },
     {
@@ -13602,6 +14823,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings"
+        ],
+        "secondary": [
+          "Lower back (erectors)"
+        ]
       }
     },
     {
@@ -13708,6 +14938,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Side glutes"
+        ],
+        "secondary": [
+          "Hamstrings"
+        ]
       }
     },
     {
@@ -13816,6 +15055,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side glutes"
+        ],
+        "secondary": [
+          "Outer hip (TFL)",
+          "Quads"
+        ]
       }
     },
     {
@@ -13916,6 +15164,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Side glutes"
+        ],
+        "secondary": [
+          "Deep hip rotators"
+        ]
       }
     },
     {
@@ -14022,6 +15278,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Abs",
+          "Quads"
+        ]
       }
     },
     {
@@ -14129,6 +15395,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Side glutes"
+        ]
       }
     },
     {
@@ -14230,6 +15505,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Abs"
+        ]
       }
     },
     {
@@ -14370,6 +15654,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Deep core (transverse abdominis)",
+          "Obliques"
+        ],
+        "secondary": [
+          "Front delts",
+          "Glutes"
+        ]
       }
     },
     {
@@ -14479,6 +15774,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques",
+          "Deep side core (QL)"
+        ],
+        "secondary": [
+          "Side glutes",
+          "Deep core (transverse abdominis)",
+          "Shoulder stabilisers"
+        ]
       }
     },
     {
@@ -14588,6 +15894,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Deep core (transverse abdominis)"
+        ],
+        "secondary": [
+          "Obliques",
+          "Hip flexors"
+        ]
       }
     },
     {
@@ -14691,6 +16007,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Deep core (transverse abdominis)"
+        ],
+        "secondary": [
+          "Hip flexors",
+          "Obliques"
+        ]
       }
     },
     {
@@ -14798,6 +16124,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs"
+        ],
+        "secondary": [
+          "Hip flexors",
+          "Obliques",
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -14909,6 +16245,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Hip flexors"
+        ],
+        "secondary": [
+          "Front delts",
+          "Quads",
+          "Obliques"
+        ]
       }
     },
     {
@@ -15015,6 +16362,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Abs",
+          "Hip flexors"
+        ]
       }
     },
     {
@@ -15123,6 +16479,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques",
+          "Deep side core (QL)"
+        ],
+        "secondary": [
+          "Forearms and grip",
+          "Upper traps",
+          "Side glutes"
+        ]
       }
     },
     {
@@ -15235,6 +16602,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Deep core (transverse abdominis)"
+        ],
+        "secondary": [
+          "Lats",
+          "Obliques",
+          "Triceps"
+        ]
       }
     },
     {
@@ -15343,6 +16721,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Abs",
+          "Front delts",
+          "Glutes"
+        ]
       }
     },
     {
@@ -15454,6 +16842,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Side glutes",
+          "Hamstrings",
+          "Shoulder stabilisers"
+        ]
       }
     },
     {
@@ -15562,6 +16960,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Abs",
+          "Shoulders (all heads)",
+          "Glutes"
+        ]
       }
     },
     {
@@ -15672,6 +17080,16 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques",
+          "Deep core (transverse abdominis)"
+        ],
+        "secondary": [
+          "Abs",
+          "Side glutes"
+        ]
       }
     },
     {
@@ -15775,6 +17193,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs"
+        ],
+        "secondary": [
+          "Obliques"
+        ]
       }
     },
     {
@@ -15877,6 +17303,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs"
+        ],
+        "secondary": [
+          "Obliques"
+        ]
       }
     },
     {
@@ -15977,6 +17411,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs"
+        ],
+        "secondary": [
+          "Hip flexors",
+          "Obliques"
+        ]
       }
     },
     {
@@ -16078,6 +17521,15 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Abs",
+          "Shoulders (all heads)"
+        ]
       }
     },
     {
@@ -16185,6 +17637,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Abs",
+          "Shoulders (all heads)",
+          "Glutes",
+          "Quads"
+        ]
       }
     },
     {
@@ -16287,6 +17750,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Obliques"
+        ],
+        "secondary": [
+          "Abs"
+        ]
       }
     },
     {
@@ -16395,6 +17866,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Deep core (transverse abdominis)"
+        ],
+        "secondary": [
+          "Obliques",
+          "Lats",
+          "Hip flexors"
+        ]
       }
     },
     {
@@ -16492,6 +17974,14 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs"
+        ],
+        "secondary": [
+          "Obliques"
+        ]
       }
     },
     {
@@ -16602,6 +18092,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Shoulders (all heads)"
+        ],
+        "secondary": [
+          "Triceps",
+          "Abs",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -16717,6 +18219,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Lats",
+          "Abs",
+          "Obliques"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Rear delts",
+          "Biceps",
+          "Front delts"
+        ]
       }
     },
     {
@@ -16833,6 +18348,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings",
+          "Shoulders (all heads)"
+        ],
+        "secondary": [
+          "Quads",
+          "Upper traps",
+          "Triceps",
+          "Core"
+        ]
       }
     },
     {
@@ -16957,6 +18485,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings",
+          "Lower back (erectors)"
+        ],
+        "secondary": [
+          "Quads",
+          "Traps",
+          "Lats",
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -17067,6 +18608,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Shoulders (all heads)"
+        ],
+        "secondary": [
+          "Triceps",
+          "Abs",
+          "Upper traps"
+        ]
       }
     },
     {
@@ -17178,6 +18731,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Front delts"
+        ],
+        "secondary": [
+          "Upper chest",
+          "Triceps",
+          "Core"
+        ]
       }
     },
     {
@@ -17294,6 +18859,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Glutes",
+          "Hamstrings",
+          "Shoulders (all heads)"
+        ],
+        "secondary": [
+          "Triceps",
+          "Upper traps",
+          "Core",
+          "Forearms and grip"
+        ]
       }
     },
     {
@@ -17412,6 +18990,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Shoulders (all heads)",
+          "Obliques",
+          "Glutes"
+        ],
+        "secondary": [
+          "Triceps",
+          "Abs",
+          "Quads",
+          "Rotator cuff"
+        ]
       }
     },
     {
@@ -17527,6 +19118,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Forearms and grip",
+          "Upper traps",
+          "Core"
+        ],
+        "secondary": [
+          "Side glutes",
+          "Quads",
+          "Calves"
+        ]
       }
     },
     {
@@ -17637,6 +19240,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Lats"
+        ],
+        "secondary": [
+          "Mid-back (rhomboids)",
+          "Biceps",
+          "Rear delts"
+        ]
       }
     },
     {
@@ -17756,6 +19371,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Lats"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Mid-back (rhomboids)",
+          "Biceps",
+          "Core"
+        ]
       }
     },
     {
@@ -17869,6 +19497,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Shoulders (all heads)",
+          "Mid chest",
+          "Lats"
+        ]
       }
     },
     {
@@ -17976,6 +19616,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Shoulders (all heads)"
+        ],
+        "secondary": [
+          "Triceps",
+          "Core"
+        ]
       }
     },
     {
@@ -18088,6 +19739,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Glutes",
+          "Mid chest"
+        ],
+        "secondary": [
+          "Shoulders (all heads)",
+          "Triceps",
+          "Core",
+          "Calves"
+        ]
       }
     },
     {
@@ -18198,6 +19862,18 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Front delts",
+          "Quads"
+        ],
+        "secondary": [
+          "Obliques",
+          "Triceps",
+          "Hip flexors"
+        ]
       }
     },
     {
@@ -18309,6 +19985,17 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Abs",
+          "Front delts"
+        ],
+        "secondary": [
+          "Hamstrings",
+          "Triceps",
+          "Mid chest"
+        ]
       }
     },
     {
@@ -18416,7 +20103,19 @@
         "status": "pending",
         "reviewedBy": null,
         "notes": null
+      },
+      "muscleParts": {
+        "primary": [
+          "Quads",
+          "Abs"
+        ],
+        "secondary": [
+          "Shoulders (all heads)",
+          "Glutes",
+          "Hip flexors"
+        ]
       }
     }
-  ]
+  ],
+  "musclePartsNote": "muscleParts holds the friendly region names shown on the expanded tile (first entries = main movers). Derived from each entry's anatomical `muscles` by scripts/build-muscle-parts.mjs. Region claims for chest (upper / lower) rest on mixed EMG evidence and need trainer sign-off like the rest of the form content."
 }

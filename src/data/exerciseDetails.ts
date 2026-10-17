@@ -17,6 +17,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "two dumbbells and a flat bench",
     "setup": [
       "Sit on the end of a flat bench with the dumbbells on your thighs, then lie back and bring them to chest level as you go.",
@@ -96,6 +105,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Upper chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "two dumbbells and an adjustable bench set to 30–45°",
     "setup": [
       "Set the bench to 30–45°. Sit back with the dumbbells on your thighs and kick them up to the shoulders one at a time as you lie back.",
@@ -171,6 +189,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts"
       ]
     },
     "equipmentDetail": "two dumbbells and a flat bench",
@@ -269,6 +295,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Triceps",
+        "Front delts"
+      ]
+    },
     "equipmentDetail": "two dumbbells and the floor (or a mat)",
     "setup": [
       "Lie on your back, knees bent, feet flat. Roll each dumbbell up so it sits over the shoulder.",
@@ -344,6 +379,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "anterior deltoid",
         "triceps brachii"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
       ]
     },
     "equipmentDetail": "barbell with plates on a flat bench with uprights; safety arms or spotter",
@@ -429,6 +473,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Upper chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "barbell on an incline bench rack (about 30°) with safeties",
     "setup": [
       "Set the bench to about 30°, set the safeties, and lie with the bar above the eyes.",
@@ -508,6 +561,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Triceps",
+        "Front delts"
+      ]
+    },
     "equipmentDetail": "one kettlebell and the floor",
     "setup": [
       "Lie on your side next to the kettlebell, grip the handle and roll onto your back holding it to the chest with both hands.",
@@ -583,6 +645,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "triceps brachii",
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Inner chest"
+      ],
+      "secondary": [
+        "Triceps",
+        "Front delts"
       ]
     },
     "equipmentDetail": "one dumbbell or kettlebell held between both palms, on a flat bench",
@@ -661,6 +732,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lower chest"
+      ],
+      "secondary": [
+        "Front delts"
+      ]
+    },
     "equipmentDetail": "cable crossover station with both pulleys set high and single handles",
     "setup": [
       "Set both pulleys high. Take a handle in each hand and step forward into a staggered stance.",
@@ -734,6 +813,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Upper chest"
+      ],
+      "secondary": [
+        "Front delts"
       ]
     },
     "equipmentDetail": "cable crossover station with both pulleys set low and single handles",
@@ -811,6 +898,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid",
         "triceps brachii",
         "core (anti-extension)"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps",
+        "Core"
       ]
     },
     "equipmentDetail": "cable station with both pulleys at chest height and single handles",
@@ -891,6 +988,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "seated chest press machine",
     "setup": [
       "Adjust the seat so the handles line up with the middle of your chest.",
@@ -965,6 +1071,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts"
       ]
     },
     "equipmentDetail": "pec deck / chest fly machine",
@@ -1043,6 +1157,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "one resistance band anchored behind at chest height (or wrapped around the upper back)",
     "setup": [
       "Anchor the band at chest height behind you, or wrap it around your upper back.",
@@ -1117,6 +1240,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts"
       ]
     },
     "equipmentDetail": "one resistance band anchored behind at chest height",
@@ -1194,6 +1325,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid",
         "triceps brachii",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps",
+        "Abs"
       ]
     },
     "equipmentDetail": "none, just the floor",
@@ -1300,6 +1441,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lower chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "a sturdy bench, box or bar at about hip height",
     "setup": [
       "Place the hands on the edge of a stable bench slightly wider than the shoulders.",
@@ -1380,6 +1531,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Upper chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "a bench or box behind for the feet",
     "setup": [
       "Place the feet on a bench and the hands on the floor slightly wider than the shoulders.",
@@ -1456,6 +1617,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "triceps brachii",
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lower chest"
+      ],
+      "secondary": [
+        "Triceps",
+        "Front delts"
       ]
     },
     "equipmentDetail": "parallel dip bars",
@@ -1537,6 +1707,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Triceps",
+        "Front delts"
+      ]
+    },
     "equipmentDetail": "barbell set in a rack at low height (safeties just above the floor-press bottom), lifter on the floor",
     "setup": [
       "Set the bar in a rack low enough to unrack from the floor. Lie under it, eyes under the bar.",
@@ -1613,6 +1792,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid",
         "triceps brachii",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps",
+        "Abs"
       ]
     },
     "equipmentDetail": "two kettlebells standing upright on their flat bases, hands on the handles",
@@ -1693,6 +1882,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "Smith machine with a flat bench under the bar; safety stops set",
     "setup": [
       "Place the bench so the bar comes down onto the lower chest. Set the safety stops just below chest height.",
@@ -1768,6 +1966,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "anterior deltoid",
         "triceps brachii"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Upper chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps"
       ]
     },
     "equipmentDetail": "incline chest press machine",
@@ -1846,6 +2053,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid",
         "triceps brachii",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Mid chest"
+      ],
+      "secondary": [
+        "Front delts",
+        "Triceps",
+        "Abs"
       ]
     },
     "equipmentDetail": "one resistance band looped across the upper back, ends pinned under each hand",
@@ -1928,6 +2145,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Mid traps",
+        "Rear delts",
+        "Biceps"
+      ]
+    },
     "equipmentDetail": "one dumbbell and a flat bench",
     "setup": [
       "Place the same-side knee and hand on a flat bench, other foot on the floor.",
@@ -2007,6 +2235,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "rear deltoid",
         "biceps brachii"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps"
       ]
     },
     "equipmentDetail": "two dumbbells and an incline bench set to about 30–45°",
@@ -2091,6 +2330,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "serratus anterior"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Lower chest"
+      ],
+      "secondary": [
+        "Triceps (long head)",
+        "Teres major",
+        "Serratus"
+      ]
+    },
     "equipmentDetail": "one dumbbell and a flat bench",
     "setup": [
       "Lie on a flat bench, feet flat. Hold one dumbbell above the chest with both hands cupping the top end.",
@@ -2172,6 +2422,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii",
         "erector spinae",
         "hamstrings (isometric)"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps",
+        "Lower back (erectors)",
+        "Hamstrings"
       ]
     },
     "equipmentDetail": "barbell with plates",
@@ -2260,6 +2523,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "erector spinae"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps",
+        "Lower back (erectors)"
+      ]
+    },
     "equipmentDetail": "barbell with full-size plates resting on the floor",
     "setup": [
       "Stand with the bar over mid-foot, grip slightly wider than shoulders.",
@@ -2341,6 +2616,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "middle trapezius",
         "rear deltoid",
         "biceps brachii"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Mid traps",
+        "Rear delts",
+        "Biceps"
       ]
     },
     "equipmentDetail": "one kettlebell (optional bench for support)",
@@ -2426,6 +2712,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "erector spinae"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps",
+        "Obliques",
+        "Lower back (erectors)"
+      ]
+    },
     "equipmentDetail": "two kettlebells on the floor between the feet",
     "setup": [
       "Stand wider than hip-width with two kettlebells between the feet.",
@@ -2509,6 +2808,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps"
+      ]
+    },
     "equipmentDetail": "seated cable row station with a V-handle (close-grip)",
     "setup": [
       "Sit with feet on the platform, knees slightly bent, and grab the handle.",
@@ -2589,6 +2899,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Teres major",
+        "Triceps (long head)",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley high and a straight bar or rope",
     "setup": [
       "Face the machine, grip the bar shoulder-width, step back.",
@@ -2667,6 +2987,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rear deltoid",
         "rhomboids",
         "lower trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Biceps",
+        "Rear delts",
+        "Mid-back (rhomboids)",
+        "Lower traps"
       ]
     },
     "equipmentDetail": "lat pulldown machine with seat, thigh pad, high pulley and a long wide bar",
@@ -2751,6 +3082,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps"
+      ]
+    },
     "equipmentDetail": "seated row machine with a chest pad",
     "setup": [
       "Adjust the seat so the handles are at mid-chest height and the chest pad touches your chest when the arms are straight.",
@@ -2829,6 +3171,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii",
         "rhomboids",
         "lower trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Biceps",
+        "Mid-back (rhomboids)",
+        "Lower traps"
       ]
     },
     "equipmentDetail": "assisted pull-up machine with a knee pad (counterweight)",
@@ -2910,6 +3262,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "infraspinatus",
         "teres minor",
         "triceps brachii"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Rear delts",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rotator cuff",
+        "Triceps"
       ]
     },
     "equipmentDetail": "one flat resistance band held in both hands",
@@ -3014,6 +3377,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps"
+      ]
+    },
     "equipmentDetail": "one resistance band looped around the feet, seated on the floor",
     "setup": [
       "Sit on the floor with legs straight, knees slightly bent, band looped around the soles.",
@@ -3094,6 +3468,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "lower trapezius"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Biceps",
+        "Rear delts",
+        "Lower traps"
+      ]
+    },
     "equipmentDetail": "one resistance band anchored high (over a door or rack)",
     "setup": [
       "Anchor the band high. Kneel facing the anchor, holding one end in each hand.",
@@ -3171,6 +3555,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii",
         "teres major",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats"
+      ],
+      "secondary": [
+        "Biceps",
+        "Teres major",
+        "Abs"
       ]
     },
     "equipmentDetail": "a pull-up bar fixed overhead",
@@ -3274,6 +3668,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Biceps"
+      ],
+      "secondary": [
+        "Teres major",
+        "Mid-back (rhomboids)",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "a pull-up bar fixed overhead",
     "setup": [
       "Grip the bar underhand (palms facing you), shoulder-width.",
@@ -3355,6 +3760,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii",
         "gluteus maximus",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps",
+        "Glutes",
+        "Abs"
       ]
     },
     "equipmentDetail": "a barbell in a rack (or Smith machine bar) at about waist height",
@@ -3441,6 +3859,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "middle trapezius"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lower back (erectors)"
+      ],
+      "secondary": [
+        "Glutes",
+        "Hamstrings",
+        "Rear delts",
+        "Mid traps"
+      ]
+    },
     "equipmentDetail": "none, just a mat",
     "setup": [
       "Lie face down on a mat, arms straight overhead, legs straight.",
@@ -3521,6 +3950,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rear deltoid",
         "biceps brachii",
         "erector spinae"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Mid-back (rhomboids)",
+        "Mid traps"
+      ],
+      "secondary": [
+        "Rear delts",
+        "Biceps",
+        "Lower back (erectors)"
       ]
     },
     "equipmentDetail": "barbell in a landmine (or corner), plates on the free end, a V-handle under the bar",
@@ -3606,6 +4047,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "upper trapezius"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper chest",
+        "Upper traps"
+      ]
+    },
     "equipmentDetail": "two dumbbells and a bench with a slightly reclined (about 80°) back support",
     "setup": [
       "Set the bench back almost upright. Sit with your back on the pad, feet flat.",
@@ -3687,6 +4139,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "supraspinatus"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Side delts"
+      ],
+      "secondary": [
+        "Front delts",
+        "Upper traps",
+        "Rotator cuff"
+      ]
+    },
     "equipmentDetail": "two light dumbbells",
     "setup": [
       "Stand tall with a dumbbell in each hand at your sides, palms facing in.",
@@ -3764,6 +4226,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rhomboids",
         "middle trapezius",
         "infraspinatus"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Rear delts"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Mid traps",
+        "Rotator cuff"
       ]
     },
     "equipmentDetail": "two light dumbbells",
@@ -3845,6 +4317,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "upper pectoralis major"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper chest"
+      ]
+    },
     "equipmentDetail": "two dumbbells and a bench with back support",
     "setup": [
       "Sit with the back supported. Hold the dumbbells in front of the shoulders, palms facing you, elbows bent and in front."
@@ -3923,6 +4405,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "upper trapezius",
         "upper pectoralis major",
         "core"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper traps",
+        "Upper chest",
+        "Core"
       ]
     },
     "equipmentDetail": "barbell taken from a rack at upper-chest height",
@@ -4007,6 +4501,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "core"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Upper chest"
+      ],
+      "secondary": [
+        "Triceps",
+        "Serratus",
+        "Core"
+      ]
+    },
     "equipmentDetail": "barbell with one end in a landmine (or corner), free end held at the shoulder",
     "setup": [
       "Stand in a staggered stance facing the landmine, holding the end of the bar at the front of the shoulder with one hand.",
@@ -4088,6 +4593,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper traps",
+        "Obliques"
+      ]
+    },
     "equipmentDetail": "one kettlebell",
     "setup": [
       "Clean the kettlebell to the rack position: bell resting on the back of the forearm, wrist straight, elbow tucked against the ribs.",
@@ -4167,6 +4683,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii",
         "rectus abdominis",
         "obliques"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Shoulders (all heads)"
+      ],
+      "secondary": [
+        "Upper traps",
+        "Triceps",
+        "Abs",
+        "Obliques"
       ]
     },
     "equipmentDetail": "one light kettlebell held upside down by the horns",
@@ -4251,6 +4778,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "core"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts",
+        "Rotator cuff"
+      ],
+      "secondary": [
+        "Triceps",
+        "Forearms and grip",
+        "Core"
+      ]
+    },
     "equipmentDetail": "one light kettlebell held upside down (bottom up) by the handle",
     "setup": [
       "Hold a light kettlebell by the handle with the bell upside down, at shoulder height.",
@@ -4330,6 +4869,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid",
         "supraspinatus",
         "upper trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Side delts"
+      ],
+      "secondary": [
+        "Front delts",
+        "Rotator cuff",
+        "Upper traps"
       ]
     },
     "equipmentDetail": "cable station with the pulley at the lowest setting and a single handle",
@@ -4413,6 +4962,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "biceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Rear delts",
+        "Mid traps",
+        "Mid-back (rhomboids)"
+      ],
+      "secondary": [
+        "Rotator cuff",
+        "Biceps"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at about forehead height and a rope attachment",
     "setup": [
       "Set the pulley at forehead height with a rope. Grip with palms facing in and step back.",
@@ -4494,6 +5054,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "serratus anterior"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts"
+      ],
+      "secondary": [
+        "Upper chest",
+        "Side delts",
+        "Serratus"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at the lowest setting and a single handle or straight bar",
     "setup": [
       "Stand facing away from a low pulley, handle in one hand (or bar in both) in front of the thighs.",
@@ -4571,6 +5141,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "triceps brachii",
         "upper trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper traps"
       ]
     },
     "equipmentDetail": "seated shoulder press machine",
@@ -4652,6 +5232,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "infraspinatus"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Rear delts"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Mid traps",
+        "Rotator cuff"
+      ]
+    },
     "equipmentDetail": "pec deck machine set for reverse fly, sitting facing the pad",
     "setup": [
       "Adjust the handles to the rear position. Sit facing the pad, chest against it.",
@@ -4728,6 +5318,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "supraspinatus",
         "upper trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Side delts"
+      ],
+      "secondary": [
+        "Rotator cuff",
+        "Upper traps"
       ]
     },
     "equipmentDetail": "lateral raise machine with arm pads",
@@ -4808,6 +5407,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "upper trapezius"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper traps"
+      ]
+    },
     "equipmentDetail": "one resistance band stood on under both feet",
     "setup": [
       "Stand on the middle of the band, feet hip-width. Hold the ends at shoulder height, palms forward.",
@@ -4885,6 +5494,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid",
         "supraspinatus",
         "upper trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Side delts"
+      ],
+      "secondary": [
+        "Front delts",
+        "Rotator cuff",
+        "Upper traps"
       ]
     },
     "equipmentDetail": "one resistance band stood on under both feet",
@@ -4967,6 +5586,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "teres minor"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Rear delts",
+        "Mid traps",
+        "Mid-back (rhomboids)"
+      ],
+      "secondary": [
+        "Rotator cuff"
+      ]
+    },
     "equipmentDetail": "one resistance band anchored at about forehead height",
     "setup": [
       "Anchor the band at forehead height. Hold one end in each hand, palms facing in.",
@@ -5046,6 +5675,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii",
         "upper pectoralis major",
         "upper trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Side delts"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper chest",
+        "Upper traps"
       ]
     },
     "equipmentDetail": "none, just the floor",
@@ -5131,6 +5771,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "calves (stretch)"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Front delts",
+        "Abs"
+      ],
+      "secondary": [
+        "Serratus",
+        "Triceps",
+        "Hamstrings",
+        "Calves"
+      ]
+    },
     "equipmentDetail": "none, just a mat",
     "setup": [
       "Start in a high plank: hands under the shoulders, body straight from head to heels."
@@ -5213,6 +5865,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "teres minor"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Mid traps",
+        "Lower traps",
+        "Rear delts"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Rotator cuff"
+      ]
+    },
     "equipmentDetail": "none (or very light dumbbells); lie face down on a mat or an incline bench",
     "setup": [
       "Lie face down on a mat or chest-down on an incline bench, forehead down, thumbs up."
@@ -5292,6 +5955,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "brachioradialis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Biceps"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ]
+    },
     "equipmentDetail": "two dumbbells",
     "setup": [
       "Stand tall with a dumbbell in each hand, arms straight, palms facing forward.",
@@ -5367,6 +6039,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "biceps brachii"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ],
+      "secondary": [
+        "Biceps"
       ]
     },
     "equipmentDetail": "two dumbbells",
@@ -5445,6 +6126,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "brachioradialis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Biceps (long head)"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ]
+    },
     "equipmentDetail": "two dumbbells and an incline bench set to about 45–60°",
     "setup": [
       "Set the bench to 45–60°. Sit back with the arms hanging straight down behind the torso, palms forward."
@@ -5518,6 +6208,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "triceps brachii (lateral and medial heads)"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps (long head)"
+      ],
+      "secondary": [
+        "Triceps (outer and inner heads)"
       ]
     },
     "equipmentDetail": "one dumbbell held with both hands; optional bench with back support",
@@ -5595,6 +6293,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anconeus"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Elbow extensors (anconeus)"
+      ]
+    },
     "equipmentDetail": "two dumbbells and a flat bench",
     "setup": [
       "Lie on a flat bench with the dumbbells held straight up over the shoulders, palms facing each other."
@@ -5668,6 +6374,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "brachialis",
         "brachioradialis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Biceps"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
       ]
     },
     "equipmentDetail": "a barbell (straight or EZ-bar)",
@@ -5746,6 +6461,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Triceps",
+        "Inner chest"
+      ],
+      "secondary": [
+        "Front delts"
+      ]
+    },
     "equipmentDetail": "barbell on a flat bench with uprights; safeties or spotter",
     "setup": [
       "Lie on the bench, grip the bar about shoulder-width (not narrower).",
@@ -5820,6 +6544,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "anconeus"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Elbow extensors (anconeus)"
       ]
     },
     "equipmentDetail": "a barbell or EZ-bar and a flat bench",
@@ -5898,6 +6630,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearm flexors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Biceps"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ]
+    },
     "equipmentDetail": "one kettlebell held by the horns (or one per hand by the handle)",
     "setup": [
       "Stand tall, holding the kettlebell by the horns with the bell hanging down, arms straight."
@@ -5974,6 +6715,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii (lateral and medial heads)"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Triceps (long head)"
+      ],
+      "secondary": [
+        "Triceps (outer and inner heads)"
+      ]
+    },
     "equipmentDetail": "one kettlebell held by the horns",
     "setup": [
       "Stand or sit tall. Hold the kettlebell by the horns overhead, bell hanging behind, arms straight."
@@ -6048,6 +6797,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearm flexors",
         "rectus abdominis",
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Forearms and grip",
+        "Abs",
+        "Front delts"
       ]
     },
     "equipmentDetail": "cable machine with the pulley at the top and a short straight bar",
@@ -6157,6 +6916,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "brachioradialis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Biceps"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at the lowest setting and a straight bar",
     "setup": [
       "Set the pulley low with a straight bar. Grip underhand, shoulder-width, and stand tall."
@@ -6231,6 +6999,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "triceps brachii (lateral and medial heads)",
         "core"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps (long head)"
+      ],
+      "secondary": [
+        "Triceps (outer and inner heads)",
+        "Core"
       ]
     },
     "equipmentDetail": "cable station with a rope attachment, pulley at about head height or low",
@@ -6310,6 +7087,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "brachioradialis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Biceps"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ]
+    },
     "equipmentDetail": "preacher curl machine with an arm pad",
     "setup": [
       "Adjust the seat so the armpits sit at the top of the pad.",
@@ -6385,6 +7171,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "pectoralis major",
         "anterior deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Lower chest",
+        "Front delts"
       ]
     },
     "equipmentDetail": "seated dip machine",
@@ -6464,6 +7259,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "brachioradialis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Biceps"
+      ],
+      "secondary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ]
+    },
     "equipmentDetail": "one resistance band stood on under both feet",
     "setup": [
       "Stand on the middle of the band, holding one end in each hand, palms forward, arms straight."
@@ -6539,6 +7343,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearm flexors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Forearms and grip"
+      ]
+    },
     "equipmentDetail": "one resistance band anchored high (over a door or rack)",
     "setup": [
       "Anchor the band high. Grip it with both hands at chest height, elbows tucked at the sides."
@@ -6612,6 +7424,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "anterior deltoid",
         "pectoralis major"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Front delts",
+        "Lower chest"
       ]
     },
     "equipmentDetail": "a flat bench behind the body",
@@ -6690,6 +7511,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "pectoralis major",
         "anterior deltoid",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Inner chest",
+        "Front delts",
+        "Abs"
       ]
     },
     "equipmentDetail": "none, just the floor",
@@ -6771,6 +7602,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearm flexors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Brachialis",
+        "Forearms (brachioradialis)"
+      ],
+      "secondary": [
+        "Biceps",
+        "Forearms and grip"
+      ]
+    },
     "equipmentDetail": "one or two kettlebells held by the handle",
     "setup": [
       "Stand tall, a kettlebell in each hand by the handle, palms facing in, bells hanging."
@@ -6845,6 +7686,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "anconeus"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Triceps"
+      ],
+      "secondary": [
+        "Elbow extensors (anconeus)"
       ]
     },
     "equipmentDetail": "seated triceps extension machine with an arm pad",
@@ -6923,6 +7772,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors",
         "rectus abdominis",
         "calves"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Abs",
+        "Calves"
       ]
     },
     "equipmentDetail": "one dumbbell held vertically against the chest (or a kettlebell by the horns)",
@@ -7007,6 +7867,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "calves"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings",
+        "Calves"
+      ]
+    },
     "equipmentDetail": "two dumbbells, one in each hand",
     "setup": [
       "Stand tall with a dumbbell in each hand at your sides."
@@ -7085,6 +7956,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "adductor magnus",
         "hamstrings"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings"
       ]
     },
     "equipmentDetail": "two dumbbells, one in each hand, and a flat bench behind for the rear foot",
@@ -7187,6 +8068,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Calves",
+        "Inner thighs (adductors)"
+      ]
+    },
     "equipmentDetail": "two dumbbells and a sturdy box or bench at about knee height",
     "setup": [
       "Stand facing a knee-height box, a dumbbell in each hand.",
@@ -7267,6 +8159,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors",
         "erector spinae",
         "rectus abdominis"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Inner thighs (adductors)",
+        "Lower back (erectors)",
+        "Abs"
       ]
     },
     "equipmentDetail": "barbell with round plates across the upper back (not the neck), inside a squat rack with safety bars set low",
@@ -7388,6 +8292,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads"
+      ],
+      "secondary": [
+        "Glutes",
+        "Inner thighs (adductors)",
+        "Lower back (erectors)",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "barbell resting on the front of the shoulders in a squat rack with safeties",
     "setup": [
       "Rest the bar on the front of the shoulders against the throat, fingertips under the bar (or arms crossed).",
@@ -7469,6 +8384,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings"
+      ]
+    },
     "equipmentDetail": "barbell across the upper back, taken from a rack",
     "setup": [
       "Unrack the bar onto the upper back. Stand tall, feet hip-width."
@@ -7547,6 +8472,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors",
         "rectus abdominis",
         "upper back"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Abs",
+        "Upper back"
       ]
     },
     "equipmentDetail": "two kettlebells held in the rack position at the shoulders",
@@ -7630,6 +8566,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings"
+      ]
+    },
     "equipmentDetail": "one kettlebell held at the chest by the horns (goblet) or one in each hand",
     "setup": [
       "Hold a kettlebell by the horns at the chest. Stand tall, feet hip-width."
@@ -7709,6 +8655,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at the lowest setting and a rope or single handle held at the chest",
     "setup": [
       "Set the pulley low. Hold the attachment at the chest and step back so the cable is taut.",
@@ -7786,6 +8742,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "gluteus maximus",
         "hamstrings",
         "adductors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads"
+      ],
+      "secondary": [
+        "Glutes",
+        "Hamstrings",
+        "Inner thighs (adductors)"
       ]
     },
     "equipmentDetail": "a 45° leg press machine with a padded back rest, sliding foot platform and side handles",
@@ -7887,6 +8853,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus femoris (hip portion)"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads"
+      ],
+      "secondary": [
+        "Quads (rectus femoris)"
+      ]
+    },
     "equipmentDetail": "leg extension machine with a shin pad",
     "setup": [
       "Adjust the back rest so the knees line up with the machine's pivot.",
@@ -7960,6 +8934,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "calves (gastrocnemius)"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Hamstrings"
+      ],
+      "secondary": [
+        "Calves (gastrocnemius)"
       ]
     },
     "equipmentDetail": "lying leg curl machine with an ankle pad",
@@ -8038,6 +9020,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads"
+      ],
+      "secondary": [
+        "Glutes",
+        "Inner thighs (adductors)"
+      ]
+    },
     "equipmentDetail": "hack squat machine with shoulder pads, back pad and a foot platform",
     "setup": [
       "Step in with the back on the pad and shoulders under the pads.",
@@ -8112,6 +9103,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "soleus"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Calves (gastrocnemius)"
+      ],
+      "secondary": [
+        "Soleus (lower calf)"
       ]
     },
     "equipmentDetail": "standing calf raise machine with shoulder pads and a foot step",
@@ -8191,6 +9190,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings"
+      ]
+    },
     "equipmentDetail": "one long loop band stood on with both feet, top of the band held across the front of the shoulders",
     "setup": [
       "Stand on the band, feet shoulder-width. Bring the top of the band up and hold it across the front of the shoulders with both hands."
@@ -8266,6 +9275,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "erector spinae"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Hamstrings",
+        "Glutes"
+      ],
+      "secondary": [
+        "Lower back (erectors)"
       ]
     },
     "equipmentDetail": "one long loop band stood on with both feet and looped across the upper back (not the neck)",
@@ -8344,6 +9362,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors",
         "hamstrings",
         "calves"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings",
+        "Calves"
       ]
     },
     "equipmentDetail": "none",
@@ -8425,6 +9454,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings"
+      ]
+    },
     "equipmentDetail": "none",
     "setup": [
       "Stand tall, feet hip-width, hands on hips."
@@ -8504,6 +9543,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Calves",
+        "Hamstrings"
+      ]
+    },
     "equipmentDetail": "none",
     "setup": [
       "Stand with feet shoulder-width, arms ready to swing."
@@ -8580,6 +9629,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "gluteus maximus",
         "adductors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads"
+      ],
+      "secondary": [
+        "Glutes",
+        "Inner thighs (adductors)"
       ]
     },
     "equipmentDetail": "a flat wall",
@@ -8661,6 +9719,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "calves"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Abs",
+        "Calves"
+      ]
+    },
     "equipmentDetail": "a box or bench behind the body",
     "setup": [
       "Stand on one leg in front of a box, the other leg held straight out in front.",
@@ -8739,6 +9808,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "soleus"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Calves (gastrocnemius)"
+      ],
+      "secondary": [
+        "Soleus (lower calf)"
+      ]
+    },
     "equipmentDetail": "a step or floor; optional dumbbell in one hand",
     "setup": [
       "Stand on the edge of a step with the balls of the feet, heels hanging off.",
@@ -8814,6 +9891,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "adductors",
         "hamstrings"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Hamstrings"
       ]
     },
     "equipmentDetail": "cable station with the pulley at the lowest setting and a single handle or two handles",
@@ -8894,6 +9981,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "calves (gastrocnemius)"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Hamstrings"
+      ],
+      "secondary": [
+        "Calves (gastrocnemius)"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at the lowest setting and an ankle strap",
     "setup": [
       "Attach the ankle strap and face the machine, holding it for support.",
@@ -8970,6 +10065,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "erector spinae",
         "trapezius",
         "forearms"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Hamstrings",
+        "Glutes"
+      ],
+      "secondary": [
+        "Lower back (erectors)",
+        "Traps",
+        "Forearms and grip"
       ]
     },
     "equipmentDetail": "two dumbbells, one in each hand",
@@ -9052,6 +10158,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Quads",
+        "Inner thighs (adductors)"
+      ]
+    },
     "equipmentDetail": "one dumbbell across the hips and a flat bench behind the upper back",
     "setup": [
       "Sit with the upper back (bottom of the shoulder blades) against a bench, knees bent, feet flat.",
@@ -9130,6 +10246,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings",
         "quadriceps",
         "adductors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Quads",
+        "Inner thighs (adductors)"
       ]
     },
     "equipmentDetail": "padded barbell across the hips and a flat bench behind the upper back",
@@ -9214,6 +10340,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearms"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Hamstrings",
+        "Glutes"
+      ],
+      "secondary": [
+        "Lower back (erectors)",
+        "Traps",
+        "Forearms and grip"
+      ]
+    },
     "equipmentDetail": "barbell with plates, taken from a rack or deadlifted from the floor",
     "setup": [
       "Stand tall holding the bar at the thighs, grip just outside the legs, feet hip-width, knees soft."
@@ -9291,6 +10428,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "hamstrings",
         "quadriceps"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Quads"
       ]
     },
     "equipmentDetail": "padded barbell across the hips, lying on the floor",
@@ -9371,6 +10517,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis",
         "latissimus dorsi",
         "anterior and rear deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary": [
+        "Lower back (erectors)",
+        "Abs",
+        "Lats",
+        "Front delts",
+        "Rear delts"
       ]
     },
     "equipmentDetail": "one kettlebell held with both hands by the handle",
@@ -9491,6 +10650,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "erector spinae"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary": [
+        "Inner thighs (adductors)",
+        "Quads",
+        "Lower back (erectors)"
+      ]
+    },
     "equipmentDetail": "one kettlebell on the floor between the feet",
     "setup": [
       "Stand with feet wide, toes out, kettlebell between the heels.",
@@ -9573,6 +10743,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Hamstrings",
+        "Glutes"
+      ],
+      "secondary": [
+        "Side glutes",
+        "Lower back (erectors)",
+        "Inner thighs (adductors)"
+      ]
+    },
     "equipmentDetail": "one kettlebell or dumbbell held in the hand opposite the standing leg",
     "setup": [
       "Stand on one leg, knee soft, weight in the opposite hand."
@@ -9652,6 +10833,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "adductors"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary": [
+        "Lower back (erectors)",
+        "Inner thighs (adductors)"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at the lowest setting and a rope attachment",
     "setup": [
       "Face away from a low pulley, straddle the cable, and hold the rope between the legs.",
@@ -9729,6 +10920,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hamstrings"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley at the lowest setting and an ankle strap",
     "setup": [
       "Attach the ankle strap, face the machine and hold it for support.",
@@ -9803,6 +11002,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "tensor fasciae latae"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Side glutes"
+      ],
+      "secondary": [
+        "Outer hip (TFL)"
       ]
     },
     "equipmentDetail": "cable station with the pulley at the lowest setting and an ankle strap",
@@ -9882,6 +11089,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "gluteus maximus (upper)"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Side glutes"
+      ],
+      "secondary": [
+        "Outer hip (TFL)",
+        "Upper glutes"
+      ]
+    },
     "equipmentDetail": "seated hip abduction machine with outer thigh pads",
     "setup": [
       "Sit with the outer thighs against the pads, back against the rest, hold the handles."
@@ -9959,6 +11175,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "erector spinae"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary": [
+        "Lower back (erectors)"
+      ]
+    },
     "equipmentDetail": "45° back extension bench (hyperextension bench)",
     "setup": [
       "Set the pad just below the hip bones so you can bend at the hips. Hook the heels under the foot pads.",
@@ -10034,6 +11259,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "hamstrings"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Side glutes"
+      ],
+      "secondary": [
+        "Hamstrings"
       ]
     },
     "equipmentDetail": "one mini loop band just above the knees, lying on a mat",
@@ -10118,6 +11352,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "quadriceps"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Side glutes"
+      ],
+      "secondary": [
+        "Outer hip (TFL)",
+        "Quads"
+      ]
+    },
     "equipmentDetail": "one mini loop band just above the knees or around the ankles",
     "setup": [
       "Place the band above the knees, feet hip-width.",
@@ -10194,6 +11437,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "gluteus minimus",
         "deep hip rotators"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Side glutes"
+      ],
+      "secondary": [
+        "Deep hip rotators"
       ]
     },
     "equipmentDetail": "one mini loop band just above the knees, lying on a mat",
@@ -10274,6 +11525,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "quadriceps"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Abs",
+        "Quads"
+      ]
+    },
     "equipmentDetail": "none, just a thin exercise mat",
     "setup": [
       "Lie on your back, knees bent, feet flat close to the glutes, arms by the sides."
@@ -10350,6 +11611,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "hamstrings",
         "gluteus medius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Side glutes"
       ]
     },
     "equipmentDetail": "none, just a mat",
@@ -10429,6 +11699,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Abs"
+      ]
+    },
     "equipmentDetail": "none, just a mat",
     "setup": [
       "Start on hands and knees, hands under the shoulders, knees under the hips, back flat."
@@ -10505,6 +11784,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "anterior deltoid",
         "gluteus maximus"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Deep core (transverse abdominis)",
+        "Obliques"
+      ],
+      "secondary": [
+        "Front delts",
+        "Glutes"
       ]
     },
     "equipmentDetail": "none, just a thin exercise mat",
@@ -10616,6 +11906,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "shoulder stabilisers"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Obliques",
+        "Deep side core (QL)"
+      ],
+      "secondary": [
+        "Side glutes",
+        "Deep core (transverse abdominis)",
+        "Shoulder stabilisers"
+      ]
+    },
     "equipmentDetail": "none, just a mat",
     "setup": [
       "Lie on your side, elbow under the shoulder, legs straight and stacked."
@@ -10694,6 +11995,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "obliques",
         "hip flexors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Deep core (transverse abdominis)"
+      ],
+      "secondary": [
+        "Obliques",
+        "Hip flexors"
       ]
     },
     "equipmentDetail": "none, just a mat",
@@ -10776,6 +12087,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Deep core (transverse abdominis)"
+      ],
+      "secondary": [
+        "Hip flexors",
+        "Obliques"
+      ]
+    },
     "equipmentDetail": "none, just a mat",
     "setup": [
       "Lie on your back, arms overhead, legs straight.",
@@ -10853,6 +12174,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "hip flexors",
         "obliques",
         "forearm flexors (grip)"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Abs"
+      ],
+      "secondary": [
+        "Hip flexors",
+        "Obliques",
+        "Forearms and grip"
       ]
     },
     "equipmentDetail": "a pull-up bar",
@@ -10934,6 +12265,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Hip flexors"
+      ],
+      "secondary": [
+        "Front delts",
+        "Quads",
+        "Obliques"
+      ]
+    },
     "equipmentDetail": "none, just the floor",
     "setup": [
       "Start in a high plank, hands under the shoulders, body straight."
@@ -11010,6 +12352,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "rectus abdominis",
         "hip flexors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Abs",
+        "Hip flexors"
       ]
     },
     "equipmentDetail": "one dumbbell or kettlebell held at the chest",
@@ -11089,6 +12440,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearm flexors (grip)",
         "upper trapezius",
         "gluteus medius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Obliques",
+        "Deep side core (QL)"
+      ],
+      "secondary": [
+        "Forearms and grip",
+        "Upper traps",
+        "Side glutes"
       ]
     },
     "equipmentDetail": "one heavy dumbbell or kettlebell in one hand",
@@ -11171,6 +12533,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Deep core (transverse abdominis)"
+      ],
+      "secondary": [
+        "Lats",
+        "Obliques",
+        "Triceps"
+      ]
+    },
     "equipmentDetail": "barbell with round plates (or an ab wheel), kneeling on a mat",
     "setup": [
       "Kneel on a mat with the bar below the shoulders, hands shoulder-width.",
@@ -11251,6 +12624,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "gluteus maximus"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Abs",
+        "Front delts",
+        "Glutes"
+      ]
+    },
     "equipmentDetail": "barbell with one end in a landmine, free end held with both hands",
     "setup": [
       "Hold the end of the bar with both hands at chest height, arms straight, feet shoulder-width."
@@ -11327,6 +12710,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "gluteus medius",
         "hamstrings",
         "shoulder stabilisers"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Side glutes",
+        "Hamstrings",
+        "Shoulder stabilisers"
       ]
     },
     "equipmentDetail": "one kettlebell held overhead",
@@ -11408,6 +12801,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "gluteus maximus"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Abs",
+        "Shoulders (all heads)",
+        "Glutes"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley set high and a single handle",
     "setup": [
       "Stand side-on to a high pulley, feet shoulder-width, hold the handle with both hands up by the shoulder."
@@ -11484,6 +12887,16 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "rectus abdominis",
         "gluteus medius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Obliques",
+        "Deep core (transverse abdominis)"
+      ],
+      "secondary": [
+        "Abs",
+        "Side glutes"
       ]
     },
     "equipmentDetail": "cable station (pulley at chest height) or a band anchored at chest height",
@@ -11563,6 +12976,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs"
+      ],
+      "secondary": [
+        "Obliques"
+      ]
+    },
     "equipmentDetail": "cable station with the pulley high and a rope attachment",
     "setup": [
       "Kneel facing a high pulley, holding the rope beside the head.",
@@ -11636,6 +13057,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       ],
       "secondary": [
         "obliques"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Abs"
+      ],
+      "secondary": [
+        "Obliques"
       ]
     },
     "equipmentDetail": "seated ab crunch machine",
@@ -11713,6 +13142,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs"
+      ],
+      "secondary": [
+        "Hip flexors",
+        "Obliques"
+      ]
+    },
     "equipmentDetail": "captain's chair (vertical knee raise station with back and forearm pads)",
     "setup": [
       "Stand on the steps, back against the pad, forearms on the arm pads, legs hanging."
@@ -11787,6 +13225,15 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "rectus abdominis",
         "deltoids"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Abs",
+        "Shoulders (all heads)"
       ]
     },
     "equipmentDetail": "one resistance band anchored high",
@@ -11867,6 +13314,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "quadriceps"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Abs",
+        "Shoulders (all heads)",
+        "Glutes",
+        "Quads"
+      ]
+    },
     "equipmentDetail": "one dumbbell or kettlebell held with both hands",
     "setup": [
       "Stand with feet wider than shoulders, holding the weight with both hands."
@@ -11944,6 +13402,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Obliques"
+      ],
+      "secondary": [
+        "Abs"
+      ]
+    },
     "equipmentDetail": "seated rotary torso machine",
     "setup": [
       "Set the start position, sit tall with the chest against the pad and legs locked in."
@@ -12019,6 +13485,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques",
         "latissimus dorsi",
         "hip flexors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Deep core (transverse abdominis)"
+      ],
+      "secondary": [
+        "Obliques",
+        "Lats",
+        "Hip flexors"
       ]
     },
     "equipmentDetail": "one resistance band anchored behind the head at floor level",
@@ -12100,6 +13577,14 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs"
+      ],
+      "secondary": [
+        "Obliques"
+      ]
+    },
     "equipmentDetail": "one resistance band anchored high",
     "setup": [
       "Anchor the band high. Kneel facing it, holding the band beside the head."
@@ -12176,6 +13661,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "triceps brachii",
         "rectus abdominis",
         "upper trapezius"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Shoulders (all heads)"
+      ],
+      "secondary": [
+        "Triceps",
+        "Abs",
+        "Upper traps"
       ]
     },
     "equipmentDetail": "two dumbbells held at the shoulders",
@@ -12262,6 +13759,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "anterior deltoid"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Lats",
+        "Abs",
+        "Obliques"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Rear delts",
+        "Biceps",
+        "Front delts"
+      ]
+    },
     "equipmentDetail": "two hexagonal dumbbells on the floor",
     "setup": [
       "Set up in a high plank gripping two hex dumbbells, feet wider than hip-width for stability."
@@ -12346,6 +13856,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "core"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings",
+        "Shoulders (all heads)"
+      ],
+      "secondary": [
+        "Quads",
+        "Upper traps",
+        "Triceps",
+        "Core"
+      ]
+    },
     "equipmentDetail": "two dumbbells",
     "setup": [
       "Stand with dumbbells at the sides or hanging in front of the thighs."
@@ -12428,6 +13951,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "trapezius",
         "latissimus dorsi",
         "forearms"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings",
+        "Lower back (erectors)"
+      ],
+      "secondary": [
+        "Quads",
+        "Traps",
+        "Lats",
+        "Forearms and grip"
       ]
     },
     "equipmentDetail": "barbell with full-size plates on the floor",
@@ -12521,6 +14057,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "upper trapezius"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Shoulders (all heads)"
+      ],
+      "secondary": [
+        "Triceps",
+        "Abs",
+        "Upper traps"
+      ]
+    },
     "equipmentDetail": "barbell in the front rack position, taken from a rack",
     "setup": [
       "Hold the bar in the front rack on the shoulders, elbows forward, feet shoulder-width."
@@ -12602,6 +14150,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "upper pectoralis major",
         "triceps brachii",
         "core"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Front delts"
+      ],
+      "secondary": [
+        "Upper chest",
+        "Triceps",
+        "Core"
       ]
     },
     "equipmentDetail": "barbell with one end in a landmine, free end held at the chest",
@@ -12688,6 +14248,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "forearms"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Glutes",
+        "Hamstrings",
+        "Shoulders (all heads)"
+      ],
+      "secondary": [
+        "Triceps",
+        "Upper traps",
+        "Core",
+        "Forearms and grip"
+      ]
+    },
     "equipmentDetail": "one kettlebell",
     "setup": [
       "Stand with the kettlebell between the feet. Hinge and grip the handle with one hand."
@@ -12770,6 +14343,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rectus abdominis",
         "quadriceps",
         "rotator cuff"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Shoulders (all heads)",
+        "Obliques",
+        "Glutes"
+      ],
+      "secondary": [
+        "Triceps",
+        "Abs",
+        "Quads",
+        "Rotator cuff"
       ]
     },
     "equipmentDetail": "one kettlebell or dumbbell held overhead",
@@ -12856,6 +14442,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "calves"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Forearms and grip",
+        "Upper traps",
+        "Core"
+      ],
+      "secondary": [
+        "Side glutes",
+        "Quads",
+        "Calves"
+      ]
+    },
     "equipmentDetail": "two heavy dumbbells or kettlebells, one in each hand",
     "setup": [
       "Deadlift the weights to your sides with a flat back. Stand tall, shoulders back."
@@ -12936,6 +14534,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rhomboids",
         "biceps brachii",
         "rear deltoid"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Lats"
+      ],
+      "secondary": [
+        "Mid-back (rhomboids)",
+        "Biceps",
+        "Rear delts"
       ]
     },
     "equipmentDetail": "cable station with the pulley at chest height and a rope or two handles",
@@ -13020,6 +14630,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "rhomboids",
         "biceps brachii",
         "core"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Lats"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Mid-back (rhomboids)",
+        "Biceps",
+        "Core"
       ]
     },
     "equipmentDetail": "rowing machine (ergometer)",
@@ -13108,6 +14731,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "latissimus dorsi"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Shoulders (all heads)",
+        "Mid chest",
+        "Lats"
+      ]
+    },
     "equipmentDetail": "air bike (fan bike with moving handles)",
     "setup": [
       "Set the seat so the knee is slightly bent at the bottom of the pedal stroke.",
@@ -13188,6 +14823,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
       "secondary": [
         "triceps brachii",
         "core"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Shoulders (all heads)"
+      ],
+      "secondary": [
+        "Triceps",
+        "Core"
       ]
     },
     "equipmentDetail": "one long loop band stood on with both feet, ends held at the shoulders",
@@ -13273,6 +14919,19 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "calves"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Glutes",
+        "Mid chest"
+      ],
+      "secondary": [
+        "Shoulders (all heads)",
+        "Triceps",
+        "Core",
+        "Calves"
+      ]
+    },
     "equipmentDetail": "none",
     "setup": [
       "Stand with feet shoulder-width."
@@ -13354,6 +15013,18 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "obliques",
         "triceps brachii",
         "hip flexors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Front delts",
+        "Quads"
+      ],
+      "secondary": [
+        "Obliques",
+        "Triceps",
+        "Hip flexors"
       ]
     },
     "equipmentDetail": "none, open floor space",
@@ -13438,6 +15109,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "pectoralis major"
       ]
     },
+    "muscleParts": {
+      "primary": [
+        "Abs",
+        "Front delts"
+      ],
+      "secondary": [
+        "Hamstrings",
+        "Triceps",
+        "Mid chest"
+      ]
+    },
     "equipmentDetail": "none",
     "setup": [
       "Stand tall, feet hip-width."
@@ -13516,6 +15198,17 @@ export const EXERCISE_DETAILS: Record<string, ExerciseDetails> = {
         "deltoids",
         "gluteus maximus",
         "hip flexors"
+      ]
+    },
+    "muscleParts": {
+      "primary": [
+        "Quads",
+        "Abs"
+      ],
+      "secondary": [
+        "Shoulders (all heads)",
+        "Glutes",
+        "Hip flexors"
       ]
     },
     "equipmentDetail": "none",

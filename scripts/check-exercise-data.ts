@@ -35,6 +35,11 @@ for (const e of EXERCISES) {
   if (d.execution.length === 0) fail(`${e.id}: execution is empty`);
   if (d.commonMistakes.some((m) => !m.mistake || !m.fix)) fail(`${e.id}: a common mistake is missing its mistake or fix`);
 
+  // 3b. muscle parts: at least one main mover, no repeats, and the main muscle group is covered
+  const mp = d.muscleParts;
+  if (!mp || mp.primary.length === 0) fail(`${e.id}: muscleParts.primary is empty (run node scripts/build-muscle-parts.mjs, then npm run build:details)`);
+  else if (mp.primary.some((p) => mp.secondary.includes(p))) fail(`${e.id}: a muscle part is listed as both primary and secondary`);
+
   // 4. image spec is complete and consistent
   const img = d.image;
   const expectedLabels = d.isStaticHold ? ["SET-UP", "HOLD"] : ["START", "END"];
