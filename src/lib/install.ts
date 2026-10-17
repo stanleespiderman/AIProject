@@ -65,6 +65,39 @@ function getMode(): InstallMode {
   return "hidden";
 }
 
+export type Platform = "ios" | "android" | "desktop";
+
+export interface InstallContext {
+  platform: Platform;
+  /** Opened inside Instagram, Facebook, TikTok etc., where installing isn't possible. */
+  inApp: boolean;
+  /** Already running as an installed app. */
+  standalone: boolean;
+  /** The browser has offered its install dialog (Android / desktop Chrome). */
+  canPrompt: boolean;
+}
+
+function detectPlatform(): Platform {
+  if (isIOS()) return "ios";
+  return /Android/i.test(navigator.userAgent) ? "android" : "desktop";
+}
+
+function isInAppBrowser(): boolean {
+  return /FBAN|FBAV|FB_IAB|Instagram|Line\/|Twitter|TikTok|musical_ly|Snapchat|MicroMessenger|LinkedInApp|Pinterest|; wv\)/i.test(navigator.userAgent);
+}
+
+/** One string so useSyncExternalStore sees a stable snapshot between changes. */
+function contextKey(): string {
+  return [detectPlatform(), isInAppBrowser() ? 1 : 0, installed || isStandalone() ? 1 : 0, deferred ? 1 : 0].join(":");
+}
+
+/** The device and browser, for the /install page. Ignores dismissals. Server and first render say "desktop". */
+export function useInstallContext(): InstallContext {
+  const key = useSyncExternalStore(subscribe, contextKey, () => "desktop:0:0:0");
+  const [platform, inApp, standalone, canPrompt] = key.split(":");
+  return { platform: platform as Platform, inApp: inApp === "1", standalone: standalone === "1", canPrompt: canPrompt === "1" };
+}
+
 function subscribe(listener: () => void) {
   listeners.add(listener);
   return () => {
