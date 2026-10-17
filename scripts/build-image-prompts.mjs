@@ -186,7 +186,7 @@ What I expected:
     const ids = data.exercises.filter((e) => e.appFields.primaryMuscle === key && !done.has(e.id)).map((e) => e.id);
     if (ids.length === 0) continue;
     const name = `${String(n + 1).padStart(2, "0")}-${key}.md`;
-    const intro = `${ids.length} exercises. Open a chat in the ChatGPT Project that has \`exercise-image-design.md\` and \`push-up-approved.webp\` uploaded, paste **one prompt per message**, check the result against the guide's section 9 checklist, and save it as \`<exercise-id>.png\`. Generated from \`docs/data/whatnext-exercise-form-data.json\` by \`node scripts/build-image-prompts.mjs groups\`; do not edit by hand.`;
+    const intro = `${ids.length} exercises. Generated from \`docs/data/whatnext-exercise-form-data.json\` by \`node scripts/build-image-prompts.mjs groups\`; do not edit by hand.\n\nPaste one prompt per new chat in the ChatGPT Project (with \`exercise-image-design.md\` and the reference image \`push-up-approved.webp\` uploaded), on a Thinking model. Judge each result against the checklist in section 9 of \`exercise-image-design.md\`, then save it as \`<exercise-id>.png\`.`;
     writeFileSync(join(dir, name), render(ids.map((id) => [id, ""]), { title: `${label}: image prompts`, intro }) + "\n");
     files.push([name, label, ids.length]);
   }
