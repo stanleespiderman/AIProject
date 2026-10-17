@@ -7,12 +7,12 @@ import { dismissInstall, promptInstall, useInstallMode } from "@/lib/install";
 import { Close } from "./icons";
 
 /**
- * A dismissible banner asking people to add WhatNext? to their home screen.
+ * A dismissible banner asking people to add WhatNxt to their home screen.
  * Android / Chrome: an Install button opens the browser's own dialog.
  * iPhone / iPad: shows the Share > Add to Home Screen steps.
  * Waits for the first-run safety notice so the two never stack.
  */
-export function InstallBanner({ title = "Keep WhatNext? on your home screen", className = "" }: { title?: string; className?: string }) {
+export function InstallBanner({ title = "Keep WhatNxt on your home screen", className = "" }: { title?: string; className?: string }) {
   const hydrated = useHydrated();
   const mode = useInstallMode();
   const [disclaimerAck] = useStoredState<boolean>(STORAGE_KEYS.disclaimer, false);
@@ -21,7 +21,7 @@ export function InstallBanner({ title = "Keep WhatNext? on your home screen", cl
 
   return (
     <aside
-      aria-label="Install WhatNext"
+      aria-label="Install WhatNxt"
       className={`relative flex animate-rise items-center gap-3 rounded-3xl border border-line bg-panel p-3 pr-11 ${className}`}
     >
       <Image src="/icons/icon-192.png" alt="" width={48} height={48} className="size-12 shrink-0 rounded-2xl" />

@@ -19,13 +19,13 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WhatNext? | Your next set in 10 seconds",
+  title: "WhatNxt | Your next set in 10 seconds",
   description:
     "Bored mid-workout or finished early? Pick your equipment and a muscle group and get your next exercises with sets, reps and form cues.",
-  applicationName: "WhatNext?",
+  applicationName: "WhatNxt",
   icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
   // iOS home-screen launch: full screen with a black status bar (matches the page, content starts below it).
-  appleWebApp: { capable: true, title: "WhatNext?", statusBarStyle: "black" },
+  appleWebApp: { capable: true, title: "WhatNxt", statusBarStyle: "black" },
 };
 
 export const viewport: Viewport = {

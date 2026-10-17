@@ -1,6 +1,6 @@
-# WhatNext? Exercise Illustration Design Guide
+# WhatNxt Exercise Illustration Design Guide
 
-**For the AI image generator.** This file is the permanent style guide for every exercise illustration in the WhatNext? fitness app. When I ask for an exercise image (for example "Make the image for goblet-squat"), always follow every rule below. Do not change the style between images. If something in my request conflicts with this guide, ask me before deviating.
+**For the AI image generator.** This file is the permanent style guide for every exercise illustration in the WhatNxt fitness app. When I ask for an exercise image (for example "Make the image for goblet-squat"), always follow every rule below. Do not change the style between images. If something in my request conflicts with this guide, ask me before deviating.
 
 ---
 

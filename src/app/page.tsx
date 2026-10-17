@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <div className="flex items-center justify-between pt-6">
         <span className="font-display text-xl font-extrabold tracking-wide uppercase italic">
-          What<span className="text-volt">Next?</span>
+          What<span className="text-volt">Nxt</span>
         </span>
         <span className="flex items-center gap-2">
           <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">

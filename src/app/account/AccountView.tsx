@@ -285,7 +285,7 @@ function SignedOut() {
           </button>
         )}
       </div>
-      <p className="mt-4 text-xs text-muted">No account needed to use WhatNext. Signing up just saves your picks.</p>
+      <p className="mt-4 text-xs text-muted">No account needed to use WhatNxt. Signing up just saves your picks.</p>
     </>
   );
 }

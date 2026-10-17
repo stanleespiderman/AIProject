@@ -9,7 +9,7 @@ The app works without any of this: with no Supabase variables set, it stays on `
 3. **Project Settings > API**: copy the **Project URL** and the **anon / publishable key**.
 
 ## 2. Configure sign-in (Authentication > URL Configuration)
-- **Site URL**: your production URL, e.g. `https://whatnext.vercel.app`.
+- **Site URL**: your production URL, e.g. `https://yourdomain.com`.
 - **Redirect URLs**: add `https://<your-domain>/account` and `https://<your-domain>/account/reset`. Add `http://localhost:3000/**` for local dev, and your Vercel preview pattern (e.g. `https://*-<team>.vercel.app/**`) if you want sign-in on previews.
 - **Authentication > Providers > Email**: decide whether "Confirm email" is on.
   - On (recommended): the app shows "Check your email" after sign-up. Supabase's built-in mailer is limited to a few emails per hour, so before real traffic set up your own SMTP (Authentication > SMTP Settings: Resend, Postmark, SES...).

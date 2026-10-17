@@ -1,4 +1,4 @@
--- WhatNext? account data. Run once in the Supabase SQL editor (or `supabase db push`).
+-- WhatNxt account data. Run once in the Supabase SQL editor (or `supabase db push`).
 -- Every table is locked to its owner with row level security: the anon key in the
 -- browser can only ever read and write the signed-in user's own rows.
 

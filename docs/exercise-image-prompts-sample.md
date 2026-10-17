@@ -51,7 +51,7 @@ What I expected:
 *Tests: Body flat on the floor, no equipment; the elbow arc must sit on the elbow.*  ·  Save as `push-up.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: push-up (Push-Up)
 
@@ -75,7 +75,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Heavy equipment (bar on the back, not the neck), a rack, and two joint angles.*  ·  Save as `barbell-back-squat.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: barbell-back-squat (Barbell Back Squat)
 
@@ -99,7 +99,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Fast, ballistic movement with a flat back.*  ·  Save as `kettlebell-swing.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: kettlebell-swing (Kettlebell Swing)
 
@@ -123,7 +123,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Hanging body with the bar overhead.*  ·  Save as `pull-up.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: pull-up (Pull-Up)
 
@@ -147,7 +147,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: A different camera angle (three-quarter front).*  ·  Save as `dumbbell-fly.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: dumbbell-fly (Dumbbell Fly)
 
@@ -171,7 +171,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Rear camera, so the back muscles face the viewer.*  ·  Save as `band-pull-apart.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: band-pull-apart (Band Pull-Apart)
 
@@ -195,7 +195,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: A static hold: SET-UP and HOLD instead of START and END.*  ·  Save as `plank.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: plank (Plank)
 
@@ -219,7 +219,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Cable machine and small arm muscles.*  ·  Save as `cable-triceps-pushdown.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: cable-triceps-pushdown (Cable Triceps Pushdown)
 
@@ -243,7 +243,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Two legs doing different jobs, with a bench for the rear foot.*  ·  Save as `dumbbell-bulgarian-split-squat.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: dumbbell-bulgarian-split-squat (Dumbbell Bulgarian Split Squat)
 
@@ -267,7 +267,7 @@ Place every angle arc exactly on the joint named in its label (guide section 7),
 *Tests: Machine drawn in a reclined pose.*  ·  Save as `leg-press.png`
 
 ```
-Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
+Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.
 
 Create the image for exercise id: leg-press (Leg Press)
 

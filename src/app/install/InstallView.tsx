@@ -25,7 +25,7 @@ export function InstallView() {
         <Image src="/icons/icon-192.png" alt="" width={64} height={64} className="size-16 shrink-0 rounded-2xl" />
         <div>
           <p className="font-display text-2xl leading-none font-extrabold uppercase">
-            What<span className="text-volt">Next?</span>
+            What<span className="text-volt">Nxt</span>
           </p>
           <p className="mt-1 text-sm text-muted">Your next set in 10 seconds</p>
         </div>
@@ -60,7 +60,7 @@ function Done() {
       <p className="flex items-center gap-2 font-display text-2xl font-extrabold uppercase">
         <Check className="text-volt" /> You&apos;re already using the app
       </p>
-      <p className="mt-1 text-sm text-muted">WhatNext? is on your home screen. Nothing more to do.</p>
+      <p className="mt-1 text-sm text-muted">WhatNxt is on your home screen. Nothing more to do.</p>
       <ButtonLink href="/equipment" className="mt-4">
         Pick a workout <ArrowRight />
       </ButtonLink>
@@ -77,7 +77,7 @@ function IosSteps() {
       <Step n={2} title="Choose “Add to Home Screen”" detail="Scroll down the list if you don't see it.">
         <PlusSquare />
       </Step>
-      <Step n={3} title="Tap Add" detail="WhatNext? now sits on your home screen with the green arrows icon.">
+      <Step n={3} title="Tap Add" detail="WhatNxt now sits on your home screen with the green arrows icon.">
         <span className="rounded-xl bg-volt px-4 py-2 text-sm font-bold text-ink">Add</span>
       </Step>
       <p className="rounded-2xl border border-line bg-panel p-4 text-sm text-muted">

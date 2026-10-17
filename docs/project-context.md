@@ -1,12 +1,12 @@
-# WhatNext? Project Context (handoff file)
+# WhatNxt Project Context (handoff file)
 
-Purpose of this file: give a fresh Claude chat everything it needs to continue the WhatNext? project without re-asking. It summarises decisions, current state, and next steps as of the end of the Claude Code session. Treat the repo as the source of truth for code; treat this file as the source of truth for decisions and status.
+Purpose of this file: give a fresh Claude chat everything it needs to continue the WhatNxt project without re-asking. It summarises decisions, current state, and next steps as of the end of the Claude Code session. Treat the repo as the source of truth for code; treat this file as the source of truth for decisions and status.
 
 ---
 
 ## 1. The product
 
-**WhatNext?** is a mobile-first web app for gym-goers who get bored or finish their routine early. The user picks the equipment they have and a muscle group, and gets 5 to 8 exercise suggestions with sets, reps, form cues and a form video link.
+**WhatNxt** is a mobile-first web app for gym-goers who get bored or finish their routine early. The user picks the equipment they have and a muscle group, and gets 5 to 8 exercise suggestions with sets, reps, form cues and a form video link.
 
 - Tagline: "Bored mid-workout? Get your next set in 10 seconds."
 - Audience and pricing context: India (INR pricing). Free tier plus a paid "NextSet" unlock.

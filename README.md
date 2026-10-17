@@ -1,4 +1,4 @@
-# WhatNext?
+# WhatNxt
 
 > Bored mid-workout? Get your next set in 10 seconds.
 
@@ -154,7 +154,7 @@ For the exercises that have them, `angleRanges` in the JSON gives each key angle
 
 ### Install to home screen
 
-`src/app/manifest.ts` + `public/icons/` make WhatNext? installable (icons drawn by `scripts/build-app-icons.mjs`). `InstallBanner` shows on Home and under the results: on Android/Chrome an Install button opens the browser's dialog; on iPhone it shows the Share > Add to Home Screen steps. It hides once installed, waits for the first-run safety notice, and a dismissal hides it for 30 days. `/install` is a shareable page (bio, message or QR code) that shows only the steps for the visitor's phone: the Install button on Android, Share steps on iPhone, "open in your browser" inside Instagram/Facebook, and a QR code on desktop. There is deliberately no service worker, so nothing is cached offline yet.
+`src/app/manifest.ts` + `public/icons/` make WhatNxt installable (icons drawn by `scripts/build-app-icons.mjs`). `InstallBanner` shows on Home and under the results: on Android/Chrome an Install button opens the browser's dialog; on iPhone it shows the Share > Add to Home Screen steps. It hides once installed, waits for the first-run safety notice, and a dismissal hides it for 30 days. `/install` is a shareable page (bio, message or QR code) that shows only the steps for the visitor's phone: the Install button on Android, Share steps on iPhone, "open in your browser" inside Instagram/Facebook, and a QR code on desktop. There is deliberately no service worker, so nothing is cached offline yet.
 
 ### Muscle parts
 

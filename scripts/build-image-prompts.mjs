@@ -39,7 +39,7 @@ function prompt(e) {
   const im = e.image;
   const key = (e.angleRanges ?? []).find((r) => r.key);
   const lines = [
-    `Use the attached design guide "exercise-image-design.md" (the WhatNext? Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.`,
+    `Use the attached design guide "exercise-image-design.md" (the WhatNxt Exercise Illustration Design Guide). Follow EVERY rule in it exactly: layout, style, muscles, equipment, camera, angle labels, safety rules and the section 9 checklist. Do not change the style and do not add anything that is not listed below. The camera stated below overrides the default camera in the guide.`,
     ``,
     `Create the image for exercise id: ${e.id} (${e.name})`,
     ``,

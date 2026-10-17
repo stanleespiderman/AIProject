@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 
-/** Lets phones install WhatNext? to the home screen and open it full screen, like an app. */
+/** Lets phones install WhatNxt to the home screen and open it full screen, like an app. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "WhatNext? | Your next set in 10 seconds",
-    short_name: "WhatNext?",
+    name: "WhatNxt | Your next set in 10 seconds",
+    short_name: "WhatNxt",
     description: "Pick your equipment and a muscle group and get your next exercises with sets, reps and form cues.",
     start_url: "/",
     scope: "/",
