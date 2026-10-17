@@ -43,6 +43,18 @@ for (const e of EXERCISES) {
   }
   if (img.primaryMusclesToHighlight.length === 0) fail(`${e.id}: no primary muscle to highlight`);
   if (img.leftPanel.angles.length === 0 || img.rightPanel.angles.length === 0) fail(`${e.id}: each image panel needs at least one angle label`);
+  const xv = img.extraView;
+  if (xv) {
+    if (xv.leftPanel.label !== img.leftPanel.label || xv.rightPanel.label !== img.rightPanel.label) {
+      fail(`${e.id}: extraView panel labels must match the main image (${img.leftPanel.label} / ${img.rightPanel.label})`);
+    }
+    if (!xv.camera || !xv.purpose) fail(`${e.id}: extraView needs a camera and a purpose`);
+  }
+  for (const panel of [img.leftPanel, img.rightPanel, ...(xv ? [xv.leftPanel, xv.rightPanel] : [])]) {
+    if (!panel.alignment) continue;
+    if (panel.alignment.length === 0 || panel.alignment.length > 3) fail(`${e.id}: ${panel.label} panel needs 1 to 3 alignment lines, got ${panel.alignment.length}`);
+    if (panel.alignment.some((a) => /\d\s*°/.test(a))) fail(`${e.id}: ${panel.label} alignment lines must not contain degree numbers`);
+  }
 
   // 4b. angle ranges (optional per exercise): sane numbers, one key angle, labels match the image
   if (d.angleRanges) {
