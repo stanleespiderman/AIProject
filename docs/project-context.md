@@ -24,7 +24,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Sessions and exercise log:** Start session / End session buttons (sticky bar while live, auto-ends after 3 hours). Each card has Start exercise / Mark done. Sessions and exercise logs are stored on-device in `whatnext:db` through `src/lib/db/`; `/history` shows them. Signed-in users' sessions and logs sync to Supabase.
 
-**Accounts (Supabase):** passwordless email sign-in (link or 6-digit code), optional to train, required to buy. Purchases live in `public.entitlements` (users can read their own row; only the server's service role can write). Migration in `supabase/migrations/`, email templates in `supabase/templates/`, setup steps in README > "Accounts (Supabase) setup". Without Supabase env vars the app runs local-only.
+**Accounts (Supabase):** passwordless email sign-in (link or 6-digit code). First session on a device is anonymous; sign-in is required from the second session on and to buy. Purchases live in `public.entitlements` (users can read their own row; only the server's service role can write). Migration in `supabase/migrations/`, email templates in `supabase/templates/`, setup steps in README > "Accounts (Supabase) setup". Without Supabase env vars the app runs local-only.
 
 **Safety:** one-time disclaimer on first use, also in the footer: "Not medical advice. Use a weight you can control and consult a trainer if unsure."
 

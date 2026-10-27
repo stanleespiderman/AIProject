@@ -47,5 +47,7 @@ export const STORAGE_KEYS = {
   votes: "whatnext:votes",
   disclaimer: "whatnext:disclaimer-ack",
   db: "whatnext:db",
+  /** Set once this device has had its one session without an account. Survives sign-out. */
+  firstSessionUsed: "whatnext:first-session-used",
   pro: "whatnext:pro",
 } as const;

@@ -73,7 +73,8 @@ What was built, and how it differs from the sketch below:
 - **Entitlements are read-only to users** (RLS: select own row only). Only the service role can insert, so a purchase can only be granted by the server after payment verification. Tested: a signed-in user posting to `entitlements` gets 403.
 - **Sync, not server-first:** the device keeps working offline; changes are pushed in the background and merged on sign-in (`src/lib/db/remote.ts`).
 - **Quick empty sessions don't count:** ended within 1 minute with nothing logged → deleted (owner decision, 2026-10-27).
-- **Still soft:** the free-session count is enforced in the browser, and anonymous use is allowed, so clearing site data still resets it. Making it hard means requiring sign-in to start a session and moving `startSession` to a server function; not worth it before payments are live.
+- **Sign-in after the first session:** one anonymous session per device, then sign-in is required, so the free count follows the account.
+- **Still partly soft:** the count is checked in the browser, so a determined user could edit storage. Making it airtight means moving `startSession` to a server function that checks the count; worth doing once payments are live.
 
 Original sketch:
 
@@ -130,5 +131,6 @@ create index on exercise_logs (session_id);
 ## Owner decisions
 
 - A session ended within a minute with no exercises doesn't count. (Decided 2026-10-27.)
+- Sign-in is required from the second session on; the first session on a device is anonymous. (Decided 2026-10-27.) This also makes the 5-free-sessions limit per account rather than per browser, except for that one anonymous session per device.
 - Reps/weight per set: later stage. The schema has room: add a `sets_done jsonb` column to `exercise_logs`.
 - Open: is 3 hours the right auto-end? Most gym sessions are under 2.

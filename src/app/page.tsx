@@ -33,7 +33,7 @@ export default function Home() {
 
       <section className="flex flex-1 flex-col justify-center py-10">
         <p className="inline-block w-fit -skew-x-12 bg-volt px-2 font-display text-sm font-extrabold tracking-widest text-ink uppercase">
-          No signup. No plan needed.
+          First session free. No signup.
         </p>
         <h1 className="mt-5 font-display text-[4.25rem] leading-[0.85] font-extrabold uppercase italic">
           Bored

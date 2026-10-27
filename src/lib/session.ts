@@ -6,11 +6,15 @@ import {
   readDb,
   SESSION_MAX_MS,
   updateDb,
+  useDb,
   type ExerciseLog,
   type WorkoutSession,
 } from "./db";
+import { getAccount, useAccount } from "./account";
+import { STORAGE_KEYS } from "./constants";
 import { deleteRemoteSession, pushSession } from "./db/remote";
 import { canStartSession } from "./payments/usage";
+import { readJSON, useStoredState, writeJSON } from "./storage";
 import type { Exercise } from "./types";
 
 export { SESSION_MAX_HOURS } from "./db";
@@ -27,16 +31,39 @@ export function closeStaleSession(): void {
   endSession("timeout", new Date(started + SESSION_MAX_MS).toISOString());
 }
 
-export type StartSessionResult = { status: "started" | "resumed" } | { status: "paywall" };
+/**
+ * The first session on a device works without an account; every session
+ * after that needs sign-in (only when accounts are switched on).
+ */
+function signInRequired(account: ReturnType<typeof getAccount>, firstSessionUsed: boolean): boolean {
+  return account.status !== "unconfigured" && account.status !== "signedIn" && firstSessionUsed;
+}
+
+// Sessions already on the device (e.g. from before this rule) also count as the first use.
+export function signInRequiredToStart(): boolean {
+  const used = readJSON<boolean>(STORAGE_KEYS.firstSessionUsed, false) || readDb().sessions.length > 0;
+  return signInRequired(getAccount(), used);
+}
+
+export function useSignInRequiredToStart(): boolean {
+  const [flag] = useStoredState<boolean>(STORAGE_KEYS.firstSessionUsed, false);
+  const hasSessions = useDb().sessions.length > 0;
+  return signInRequired(useAccount(), flag || hasSessions);
+}
+
+export type StartSessionResult = { status: "started" | "resumed" | "paywall" | "signin" };
 
 /**
  * Starts a workout session, or resumes the live one.
- * Returns `paywall` when the free sessions are used up (send the user to /unlock).
+ * Returns `signin` when this device has had its anonymous session (send the
+ * user to /login), and `paywall` when the free sessions are used up (/unlock).
  */
 export function startSession(): StartSessionResult {
   closeStaleSession();
   if (findActiveSession(readDb())) return { status: "resumed" };
+  if (signInRequiredToStart()) return { status: "signin" };
   if (!canStartSession()) return { status: "paywall" };
+  writeJSON(STORAGE_KEYS.firstSessionUsed, true);
   const id = newId();
   updateDb((db) => ({
     ...db,
@@ -64,8 +91,10 @@ export function endSession(reason: "user" | "timeout" = "user", at = new Date().
   if (!active) return;
   const tooShort = Date.parse(at) - Date.parse(active.startedAt) < MIN_COUNTED_SESSION_MS;
   if (active.exercises.length === 0 && tooShort) {
-    updateDb((db) => ({ ...db, sessions: db.sessions.filter((s) => s.id !== active.id) }));
+    const db = updateDb((db) => ({ ...db, sessions: db.sessions.filter((s) => s.id !== active.id) }));
     void deleteRemoteSession(active.id);
+    // A first session that didn't count doesn't use up the free try without an account either.
+    if (db.sessions.length === 0) writeJSON(STORAGE_KEYS.firstSessionUsed, false);
     return;
   }
   updateActive((s) => ({ ...s, endedAt: at, endReason: reason }));

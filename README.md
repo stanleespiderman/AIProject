@@ -38,7 +38,7 @@ Push to GitHub, then "Add New Project" in Vercel and import the repo. For accoun
 
 ## Accounts (Supabase) setup
 
-Accounts are optional for training and required to buy: a purchase is a row in `public.entitlements` against the user's account, so it works on any phone. Signed-in users also get their workout log synced.
+The first session on a device works without an account; from the second session on, sign-in is required (`useSignInRequiredToStart()` in `src/lib/session.ts`; the device remembers this in `whatnext:first-session-used`, which survives sign-out). Buying also requires sign-in: a purchase is a row in `public.entitlements` against the user's account, so it works on any phone. Signed-in users also get their workout log synced.
 
 One-time setup in the Supabase dashboard:
 
@@ -146,6 +146,7 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 | `whatnext:db` | Workout database: `{ version, sessions: [{ number, startedAt, endedAt, exercises: [...] }] }` |
 | `whatnext:pro` | Cache of the signed-in account's entitlement (from Supabase); null when signed out |
 | `whatnext:auth` | Supabase Auth session |
+| `whatnext:first-session-used` | This device has had its one session without an account |
 
 ---
 
