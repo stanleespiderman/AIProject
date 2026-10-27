@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { paymentState } from '../src/lib/server/payment-state.ts';
+const base = { payment_id:'p',status:'succeeded',metadata:{user_id:'11111111-1111-4111-8111-111111111111'},product_cart:[{product_id:'our'}],total_amount:39900,currency:'INR',refunds:[] };
+test('successful purchase is eligible',()=>assert.equal(paymentState(base,'our')?.eligible,true));
+test('partial refund retains access',()=>assert.equal(paymentState({...base,refund_status:'partial',refunds:[{status:'succeeded',amount:100,currency:'INR'}]},'our')?.eligible,true));
+test('full refund terminal state',()=>assert.equal(paymentState({...base,refund_status:'full'},'our')?.revoked,true));
+test('cumulative partial refunds reaching total revoke',()=>assert.equal(paymentState({...base,refunds:[{status:'succeeded',amount:20000,currency:'INR'},{status:'succeeded',amount:19900,currency:'INR'}]},'our')?.revoked,true));
+test('failed refunds do not revoke',()=>assert.equal(paymentState({...base,refunds:[{status:'failed',amount:39900,currency:'INR'}]},'our')?.revoked,false));
+test('other currency not counted',()=>assert.equal(paymentState({...base,refunds:[{status:'succeeded',amount:39900,currency:'USD'}]},'our')?.revoked,false));
+test('wrong product ignored',()=>assert.equal(paymentState(base,'other'),null));
+test('invalid owner ignored',()=>assert.equal(paymentState({...base,metadata:{user_id:'invalid'}},'our'),null));
+test('pending payment not eligible',()=>assert.equal(paymentState({...base,status:'processing'},'our')?.eligible,false));
