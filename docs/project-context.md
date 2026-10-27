@@ -10,7 +10,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 - Tagline: "Bored mid-workout? Get your next set in 10 seconds."
 - Audience and pricing context: India (INR pricing). Free tier plus a paid "NextSet" unlock.
-- Owner's constraints: simple, clean, easy to extend over about 8 weeks. No backend or database for now. No user accounts or login. Must deploy cleanly on Vercel.
+- Owner's constraints: simple, clean, easy to extend over about 8 weeks. Originally no backend or accounts; since 2026-10-27 the owner chose Supabase for accounts and the workout database (app stays static, Supabase is called from the browser). Must deploy cleanly on Vercel.
 
 ## 2. Core flow (all built)
 
@@ -22,7 +22,9 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Monetisation (stub only, no real payments):** 5 free workout sessions in total (a session counts when started). After that, the unlock screen offers one plan: Rs 399 one-time for full, unlimited access, with a placeholder button. Shuffles are unlimited inside a session. Superseded the earlier "3 shuffles a day, Rs 199 / Rs 299 per month" model on 2026-10-27; see `docs/plans/sessions-paywall-and-exercise-log.md`.
 
-**Sessions and exercise log:** Start session / End session buttons (sticky bar while live, auto-ends after 3 hours). Each card has Start exercise / Mark done. Sessions and exercise logs are stored on-device in `whatnext:db` through `src/lib/db/`; `/history` shows them. A server Postgres schema is planned, not built.
+**Sessions and exercise log:** Start session / End session buttons (sticky bar while live, auto-ends after 3 hours). Each card has Start exercise / Mark done. Sessions and exercise logs are stored on-device in `whatnext:db` through `src/lib/db/`; `/history` shows them. Signed-in users' sessions and logs sync to Supabase.
+
+**Accounts (Supabase):** passwordless email sign-in (link or 6-digit code), optional to train, required to buy. Purchases live in `public.entitlements` (users can read their own row; only the server's service role can write). Migration in `supabase/migrations/`, email templates in `supabase/templates/`, setup steps in README > "Accounts (Supabase) setup". Without Supabase env vars the app runs local-only.
 
 **Safety:** one-time disclaimer on first use, also in the footer: "Not medical advice. Use a weight you can control and consult a trainer if unsure."
 

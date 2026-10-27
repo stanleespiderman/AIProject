@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { BottomBar } from "@/components/BottomBar";
 import { Check } from "@/components/icons";
 import { StepHeader } from "@/components/StepHeader";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
+import { useAccount } from "@/lib/account";
 import { formatInr, PLANS, startCheckout, useIsPro } from "@/lib/payments";
 import { FREE_SESSIONS } from "@/lib/payments/usage";
 
@@ -17,6 +19,9 @@ const perks = [
 
 export default function UnlockPage() {
   const pro = useIsPro();
+  const account = useAccount();
+  // A purchase is saved to an account, so buying needs one (when accounts are switched on).
+  const needsSignIn = account.status === "signedOut";
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const plan = PLANS[0];
@@ -77,10 +82,32 @@ export default function UnlockPage() {
       )}
 
       <BottomBar>
-        <Button onClick={checkout} disabled={busy || pro}>
-          {pro ? "You're unlocked" : busy ? "One sec…" : `Pay ${formatInr(plan.priceInr)}`}
-        </Button>
-        <p className="mt-2 text-center text-xs text-muted">No subscription. Pay once, keep it.</p>
+        {needsSignIn ? (
+          <>
+            <ButtonLink href="/login?next=/unlock">Sign in to buy</ButtonLink>
+            <p className="mt-2 text-center text-xs text-muted">
+              Your purchase is saved to your account, so it works on any phone.
+            </p>
+          </>
+        ) : (
+          <>
+            <Button onClick={checkout} disabled={busy || pro || account.status === "loading"}>
+              {pro ? "You're unlocked" : busy ? "One sec…" : `Pay ${formatInr(plan.priceInr)}`}
+            </Button>
+            <p className="mt-2 text-center text-xs text-muted">
+              {account.status === "signedIn" ? (
+                <>
+                  Buying as {account.email} ·{" "}
+                  <Link href="/account" className="underline underline-offset-4">
+                    not you?
+                  </Link>
+                </>
+              ) : (
+                "No subscription. Pay once, keep it."
+              )}
+            </p>
+          </>
+        )}
       </BottomBar>
     </>
   );

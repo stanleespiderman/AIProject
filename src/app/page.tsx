@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BottomBar } from "@/components/BottomBar";
+import { AccountLink } from "@/components/AccountLink";
 import { SessionButton } from "@/components/SessionButton";
 import { EXERCISES } from "@/data/exercises";
 
@@ -26,6 +27,7 @@ export default function Home() {
           >
             History
           </Link>
+          <AccountLink />
         </div>
       </div>
 

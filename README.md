@@ -4,7 +4,7 @@
 
 A mobile-first web app for gym-goers. Pick the equipment you have and a muscle group, and get 5–8 exercise suggestions, each with sets × reps, form cues and a link to form videos.
 
-**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. No backend and no accounts. Everything the app remembers, including the workout log, lives in `localStorage` (see `src/lib/db/`). Every route is statically prerendered, so it deploys to Vercel with zero config.
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Supabase (accounts + database). The app is still fully static: Supabase is called from the browser and row level security protects the data. Without Supabase env vars it runs local-only (no accounts) from `localStorage`. Every route is statically prerendered, so it deploys to Vercel with zero config.
 
 ---
 
@@ -34,7 +34,21 @@ To test on your phone, run `npm run dev -- -H 0.0.0.0` and open `http://<your-la
 
 ## Deploy to Vercel
 
-Push to GitHub, then "Add New Project" in Vercel and import the repo. No environment variables or settings are needed.
+Push to GitHub, then "Add New Project" in Vercel and import the repo. For accounts, connect Supabase first (next section).
+
+## Accounts (Supabase) setup
+
+Accounts are optional for training and required to buy: a purchase is a row in `public.entitlements` against the user's account, so it works on any phone. Signed-in users also get their workout log synced.
+
+One-time setup in the Supabase dashboard:
+
+1. **Run the migration:** SQL Editor → paste `supabase/migrations/20261027000000_accounts.sql` → Run. Creates `entitlements`, `workout_sessions`, `exercise_logs` with row level security.
+2. **URLs:** Authentication → URL Configuration. Site URL = your production URL. Redirect URLs: `https://<your-domain>/auth/callback`, `https://*-<your-vercel-team>.vercel.app/auth/callback` (previews), `http://localhost:3000/auth/callback`.
+3. **Email templates:** Authentication → Emails. Paste `supabase/templates/magic_link.html` into "Magic Link" and `supabase/templates/confirmation.html` into "Confirm signup" (subject: "Your WhatNext? sign-in code"). The defaults only have a link; these add the 6-digit code, which is what works when the email app opens links in a different browser.
+4. **Email sending:** Supabase's built-in email is rate-limited to a few emails an hour and is for testing only. Before launch, set up custom SMTP (Authentication → Emails → SMTP, e.g. Resend or Amazon SES).
+5. **Env vars:** `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` (see `.env.example`). The Vercel Supabase integration adds them; redeploy after adding, because they are baked in at build time.
+
+Sign-in is passwordless: `/login` emails a link plus a 6-digit code.
 
 ---
 
@@ -50,12 +64,17 @@ src/
 │  ├─ muscle/                  # 3. Muscle picker (single select, tap to go)
 │  ├─ results/                 # 4. Results + Shuffle + votes + Start exercise (needs a live session)
 │  ├─ history/page.tsx         # Past sessions and the exercises done in each
+│  ├─ login/                   # Email sign-in (link or 6-digit code)
+│  ├─ auth/callback/page.tsx   # Where the email link lands
+│  ├─ account/page.tsx         # Plan, stats, sign out
 │  └─ unlock/page.tsx          # Paywall: ₹399 one-time full access (stub)
 ├─ components/
 │  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyBadge
 │  ├─ ExerciseCard.tsx         # One exercise card (with Start exercise / Mark done)
 │  ├─ SessionBar.tsx           # Sticky "Session live · timer · End session" bar
 │  ├─ SessionButton.tsx        # Start / Continue session, or Unlock when free sessions are used up
+│  ├─ AccountSync.tsx          # Starts Supabase Auth once per page load (in the layout)
+│  ├─ AccountLink.tsx          # "Sign in" / "Account" pill on the home screen
 │  ├─ VoteButtons.tsx          # Thumbs up / down
 │  ├─ StepHeader.tsx           # Back button + step label + big title
 │  ├─ BottomBar.tsx            # Sticky thumb-zone action area
@@ -73,9 +92,12 @@ src/
    ├─ storage.ts               # Safe localStorage helpers + React hook
    ├─ params.ts                # URL query param parsing/building
    ├─ session.ts               # Session lifecycle: start/end session, start/finish exercise
+   ├─ supabase.ts              # Browser Supabase client (null when env vars are missing)
+   ├─ account.ts               # Sign in / out, account state, loads the purchase
    ├─ db/                      # ← The workout database (sessions + exercise logs)
    │  ├─ schema.ts             #   Types + DB_VERSION
-   │  └─ index.ts              #   Read/write/hooks. The only code that knows where data is stored
+   │  ├─ index.ts              #   Read/write/hooks on the device copy
+   │  └─ remote.ts             #   Sync with Supabase when signed in (push on change, merge on sign-in)
    ├─ youtube.ts               # Builds YouTube *search* URLs
    └─ payments/                # ← Everything monetisation-related
       ├─ index.ts              #   Plan (₹399 full access), checkout stub, Pro status
@@ -106,7 +128,9 @@ docs/exercise-image-design.md                # style guide for exercise illustra
 
 - **Start session** on the home screen starts a workout session; the bar at the top shows a timer and **End session**. Results need a live session.
 - Each card has **Start exercise**, then **Mark done** (and **Again** to log it twice). Every start and finish is written to the workout database with a snapshot of the exercise.
-- A session left open for 3 hours (`SESSION_MAX_HOURS` in `src/lib/session.ts`) ends itself.
+- A session left open for 3 hours (`SESSION_MAX_HOURS` in `src/lib/db/index.ts`) ends itself.
+- A session ended within 1 minute with no exercises logged is deleted and doesn't use up a free session (`MIN_COUNTED_SESSION_MS`).
+- Signed in, every change is pushed to Supabase in the background; on sign-in the device and account histories are merged. Signing out clears the device copy.
 - `/history` lists every session and what was done.
 - The full design, and the server-side Postgres schema for later, is in `docs/plans/sessions-paywall-and-exercise-log.md`.
 
@@ -120,7 +144,8 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 | `whatnext:votes` | `{ [exerciseId]: 1 \| -1 }` |
 | `whatnext:disclaimer-ack` | Disclaimer dismissed |
 | `whatnext:db` | Workout database: `{ version, sessions: [{ number, startedAt, endedAt, exercises: [...] }] }` |
-| `whatnext:pro` | Set only by `grantPro()` after a real payment |
+| `whatnext:pro` | Cache of the signed-in account's entitlement (from Supabase); null when signed out |
+| `whatnext:auth` | Supabase Auth session |
 
 ---
 
@@ -176,7 +201,7 @@ Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`
 | --- | --- | --- |
 | `PLANS` | `index.ts` | One plan: ₹399 one-time full access. Edit price and copy here |
 | `startCheckout(planId)` | `index.ts` | **The stub.** Currently returns `{ status: "unavailable" }` |
-| `grantPro(planId)` / `isPro()` / `useIsPro()` | `index.ts` | Pro flag; Pro users get unlimited sessions |
+| `isPro()` / `useIsPro()` | `index.ts` | Pro flag, cached from the account's `entitlements` row; Pro users get unlimited sessions |
 | `FREE_SESSIONS` | `usage.ts` | Free sessions in total, not per day (5) |
 | `canStartSession()` / `useFreeSessionsLeft()` | `usage.ts` | Quota check; a session counts the moment it starts |
 
@@ -186,7 +211,7 @@ When the 5 free sessions are used up, Start session becomes "Unlock · ₹399" a
 
 1. Add a server route, e.g. `src/app/api/checkout/route.ts`, that creates a Razorpay order or a Stripe Checkout Session using your secret key from env vars. Never put secret keys in client code.
 2. Replace the body of `startCheckout()` to call that route:
-   - **Razorpay:** load `checkout.js`, open `new Razorpay({ order_id, key, handler })`, send the response to a server route that verifies the signature, then call `grantPro(planId)`.
+   - **Razorpay:** load `checkout.js`, open `new Razorpay({ order_id, key, handler })`, send the response to a server route that verifies the signature, inserts the `entitlements` row for the signed-in user with `SUPABASE_SERVICE_ROLE_KEY`, then call `refreshEntitlement()`. Add a Razorpay webhook doing the same insert as a backup.
    - **Stripe:** redirect to the Checkout Session URL and handle the result on a `/unlock/success` page or through a webhook.
 3. **Before charging real money:** Pro status and the session count currently live in `localStorage`, which the user can edit or clear. Once payments are real, keep sessions and entitlements on the server and have `isPro()` / `canStartSession()` check that instead. The schema and steps are in `docs/plans/sessions-paywall-and-exercise-log.md`.
 

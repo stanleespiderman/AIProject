@@ -1,12 +1,22 @@
 "use client";
 
-import { findActiveSession, newId, readDb, updateDb, type ExerciseLog, type WorkoutSession } from "./db";
+import {
+  findActiveSession,
+  newId,
+  readDb,
+  SESSION_MAX_MS,
+  updateDb,
+  type ExerciseLog,
+  type WorkoutSession,
+} from "./db";
+import { deleteRemoteSession, pushSession } from "./db/remote";
 import { canStartSession } from "./payments/usage";
 import type { Exercise } from "./types";
 
-/** A session left open longer than this is closed automatically. */
-export const SESSION_MAX_HOURS = 3;
-const SESSION_MAX_MS = SESSION_MAX_HOURS * 60 * 60 * 1000;
+export { SESSION_MAX_HOURS } from "./db";
+
+/** A session ended sooner than this with nothing logged doesn't count towards the free ones. */
+export const MIN_COUNTED_SESSION_MS = 60 * 1000;
 
 /** Ends a live session that has run past SESSION_MAX_HOURS. Safe to call any time. */
 export function closeStaleSession(): void {
@@ -27,12 +37,13 @@ export function startSession(): StartSessionResult {
   closeStaleSession();
   if (findActiveSession(readDb())) return { status: "resumed" };
   if (!canStartSession()) return { status: "paywall" };
+  const id = newId();
   updateDb((db) => ({
     ...db,
     sessions: [
       ...db.sessions,
       {
-        id: newId(),
+        id,
         number: db.sessions.length + 1,
         startedAt: new Date().toISOString(),
         endedAt: null,
@@ -40,10 +51,23 @@ export function startSession(): StartSessionResult {
       },
     ],
   }));
+  void pushSession(id);
   return { status: "started" };
 }
 
+/**
+ * Ends the live session. One ended within MIN_COUNTED_SESSION_MS with no
+ * exercises logged is removed instead, so it doesn't use up a free session.
+ */
 export function endSession(reason: "user" | "timeout" = "user", at = new Date().toISOString()): void {
+  const active = findActiveSession(readDb());
+  if (!active) return;
+  const tooShort = Date.parse(at) - Date.parse(active.startedAt) < MIN_COUNTED_SESSION_MS;
+  if (active.exercises.length === 0 && tooShort) {
+    updateDb((db) => ({ ...db, sessions: db.sessions.filter((s) => s.id !== active.id) }));
+    void deleteRemoteSession(active.id);
+    return;
+  }
   updateActive((s) => ({ ...s, endedAt: at, endReason: reason }));
 }
 
@@ -72,9 +96,8 @@ export function finishExercise(logId: string): void {
 }
 
 function updateActive(fn: (session: WorkoutSession) => WorkoutSession): void {
-  updateDb((db) => {
-    const active = findActiveSession(db);
-    if (!active) return db;
-    return { ...db, sessions: db.sessions.map((s) => (s === active ? fn(s) : s)) };
-  });
+  const active = findActiveSession(readDb());
+  if (!active) return;
+  updateDb((db) => ({ ...db, sessions: db.sessions.map((s) => (s.id === active.id ? fn(s) : s)) }));
+  void pushSession(active.id);
 }

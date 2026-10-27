@@ -1,0 +1,11 @@
+<!-- Supabase → Authentication → Emails → "Confirm signup" (first sign-in of a new email). Subject: Your WhatNext? sign-in code -->
+<div style="font-family:Arial,sans-serif;max-width:420px;margin:0 auto;padding:24px;color:#111">
+  <h2 style="margin:0 0 16px">Sign in to WhatNext?</h2>
+  <p style="margin:0 0 8px">Your sign-in code:</p>
+  <p style="font-size:32px;font-weight:bold;letter-spacing:6px;margin:0 0 24px">{{ .Token }}</p>
+  <p style="margin:0 0 24px">
+    Or tap this button on the same phone:<br /><br />
+    <a href="{{ .ConfirmationURL }}" style="background:#d4ff3a;color:#09090c;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:bold">Sign in</a>
+  </p>
+  <p style="color:#666;font-size:12px;margin:0">The code and link expire in 1 hour. If you didn't ask for this, ignore this email.</p>
+</div>

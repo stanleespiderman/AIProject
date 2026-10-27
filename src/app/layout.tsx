@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Barlow_Condensed, Inter } from "next/font/google";
+import { AccountSync } from "@/components/AccountSync";
 import { DisclaimerModal } from "@/components/DisclaimerModal";
 import { Footer } from "@/components/Footer";
 import { SessionBar } from "@/components/SessionBar";
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Footer />
         </div>
         <DisclaimerModal />
+        <AccountSync />
       </body>
     </html>
   );

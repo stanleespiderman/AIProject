@@ -6,7 +6,11 @@
  *   PLANS, startCheckout(), isPro(), useIsPro()
  * and the free-session quota in ./usage.ts.
  *
- * To go live with Razorpay or Stripe, replace the body of `startCheckout`
+ * Purchases belong to an account: the server writes them to the Supabase
+ * `entitlements` table after verifying the payment, and src/lib/account.ts
+ * copies the signed-in user's row into a local cache (cacheEntitlement).
+ *
+ * To go live with Razorpay, replace the body of `startCheckout`
  * (see README > "Payments"). No component needs to change.
  * ─────────────────────────────────────────────────────────────────
  */
@@ -39,11 +43,10 @@ export type CheckoutResult =
   | { status: "unavailable"; message: string };
 
 /**
- * STUB: no real payment happens. Replace with your provider's checkout:
- *  - Razorpay: create an order on a server route, open `new Razorpay({...}).open()`,
- *    verify the signature server-side, then call `grantPro()`.
- *  - Stripe: create a Checkout Session on a server route and redirect to it;
- *    grant Pro from the success page / webhook.
+ * STUB: no real payment happens. The caller makes sure the user is signed in.
+ * Razorpay: create an order on a server route, open `new Razorpay({...}).open()`,
+ * verify the signature server-side, insert into `entitlements` with the
+ * service role key, then call `refreshEntitlement()` from src/lib/account.ts.
  */
 export async function startCheckout(planId: PlanId): Promise<CheckoutResult> {
   void planId;
@@ -53,15 +56,18 @@ export async function startCheckout(planId: PlanId): Promise<CheckoutResult> {
   };
 }
 
-interface ProState {
-  /** Older installs may hold "lifetime" or "monthly" from the previous plans; they stay Pro. */
-  plan: PlanId | (string & {});
+export interface ProState {
+  plan: string;
   since: string;
 }
 
-/** Call this only after the provider confirms payment. */
-export function grantPro(plan: PlanId): void {
-  writeJSON<ProState>(STORAGE_KEYS.pro, { plan, since: new Date().toISOString() });
+/**
+ * Local copy of the signed-in account's entitlement, so the app knows the
+ * user has paid while offline. Written only by src/lib/account.ts from the
+ * server; null when signed out or not paid.
+ */
+export function cacheEntitlement(state: ProState | null): void {
+  writeJSON<ProState | null>(STORAGE_KEYS.pro, state);
 }
 
 export function isPro(): boolean {

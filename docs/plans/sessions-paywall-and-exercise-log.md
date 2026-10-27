@@ -1,6 +1,6 @@
 # Plan: workout sessions, 5-free-sessions paywall, exercise log
 
-Status: **v1 implemented** (on-device). Phase 2 (server) is planned below, not built.
+Status: **v1 implemented** (on-device). **Phase 2 accounts + server database implemented** (Supabase); real payments not built yet.
 
 ## What changes
 
@@ -64,7 +64,18 @@ Storage: one localStorage key, `whatnext:db`:
 - History lives on one device and is lost if the browser storage is cleared.
 - Payments are still a stub (`startCheckout()` returns "unavailable").
 
-## Phase 2: server database + real payments (not built)
+## Phase 2: accounts + server database (built) and real payments (not built)
+
+What was built, and how it differs from the sketch below:
+
+- **Supabase Auth, passwordless email** (link + 6-digit code). Accounts are optional to train, required to buy.
+- **Schema:** `supabase/migrations/20261027000000_accounts.sql`. Uses `auth.users` directly (no `users` table); session `number` is computed on the device, not stored.
+- **Entitlements are read-only to users** (RLS: select own row only). Only the service role can insert, so a purchase can only be granted by the server after payment verification. Tested: a signed-in user posting to `entitlements` gets 403.
+- **Sync, not server-first:** the device keeps working offline; changes are pushed in the background and merged on sign-in (`src/lib/db/remote.ts`).
+- **Quick empty sessions don't count:** ended within 1 minute with nothing logged → deleted (owner decision, 2026-10-27).
+- **Still soft:** the free-session count is enforced in the browser, and anonymous use is allowed, so clearing site data still resets it. Making it hard means requiring sign-in to start a session and moving `startSession` to a server function; not worth it before payments are live.
+
+Original sketch:
 
 Do these together, because each needs the others:
 
@@ -116,8 +127,8 @@ create index on exercise_logs (session_id);
 4. **Razorpay** for ₹399: server creates an order (39900 paise), client opens Checkout, server verifies the signature (and a webhook as backup), then inserts into `entitlements`.
 5. **Swap the repository.** Re-implement `src/lib/db/index.ts` against the API. Offer a one-time "import my history" that uploads the local `whatnext:db` after sign-in.
 
-## Open questions for the owner
+## Owner decisions
 
-- Should a session that is ended within a minute with no exercises be refunded? (v1: no, it still counts.)
-- Is 3 hours the right auto-end? Most gym sessions are under 2.
-- Do we want reps/weight per set in the log later? The schema has room: add a `sets_done jsonb` column to `exercise_logs`.
+- A session ended within a minute with no exercises doesn't count. (Decided 2026-10-27.)
+- Reps/weight per set: later stage. The schema has room: add a `sets_done jsonb` column to `exercise_logs`.
+- Open: is 3 hours the right auto-end? Most gym sessions are under 2.

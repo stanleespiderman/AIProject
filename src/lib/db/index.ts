@@ -32,11 +32,37 @@ export function updateDb(fn: (db: Database) => Database): Database {
   return next;
 }
 
+/** A UUID v4 (the server tables use uuid ids). */
 export function newId(): string {
   // randomUUID needs a secure context; plain http on a LAN (phone testing) doesn't have one.
-  return typeof crypto !== "undefined" && "randomUUID" in crypto
-    ? crypto.randomUUID()
-    : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+  if (typeof crypto.randomUUID === "function") return crypto.randomUUID();
+  const b = crypto.getRandomValues(new Uint8Array(16));
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = [...b].map((x) => x.toString(16).padStart(2, "0")).join("");
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+}
+
+export function isUuid(id: string): boolean {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+}
+
+/** A session left open longer than this is closed automatically. */
+export const SESSION_MAX_HOURS = 3;
+export const SESSION_MAX_MS = SESSION_MAX_HOURS * 60 * 60 * 1000;
+
+/**
+ * Only the newest session may be live. After merging sessions from two
+ * devices, close any older one still open (at its time limit, or when the
+ * next session started, whichever is first). Expects oldest-first order.
+ */
+export function closeOrphanedSessions(sessions: WorkoutSession[]): WorkoutSession[] {
+  return sessions.map((s, i) => {
+    const next = sessions[i + 1];
+    if (s.endedAt !== null || !next) return s;
+    const end = Math.min(Date.parse(s.startedAt) + SESSION_MAX_MS, Date.parse(next.startedAt));
+    return { ...s, endedAt: new Date(end).toISOString(), endReason: "timeout" };
+  });
 }
 
 export function findActiveSession(db: Database): WorkoutSession | null {
