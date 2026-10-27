@@ -10,20 +10,22 @@
  * `entitlements` table after verifying the payment, and src/lib/account.ts
  * copies the signed-in user's row into a local cache (cacheEntitlement).
  *
- * To go live with Razorpay, replace the body of `startCheckout`
- * (see README > "Payments"). No component needs to change.
+ * Checkout is Dodo Payments: startCheckout() asks our server route
+ * (src/app/api/checkout) for a hosted checkout URL and redirects there. The
+ * Dodo webhook (src/app/api/webhooks/dodo) grants the purchase.
  * ─────────────────────────────────────────────────────────────────
  */
 
 import { STORAGE_KEYS } from "../constants";
 import { readJSON, useStoredState, writeJSON } from "../storage";
+import { getSupabase } from "../supabase";
 
 export type PlanId = "full";
 
 export interface Plan {
   id: PlanId;
   name: string;
-  /** Price in whole rupees. Razorpay expects paise (× 100) and Stripe the smallest unit too. */
+  /** Display price in whole rupees. The amount actually charged is set on the Dodo product. */
   priceInr: number;
   billing: "one-time";
   blurb: string;
@@ -38,22 +40,35 @@ export function formatInr(amount: number): string {
 }
 
 export type CheckoutResult =
-  | { status: "success" }
-  | { status: "cancelled" }
-  | { status: "unavailable"; message: string };
+  | { status: "redirecting" } // on the way to Dodo's checkout page
+  | { status: "signin" }
+  | { status: "owned" } // this account has already paid
+  | { status: "error"; message: string };
 
-/**
- * STUB: no real payment happens. The caller makes sure the user is signed in.
- * Razorpay: create an order on a server route, open `new Razorpay({...}).open()`,
- * verify the signature server-side, insert into `entitlements` with the
- * service role key, then call `refreshEntitlement()` from src/lib/account.ts.
- */
+/** Sends the signed-in user to Dodo Payments' hosted checkout. */
 export async function startCheckout(planId: PlanId): Promise<CheckoutResult> {
-  void planId;
-  return {
-    status: "unavailable",
-    message: "Payments aren't live yet. Check back soon.",
-  };
+  const supabase = getSupabase();
+  if (!supabase) return { status: "error", message: "Payments aren't live yet. Check back soon." };
+  const { data } = await supabase.auth.getSession();
+  if (!data.session) return { status: "signin" };
+
+  let res: Response;
+  try {
+    res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${data.session.access_token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ plan: planId }),
+    });
+  } catch {
+    return { status: "error", message: "Couldn't reach the server. Check your connection and try again." };
+  }
+  const body = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
+  if (res.status === 401) return { status: "signin" };
+  if (res.status === 409) return { status: "owned" };
+  if (!res.ok || !body.url) return { status: "error", message: body.error ?? "Something went wrong. Try again." };
+
+  window.location.assign(body.url);
+  return { status: "redirecting" };
 }
 
 export interface ProState {

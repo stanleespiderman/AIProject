@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BottomBar } from "@/components/BottomBar";
 import { Check } from "@/components/icons";
 import { StepHeader } from "@/components/StepHeader";
 import { Button, ButtonLink } from "@/components/ui/Button";
-import { useAccount } from "@/lib/account";
+import { refreshEntitlement, useAccount } from "@/lib/account";
 import { formatInr, PLANS, startCheckout, useIsPro } from "@/lib/payments";
 import { FREE_SESSIONS } from "@/lib/payments/usage";
 
@@ -18,6 +19,7 @@ const perks = [
 ];
 
 export default function UnlockPage() {
+  const router = useRouter();
   const pro = useIsPro();
   const account = useAccount();
   // A purchase is saved to an account, so buying needs one (when accounts are switched on).
@@ -30,8 +32,11 @@ export default function UnlockPage() {
     setBusy(true);
     setMessage(null);
     const result = await startCheckout(plan.id);
+    if (result.status === "redirecting") return; // stay busy while the browser leaves
     setBusy(false);
-    if (result.status === "unavailable") setMessage(result.message);
+    if (result.status === "signin") router.push("/login?next=/unlock");
+    else if (result.status === "owned") await refreshEntitlement();
+    else setMessage(result.message);
   };
 
   return (

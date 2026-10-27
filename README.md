@@ -4,7 +4,7 @@
 
 A mobile-first web app for gym-goers. Pick the equipment you have and a muscle group, and get 5–8 exercise suggestions, each with sets × reps, form cues and a link to form videos.
 
-**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Supabase (accounts + database). The app is still fully static: Supabase is called from the browser and row level security protects the data. Without Supabase env vars it runs local-only (no accounts) from `localStorage`. Every route is statically prerendered, so it deploys to Vercel with zero config.
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Supabase (accounts + database) · Dodo Payments. Pages are static: Supabase is called from the browser and row level security protects the data. The only server code is two route handlers for payments (`src/app/api/`). Without Supabase env vars it runs local-only (no accounts) from `localStorage`. Every route is statically prerendered, so it deploys to Vercel with zero config.
 
 ---
 
@@ -67,7 +67,9 @@ src/
 │  ├─ login/                   # Email sign-in (link or 6-digit code)
 │  ├─ auth/callback/page.tsx   # Where the email link lands
 │  ├─ account/page.tsx         # Plan, stats, sign out
-│  └─ unlock/page.tsx          # Paywall: ₹399 one-time full access (stub)
+│  ├─ unlock/page.tsx          # Paywall: ₹399 one-time full access → Dodo checkout
+│  ├─ unlock/success/page.tsx  # Back from Dodo: waits for the webhook to unlock
+│  └─ api/                     # Server: checkout/ (create Dodo session), webhooks/dodo/ (grant/revoke)
 ├─ components/
 │  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyBadge
 │  ├─ ExerciseCard.tsx         # One exercise card (with Start exercise / Mark done)
@@ -94,13 +96,14 @@ src/
    ├─ session.ts               # Session lifecycle: start/end session, start/finish exercise
    ├─ supabase.ts              # Browser Supabase client (null when env vars are missing)
    ├─ account.ts               # Sign in / out, account state, loads the purchase
+   ├─ server/                  # Server-only: Dodo client, Supabase admin client (service role)
    ├─ db/                      # ← The workout database (sessions + exercise logs)
    │  ├─ schema.ts             #   Types + DB_VERSION
    │  ├─ index.ts              #   Read/write/hooks on the device copy
    │  └─ remote.ts             #   Sync with Supabase when signed in (push on change, merge on sign-in)
    ├─ youtube.ts               # Builds YouTube *search* URLs
    └─ payments/                # ← Everything monetisation-related
-      ├─ index.ts              #   Plan (₹399 full access), checkout stub, Pro status
+      ├─ index.ts              #   Plan (₹399 full access), startCheckout(), Pro status
       └─ usage.ts              #   5-free-sessions quota
 ```
 
@@ -194,27 +197,38 @@ Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`
 
 ---
 
-## Payments (stub)
+## Payments (Dodo Payments)
 
-**Everything lives in `src/lib/payments/`.** The UI only touches its exports, so swapping in a real provider shouldn't require changes to any component.
+Checkout is [Dodo Payments](https://dodopayments.com) (hosted checkout, merchant of record). A purchase is a row in Supabase `public.entitlements` against the buyer's account.
+
+**How a purchase works**
+
+1. Signed-in user taps **Pay ₹399** on `/unlock` → `startCheckout()` (`src/lib/payments/index.ts`) calls `POST /api/checkout` with their Supabase access token.
+2. `src/app/api/checkout/route.ts` checks the token, refuses if they already own it (409), and creates a Dodo checkout session with `metadata.user_id` = their Supabase user id. The browser goes to Dodo's checkout page.
+3. After paying, Dodo sends them to `/unlock/success`, which waits for the purchase to appear. **The redirect grants nothing.**
+4. Dodo calls `POST /api/webhooks/dodo` (`src/app/api/webhooks/dodo/route.ts`). It verifies the signature and, on `payment.succeeded` for our product, inserts the entitlement with the service role key. That webhook is the only thing that grants access. Duplicate deliveries are harmless. A full `refund.succeeded` or a `dispute.lost` removes the entitlement.
 
 | Export | File | Purpose |
 | --- | --- | --- |
-| `PLANS` | `index.ts` | One plan: ₹399 one-time full access. Edit price and copy here |
-| `startCheckout(planId)` | `index.ts` | **The stub.** Currently returns `{ status: "unavailable" }` |
-| `isPro()` / `useIsPro()` | `index.ts` | Pro flag, cached from the account's `entitlements` row; Pro users get unlimited sessions |
-| `FREE_SESSIONS` | `usage.ts` | Free sessions in total, not per day (5) |
-| `canStartSession()` / `useFreeSessionsLeft()` | `usage.ts` | Quota check; a session counts the moment it starts |
+| `PLANS` | `payments/index.ts` | One plan: ₹399 one-time full access (display only; the real price is the Dodo product) |
+| `startCheckout(planId)` | `payments/index.ts` | Sends the signed-in user to Dodo checkout |
+| `isPro()` / `useIsPro()` | `payments/index.ts` | Pro flag, cached from the account's `entitlements` row |
+| `FREE_SESSIONS` | `payments/usage.ts` | Free sessions in total, not per day (5) |
+| `canStartSession()` / `useFreeSessionsLeft()` | `payments/usage.ts` | Quota check; a session counts the moment it starts |
 
 When the 5 free sessions are used up, Start session becomes "Unlock · ₹399" and links to `/unlock`. Shuffles are unlimited inside a session.
 
-### Plugging in Razorpay or Stripe
+### Dodo Payments setup
 
-1. Add a server route, e.g. `src/app/api/checkout/route.ts`, that creates a Razorpay order or a Stripe Checkout Session using your secret key from env vars. Never put secret keys in client code.
-2. Replace the body of `startCheckout()` to call that route:
-   - **Razorpay:** load `checkout.js`, open `new Razorpay({ order_id, key, handler })`, send the response to a server route that verifies the signature, inserts the `entitlements` row for the signed-in user with `SUPABASE_SERVICE_ROLE_KEY`, then call `refreshEntitlement()`. Add a Razorpay webhook doing the same insert as a backup.
-   - **Stripe:** redirect to the Checkout Session URL and handle the result on a `/unlock/success` page or through a webhook.
-3. **Before charging real money:** Pro status and the session count currently live in `localStorage`, which the user can edit or clear. Once payments are real, keep sessions and entitlements on the server and have `isPro()` / `canStartSession()` check that instead. The schema and steps are in `docs/plans/sessions-paywall-and-exercise-log.md`.
+1. **Product:** Dodo dashboard → Products → create a **one-time** product "WhatNext? Full access", price **₹399 (INR)**. Copy its id (`pdt_...`).
+2. **API key:** Developer → API Keys → create one. Use **Test mode** first.
+3. **Webhook:** Developer → Webhooks → add `https://<your-domain>/api/webhooks/dodo`, subscribe to `payment.succeeded`, `refund.succeeded` and `dispute.lost`. Copy the signing secret.
+4. **Supabase:** run `supabase/migrations/20261028000000_dodo_payments.sql` (after the accounts migration). Copy the **service role** key (Project Settings → API).
+5. **Vercel env vars** (server-only, no `NEXT_PUBLIC_` prefix), then redeploy:
+   `DODO_PAYMENTS_API_KEY`, `DODO_PAYMENTS_WEBHOOK_KEY`, `DODO_PAYMENTS_PRODUCT_ID`, `DODO_PAYMENTS_ENVIRONMENT` (`test_mode` or `live_mode`), `SUPABASE_SERVICE_ROLE_KEY`.
+6. **Test:** buy with a Dodo test card, check that `/unlock/success` says "You're unlocked" and a row appears in `entitlements`. Then switch the key, webhook, product id and `DODO_PAYMENTS_ENVIRONMENT` to live mode.
+
+If someone pays but isn't unlocked: check Dodo → Webhooks delivery logs (a 401 means the signing secret is wrong; 503 means env vars are missing), then Vercel function logs for `[dodo webhook]`.
 
 ---
 

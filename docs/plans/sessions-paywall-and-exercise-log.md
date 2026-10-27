@@ -1,6 +1,6 @@
 # Plan: workout sessions, 5-free-sessions paywall, exercise log
 
-Status: **v1 implemented** (on-device). **Phase 2 accounts + server database implemented** (Supabase); real payments not built yet.
+Status: **v1 implemented** (on-device). **Phase 2 accounts + server database implemented** (Supabase). **Payments implemented with Dodo Payments** (2026-10-28; owner chose Dodo over Razorpay).
 
 ## What changes
 
@@ -127,6 +127,13 @@ create index on exercise_logs (session_id);
 3. **Server routes** (`src/app/api/...`): `POST /sessions` (checks `count < 5 or entitlement exists` inside a transaction, then inserts), `POST /sessions/:id/end`, `POST /sessions/:id/exercises`, `PATCH /exercises/:id`.
 4. **Razorpay** for ₹399: server creates an order (39900 paise), client opens Checkout, server verifies the signature (and a webhook as backup), then inserts into `entitlements`.
 5. **Swap the repository.** Re-implement `src/lib/db/index.ts` against the API. Offer a one-time "import my history" that uploads the local `whatnext:db` after sign-in.
+
+## Payments (Dodo Payments, built)
+
+- Hosted checkout via `POST /api/checkout` (checks the Supabase token, refuses repeat buyers, puts `user_id` in the session metadata).
+- `POST /api/webhooks/dodo` verifies the Standard Webhooks signature and is the only place an entitlement is granted (`payment.succeeded` for our product id) or removed (full `refund.succeeded`, `dispute.lost`). Idempotent on retries.
+- Migration `20261028000000_dodo_payments.sql`: `amount_paise` → `amount_minor` plus `currency`, because Dodo can charge in the buyer's currency.
+- Tested against a mock Dodo API with real signed webhooks: purchase unlocks, wrong/missing signature → 401, duplicate delivery → one row, other product → ignored, partial refund → kept, full refund → removed, repeat checkout → 409.
 
 ## Owner decisions
 

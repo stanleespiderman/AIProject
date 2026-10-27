@@ -24,7 +24,9 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Sessions and exercise log:** Start session / End session buttons (sticky bar while live, auto-ends after 3 hours). Each card has Start exercise / Mark done. Sessions and exercise logs are stored on-device in `whatnext:db` through `src/lib/db/`; `/history` shows them. Signed-in users' sessions and logs sync to Supabase.
 
-**Accounts (Supabase):** passwordless email sign-in (link or 6-digit code). First session on a device is anonymous; sign-in is required from the second session on and to buy. Purchases live in `public.entitlements` (users can read their own row; only the server's service role can write). Migration in `supabase/migrations/`, email templates in `supabase/templates/`, setup steps in README > "Accounts (Supabase) setup". Without Supabase env vars the app runs local-only.
+**Accounts (Supabase):** passwordless email sign-in (link or 6-digit code). First session on a device is anonymous; sign-in is required from the second session on and to buy.
+
+**Payments (Dodo Payments):** ₹399 one-time via Dodo hosted checkout. `src/app/api/checkout` creates the session; `src/app/api/webhooks/dodo` (signature-verified) writes `entitlements`. Setup steps in README > "Dodo Payments setup". Purchases live in `public.entitlements` (users can read their own row; only the server's service role can write). Migration in `supabase/migrations/`, email templates in `supabase/templates/`, setup steps in README > "Accounts (Supabase) setup". Without Supabase env vars the app runs local-only.
 
 **Safety:** one-time disclaimer on first use, also in the footer: "Not medical advice. Use a weight you can control and consult a trainer if unsure."
 
@@ -110,7 +112,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 3. Write the per-exercise data (camera, equipment, primary and secondary muscles, start, end, angle labels) for all 168 exercises and generate one prompt each. A first draft of the chest and back data (44 exercises) was started in the session but not committed; redo it after the sample test.
 4. Generate all images, upload to `public/exercises/`, and have a trainer review them (the angle values are typical working values, not rules).
 5. App changes: add an optional `steps`/image field to the exercise data; show the image first on each card with a fallback to text cues when no image exists; make the video link secondary ("Prefer video? Watch form").
-6. Deploy to Vercel; consider server-side entitlements and a real payment provider (Razorpay or Stripe) later, behind `src/lib/payments/`.
+6. Deploy to Vercel and finish the Supabase + Dodo Payments setup (README); test a purchase in Dodo test mode before going live.
 
 ## 9. Working agreements and cautions
 
