@@ -5,6 +5,7 @@ import { Barlow_Condensed, Inter } from "next/font/google";
 import { DisclaimerModal } from "@/components/DisclaimerModal";
 import { InstallBoot } from "@/components/InstallBoot";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const display = Barlow_Condensed({
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </div>
         <DisclaimerModal />
         <InstallBoot />
+        {clarityAllowed && <GoogleAnalytics />}
         {clarityAllowed && (
           <Script id="microsoft-clarity" strategy="afterInteractive">
             {`if (["whatnxt.me", "www.whatnxt.me"].includes(window.location.hostname)
