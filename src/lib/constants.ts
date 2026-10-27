@@ -58,4 +58,6 @@ export const STORAGE_KEYS = {
   shuffles: "whatnext:shuffles",
   pro: "whatnext:pro",
   installDismissed: "whatnext:install-dismissed",
+  /** This device has had its one guest workout (survives sign-out). */
+  guestUsed: "whatnext:guest-workout-used",
 } as const;

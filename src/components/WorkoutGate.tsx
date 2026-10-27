@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useRouter } from "next/navigation";
+import { useState, type ReactNode } from "react";
 import { StepHeader } from "@/components/StepHeader";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { cloudEnabled } from "@/lib/supabase/client";
@@ -10,6 +11,7 @@ import { useWorkoutStatus } from "@/lib/payments/usage";
 /**
  * Wraps the results screen. With accounts turned on, results show only during a
  * started workout; starting one is checked by the database (free limit or paid access).
+ * The first workout on a device can run as a guest; after that an account is needed.
  * Without accounts configured, results are shown as before.
  */
 export function WorkoutGate({ children }: { children: (finish: (() => void) | null) => ReactNode }) {
@@ -18,7 +20,15 @@ export function WorkoutGate({ children }: { children: (finish: (() => void) | nu
 }
 
 function Gate({ children }: { children: (finish: (() => void) | null) => ReactNode }) {
+  const router = useRouter();
   const { status, start, finish } = useWorkoutStatus();
+  const [busy, setBusy] = useState(false);
+
+  const begin = async () => {
+    setBusy(true);
+    await start();
+    setBusy(false);
+  };
 
   if (!status) {
     return <p className="pt-24 text-center text-muted">One sec…</p>;
@@ -27,8 +37,37 @@ function Gate({ children }: { children: (finish: (() => void) | null) => ReactNo
   if (!status.ok && status.reason === "signed_out") {
     return (
       <>
-        <StepHeader backHref="/equipment" title="Sign in to start" subtitle="Your workouts and access are saved to your account." />
-        <ButtonLink href="/account">Sign in or create account</ButtonLink>
+        <StepHeader
+          backHref="/equipment"
+          title="Ready?"
+          subtitle="Your first workout is free, no account needed. Start it, then tap Start exercise on the moves you do."
+        />
+        <Button onClick={() => void begin()} disabled={busy}>
+          {busy ? "One sec…" : "Start workout"}
+        </Button>
+        <p className="mt-3 text-center text-sm text-muted">
+          Have an account?{" "}
+          <Link href="/account" className="font-semibold text-fg underline underline-offset-4">
+            Sign in
+          </Link>
+        </p>
+      </>
+    );
+  }
+
+  if (!status.ok && (status.reason === "signup_required" || status.reason === "guest_unavailable")) {
+    return (
+      <>
+        <StepHeader
+          backHref="/equipment"
+          title="Keep training"
+          subtitle={
+            status.reason === "signup_required"
+              ? "Nice first workout! Create a free account to keep going: you get 4 more free workouts and your history is saved."
+              : "Sign in or create a free account to start a workout. Your first 5 workouts are free."
+          }
+        />
+        <ButtonLink href="/account">{status.reason === "signup_required" ? "Create free account" : "Sign in or create account"}</ButtonLink>
       </>
     );
   }
@@ -42,7 +81,9 @@ function Gate({ children }: { children: (finish: (() => void) | null) => ReactNo
     );
   }
 
-  if (!status.ok && status.reason === "limit_reached") {
+  // Free workouts used up: show the paywall straight away instead of a Start button that would refuse.
+  const outOfFree = status.ok && !status.paid && !status.active_id && status.finished >= status.limit;
+  if ((!status.ok && status.reason === "limit_reached") || outOfFree) {
     return (
       <>
         <StepHeader
@@ -59,7 +100,9 @@ function Gate({ children }: { children: (finish: (() => void) | null) => ReactNo
     return (
       <>
         <StepHeader backHref="/equipment" title="Something went wrong" subtitle="We couldn't check your account. Try again in a moment." />
-        <Button onClick={() => void start()}>Try again</Button>
+        <Button onClick={() => void begin()} disabled={busy}>
+          Try again
+        </Button>
       </>
     );
   }
@@ -76,15 +119,23 @@ function Gate({ children }: { children: (finish: (() => void) | null) => ReactNo
               : `${status.finished} of ${status.limit} free workouts used.`
           }
         />
-        <Button onClick={() => void start()}>Start workout</Button>
+        <Button onClick={() => void begin()} disabled={busy}>
+          {busy ? "One sec…" : "Start workout"}
+        </Button>
         {!status.paid && (
           <p className="mt-3 text-center text-xs text-muted">
-            A workout counts once you press Finish. <Link href="/unlock" className="underline underline-offset-4">Unlock NextSet</Link>
+            A workout counts once you press Finish (or after 3 hours). <Link href="/unlock" className="underline underline-offset-4">Unlock NextSet</Link>
           </p>
         )}
       </>
     );
   }
 
-  return <>{children(() => void finish())}</>;
+  return (
+    <>
+      {children(() => {
+        void finish().then(() => router.push("/history"));
+      })}
+    </>
+  );
 }

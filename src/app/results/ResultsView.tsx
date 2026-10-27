@@ -17,6 +17,7 @@ import type { Difficulty, EquipmentId, MuscleGroup } from "@/lib/types";
 import { readVotes, useVotes } from "@/lib/votes";
 import { useSearchParams } from "next/navigation";
 import { WorkoutGate } from "@/components/WorkoutGate";
+import { finishExercise, startExercise, useWorkout } from "@/lib/payments/usage";
 
 export function ResultsView() {
   const params = useSearchParams();
@@ -67,6 +68,10 @@ function ResultsList({
   onFinish: (() => void) | null;
 }) {
   const { votes, toggle } = useVotes();
+  const workout = useWorkout();
+  // Logging is available during a running workout (accounts on). Latest log per exercise wins.
+  const logging = onFinish !== null && workout.status?.ok === true && workout.status.active_id !== null;
+  const logs = new Map(workout.logs.map((l) => [l.exercise_id, l]));
 
   const roll = (avoid: string[] = []) =>
     recommend({ all: EXERCISES, equipment, muscle, level, votes: readVotes(), avoid });
@@ -132,6 +137,11 @@ function ResultsList({
             onToggle={() => toggleTile(ex.id)}
             vote={votes[ex.id]}
             onVote={(v) => toggle(ex.id, v)}
+            logging={
+              logging
+                ? { log: logs.get(ex.id), onStart: () => startExercise(ex), onDone: (id) => finishExercise(id) }
+                : undefined
+            }
           />
         ))}
       </div>

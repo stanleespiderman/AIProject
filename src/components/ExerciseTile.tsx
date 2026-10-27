@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { EXERCISE_IMAGES } from "@/data/exerciseImages";
 import { MUSCLE_LABEL } from "@/lib/constants";
+import type { ExerciseLog } from "@/lib/payments/usage";
 import type { Exercise, Vote } from "@/lib/types";
 import { HowToDoIt } from "./HowToDoIt";
-import { Close, Play } from "./icons";
+import { Check, Close, Play } from "./icons";
 import { MuscleParts } from "./MuscleParts";
-import { buttonClasses } from "./ui/Button";
+import { Button, buttonClasses } from "./ui/Button";
 import { DifficultyDots } from "./ui/DifficultyDots";
 import { VoteButtons } from "./VoteButtons";
 
@@ -17,6 +21,8 @@ interface ExerciseTileProps {
   onVote: (vote: Vote) => void;
   /** Stagger for the entrance animation. */
   index: number;
+  /** Exercise logging, during a running workout only. `log` is the latest log for this exercise. */
+  logging?: { log: ExerciseLog | undefined; onStart: () => void; onDone: (logId: string) => void };
 }
 
 /**
@@ -24,7 +30,7 @@ interface ExerciseTileProps {
  * Open it takes the full row and shows the image (when there is one), form cues,
  * the exact muscle parts, sets x reps, the how-to and the actions.
  */
-export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index }: ExerciseTileProps) {
+export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index, logging }: ExerciseTileProps) {
   const { id, name, difficulty, primaryMuscle, secondaryMuscles, sets, reps, formCues, muscleParts, videoUrl } = exercise;
   const image = EXERCISE_IMAGES[id];
 
@@ -41,7 +47,17 @@ export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index }: 
         onClick={onToggle}
         className={`flex w-full flex-col gap-2 p-3 text-left ${open ? "pr-14 pb-2.5" : "min-h-28 active:bg-panel-2"}`}
       >
-        <DifficultyDots level={difficulty} className={open ? "[&>i]:size-[7px]" : ""} />
+        <span className="flex items-center justify-between gap-2">
+          <DifficultyDots level={difficulty} className={open ? "[&>i]:size-[7px]" : ""} />
+          {!open && logging?.log && (
+            <span
+              className={`grid size-5 place-items-center rounded-full ${logging.log.completed_at ? "bg-easy/20 text-easy" : "bg-volt/20 text-volt"}`}
+              aria-label={logging.log.completed_at ? "Done" : "In progress"}
+            >
+              {logging.log.completed_at ? <Check width={12} height={12} strokeWidth={3} /> : <span className="size-1.5 rounded-full bg-volt" />}
+            </span>
+          )}
+        </span>
         <span className={`font-display leading-none font-extrabold text-balance uppercase [overflow-wrap:anywhere] ${open ? "text-3xl" : "text-xl"}`}>
           {name}
         </span>
@@ -101,6 +117,8 @@ export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index }: 
 
             <HowToDoIt exercise={exercise} />
 
+            {logging && <ExerciseActions name={name} {...logging} />}
+
             <div className="mt-4 flex items-center gap-2">
               <a
                 href={videoUrl}
@@ -117,5 +135,40 @@ export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index }: 
         </>
       )}
     </article>
+  );
+}
+
+/** Start exercise → Mark done → Done (with Again, to log it a second time). */
+function ExerciseActions({ name, log, onStart, onDone }: { name: string } & NonNullable<ExerciseTileProps["logging"]>) {
+  const [busy, setBusy] = useState(false);
+  const run = async (fn: () => unknown) => {
+    setBusy(true);
+    await fn();
+    setBusy(false);
+  };
+
+  if (!log) {
+    return (
+      <Button size="md" className="mt-4 w-full" disabled={busy} onClick={() => void run(onStart)}>
+        <Play width={18} height={18} /> Start exercise
+      </Button>
+    );
+  }
+  if (!log.completed_at) {
+    return (
+      <Button size="md" className="mt-4 w-full" disabled={busy} onClick={() => void run(() => onDone(log.id))}>
+        <Check width={20} height={20} /> Mark done
+      </Button>
+    );
+  }
+  return (
+    <div className="mt-4 flex items-center gap-2">
+      <p className="flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl bg-easy/15 font-display text-lg font-extrabold tracking-wide text-easy uppercase">
+        <Check width={20} height={20} /> Done
+      </p>
+      <Button variant="secondary" size="md" disabled={busy} onClick={() => void run(onStart)} aria-label={`Do ${name} again`}>
+        Again
+      </Button>
+    </div>
   );
 }

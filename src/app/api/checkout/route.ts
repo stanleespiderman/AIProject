@@ -1,4 +1,4 @@
-import DodoPayments from "dodopayments";
+import { dodoClient } from "@/lib/server/dodo";
 import { getAdminClient } from "@/lib/server/supabase-admin";
 
 /**
@@ -30,8 +30,7 @@ export async function POST(request: Request) {
   const { data: existing } = await admin.from("entitlements").select("user_id").eq("user_id", user.id).maybeSingle();
   if (existing) return Response.json({ error: "You already have NextSet." }, { status: 409 });
 
-  const environment = process.env.DODO_PAYMENTS_ENVIRONMENT === "live_mode" ? "live_mode" : "test_mode";
-  const client = new DodoPayments({ bearerToken: apiKey, environment });
+  const client = dodoClient(apiKey);
   try {
     const session = await client.checkoutSessions.create({
       product_cart: [{ product_id: productId, quantity: 1 }],

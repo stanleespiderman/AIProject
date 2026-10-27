@@ -60,7 +60,7 @@ export default function ResetPasswordPage() {
 
   return (
     <>
-      <StepHeader backHref="/account" title="New password" subtitle="Choose a password you haven't used elsewhere." />
+      <StepHeader backHref="/account" title="Choose a password" subtitle="Pick one you haven't used elsewhere. You'll use it with your email to sign in." />
       <form onSubmit={submit} className="grid gap-3" noValidate>
         <input
           id="new-password"

@@ -1,7 +1,7 @@
-import DodoPayments from "dodopayments";
 import { Webhooks } from "@dodopayments/nextjs";
 import type { NextRequest } from "next/server";
 import { getAdminClient } from "@/lib/server/supabase-admin";
+import { dodoClient } from "@/lib/server/dodo";
 import { paymentState } from "@/lib/server/payment-state";
 
 export async function POST(request: NextRequest) {
@@ -12,8 +12,7 @@ export async function POST(request: NextRequest) {
   if (!webhookKey || !productId || !apiKey || !admin) {
     return Response.json({ error: "Webhook isn't set up." }, { status: 503 });
   }
-  const environment = process.env.DODO_PAYMENTS_ENVIRONMENT === "live_mode" ? "live_mode" : "test_mode";
-  const client = new DodoPayments({ bearerToken: apiKey, environment });
+  const client = dodoClient(apiKey);
   const handler = Webhooks({
     webhookKey,
     onPayload: async payload => {

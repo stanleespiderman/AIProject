@@ -40,7 +40,10 @@ export default function UnlockPage() {
     }
   };
 
-  const signedOut = status?.ok === false && status.reason === "signed_out";
+  // Guests and signed-out visitors need a real account first: the purchase is saved to it.
+  const signedOut =
+    (status?.ok === false && ["signed_out", "guest_unavailable", "signup_required"].includes(status.reason)) ||
+    (status?.ok === true && status.guest);
   const canBuy = cloudEnabled && !paid && status?.ok === true;
 
   return (
@@ -92,7 +95,7 @@ export default function UnlockPage() {
 
       <BottomBar>
         {signedOut || !cloudEnabled ? (
-          <ButtonLink href="/account">Sign in to unlock</ButtonLink>
+          <ButtonLink href="/account">{status?.ok === true && status.guest ? "Create account to unlock" : "Sign in to unlock"}</ButtonLink>
         ) : (
           <Button onClick={checkout} disabled={busy || !canBuy}>
             {paid ? "You're unlocked" : busy ? "One sec…" : `Continue · ${formatInr(PLAN.priceInr)}`}

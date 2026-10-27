@@ -4,7 +4,7 @@
 
 A mobile-first web app for gym-goers. Pick the equipment you have and a muscle group, and get 5–8 exercise suggestions, each with sets × reps, form cues and a link to form videos.
 
-**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Supabase (optional accounts and cloud storage). Without Supabase configured there is no backend: everything the app remembers lives in `localStorage`. With it, signed-in users also get their equipment and votes saved to their account. Every route is statically prerendered. See `docs/deploy-accounts.md` to switch accounts on.
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Supabase (optional accounts and cloud storage). Without Supabase configured there is no backend: everything the app remembers lives in `localStorage`. With it, signed-in users also get their equipment and votes saved to their account, workouts are counted (5 free, then ₹399 once via Dodo Payments) and the exercises done in each workout are logged. Pages are statically prerendered; the only server code is the route handlers in `src/app/api/`. See `docs/deploy-accounts.md` to switch accounts on.
 
 ---
 
@@ -112,7 +112,8 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 | `whatnext:votes` | `{ [exerciseId]: 1 \| -1 }` |
 | `whatnext:disclaimer-ack` | Disclaimer dismissed |
 | `whatnext:shuffles` | Unused: Shuffle is free and unlimited |
-| `whatnext:pro` | Set only by `grantPro()` after a real payment |
+| `whatnext:pro` | Unused: paid access lives in the `entitlements` table |
+| `whatnext:guest-workout-used` | This device has had its one guest workout (survives sign-out) |
 
 ---
 
@@ -168,27 +169,42 @@ Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`
 
 ---
 
-## Payments (stub)
+## Workouts, payments and the exercise log
 
-**Everything lives in `src/lib/payments/`.** The UI only touches its exports, so swapping in a real provider shouldn't require changes to any component.
+With accounts switched on (Supabase env vars set), results show only during a **workout**:
 
-| Export | File | Purpose |
-| --- | --- | --- |
-| `PLANS` | `index.ts` | ₹199 lifetime and ₹299/month. Edit prices and copy here |
-| `startCheckout(planId)` | `index.ts` | **The stub.** Currently returns `{ status: "unavailable" }` |
-| `grantPro(planId)` / `isPro()` / `useIsPro()` | `index.ts` | Pro flag; Pro users get unlimited shuffles |
-| `FREE_SHUFFLES_PER_DAY` | `usage.ts` | The daily free limit (3) |
-| `consumeShuffle()` / `useShufflesLeft()` | `usage.ts` | Quota tracking; resets at local midnight |
+1. **First workout: no account.** Tapping *Start workout* signs the visitor in as a Supabase *anonymous* guest. A device gets one guest workout (`whatnext:guest-workout-used`).
+2. **Then an account.** After the guest's workout, the gate asks them to create an account. Sign-up adds an email to the same guest user (`supabase.auth.updateUser`), so the workout and its log are kept. They choose a password after confirming the email, on `/account/reset`.
+3. **5 free workouts, then ₹399 once** ("NextSet", lifetime). A workout counts when it's finished: *Finish* in the top bar or on the results screen, or automatically after **3 hours**. Finishing within **1 minute with nothing logged** deletes it, so it doesn't count.
+4. **Exercise log.** In a running workout each tile has *Start exercise → Mark done* (and *Again*). `/history` lists workouts and their exercises.
 
-Shuffle is currently free and unlimited, so nothing in the UI calls `consumeShuffle()` or links to `/unlock`. The code is kept for if paid features come back.
+All of this is decided in the database. The browser can only read its own rows and call the functions in the migrations. It can't change the count, its workouts or its access.
 
-### Plugging in Razorpay or Stripe
+| Piece | Where |
+| --- | --- |
+| Workout status, start, finish, exercise logging | `supabase/migrations/20261027000000_workouts_and_access.sql`, `20261028000000_guest_workout_and_exercise_log.sql` |
+| Client store (status, logs, actions) | `src/lib/payments/usage.ts` (`useWorkout`, `startWorkout`, `finishWorkout`, `startExercise`, `finishExercise`) |
+| Gate on the results screen | `src/components/WorkoutGate.tsx` |
+| Live bar (timer, Finish) | `src/components/WorkoutBar.tsx` |
+| History | `src/app/history/page.tsx` |
+| Plan and checkout start | `src/lib/payments/index.ts` (`PLAN`, display only: the charge is the Dodo product's price) |
+| Dodo checkout | `src/app/api/checkout/route.ts` |
+| Dodo webhook (grants and revokes access) | `src/app/api/webhooks/dodo-payments/route.ts`, `src/lib/server/payment-state.ts`, `supabase/migrations/20261027010000_payment_ledger.sql` |
 
-1. Add a server route, e.g. `src/app/api/checkout/route.ts`, that creates a Razorpay order or a Stripe Checkout Session using your secret key from env vars. Never put secret keys in client code.
-2. Replace the body of `startCheckout()` to call that route:
-   - **Razorpay:** load `checkout.js`, open `new Razorpay({ order_id, key, handler })`, send the response to a server route that verifies the signature, then call `grantPro(planId)`.
-   - **Stripe:** redirect to the Checkout Session URL and handle the result on a `/unlock/success` page or through a webhook.
-3. **Before charging real money:** Pro status currently lives in `localStorage`, which the user can edit. Once payments are real, keep entitlements on the server (a database or the provider's customer records), and have `isPro()` check that instead.
+**How a purchase works:** the signed-in, email-confirmed user taps *Continue · ₹399* on `/unlock`. `/api/checkout` verifies their Supabase token and creates a Dodo checkout session with their user id in `metadata`. After paying, Dodo returns them to `DODO_PAYMENTS_RETURN_URL` (`/unlock`), which polls until access appears. Access is granted only by the webhook: it verifies Dodo's signature, **re-fetches the payment from Dodo** (so a stale or replayed event can't restore refunded access), and records it through `apply_dodo_payment()` (deduplicated per event; full refunds are final).
+
+Without the Supabase env vars, none of this runs: results show directly and nothing is gated.
+
+### Dodo Payments setup
+
+1. **Product:** Dodo dashboard → Products → a **one-time** product, ₹399 INR. Copy its id (`pdt_...`).
+2. **API key:** Developer → API Keys. Start in **Test mode**.
+3. **Webhook:** Developer → Webhooks → `https://<your-domain>/api/webhooks/dodo-payments`, events `payment.succeeded` and `refund.succeeded`. Copy the signing secret.
+4. **Vercel env vars** (server-only, never `NEXT_PUBLIC_`), then redeploy:
+   `DODO_PAYMENTS_API_KEY`, `DODO_PAYMENTS_WEBHOOK_KEY`, `DODO_PRODUCT_ID`, `DODO_PAYMENTS_RETURN_URL` (`https://<your-domain>/unlock`), `DODO_PAYMENTS_ENVIRONMENT` (`test_mode` or `live_mode`), plus `SUPABASE_SERVICE_ROLE_KEY`.
+5. **Test** with a Dodo test card, then switch the key, webhook, product and environment to live. Before going live, remove the "Test Mode demo" note at the top of `src/app/unlock/page.tsx`.
+
+If someone pays but isn't unlocked, check Dodo → Webhooks delivery logs: a 401 means the signing secret is wrong; a 503 means an env var is missing.
 
 ---
 

@@ -30,8 +30,12 @@ export function AccountView() {
   }
 
   if (status === "loading") return <StepHeader backHref="/" title="Account" />;
-  if (status === "in" && user) return <SignedIn email={user.email ?? ""} name={user.user_metadata?.display_name as string | undefined} />;
-  return <SignedOut />;
+  // A guest (anonymous sign-in, used for the first free workout) sees the sign-up form,
+  // which upgrades the same user so their workout is kept.
+  if (status === "in" && user && !user.is_anonymous) {
+    return <SignedIn email={user.email ?? ""} name={user.user_metadata?.display_name as string | undefined} />;
+  }
+  return <SignedOut guest={status === "in" && !!user?.is_anonymous} />;
 }
 
 function SignedIn({ email, name }: { email: string; name?: string }) {
@@ -82,6 +86,9 @@ function SignedIn({ email, name }: { email: string; name?: string }) {
       </ul>
       <ButtonLink href="/equipment" className="mt-6">
         Pick a workout <ArrowRight />
+      </ButtonLink>
+      <ButtonLink href="/history" variant="secondary" size="md" className="mt-3 w-full">
+        Your workouts
       </ButtonLink>
       <Button variant="secondary" size="md" onClick={signOut} disabled={busy} className="mt-3 w-full">
         {busy ? "Signing out…" : "Sign out"}
@@ -143,8 +150,11 @@ function SignedIn({ email, name }: { email: string; name?: string }) {
   );
 }
 
-function SignedOut() {
-  const [mode, setMode] = useState<"signin" | "signup" | "forgot">("signin");
+function SignedOut({ guest = false }: { guest?: boolean }) {
+  const [mode, setMode] = useState<"signin" | "signup" | "forgot">(guest ? "signup" : "signin");
+  // A guest signs up by adding an email to their current (anonymous) user; Supabase only
+  // allows a password once that email is confirmed, so it's chosen on /account/reset.
+  const upgradingGuest = guest && mode === "signup";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -165,14 +175,21 @@ function SignedOut() {
     setError(null);
     setNotice(null);
 
-    if (mode !== "forgot" && password.length < MIN_PASSWORD) {
+    if (mode !== "forgot" && !upgradingGuest && password.length < MIN_PASSWORD) {
       setError(`Use at least ${MIN_PASSWORD} characters for your password.`);
       return;
     }
 
     setBusy(true);
     try {
-      if (mode === "signin") {
+      if (upgradingGuest) {
+        const { error } = await supabase.auth.updateUser(
+          { email, data: name.trim() ? { display_name: name.trim() } : undefined },
+          { emailRedirectTo: `${window.location.origin}/account/reset` },
+        );
+        if (error) setError(friendly(error.message));
+        else setNotice("Check your email and tap the link to confirm it, then choose a password. Your workout is kept.");
+      } else if (mode === "signin") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) setError(friendly(error.message));
       } else if (mode === "signup") {
@@ -201,10 +218,12 @@ function SignedOut() {
     }
   };
 
-  const titles = { signin: "Welcome back", signup: "Save your picks", forgot: "Reset password" } as const;
+  const titles = { signin: "Welcome back", signup: guest ? "Keep training" : "Save your picks", forgot: "Reset password" } as const;
   const subtitles = {
     signin: "Sign in to save your workouts and access on any device.",
-    signup: "Free account. No spam. Your picks follow you across devices.",
+    signup: guest
+      ? "Create a free account to keep your first workout and get 4 more free ones. No spam."
+      : "Free account. No spam. Your picks follow you across devices.",
     forgot: "We'll email you a link to set a new password.",
   } as const;
 
@@ -238,7 +257,7 @@ function SignedOut() {
           className={field}
           aria-label="Email"
         />
-        {mode !== "forgot" && (
+        {mode !== "forgot" && !upgradingGuest && (
           <input
             id="password"
             type="password"
@@ -285,7 +304,11 @@ function SignedOut() {
           </button>
         )}
       </div>
-      <p className="mt-4 text-xs text-muted">A verified email is required to start workouts. Your first 5 workouts are free.</p>
+      <p className="mt-4 text-xs text-muted">
+        {guest && mode === "signin"
+          ? "Signing in to an existing account doesn't carry over your guest workout."
+          : "Your first workout needs no account. After that, a verified email is required. 5 workouts are free."}
+      </p>
     </>
   );
 }

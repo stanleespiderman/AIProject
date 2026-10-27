@@ -20,7 +20,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 4. **Results:** 5 to 8 random exercises matching both filters. Shuffle button for a new set. Each card shows name, target muscle, difficulty badge, sets x reps, 2 to 3 form cues, and a "Watch form" button.
 5. **Thumbs up / down** on each card, saved in localStorage. Liked exercises appear more often (weight 3x), disliked less often (weight 0.25x).
 
-**Monetisation (stub only, no real payments):** 3 free shuffles per day (localStorage, resets at local midnight). After that, an "Unlock NextSet" screen offers Rs 199 one-time or Rs 299/month with a placeholder button.
+**Monetisation (Dodo Payments, decided 2026-10-28):** workouts are counted in Supabase. The first workout on a device needs no account (anonymous guest); after it, sign-up is required. 5 free finished workouts, then Rs 399 one-time ("NextSet", lifetime) via Dodo hosted checkout; the signature-verified webhook grants access. Workouts auto-finish after 3 hours; finishing within 1 minute with nothing logged doesn't count. Each workout logs the exercises started/done (`exercise_logs`), shown on `/history`. See README > "Workouts, payments and the exercise log".
 
 **Safety:** one-time disclaimer on first use, also in the footer: "Not medical advice. Use a weight you can control and consult a trainer if unsure."
 
@@ -57,7 +57,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 **Working and tested** (lint, build and a headless-browser walkthrough all passed): the whole flow above, vote weighting, shuffle quota, remembered equipment, disclaimer, shareable result URLs (`/results?eq=...&m=...`).
 
 **Stubbed or limited:**
-- Payments: "Continue" only shows "Payments aren't live yet." Pro status is a localStorage flag a user could edit. Needs server-side entitlements before real money.
+- Payments: built on Dodo Payments and tested against a local stand-in; needs the Dodo product, keys and webhook set up, and one real test-mode purchase, before going live.
 - The shuffle limit is a soft nudge: refreshing results gives a new set without spending a shuffle.
 - No automated tests yet (the recommendation logic is pure and easy to test).
 - No accounts or cross-device sync (by design).
