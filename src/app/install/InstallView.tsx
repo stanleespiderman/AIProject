@@ -48,7 +48,7 @@ export function InstallView() {
       </div>
 
       <p className="mt-8 text-center text-xs text-muted">
-        Free. No signup. Remove it any time like any other icon.
+        Free to install. Your first 5 workouts are free. Remove it any time like any other icon.
       </p>
     </>
   );
