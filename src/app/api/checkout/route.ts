@@ -35,6 +35,8 @@ export async function POST(request: Request) {
   try {
     const session = await client.checkoutSessions.create({
       product_cart: [{ product_id: productId, quantity: 1 }],
+      billing_currency: "INR",
+      feature_flags: { allow_currency_selection: false },
       customer: { email: user.email },
       metadata: { user_id: user.id },
       return_url: returnUrl,
