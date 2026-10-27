@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { BottomBar } from "@/components/BottomBar";
-import { ArrowRight } from "@/components/icons";
-import { ButtonLink } from "@/components/ui/Button";
+import { SessionButton } from "@/components/SessionButton";
 import { EXERCISES } from "@/data/exercises";
 
 const steps = [
@@ -16,9 +16,17 @@ export default function Home() {
         <span className="font-display text-xl font-extrabold tracking-wide uppercase italic">
           What<span className="text-volt">Next?</span>
         </span>
-        <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">
-          {EXERCISES.length}+ moves
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">
+            {EXERCISES.length}+ moves
+          </span>
+          <Link
+            href="/history"
+            className="rounded-full border border-line px-3 py-1 text-xs text-muted transition hover:text-fg"
+          >
+            History
+          </Link>
+        </div>
       </div>
 
       <section className="flex flex-1 flex-col justify-center py-10">
@@ -47,10 +55,7 @@ export default function Home() {
       </section>
 
       <BottomBar>
-        <ButtonLink href="/equipment">
-          Start
-          <ArrowRight />
-        </ButtonLink>
+        <SessionButton />
       </BottomBar>
     </>
   );

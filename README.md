@@ -4,7 +4,7 @@
 
 A mobile-first web app for gym-goers. Pick the equipment you have and a muscle group, and get 5–8 exercise suggestions, each with sets × reps, form cues and a link to form videos.
 
-**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. No backend, no database and no accounts. Everything the app remembers lives in `localStorage`. Every route is statically prerendered, so it deploys to Vercel with zero config.
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. No backend and no accounts. Everything the app remembers, including the workout log, lives in `localStorage` (see `src/lib/db/`). Every route is statically prerendered, so it deploys to Vercel with zero config.
 
 ---
 
@@ -30,7 +30,7 @@ npm start          # serve the production build
 
 To test on your phone, run `npm run dev -- -H 0.0.0.0` and open `http://<your-laptop-ip>:3000` on the same Wi-Fi.
 
-**Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, the free shuffles, your votes and your saved equipment.
+**Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, the 5 free sessions, your votes and your saved equipment, and clears your workout history.
 
 ## Deploy to Vercel
 
@@ -48,11 +48,14 @@ src/
 │  ├─ page.tsx                 # 1. Home
 │  ├─ equipment/page.tsx       # 2. Equipment picker (multi-select, remembered)
 │  ├─ muscle/                  # 3. Muscle picker (single select, tap to go)
-│  ├─ results/                 # 4. Results + Shuffle + votes
-│  └─ unlock/page.tsx          # 5. "Unlock NextSet" paywall (stub)
+│  ├─ results/                 # 4. Results + Shuffle + votes + Start exercise (needs a live session)
+│  ├─ history/page.tsx         # Past sessions and the exercises done in each
+│  └─ unlock/page.tsx          # Paywall: ₹399 one-time full access (stub)
 ├─ components/
 │  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyBadge
-│  ├─ ExerciseCard.tsx         # One exercise card
+│  ├─ ExerciseCard.tsx         # One exercise card (with Start exercise / Mark done)
+│  ├─ SessionBar.tsx           # Sticky "Session live · timer · End session" bar
+│  ├─ SessionButton.tsx        # Start / Continue session, or Unlock when free sessions are used up
 │  ├─ VoteButtons.tsx          # Thumbs up / down
 │  ├─ StepHeader.tsx           # Back button + step label + big title
 │  ├─ BottomBar.tsx            # Sticky thumb-zone action area
@@ -69,10 +72,14 @@ src/
    ├─ votes.ts                 # Thumbs up/down persistence
    ├─ storage.ts               # Safe localStorage helpers + React hook
    ├─ params.ts                # URL query param parsing/building
+   ├─ session.ts               # Session lifecycle: start/end session, start/finish exercise
+   ├─ db/                      # ← The workout database (sessions + exercise logs)
+   │  ├─ schema.ts             #   Types + DB_VERSION
+   │  └─ index.ts              #   Read/write/hooks. The only code that knows where data is stored
    ├─ youtube.ts               # Builds YouTube *search* URLs
    └─ payments/                # ← Everything monetisation-related
-      ├─ index.ts              #   Plans, checkout stub, Pro status
-      └─ usage.ts              #   3-free-shuffles-per-day quota
+      ├─ index.ts              #   Plan (₹399 full access), checkout stub, Pro status
+      └─ usage.ts              #   5-free-sessions quota
 ```
 
 Outside `src/`:
@@ -95,6 +102,14 @@ docs/exercise-image-design.md                # style guide for exercise illustra
   5. A shuffle avoids the cards currently on screen when the pool is big enough.
 - Votes are read once per roll, so tapping 👍/👎 never reshuffles the cards you're looking at.
 
+### Sessions and the exercise log
+
+- **Start session** on the home screen starts a workout session; the bar at the top shows a timer and **End session**. Results need a live session.
+- Each card has **Start exercise**, then **Mark done** (and **Again** to log it twice). Every start and finish is written to the workout database with a snapshot of the exercise.
+- A session left open for 3 hours (`SESSION_MAX_HOURS` in `src/lib/session.ts`) ends itself.
+- `/history` lists every session and what was done.
+- The full design, and the server-side Postgres schema for later, is in `docs/plans/sessions-paywall-and-exercise-log.md`.
+
 ### localStorage keys
 
 All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
@@ -104,7 +119,7 @@ All keys are listed in `STORAGE_KEYS` in `src/lib/constants.ts`:
 | `whatnext:equipment` | Last equipment selection |
 | `whatnext:votes` | `{ [exerciseId]: 1 \| -1 }` |
 | `whatnext:disclaimer-ack` | Disclaimer dismissed |
-| `whatnext:shuffles` | `{ date, count }`. Today's shuffle usage (local date) |
+| `whatnext:db` | Workout database: `{ version, sessions: [{ number, startedAt, endedAt, exercises: [...] }] }` |
 | `whatnext:pro` | Set only by `grantPro()` after a real payment |
 
 ---
@@ -159,13 +174,13 @@ Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`
 
 | Export | File | Purpose |
 | --- | --- | --- |
-| `PLANS` | `index.ts` | ₹199 lifetime and ₹299/month. Edit prices and copy here |
+| `PLANS` | `index.ts` | One plan: ₹399 one-time full access. Edit price and copy here |
 | `startCheckout(planId)` | `index.ts` | **The stub.** Currently returns `{ status: "unavailable" }` |
-| `grantPro(planId)` / `isPro()` / `useIsPro()` | `index.ts` | Pro flag; Pro users get unlimited shuffles |
-| `FREE_SHUFFLES_PER_DAY` | `usage.ts` | The daily free limit (3) |
-| `consumeShuffle()` / `useShufflesLeft()` | `usage.ts` | Quota tracking; resets at local midnight |
+| `grantPro(planId)` / `isPro()` / `useIsPro()` | `index.ts` | Pro flag; Pro users get unlimited sessions |
+| `FREE_SESSIONS` | `usage.ts` | Free sessions in total, not per day (5) |
+| `canStartSession()` / `useFreeSessionsLeft()` | `usage.ts` | Quota check; a session counts the moment it starts |
 
-When the free shuffles run out, the Shuffle button becomes "Unlock more shuffles" and links to `/unlock`.
+When the 5 free sessions are used up, Start session becomes "Unlock · ₹399" and links to `/unlock`. Shuffles are unlimited inside a session.
 
 ### Plugging in Razorpay or Stripe
 
@@ -173,7 +188,7 @@ When the free shuffles run out, the Shuffle button becomes "Unlock more shuffles
 2. Replace the body of `startCheckout()` to call that route:
    - **Razorpay:** load `checkout.js`, open `new Razorpay({ order_id, key, handler })`, send the response to a server route that verifies the signature, then call `grantPro(planId)`.
    - **Stripe:** redirect to the Checkout Session URL and handle the result on a `/unlock/success` page or through a webhook.
-3. **Before charging real money:** Pro status currently lives in `localStorage`, which the user can edit. Once payments are real, keep entitlements on the server (a database or the provider's customer records), and have `isPro()` check that instead.
+3. **Before charging real money:** Pro status and the session count currently live in `localStorage`, which the user can edit or clear. Once payments are real, keep sessions and entitlements on the server and have `isPro()` / `canStartSession()` check that instead. The schema and steps are in `docs/plans/sessions-paywall-and-exercise-log.md`.
 
 ---
 

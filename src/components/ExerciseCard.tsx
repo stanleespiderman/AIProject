@@ -1,6 +1,8 @@
 import { MUSCLE_LABEL } from "@/lib/constants";
+import type { ExerciseLog } from "@/lib/db";
 import type { Exercise, Vote } from "@/lib/types";
-import { Play } from "./icons";
+import { Check, Play } from "./icons";
+import { Button } from "./ui/Button";
 import { buttonClasses } from "./ui/Button";
 import { DifficultyBadge } from "./ui/DifficultyBadge";
 import { HowToDoIt } from "./HowToDoIt";
@@ -11,9 +13,13 @@ interface ExerciseCardProps {
   index: number;
   vote: Vote | undefined;
   onVote: (vote: Vote) => void;
+  /** The latest log for this exercise in the live session, if it was started. */
+  log: ExerciseLog | undefined;
+  onStart: () => void;
+  onDone: (logId: string) => void;
 }
 
-export function ExerciseCard({ exercise, index, vote, onVote }: ExerciseCardProps) {
+export function ExerciseCard({ exercise, index, vote, onVote, log, onStart, onDone }: ExerciseCardProps) {
   const { name, primaryMuscle, secondaryMuscles, difficulty, sets, reps, formCues, videoUrl } = exercise;
 
   return (
@@ -51,6 +57,27 @@ export function ExerciseCard({ exercise, index, vote, onVote }: ExerciseCardProp
       </ul>
 
       <HowToDoIt exercise={exercise} />
+
+      <div className="mt-5">
+        {!log ? (
+          <Button size="md" className="w-full" onClick={onStart}>
+            <Play width={18} height={18} /> Start exercise
+          </Button>
+        ) : !log.completedAt ? (
+          <Button size="md" className="w-full" onClick={() => onDone(log.id)}>
+            <Check width={20} height={20} /> Mark done
+          </Button>
+        ) : (
+          <div className="flex items-center gap-2">
+            <p className="flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl bg-easy/15 font-display text-lg font-extrabold tracking-wide text-easy uppercase">
+              <Check width={20} height={20} /> Done
+            </p>
+            <Button variant="secondary" size="md" onClick={onStart} aria-label={`Do ${name} again`}>
+              Again
+            </Button>
+          </div>
+        )}
+      </div>
 
       <div className="mt-5 flex items-center gap-2">
         <a

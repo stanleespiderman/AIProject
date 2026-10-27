@@ -4,7 +4,7 @@
  * ─── PAYMENTS STUB ───────────────────────────────────────────────
  * Everything money-related lives in this folder. The UI only calls:
  *   PLANS, startCheckout(), isPro(), useIsPro()
- * and the daily quota in ./usage.ts.
+ * and the free-session quota in ./usage.ts.
  *
  * To go live with Razorpay or Stripe, replace the body of `startCheckout`
  * (see README > "Payments"). No component needs to change.
@@ -14,20 +14,19 @@
 import { STORAGE_KEYS } from "../constants";
 import { readJSON, useStoredState, writeJSON } from "../storage";
 
-export type PlanId = "lifetime" | "monthly";
+export type PlanId = "full";
 
 export interface Plan {
   id: PlanId;
   name: string;
   /** Price in whole rupees. Razorpay expects paise (× 100) and Stripe the smallest unit too. */
   priceInr: number;
-  billing: "one-time" | "monthly";
+  billing: "one-time";
   blurb: string;
 }
 
 export const PLANS: Plan[] = [
-  { id: "lifetime", name: "Lifetime", priceInr: 199, billing: "one-time", blurb: "Pay once, shuffle forever" },
-  { id: "monthly", name: "Monthly", priceInr: 299, billing: "monthly", blurb: "Cancel anytime" },
+  { id: "full", name: "Full access", priceInr: 399, billing: "one-time", blurb: "Pay once. Unlimited sessions, forever" },
 ];
 
 export function formatInr(amount: number): string {
@@ -50,12 +49,13 @@ export async function startCheckout(planId: PlanId): Promise<CheckoutResult> {
   void planId;
   return {
     status: "unavailable",
-    message: "Payments aren't live yet. Your free shuffles reset tomorrow.",
+    message: "Payments aren't live yet. Check back soon.",
   };
 }
 
 interface ProState {
-  plan: PlanId;
+  /** Older installs may hold "lifetime" or "monthly" from the previous plans; they stay Pro. */
+  plan: PlanId | (string & {});
   since: string;
 }
 

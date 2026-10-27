@@ -46,6 +46,6 @@ export const STORAGE_KEYS = {
   equipment: "whatnext:equipment",
   votes: "whatnext:votes",
   disclaimer: "whatnext:disclaimer-ack",
-  shuffles: "whatnext:shuffles",
+  db: "whatnext:db",
   pro: "whatnext:pro",
 } as const;

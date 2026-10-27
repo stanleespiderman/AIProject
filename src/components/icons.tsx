@@ -51,6 +51,12 @@ export const Play = (p: IconProps) => (
   </Icon>
 );
 
+export const Stop = (p: IconProps) => (
+  <Icon {...p}>
+    <rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none" />
+  </Icon>
+);
+
 export const Lock = (p: IconProps) => (
   <Icon {...p}>
     <rect x="5" y="11" width="14" height="10" rx="2" />

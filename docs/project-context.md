@@ -20,7 +20,9 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 4. **Results:** 5 to 8 random exercises matching both filters. Shuffle button for a new set. Each card shows name, target muscle, difficulty badge, sets x reps, 2 to 3 form cues, and a "Watch form" button.
 5. **Thumbs up / down** on each card, saved in localStorage. Liked exercises appear more often (weight 3x), disliked less often (weight 0.25x).
 
-**Monetisation (stub only, no real payments):** 3 free shuffles per day (localStorage, resets at local midnight). After that, an "Unlock NextSet" screen offers Rs 199 one-time or Rs 299/month with a placeholder button.
+**Monetisation (stub only, no real payments):** 5 free workout sessions in total (a session counts when started). After that, the unlock screen offers one plan: Rs 399 one-time for full, unlimited access, with a placeholder button. Shuffles are unlimited inside a session. Superseded the earlier "3 shuffles a day, Rs 199 / Rs 299 per month" model on 2026-10-27; see `docs/plans/sessions-paywall-and-exercise-log.md`.
+
+**Sessions and exercise log:** Start session / End session buttons (sticky bar while live, auto-ends after 3 hours). Each card has Start exercise / Mark done. Sessions and exercise logs are stored on-device in `whatnext:db` through `src/lib/db/`; `/history` shows them. A server Postgres schema is planned, not built.
 
 **Safety:** one-time disclaimer on first use, also in the footer: "Not medical advice. Use a weight you can control and consult a trainer if unsure."
 
@@ -36,10 +38,11 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
   - `src/app/` routes: `/`, `/equipment`, `/muscle`, `/results`, `/unlock`
   - `src/data/exercises.ts`: the exercise library (168 exercises)
   - `src/lib/recommend.ts`: filtering and weighted random picks (pure functions)
-  - `src/lib/payments/`: ALL payment code (`index.ts` plans, `startCheckout()` stub, Pro flag; `usage.ts` daily shuffle quota)
+  - `src/lib/payments/`: ALL payment code (`index.ts` plan, `startCheckout()` stub, Pro flag; `usage.ts` 5-free-sessions quota)
+  - `src/lib/db/` + `src/lib/session.ts`: workout database and session/exercise lifecycle
   - `src/lib/constants.ts`: equipment and muscle lists, labels, localStorage keys, disclaimer text
   - `README.md`: how to run locally, how to add exercises, where the payment stub lives
-- **localStorage keys:** `whatnext:equipment`, `whatnext:votes`, `whatnext:disclaimer-ack`, `whatnext:shuffles`, `whatnext:pro`.
+- **localStorage keys:** `whatnext:equipment`, `whatnext:votes`, `whatnext:disclaimer-ack`, `whatnext:db`, `whatnext:pro`.
 - **Design (app UI):** dark theme, near-black `#09090C`, lime accent `#D4FF3A`, Barlow Condensed (display) plus Inter (body).
 
 ## 4. Exercise data model
@@ -58,7 +61,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 **Stubbed or limited:**
 - Payments: "Continue" only shows "Payments aren't live yet." Pro status is a localStorage flag a user could edit. Needs server-side entitlements before real money.
-- The shuffle limit is a soft nudge: refreshing results gives a new set without spending a shuffle.
+- The session limit is a soft gate: clearing site data resets it. Needs accounts and server-side sessions before real money.
 - No automated tests yet (the recommendation logic is pure and easy to test).
 - No accounts or cross-device sync (by design).
 
