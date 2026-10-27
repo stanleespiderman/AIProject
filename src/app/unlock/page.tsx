@@ -58,6 +58,10 @@ export default function UnlockPage() {
         subtitle={paid ? "You're on NextSet. Workout away." : free}
       />
 
+      <p role="note" className="mb-5 rounded-2xl border border-volt/40 bg-volt/10 p-4 text-sm">
+        Test Mode demo. No real money is charged. Use Dodo test payment details only.
+      </p>
+
       <ul className="space-y-2">
         {perks.map((perk) => (
           <li key={perk} className="flex items-center gap-3">
