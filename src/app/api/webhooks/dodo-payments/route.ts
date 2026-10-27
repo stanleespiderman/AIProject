@@ -1,38 +1,34 @@
+import DodoPayments from "dodopayments";
 import { Webhooks } from "@dodopayments/nextjs";
 import type { NextRequest } from "next/server";
 import { getAdminClient } from "@/lib/server/supabase-admin";
+import { paymentState } from "@/lib/server/payment-state";
 
-/**
- * Receives Dodo Payments events. The adapter verifies the signature with
- * DODO_PAYMENTS_WEBHOOK_KEY, so unsigned requests never reach our code.
- * Access is granted only for a succeeded payment of OUR product, for a user id
- * we put in the checkout metadata, and revoked if that payment is refunded.
- */
 export async function POST(request: NextRequest) {
   const webhookKey = process.env.DODO_PAYMENTS_WEBHOOK_KEY;
   const productId = process.env.DODO_PRODUCT_ID;
+  const apiKey = process.env.DODO_PAYMENTS_API_KEY;
   const admin = getAdminClient();
-  if (!webhookKey || !productId || !admin) {
+  if (!webhookKey || !productId || !apiKey || !admin) {
     return Response.json({ error: "Webhook isn't set up." }, { status: 503 });
   }
-
+  const environment = process.env.DODO_PAYMENTS_ENVIRONMENT === "live_mode" ? "live_mode" : "test_mode";
+  const client = new DodoPayments({ bearerToken: apiKey, environment });
   const handler = Webhooks({
     webhookKey,
-    onPayload: async (payload) => {
-      if (payload.type === "payment.succeeded") {
-        const data = payload.data;
-        const userId = data.metadata?.user_id;
-        const boughtOurProduct = data.product_cart?.some((item: { product_id: string }) => item.product_id === productId);
-        if (!userId || !boughtOurProduct) return;
-        const { error } = await admin
-          .from("entitlements")
-          .upsert({ user_id: userId, plan: "lifetime", dodo_payment_id: data.payment_id }, { onConflict: "user_id" });
-        // A thrown error makes Dodo retry the webhook.
-        if (error) throw new Error("Could not save access");
-      } else if (payload.type === "refund.succeeded") {
-        const { error } = await admin.from("entitlements").delete().eq("dodo_payment_id", payload.data.payment_id);
-        if (error) throw new Error("Could not revoke access");
-      }
+    onPayload: async payload => {
+      if (payload.type !== "payment.succeeded" && payload.type !== "refund.succeeded") return;
+      // Signature verified by adapter before callback. Re-fetch current provider state:
+      // retries/out-of-order event snapshots must not restore refunded access.
+      const payment = await client.payments.retrieve(payload.data.payment_id);
+      const state = paymentState(payment, productId);
+      if (!state) return;
+      const { error } = await admin.rpc("apply_dodo_payment", {
+        p_event: request.headers.get("webhook-id"), p_payment: payment.payment_id,
+        p_user: state.userId, p_eligible: state.eligible, p_revoked: state.revoked,
+      });
+      // Fail for retry on provider/database errors. Never acknowledge an uncommitted grant.
+      if (error) throw new Error("Could not reconcile payment access");
     },
   });
   return handler(request);
