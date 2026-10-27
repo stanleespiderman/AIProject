@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import { DisclaimerModal } from "@/components/DisclaimerModal";
@@ -35,6 +36,11 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+// Keep session recording off when optional personal accounts are configured.
+const clarityAllowed = !(
+  process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} antialiased`}>
@@ -45,6 +51,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </div>
         <DisclaimerModal />
         <InstallBoot />
+        {clarityAllowed && (
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`if (["whatnxt.me", "www.whatnxt.me"].includes(window.location.hostname)
+                && !window.location.pathname.startsWith("/account")) {
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "z4c46g2dam");
+            }`}
+          </Script>
+        )}
       </body>
     </html>
   );
