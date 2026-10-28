@@ -1,6 +1,7 @@
 import { AccountLink } from "@/components/AccountLink";
 import { BottomBar } from "@/components/BottomBar";
 import { InstallBanner } from "@/components/InstallBanner";
+import { PhonePanel } from "@/components/PhonePanel";
 import { ArrowRight } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/Button";
 import { EXERCISES } from "@/data/exercises";
@@ -27,11 +28,12 @@ export default function Home() {
         </span>
       </div>
 
-      <section className="flex flex-1 flex-col justify-center py-10">
+      <section className="flex flex-1 flex-col justify-center py-10 lg:grid lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
+        <div>
         <p className="inline-block w-fit -skew-x-12 bg-volt px-2 font-display text-sm font-extrabold tracking-widest text-ink uppercase">
           Your first 5 workouts are free.
         </p>
-        <h1 className="mt-5 font-display text-[4.25rem] leading-[0.85] font-extrabold uppercase italic">
+        <h1 className="mt-5 font-display text-[4.25rem] leading-[0.85] lg:text-[7rem] font-extrabold uppercase italic">
           Bored
           <br />
           mid-
@@ -52,6 +54,8 @@ export default function Home() {
         </ol>
 
         <InstallBanner className="mt-6" />
+        </div>
+        <PhonePanel />
       </section>
 
       <BottomBar>

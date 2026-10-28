@@ -84,52 +84,56 @@ export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index, lo
             <Close width={14} height={14} strokeWidth={3} />
           </button>
 
-          <div className="px-3 pb-4">
-            {image && (
-              <div className="relative mb-2.5 aspect-[3/2] overflow-hidden rounded-2xl border border-line bg-black">
-                <Image
-                  src={image}
-                  alt={`${name}: start and end position, working muscles highlighted`}
-                  fill
-                  sizes="(max-width: 448px) 100vw, 448px"
-                  className="object-cover"
-                />
-              </div>
-            )}
+          <div className="px-3 pb-4 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div>
+              {image && (
+                <div className="relative mb-2.5 aspect-[3/2] overflow-hidden rounded-2xl border border-line bg-black">
+                  <Image
+                    src={image}
+                    alt={`${name}: start and end position, working muscles highlighted`}
+                    fill
+                    sizes="(max-width: 1023px) 100vw, 480px"
+                    className="object-cover"
+                  />
+                </div>
+              )}
 
-            <ul className="space-y-2">
-              {formCues.map((cue) => (
-                <li key={cue} className="flex gap-3 text-[15px] leading-snug">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-volt" aria-hidden="true" />
-                  {cue}
-                </li>
-              ))}
-            </ul>
+              <ul className="space-y-2">
+                {formCues.map((cue) => (
+                  <li key={cue} className="flex gap-3 text-[15px] leading-snug">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-volt" aria-hidden="true" />
+                    {cue}
+                  </li>
+                ))}
+              </ul>
 
-            {muscleParts && <MuscleParts parts={muscleParts} />}
-
-            <div className="mt-3 flex items-baseline gap-2 rounded-2xl bg-panel-2 px-4 py-2">
-              <span className="font-display text-3xl font-extrabold text-volt">{sets}</span>
-              <span className="font-display text-xl font-semibold text-muted">×</span>
-              <span className="font-display text-3xl font-extrabold text-volt">{reps}</span>
-              <span className="ml-auto text-[10px] tracking-wider text-muted uppercase">sets × reps</span>
+              {muscleParts && <MuscleParts parts={muscleParts} />}
             </div>
 
-            <HowToDoIt exercise={exercise} />
+            <div>
+              <div className="mt-3 flex items-baseline gap-2 rounded-2xl bg-panel-2 px-4 py-2 lg:mt-0">
+                <span className="font-display text-3xl font-extrabold text-volt">{sets}</span>
+                <span className="font-display text-xl font-semibold text-muted">×</span>
+                <span className="font-display text-3xl font-extrabold text-volt">{reps}</span>
+                <span className="ml-auto text-[10px] tracking-wider text-muted uppercase">sets × reps</span>
+              </div>
 
-            {logging && <ExerciseActions name={name} {...logging} />}
+              <HowToDoIt exercise={exercise} />
 
-            <div className="mt-4 flex items-center gap-2">
-              <a
-                href={videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={buttonClasses("secondary", "md", "flex-1")}
-              >
-                <Play width={18} height={18} className="text-volt" />
-                Watch form
-              </a>
-              <VoteButtons exerciseName={name} vote={vote} onVote={onVote} />
+              {logging && <ExerciseActions name={name} {...logging} />}
+
+              <div className="mt-4 flex items-center gap-2">
+                <a
+                  href={videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonClasses("secondary", "md", "flex-1")}
+                >
+                  <Play width={18} height={18} className="text-volt" />
+                  Watch form
+                </a>
+                <VoteButtons exerciseName={name} vote={vote} onVote={onVote} />
+              </div>
             </div>
           </div>
         </>

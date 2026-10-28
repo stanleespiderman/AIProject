@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 export function BottomBar({ children }: { children: ReactNode }) {
   return (
     <div className="sticky bottom-0 z-10 -mx-4 mt-auto bg-gradient-to-t from-ink from-70% to-transparent px-4 pt-6 pb-[max(1rem,env(safe-area-inset-bottom))]">
-      {children}
+      <div className="lg:mx-auto lg:max-w-md">{children}</div>
     </div>
   );
 }

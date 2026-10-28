@@ -55,7 +55,7 @@ export function LevelPicker() {
         subtitle="Pick a level, or keep it open for a mix."
       />
 
-      <div role="radiogroup" aria-label="Skill level" className="grid gap-2.5">
+      <div role="radiogroup" aria-label="Skill level" className="grid gap-2.5 lg:grid-cols-2">
         {LEVELS.map((l) => {
           const count = countFor(l.id);
           const active = l.id === level;
