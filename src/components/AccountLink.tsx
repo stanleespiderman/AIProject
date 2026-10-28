@@ -9,7 +9,7 @@ export function AccountLink() {
   const { status, user } = useAuth();
   if (!cloudEnabled) return null;
 
-  // Guests (anonymous, first free workout) still see "Sign in".
+  // Guests (anonymous, started without an account) still see "Sign in".
   if (status === "in" && user && !user.is_anonymous) {
     const name = (user.user_metadata?.display_name as string | undefined) || user.email || "?";
     return (

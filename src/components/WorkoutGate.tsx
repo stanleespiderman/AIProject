@@ -11,7 +11,7 @@ import { useWorkoutStatus } from "@/lib/payments/usage";
 /**
  * Wraps the results screen. With accounts turned on, results show only during a
  * started workout; starting one is checked by the database (free limit or paid access).
- * The first workout on a device can run as a guest; after that an account is needed.
+ * A workout can start as a guest; before the next one, an account is needed.
  * Without accounts configured, results are shown as before.
  */
 export function WorkoutGate({ children }: { children: (finish: (() => void) | null) => ReactNode }) {
@@ -40,7 +40,7 @@ function Gate({ children }: { children: (finish: (() => void) | null) => ReactNo
         <StepHeader
           backHref="/equipment"
           title="Ready?"
-          subtitle="Your first workout is free, no account needed. Start it, then tap Start exercise on the moves you do."
+          subtitle="5 workouts are free, and you can start without an account. Tap Start exercise on the moves you do."
         />
         <Button onClick={() => void begin()} disabled={busy}>
           {busy ? "One sec…" : "Start workout"}
@@ -63,11 +63,11 @@ function Gate({ children }: { children: (finish: (() => void) | null) => ReactNo
           title="Keep training"
           subtitle={
             status.reason === "signup_required"
-              ? "Nice first workout! Create a free account to keep going: you get 4 more free workouts and your history is saved."
-              : "Sign in or create a free account to start a workout. Your first 5 workouts are free."
+              ? "Sign in to continue. Your workout and history are saved to your account, and your 5 free workouts carry on."
+              : "Sign in or create a free account to start a workout. 5 workouts are free."
           }
         />
-        <ButtonLink href="/account">{status.reason === "signup_required" ? "Create free account" : "Sign in or create account"}</ButtonLink>
+        <ButtonLink href="/account">{status.reason === "signup_required" ? "Sign in to continue" : "Sign in or create account"}</ButtonLink>
       </>
     );
   }

@@ -31,7 +31,7 @@ export default function Home() {
       <section className="flex flex-1 flex-col justify-center py-10 lg:grid lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
         <div>
         <p className="inline-block w-fit -skew-x-12 bg-volt px-2 font-display text-sm font-extrabold tracking-widest text-ink uppercase">
-          Your first 5 workouts are free.
+          5 workouts are free.
         </p>
         <h1 className="mt-5 font-display text-[4.25rem] leading-[0.85] lg:text-[7rem] font-extrabold uppercase italic">
           Bored

@@ -17,7 +17,7 @@ export default function UnlockPage() {
   const [message, setMessage] = useState<string | null>(null);
 
   const paid = status?.ok === true && status.paid;
-  const free = status?.ok === true ? `${status.finished} of ${status.limit} free workouts used.` : "Your first 5 workouts are free.";
+  const free = status?.ok === true ? `${status.finished} of ${status.limit} free workouts used.` : "5 workouts are free.";
 
   // After Dodo sends the customer back, the webhook can take a few seconds to land.
   useEffect(() => {

@@ -18,7 +18,7 @@ The app works without any of this: with no Supabase variables set, it stays on `
 
 - **Authentication > Sign In / Providers > Allow anonymous sign-ins: ON.** The first workout on a device runs as an anonymous guest. If this is off, the app asks for an account before the first workout instead.
 - Recommended with anonymous sign-ins: **Authentication > Attack Protection > CAPTCHA** (Turnstile or hCaptcha), so bots can't create guest users in bulk. Supabase also rate-limits anonymous sign-ins per IP (Authentication > Rate Limits).
-- When a guest creates an account they get a "Confirm your new email address" email (the **Change Email Address** template) that lands on `/account/reset`, where they choose a password. Make sure `/account/reset` is in the Redirect URLs above.
+- When a guest creates an account they get a "Confirm your new email address" email (the **Change Email Address** template) that lands on `/account`. They set their password in the app when signing up. `/account/reset` is still used by "Forgot password", so keep both in the Redirect URLs above.
 
 ## 3. Add the variables to Vercel
 Project > Settings > Environment Variables (Production and Preview), then redeploy:

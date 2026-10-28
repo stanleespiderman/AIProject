@@ -173,8 +173,8 @@ Every details entry has `review.status` in the JSON (`"pending"` or `"approved"`
 
 With accounts switched on (Supabase env vars set), results show only during a **workout**:
 
-1. **First workout: no account.** Tapping *Start workout* signs the visitor in as a Supabase *anonymous* guest. A device gets one guest workout (`whatnext:guest-workout-used`).
-2. **Then an account.** After the guest's workout, the gate asks them to create an account. Sign-up adds an email to the same guest user (`supabase.auth.updateUser`), so the workout and its log are kept. They choose a password after confirming the email, on `/account/reset`.
+1. **Start without an account.** Tapping *Start workout* signs the visitor in as a Supabase *anonymous* guest. A device gets one guest workout (`whatnext:guest-workout-used`). The copy only says "5 workouts are free".
+2. **Then sign in.** After the guest's workout, the gate nudges them to sign in before the next one. Sign-up takes an email and a password in the app and adds both to the same guest user (`supabase.auth.updateUser`), so the workout and its log are kept; the email is confirmed from the link Supabase sends (it lands on `/account`). If the auth server refuses a password on an unconfirmed guest, the app falls back to choosing it on `/account/reset` after the link.
 3. **5 free workouts, then ₹399 once** ("NextSet", lifetime). A workout counts when it's finished: *Finish* in the top bar or on the results screen, or automatically after **3 hours**. Finishing within **1 minute with nothing logged** deletes it, so it doesn't count.
 4. **Exercise log.** In a running workout each tile has *Start exercise → Mark done* (and *Again*). `/history` lists workouts and their exercises.
 
