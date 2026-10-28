@@ -61,37 +61,43 @@ export default function UnlockPage() {
         subtitle={paid ? "You're on NextSet. Workout away." : free}
       />
 
-      <p role="note" className="mb-5 rounded-2xl border border-volt/40 bg-volt/10 p-4 text-sm">
-        Test Mode demo. No real money is charged. Use Dodo test payment details only.
-      </p>
+      <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-10">
+        <div>
+          <p role="note" className="mb-5 rounded-2xl border border-volt/40 bg-volt/10 p-4 text-sm">
+            Test Mode demo. No real money is charged. Use Dodo test payment details only.
+          </p>
 
-      <ul className="space-y-2">
-        {perks.map((perk) => (
-          <li key={perk} className="flex items-center gap-3">
-            <span className="grid size-6 place-items-center rounded-full bg-volt text-ink">
-              <Check width={14} height={14} strokeWidth={3} />
+          <ul className="space-y-2">
+            {perks.map((perk) => (
+              <li key={perk} className="flex items-center gap-3">
+                <span className="grid size-6 place-items-center rounded-full bg-volt text-ink">
+                  <Check width={14} height={14} strokeWidth={3} />
+                </span>
+                {perk}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <div className="mt-6 flex items-center justify-between rounded-3xl border-2 border-volt bg-volt/10 p-5 lg:mt-0">
+            <span>
+              <span className="block font-display text-2xl font-extrabold uppercase">{PLAN.name}</span>
+              <span className="text-sm text-muted">{PLAN.blurb}</span>
             </span>
-            {perk}
-          </li>
-        ))}
-      </ul>
+            <span className="text-right">
+              <span className="block font-display text-3xl font-extrabold">{formatInr(PLAN.priceInr)}</span>
+              <span className="text-xs text-muted">one-time</span>
+            </span>
+          </div>
 
-      <div className="mt-6 flex items-center justify-between rounded-3xl border-2 border-volt bg-volt/10 p-5">
-        <span>
-          <span className="block font-display text-2xl font-extrabold uppercase">{PLAN.name}</span>
-          <span className="text-sm text-muted">{PLAN.blurb}</span>
-        </span>
-        <span className="text-right">
-          <span className="block font-display text-3xl font-extrabold">{formatInr(PLAN.priceInr)}</span>
-          <span className="text-xs text-muted">one-time</span>
-        </span>
+          {message && (
+            <p role="status" className="mt-4 rounded-2xl border border-line bg-panel-2 p-4 text-sm">
+              {message}
+            </p>
+          )}
+        </div>
       </div>
-
-      {message && (
-        <p role="status" className="mt-4 rounded-2xl border border-line bg-panel-2 p-4 text-sm">
-          {message}
-        </p>
-      )}
 
       <BottomBar>
         {signedOut || !cloudEnabled ? (

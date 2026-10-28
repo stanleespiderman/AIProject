@@ -62,7 +62,7 @@ export default function HistoryPage() {
           No workouts yet. Start one from the results screen and tap Start exercise on the moves you do.
         </p>
       ) : (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2 lg:items-start">
           {rows.map((w) => (
             <WorkoutSummary key={w.id} workout={w} />
           ))}
