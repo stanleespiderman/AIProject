@@ -38,7 +38,7 @@ export default function EquipmentPage() {
         subtitle="Tap everything you can grab right now."
       />
 
-      <div className="grid grid-cols-1 gap-2.5">
+      <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-3">
         {EQUIPMENT.map((e) => (
           <Chip key={e.id} label={e.label} selected={selected.includes(e.id)} onToggle={() => toggle(e.id)} />
         ))}

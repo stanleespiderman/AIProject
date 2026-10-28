@@ -5,6 +5,8 @@ import { Barlow_Condensed, Inter } from "next/font/google";
 import { DisclaimerModal } from "@/components/DisclaimerModal";
 import { InstallBoot } from "@/components/InstallBoot";
 import { Footer } from "@/components/Footer";
+import { AppShell } from "@/components/AppShell";
+import { DesktopBanner, DesktopToast } from "@/components/DesktopNotice";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
 
@@ -46,11 +48,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} antialiased`}>
       <body className="min-h-dvh font-sans">
-        <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-4">
+        <DesktopBanner />
+        <AppShell>
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
-        </div>
+        </AppShell>
         <DisclaimerModal />
+        <DesktopToast />
         <InstallBoot />
         {clarityAllowed && <GoogleAnalytics />}
         {clarityAllowed && (

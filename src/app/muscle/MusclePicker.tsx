@@ -43,7 +43,7 @@ export function MusclePicker() {
         subtitle="Pick one. We'll do the rest."
       />
 
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4">
         {MUSCLES.map((m) => {
           const count = countFor(m.id);
           const disabled = count === 0;

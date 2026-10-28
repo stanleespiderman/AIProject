@@ -22,7 +22,7 @@ export function InstallBanner({ title = "Keep WhatNxt on your home screen", clas
   return (
     <aside
       aria-label="Install WhatNxt"
-      className={`relative flex animate-rise items-center gap-3 rounded-3xl border border-line bg-panel p-3 pr-11 ${className}`}
+      className={`relative flex animate-rise lg:hidden items-center gap-3 rounded-3xl border border-line bg-panel p-3 pr-11 ${className}`}
     >
       <Image src="/icons/icon-192.png" alt="" width={48} height={48} className="size-12 shrink-0 rounded-2xl" />
       <div className="min-w-0 flex-1">

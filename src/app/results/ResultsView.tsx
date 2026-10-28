@@ -109,7 +109,7 @@ function ResultsList({
         </p>
       )}
 
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4">
         {ordered.map((ex, i) => (
           <ExerciseTile
             key={`${round}-${ex.id}`}
@@ -140,7 +140,7 @@ function ResultsList({
 
 export function ResultsSkeleton() {
   return (
-    <div className="grid grid-cols-2 gap-2.5 pt-24" aria-busy="true" aria-label="Loading exercises">
+    <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 pt-24" aria-busy="true" aria-label="Loading exercises">
       {[0, 1, 2, 3, 4, 5].map((i) => (
         <div key={i} className="h-28 animate-pulse rounded-3xl border border-line bg-panel" />
       ))}
