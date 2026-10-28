@@ -94,7 +94,7 @@ export function GoogleAnalytics() {
 
   if (!ready || !allowedPage) return null;
   return (
-    <aside aria-label="Google Analytics preferences" className="mx-auto w-full max-w-md px-4 pb-5 text-xs leading-relaxed text-muted">
+    <aside aria-label="Google Analytics preferences" className="mx-auto w-full max-w-md px-4 pb-5 lg:max-w-5xl text-xs leading-relaxed text-muted">
       {consent === null || showSettings ? (
         <div className="rounded-2xl border border-line bg-panel p-4">
           <p className="font-semibold text-fg">Optional Google Analytics</p>

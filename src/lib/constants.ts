@@ -58,4 +58,6 @@ export const STORAGE_KEYS = {
   shuffles: "whatnext:shuffles",
   pro: "whatnext:pro",
   installDismissed: "whatnext:install-dismissed",
+  /** When the "best on a phone" banner was last closed on a desktop-sized screen. */
+  desktopBanner: "whatnext:desktop-banner-dismissed",
 } as const;
