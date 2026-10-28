@@ -1,5 +1,6 @@
 import type { BaseExercise, Exercise } from "@/lib/types";
 import { youtubeSearchUrl } from "@/lib/youtube";
+import { APPROVED_IMAGE_IDS, exerciseImagePath } from "./approvedImages";
 import { EXERCISE_DETAILS } from "./exerciseDetails";
 
 /**
@@ -894,12 +895,16 @@ const BASE_EXERCISES: BaseExercise[] = [
   }),
 ];
 
+const APPROVED_IMAGES = new Set(APPROVED_IMAGE_IDS);
+
 /**
- * The full exercise list used by the app: the hand-edited basics plus the merged details.
+ * The full exercise list used by the app: the hand-edited basics plus the merged details
+ * and, where one is approved, the illustration.
  * An exercise with no details entry still works (it just has no cues); `npm run check:data`
  * fails the build if that happens, so it is caught before shipping.
  */
 export const EXERCISES: Exercise[] = BASE_EXERCISES.map((base) => {
   const details = EXERCISE_DETAILS[base.id];
-  return details ? { ...base, ...details } : { ...base, formCues: [] };
+  const ex: Exercise = details ? { ...base, ...details } : { ...base, formCues: [] };
+  return APPROVED_IMAGES.has(base.id) ? { ...ex, imageUrl: exerciseImagePath(base.id) } : ex;
 });

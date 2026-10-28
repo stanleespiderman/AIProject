@@ -113,6 +113,8 @@ export interface Exercise
   formCues: string[];
   /** A YouTube *search* URL. Never a hard-coded video id. */
   videoUrl: string;
+  /** Path to the approved START/END illustration, e.g. "/exercises/goblet-squat.webp". Missing = no approved image yet. */
+  imageUrl?: string;
 }
 
 /** The hand-edited part of an exercise (src/data/exercises.ts). Details are merged in on top. */

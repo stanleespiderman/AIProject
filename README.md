@@ -60,6 +60,7 @@ src/
 │  ├─ Footer.tsx               # Disclaimer in the footer
 │  └─ icons.tsx                # Inline SVG icons
 ├─ data/
+│  ├─ approvedImages.ts        # Ids whose illustration is approved (shown on the card, prioritised in results)
 │  ├─ exercises.ts             # ← The exercise library: names, groups, equipment, sets, reps (168)
 │  └─ exerciseDetails.ts       # Form cues, how-to, safety, image specs. AUTO-GENERATED, don't edit
 └─ lib/
@@ -90,9 +91,10 @@ docs/exercise-image-design.md                # style guide for exercise illustra
 - `recommend()` in `src/lib/recommend.ts`:
   1. Picks a target of 5–8 cards.
   2. Draws from exercises whose `primaryMuscle` matches and which you can do with at least one of your selected pieces of equipment.
-  3. If those run out, it tops up with exercises that train the muscle as a secondary. For **Full Body**, it tops up with compound lifts instead: any exercise that trains 3+ muscle groups.
-  4. The draw is weighted random: 👍 = 3× as likely, 👎 = 0.25×, neutral = 1×. The weights are in `VOTE_WEIGHT`.
-  5. A shuffle avoids the cards currently on screen when the pool is big enough.
+  3. Exercises with an approved image (listed in `src/data/approvedImages.ts`) are drawn first, as long as they match the filters and you haven't 👎'd them. This is on while images roll out; turn it off with `PRIORITIZE_APPROVED_IMAGES` in `recommend.ts`.
+  4. If those run out, it tops up with exercises that train the muscle as a secondary. For **Full Body**, it tops up with compound lifts instead: any exercise that trains 3+ muscle groups.
+  5. The draw is weighted random: 👍 = 3× as likely, 👎 = 0.25×, neutral = 1×. The weights are in `VOTE_WEIGHT`.
+  6. A shuffle avoids the cards currently on screen when the pool is big enough.
 - Votes are read once per roll, so tapping 👍/👎 never reshuffles the cards you're looking at.
 
 ### localStorage keys

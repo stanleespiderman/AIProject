@@ -5,6 +5,16 @@ import type { EquipmentId, Exercise, MuscleGroup, VoteMap } from "./types";
 export const VOTE_WEIGHT = { liked: 3, neutral: 1, disliked: 0.25 } as const;
 /** Exercises that only hit the muscle as a secondary are picked less often. */
 const SECONDARY_MATCH_FACTOR = 0.5;
+/**
+ * While images are being rolled out, exercises with an approved image are shown first
+ * whenever they qualify for the filters. Set to false to go back to a plain weighted draw.
+ */
+export const PRIORITIZE_APPROVED_IMAGES = true;
+
+/** Gets first pick: has an approved image, and the user hasn't thumbed it down. */
+export function isPrioritized(ex: Exercise, votes: VoteMap): boolean {
+  return PRIORITIZE_APPROVED_IMAGES && !!ex.imageUrl && votes[ex.id] !== -1;
+}
 
 export function usesAvailableEquipment(ex: Exercise, equipment: EquipmentId[]): boolean {
   return ex.equipment.some((e) => equipment.includes(e));
@@ -37,7 +47,9 @@ interface RecommendOptions {
 /**
  * Picks RESULTS_MIN..RESULTS_MAX exercises matching both filters.
  * Primary-muscle matches come first; if there aren't enough, exercises that
- * train the muscle secondarily top up the list. Votes bias the weighted draw.
+ * train the muscle secondarily top up the list. Within each of those, exercises
+ * with an approved image come first (see PRIORITIZE_APPROVED_IMAGES).
+ * Votes bias the weighted draw.
  * May return fewer than RESULTS_MIN when the equipment/muscle combo is thin.
  */
 export function recommend({
@@ -68,11 +80,17 @@ export function recommend({
 
   // Fill in tiers: fresh primary matches, then primary ones already on screen
   // (only if the pool is small), then exercises that hit the muscle secondarily.
+  // Each tier is split so prioritized exercises (approved image) are drawn first.
   const onScreen = (ex: Exercise) => avoid.includes(ex.id);
+  const first = (ex: Exercise) => isPrioritized(ex, votes);
+  const split = (pool: Exercise[], factor: number): [Exercise[], number][] => [
+    [pool.filter(first), factor],
+    [pool.filter((ex) => !first(ex)), factor],
+  ];
   const tiers: [Exercise[], number][] = [
-    [primary.filter((ex) => !onScreen(ex)), 1],
-    [primary.filter(onScreen), 1],
-    [secondary, SECONDARY_MATCH_FACTOR],
+    ...split(primary.filter((ex) => !onScreen(ex)), 1),
+    ...split(primary.filter(onScreen), 1),
+    ...split(secondary, SECONDARY_MATCH_FACTOR),
   ];
 
   const picked: Exercise[] = [];
