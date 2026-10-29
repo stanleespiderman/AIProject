@@ -50,10 +50,13 @@ src/
 │  ├─ muscle/                  # 3. Muscle picker (single select, tap to go)
 │  ├─ level/                   # 4. Level picker (Any / Beginner / Intermediate / Advanced)
 │  ├─ results/                 # 5. Tile grid + free Shuffle + votes
+│  ├─ feedback/                # Feedback form (wrong exercise info, bugs, ideas). See docs/deploy-accounts.md
+│  ├─ api/feedback/route.ts    # Stores feedback in Supabase (server only)
 │  └─ unlock/page.tsx          # Paywall stub. Not linked from anywhere right now
 ├─ components/
 │  ├─ ui/                      # Generic building blocks: Button, Chip, DifficultyDots
 │  ├─ ExerciseTile.tsx         # One exercise: small tile, expands in place
+│  ├─ FeedbackLink.tsx         # Link to /feedback that remembers the current page
 │  ├─ MuscleParts.tsx          # "Muscle parts worked" reveal animation
 │  ├─ VoteButtons.tsx          # Thumbs up / down
 │  ├─ StepHeader.tsx           # Back button + step label + big title

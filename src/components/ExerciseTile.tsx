@@ -2,6 +2,7 @@ import Image from "next/image";
 import { EXERCISE_IMAGES } from "@/data/exerciseImages";
 import { MUSCLE_LABEL } from "@/lib/constants";
 import type { Exercise, Vote } from "@/lib/types";
+import { FeedbackLink } from "./FeedbackLink";
 import { HowToDoIt } from "./HowToDoIt";
 import { Close, Play } from "./icons";
 import { MuscleParts } from "./MuscleParts";
@@ -116,6 +117,14 @@ export function ExerciseTile({ exercise, open, onToggle, vote, onVote, index }: 
                 </a>
                 <VoteButtons exerciseName={name} vote={vote} onVote={onVote} />
               </div>
+
+              <FeedbackLink
+                kind="exercise"
+                exercise={id}
+                className="mt-3 inline-flex min-h-11 items-center text-sm text-muted underline-offset-4 hover:text-fg hover:underline"
+              >
+                Something wrong with this exercise?
+              </FeedbackLink>
             </div>
           </div>
         </>
