@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MUSCLE_LABEL } from "@/lib/constants";
 import type { Exercise, Vote } from "@/lib/types";
 import { Play } from "./icons";
@@ -14,7 +15,9 @@ interface ExerciseCardProps {
 }
 
 export function ExerciseCard({ exercise, index, vote, onVote }: ExerciseCardProps) {
-  const { name, primaryMuscle, secondaryMuscles, difficulty, sets, reps, formCues, videoUrl } = exercise;
+  const { name, primaryMuscle, secondaryMuscles, difficulty, sets, reps, formCues, videoUrl, imageUrl, image } =
+    exercise;
+  const [startLabel, endLabel] = [image?.leftPanel.label ?? "start", image?.rightPanel.label ?? "end"];
 
   return (
     <article
@@ -33,6 +36,18 @@ export function ExerciseCard({ exercise, index, vote, onVote }: ExerciseCardProp
         <span className="font-semibold text-fg">{MUSCLE_LABEL[primaryMuscle]}</span>
         {secondaryMuscles.length > 0 && <> · also {secondaryMuscles.map((m) => MUSCLE_LABEL[m]).join(", ")}</>}
       </p>
+
+      {imageUrl && (
+        <Image
+          src={imageUrl}
+          alt={`${name}: ${startLabel.toLowerCase()} position on the left, ${endLabel.toLowerCase()} position on the right`}
+          width={1536}
+          height={1024}
+          sizes="(min-width: 32rem) 30rem, 100vw"
+          preload={index === 0}
+          className="mt-4 aspect-[3/2] w-full rounded-2xl border border-line bg-black object-cover"
+        />
+      )}
 
       <div className="mt-4 flex items-baseline gap-2 rounded-2xl bg-panel-2 px-4 py-3">
         <span className="font-display text-4xl font-extrabold text-volt">{sets}</span>

@@ -1,0 +1,72 @@
+/**
+ * Exercises whose illustration has passed the image checklist in docs/exercise-image-design.md.
+ * Each id here has a file at public/exercises/<id>.webp.
+ *
+ * Only list an image once a human has checked it: a wrong picture can hurt someone.
+ * `npm run check:data` fails the build if an id is unknown or its file is missing.
+ */
+export const APPROVED_IMAGE_IDS: readonly string[] = [
+  "band-biceps-curl",
+  "band-face-pull",
+  "band-kneeling-crunch",
+  "band-overhead-press",
+  "band-seated-row",
+  "band-squat",
+  "band-thruster",
+  "band-triceps-pushdown",
+  "barbell-curl",
+  "barbell-deadlift",
+  "barbell-front-squat",
+  "barbell-reverse-lunge",
+  "bench-dip",
+  "bodyweight-squat",
+  "box-pistol-squat",
+  "cable-biceps-curl",
+  "cable-front-raise",
+  "cable-goblet-squat",
+  "cable-split-squat",
+  "cable-woodchop",
+  "chest-supported-dumbbell-row",
+  "chin-up",
+  "double-kettlebell-front-squat",
+  "dumbbell-biceps-curl",
+  "dumbbell-lateral-raise",
+  "dumbbell-pullover",
+  "dumbbell-step-up",
+  "face-pull",
+  "farmer-s-carry",
+  "goblet-squat",
+  "hack-squat",
+  "hammer-curl",
+  "hanging-knee-raise",
+  "hollow-body-hold",
+  "incline-dumbbell-curl",
+  "kettlebell-bottoms-up-press",
+  "kettlebell-overhead-triceps-extension",
+  "kneeling-cable-crunch",
+  "leg-extension",
+  "lying-leg-curl",
+  "machine-calf-raise",
+  "machine-preacher-curl",
+  "machine-seated-row",
+  "machine-shoulder-press",
+  "machine-triceps-dip",
+  "mountain-climber",
+  "one-arm-dumbbell-row",
+  "overhead-cable-triceps-extension",
+  "pallof-press",
+  "plank-to-downward-dog",
+  "rotary-torso-machine",
+  "rowing-machine-sprint",
+  "single-arm-kettlebell-row",
+  "standing-cable-leg-curl",
+  "standing-calf-raise",
+  "straight-arm-cable-pulldown",
+  "suitcase-carry",
+  "superman",
+  "wall-sit",
+];
+
+export function exerciseImagePath(id: string): string {
+  return `/exercises/${id}.webp`;
+}

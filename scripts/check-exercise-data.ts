@@ -2,6 +2,9 @@
  * Build-time data check. Run with `npm run check:data` (also runs before `npm run build`).
  * Fails (exit 1) if the exercise library and its details are out of step.
  */
+import { existsSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import { APPROVED_IMAGE_IDS } from "../src/data/approvedImages";
 import { EXERCISES } from "../src/data/exercises";
 import { EXERCISE_DETAILS } from "../src/data/exerciseDetails";
 
@@ -63,6 +66,18 @@ for (const e of EXERCISES) {
   if (!e.videoUrl.startsWith(SEARCH)) fail(`${e.id}: videoUrl must be a YouTube search URL, got ${e.videoUrl}`);
 }
 
+// 6. approved images: known ids, no duplicates, and the file is actually there
+const imageDir = join(__dirname, "..", "public", "exercises");
+if (new Set(APPROVED_IMAGE_IDS).size !== APPROVED_IMAGE_IDS.length) fail("APPROVED_IMAGE_IDS has duplicate ids");
+for (const id of APPROVED_IMAGE_IDS) {
+  if (!idSet.has(id)) fail(`Approved image "${id}" has no matching exercise in src/data/exercises.ts`);
+  if (!existsSync(join(imageDir, `${id}.webp`))) fail(`Approved image "${id}" is missing public/exercises/${id}.webp`);
+}
+const unlisted = readdirSync(imageDir)
+  .filter((f) => f.endsWith(".webp"))
+  .map((f) => f.replace(/\.webp$/, ""))
+  .filter((id) => !APPROVED_IMAGE_IDS.includes(id));
+
 if (errors.length > 0) {
   console.error(`\nExercise data check FAILED (${errors.length} problem${errors.length === 1 ? "" : "s"}):\n`);
   for (const msg of errors) console.error(`  - ${msg}`);
@@ -72,4 +87,5 @@ if (errors.length > 0) {
 
 const withRanges = EXERCISES.filter((e) => e.angleRanges?.length).length;
 const pending = EXERCISES.filter((e) => e.reviewStatus !== "approved").length;
-console.log(`Exercise data OK: ${EXERCISES.length} exercises, all with details. ${withRanges} with angle ranges. Trainer review pending on ${pending}.`);
+console.log(`Exercise data OK: ${EXERCISES.length} exercises, all with details. ${withRanges} with angle ranges. Trainer review pending on ${pending}. ${APPROVED_IMAGE_IDS.length} with an approved image.`);
+if (unlisted.length > 0) console.warn(`Note: images in public/exercises not in APPROVED_IMAGE_IDS (not shown): ${unlisted.join(", ")}`);
