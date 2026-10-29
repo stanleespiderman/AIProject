@@ -96,10 +96,11 @@ Results are a two-column grid of tiles (difficulty dots, name, muscle groups). T
 - `recommend()` in `src/lib/recommend.ts`:
   1. Picks a target of 5–8 cards.
   2. Draws from exercises whose `primaryMuscle` matches and which you can do with at least one of your selected pieces of equipment.
-  3. If those run out, it tops up with exercises that train the muscle as a secondary. For **Full Body**, it tops up with compound lifts instead: any exercise that trains 3+ muscle groups.
-  4. The draw is weighted random: 👍 = 3× as likely, 👎 = 0.25×, neutral = 1×. The weights are in `VOTE_WEIGHT`.
-  5. With a level picked (`lv=beginner|intermediate|advanced`, absent = any), only exercises of that difficulty are drawn.
-  6. A shuffle avoids the tiles currently on screen when the pool is big enough.
+  3. Exercises with an image in `public/exercises/` are drawn first, as long as they match the filters and you haven't 👎'd them. This is on while images roll out; turn it off with `PRIORITIZE_EXERCISES_WITH_IMAGES` in `recommend.ts`.
+  4. If those run out, it tops up with exercises that train the muscle as a secondary. For **Full Body**, it tops up with compound lifts instead: any exercise that trains 3+ muscle groups.
+  5. The draw is weighted random: 👍 = 3× as likely, 👎 = 0.25×, neutral = 1×. The weights are in `VOTE_WEIGHT`.
+  6. With a level picked (`lv=beginner|intermediate|advanced`, absent = any), only exercises of that difficulty are drawn.
+  7. A shuffle avoids the tiles currently on screen when the pool is big enough.
 - Votes are read once per roll, so tapping 👍/👎 never reshuffles the cards you're looking at.
 
 ### localStorage keys
