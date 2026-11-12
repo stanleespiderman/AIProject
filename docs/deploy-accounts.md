@@ -11,20 +11,20 @@ The app works without any of this: with no Supabase variables set, it stays on `
 
 ## 2. Configure sign-in (Authentication > URL Configuration)
 - **Site URL**: your production URL, e.g. `https://yourdomain.com`.
-- **Redirect URLs**: add `https://<your-domain>/account` and `https://<your-domain>/account/reset`. Add `http://localhost:3000/**` for local dev, and your Vercel preview pattern (e.g. `https://*-<team>.vercel.app/**`) if you want sign-in on previews.
+- **Redirect URLs**: add `https://<your-domain>/account` and `https://<your-domain>/account/reset`. Add `http://localhost:3000/**` for local dev, and your Netlify deploy-preview pattern (e.g. `https://deploy-preview-*--<site-name>.netlify.app/**`) if you want sign-in on previews.
 - **Authentication > Providers > Email**: decide whether "Confirm email" is on.
   - On (recommended): the app shows "Check your email" after sign-up. Supabase's built-in mailer is limited to a few emails per hour, so before real traffic set up your own SMTP (Authentication > SMTP Settings: Resend, Postmark, SES...).
   - Off: users are signed in straight after sign-up. Easier for launch day, but anyone can sign up with an email they don't own.
 
-## 3. Add the variables to Vercel
-Project > Settings > Environment Variables (Production and Preview), then redeploy:
+## 3. Add the variables to Netlify
+Site configuration > Environment variables (all deploy contexts), then trigger a new deploy:
 
 | Name | Value |
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | the Project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | the anon / publishable key |
 
-| `SUPABASE_SERVICE_ROLE_KEY` | the `service_role` / secret key. **Server only**, used by the delete-account and feedback routes. Mark it Sensitive in Vercel and do not tick "Expose to browser". |
+| `SUPABASE_SERVICE_ROLE_KEY` | the `service_role` / secret key. **Server only**, used by the delete-account and feedback routes. In Netlify mark it as a secret value. |
 
 The first two are meant to be public. The database is protected by the row level security policies, not by hiding the key. **Never** put the `service_role` key in a `NEXT_PUBLIC_` variable.
 For local dev copy `.env.example` to `.env.local`. Without `SUPABASE_SERVICE_ROLE_KEY` everything else works, but the delete button and the feedback form report that they aren't set up.

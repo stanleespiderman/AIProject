@@ -32,9 +32,9 @@ To test on your phone, run `npm run dev -- -H 0.0.0.0` and open `http://<your-la
 
 **Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, your votes and your saved equipment.
 
-## Deploy to Vercel
+## Deploy to Netlify
 
-Push to GitHub, then "Add New Project" in Vercel and import the repo. It deploys with no settings. To turn on accounts, add the two Supabase variables (`.env.example`) and follow `docs/deploy-accounts.md`.
+Push to GitHub, then "Add new site" → "Import an existing project" in Netlify and pick the repo. `netlify.toml` sets the build command and Node version. It deploys with no settings. To turn on accounts, add the Supabase variables (`.env.example`) in Site configuration → Environment variables and follow `docs/deploy-accounts.md`.
 
 ---
 
