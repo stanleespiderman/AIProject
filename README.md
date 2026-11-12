@@ -4,7 +4,7 @@
 
 A mobile-first web app for gym-goers. Pick the equipment you have and a muscle group, and get 5–8 exercise suggestions, each with sets × reps, form cues and a link to form videos.
 
-**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. No backend, no database and no accounts. Everything the app remembers lives in `localStorage`. Every route is statically prerendered, so it deploys to Vercel with zero config.
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. No backend, no database and no accounts. Everything the app remembers lives in `localStorage`. Every route is statically prerendered, so it deploys to Netlify with zero config.
 
 ---
 
@@ -32,9 +32,9 @@ To test on your phone, run `npm run dev -- -H 0.0.0.0` and open `http://<your-la
 
 **Reset your local state:** in DevTools → Application → Local Storage, delete the keys starting with `whatnext:`. That brings back the disclaimer, the free shuffles, your votes and your saved equipment.
 
-## Deploy to Vercel
+## Deploy to Netlify
 
-Push to GitHub, then "Add New Project" in Vercel and import the repo. No environment variables or settings are needed.
+Push to GitHub, then "Add new site" → "Import an existing project" in Netlify and pick the repo. `netlify.toml` already sets the build command and Node version. No environment variables are needed.
 
 ---
 

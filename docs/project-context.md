@@ -10,7 +10,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 
 - Tagline: "Bored mid-workout? Get your next set in 10 seconds."
 - Audience and pricing context: India (INR pricing). Free tier plus a paid "NextSet" unlock.
-- Owner's constraints: simple, clean, easy to extend over about 8 weeks. No backend or database for now. No user accounts or login. Must deploy cleanly on Vercel.
+- Owner's constraints: simple, clean, easy to extend over about 8 weeks. No backend or database for now. No user accounts or login. Must deploy cleanly on Netlify (migrated from Vercel to allow monetization).
 
 ## 2. Core flow (all built)
 
@@ -63,7 +63,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 - No accounts or cross-device sync (by design).
 
 **Not yet done:**
-- **Deployment to Vercel:** NOT deployed. The Vercel connector in Claude Code could read the account but got a 403 when creating a project (scope `helloworld-925e`). Manual route: vercel.com/new, import `stanleespiderman/AIProject`, leave defaults, production branch `main` (or the working branch until `main` is updated), Deploy.
+- **Deployment to Netlify:** NOT deployed yet. `netlify.toml` is in place. Manual route: app.netlify.com → Add new site → Import from GitHub → `stanleespiderman/AIProject`, leave defaults, production branch `main`, Deploy.
 - Exercise images (see section 7).
 
 ## 6. Design artifacts (Claude artifacts, private to the owner)
@@ -105,7 +105,7 @@ Purpose of this file: give a fresh Claude chat everything it needs to continue t
 3. Write the per-exercise data (camera, equipment, primary and secondary muscles, start, end, angle labels) for all 168 exercises and generate one prompt each. A first draft of the chest and back data (44 exercises) was started in the session but not committed; redo it after the sample test.
 4. Generate all images, upload to `public/exercises/`, and have a trainer review them (the angle values are typical working values, not rules).
 5. App changes: add an optional `steps`/image field to the exercise data; show the image first on each card with a fallback to text cues when no image exists; make the video link secondary ("Prefer video? Watch form").
-6. Deploy to Vercel; consider server-side entitlements and a real payment provider (Razorpay or Stripe) later, behind `src/lib/payments/`.
+6. Deploy to Netlify; consider server-side entitlements and a real payment provider (Razorpay or Stripe) later, behind `src/lib/payments/`.
 
 ## 9. Working agreements and cautions
 
