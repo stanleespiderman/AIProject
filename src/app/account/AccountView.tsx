@@ -203,7 +203,7 @@ function SignedOut() {
 
   const titles = { signin: "Welcome back", signup: "Save your picks", forgot: "Reset password" } as const;
   const subtitles = {
-    signin: "Sign in to get your equipment and votes on any device.",
+    signin: "Sign in to save your workouts and access on any device.",
     signup: "Free account. No spam. Your picks follow you across devices.",
     forgot: "We'll email you a link to set a new password.",
   } as const;
@@ -285,7 +285,7 @@ function SignedOut() {
           </button>
         )}
       </div>
-      <p className="mt-4 text-xs text-muted">No account needed to use WhatNxt. Signing up just saves your picks.</p>
+      <p className="mt-4 text-xs text-muted">A verified email is required to start workouts. Your first 5 workouts are free.</p>
     </>
   );
 }
