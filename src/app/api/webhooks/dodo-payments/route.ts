@@ -23,6 +23,8 @@ export async function POST(request: NextRequest) {
       const payment = await client.payments.retrieve(payload.data.payment_id);
       const state = paymentState(payment, productId);
       if (!state) return;
+      const testUsers = (process.env.DODO_TEST_ALLOWED_USER_IDS ?? "").split(",").filter(Boolean);
+      if (environment === "test_mode" && !testUsers.includes(state.userId)) return;
       const { error } = await admin.rpc("apply_dodo_payment", {
         p_event: request.headers.get("webhook-id"), p_payment: payment.payment_id,
         p_user: state.userId, p_eligible: state.eligible, p_revoked: state.revoked,
