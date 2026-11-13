@@ -31,6 +31,11 @@ export async function POST(request: Request) {
   if (existing) return Response.json({ error: "You already have NextSet." }, { status: 409 });
 
   const environment = process.env.DODO_PAYMENTS_ENVIRONMENT === "live_mode" ? "live_mode" : "test_mode";
+  // Test purchases must never create public access in the shared live database.
+  const testUsers = (process.env.DODO_TEST_ALLOWED_USER_IDS ?? "").split(",").filter(Boolean);
+  if (environment === "test_mode" && !testUsers.includes(user.id)) {
+    return Response.json({ error: "Test checkout is restricted to isolated developer fixtures." }, { status: 503 });
+  }
   const client = new DodoPayments({ bearerToken: apiKey, environment });
   try {
     const session = await client.checkoutSessions.create({
