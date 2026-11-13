@@ -43,7 +43,7 @@ function SignedIn({ email, name }: { email: string; name?: string }) {
 
   const signOut = async () => {
     setBusy(true);
-    await getSupabase()?.auth.signOut();
+    await getSupabase()?.auth.signOut({ scope: "local" });
     setBusy(false);
   };
 
