@@ -16,6 +16,7 @@ import { useHydrated } from "@/lib/storage";
 import type { Difficulty, EquipmentId, MuscleGroup } from "@/lib/types";
 import { readVotes, useVotes } from "@/lib/votes";
 import { useSearchParams } from "next/navigation";
+import { WorkoutGate } from "@/components/WorkoutGate";
 
 export function ResultsView() {
   const params = useSearchParams();
@@ -40,7 +41,9 @@ export function ResultsView() {
 
   // Remount (and re-roll) whenever the filters change.
   return (
-    <ResultsList key={`${equipment.join()}|${muscle}|${level ?? "any"}`} equipment={equipment} muscle={muscle} level={level} />
+    <WorkoutGate>
+      {(onFinish) => <ResultsList key={`${equipment.join()}|${muscle}|${level ?? "any"}`} equipment={equipment} muscle={muscle} level={level} onFinish={onFinish} />}
+    </WorkoutGate>
   );
 }
 
@@ -48,10 +51,12 @@ function ResultsList({
   equipment,
   muscle,
   level,
+  onFinish,
 }: {
   equipment: EquipmentId[];
   muscle: MuscleGroup;
   level: Difficulty | null;
+  onFinish: (() => void) | null;
 }) {
   const { votes, toggle } = useVotes();
 
@@ -133,6 +138,7 @@ function ResultsList({
         <Button onClick={shuffle}>
           <Shuffle /> Shuffle
         </Button>
+        {onFinish && <Button variant="secondary" size="md" className="mt-2 w-full" onClick={onFinish}>Finish workout</Button>}
       </BottomBar>
     </>
   );
