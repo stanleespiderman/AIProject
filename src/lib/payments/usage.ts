@@ -1,43 +1,49 @@
 "use client";
 
-import { STORAGE_KEYS } from "../constants";
-import { readJSON, useStoredState, writeJSON } from "../storage";
-import { isPro, useIsPro } from "./index";
-
-/** Free shuffles per calendar day (user's local time). */
-export const FREE_SHUFFLES_PER_DAY = 3;
-
-interface ShuffleUsage {
-  date: string; // YYYY-MM-DD, local
-  count: number;
-}
-
-function today(): string {
-  const d = new Date();
-  const pad = (n: number) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-}
-
-function usedToday(usage: ShuffleUsage | null): number {
-  return usage && usage.date === today() ? usage.count : 0;
-}
+import { useCallback, useEffect, useState } from "react";
+import { useAuth } from "../auth";
+import { getSupabase } from "../supabase/client";
 
 /**
- * Tries to spend one shuffle. Returns false when the free quota is used up
- * (the caller should send the user to /unlock). Pro users are never limited.
+ * Workout sessions and access, all decided by the database.
+ * The functions behind these calls (supabase/migrations/20261027000000_*.sql) check the
+ * signed-in user, a confirmed email, the free-workout limit and any paid entitlement.
  */
-export function consumeShuffle(): boolean {
-  if (isPro()) return true;
-  const used = usedToday(readJSON<ShuffleUsage | null>(STORAGE_KEYS.shuffles, null));
-  if (used >= FREE_SHUFFLES_PER_DAY) return false;
-  writeJSON<ShuffleUsage>(STORAGE_KEYS.shuffles, { date: today(), count: used + 1 });
-  return true;
+
+export type WorkoutStatus =
+  | { ok: true; paid: boolean; finished: number; limit: number; active_id: string | null }
+  | { ok: false; reason: "signed_out" | "email_unconfirmed" | "limit_reached" | "error"; finished?: number; limit?: number };
+
+async function call(fn: "workout_status" | "start_workout" | "finish_workout"): Promise<WorkoutStatus> {
+  const supabase = getSupabase();
+  if (!supabase) return { ok: false, reason: "error" };
+  const { data, error } = await supabase.rpc(fn);
+  if (error || !data) return { ok: false, reason: "error" };
+  return data as WorkoutStatus;
 }
 
-/** Remaining free shuffles today; `Infinity` for Pro users. */
-export function useShufflesLeft(): number {
-  const pro = useIsPro();
-  const [usage] = useStoredState<ShuffleUsage | null>(STORAGE_KEYS.shuffles, null);
-  if (pro) return Infinity;
-  return Math.max(FREE_SHUFFLES_PER_DAY - usedToday(usage), 0);
+/** Current status for the signed-in user, plus actions that update it. */
+export function useWorkoutStatus() {
+  const { status: authStatus, user } = useAuth();
+  const [status, setStatus] = useState<WorkoutStatus | null>(null);
+  const userId = user?.id ?? null;
+
+  useEffect(() => {
+    let cancelled = false;
+    if (authStatus === "loading") return;
+    if (!userId) {
+      void Promise.resolve().then(() => !cancelled && setStatus({ ok: false, reason: "signed_out" }));
+      return;
+    }
+    void call("workout_status").then((s) => !cancelled && setStatus(s));
+    return () => {
+      cancelled = true;
+    };
+  }, [authStatus, userId]);
+
+  const refresh = useCallback(async () => setStatus(await call("workout_status")), []);
+  const start = useCallback(async () => setStatus(await call("start_workout")), []);
+  const finish = useCallback(async () => setStatus(await call("finish_workout")), []);
+
+  return { status: authStatus === "loading" ? null : status, refresh, start, finish };
 }
